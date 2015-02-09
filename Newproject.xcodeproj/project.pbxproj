@@ -274,6 +274,7 @@
 		D413816A1946BD4A0056574C /* EqOthersMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D41381691946BD4A0056574C /* EqOthersMdl.m */; };
 		D413816C1947107A0056574C /* createjob.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816B1947107A0056574C /* createjob.png */; };
 		D413816E194710830056574C /* site.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816D194710830056574C /* site.png */; };
+		D413971C1A88B72200612227 /* bgmetro12.png in Resources */ = {isa = PBXBuildFile; fileRef = D413971B1A88B72100612227 /* bgmetro12.png */; };
 		D41499AF194573A2001E9146 /* ManagemttileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41499AD194573A2001E9146 /* ManagemttileViewController.m */; };
 		D41499B0194573A2001E9146 /* ManagemttileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41499AE194573A2001E9146 /* ManagemttileViewController.xib */; };
 		D41499B4194575BB001E9146 /* MovementtileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41499B2194575BB001E9146 /* MovementtileViewController.m */; };
@@ -1033,6 +1034,7 @@
 		D41381691946BD4A0056574C /* EqOthersMdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqOthersMdl.m; sourceTree = "<group>"; };
 		D413816B1947107A0056574C /* createjob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createjob.png; sourceTree = "<group>"; };
 		D413816D194710830056574C /* site.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = site.png; sourceTree = "<group>"; };
+		D413971B1A88B72100612227 /* bgmetro12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgmetro12.png; sourceTree = "<group>"; };
 		D41499AC194573A2001E9146 /* ManagemttileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagemttileViewController.h; sourceTree = "<group>"; };
 		D41499AD194573A2001E9146 /* ManagemttileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagemttileViewController.m; sourceTree = "<group>"; };
 		D41499AE194573A2001E9146 /* ManagemttileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagemttileViewController.xib; sourceTree = "<group>"; };
@@ -2854,6 +2856,7 @@
 				64428BBF192E08E800CB2CF9 /* Notepad.png in Resources */,
 				64A3B82418DFEF0B0015887F /* CommentsViewController.xib in Resources */,
 				6481615C176EF0C50017F4CC /* rightarowblack.png in Resources */,
+				D413971C1A88B72200612227 /* bgmetro12.png in Resources */,
 				64A3B82618E02FC90015887F /* branchcell.xib in Resources */,
 				64A2F9BC19CBEC17009B1018 /* FLPViewController.xib in Resources */,
 				D4F2F91E193C41F300B732E9 /* iconleftblack.png in Resources */,

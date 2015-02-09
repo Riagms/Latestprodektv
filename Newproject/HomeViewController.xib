@@ -28,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgmetro1.png" id="E1N-Ki-sPL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgmetro12.png" id="E1N-Ki-sPL">
                     <rect key="frame" x="0.0" y="44" width="1024" height="980"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.79992426658163263" green="0.52500741717769073" blue="0.64225350220352428" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,7 +289,7 @@
     <resources>
         <image name="SasteyPicture.png" width="512" height="512"/>
         <image name="accounting.png" width="512" height="512"/>
-        <image name="bgmetro1.png" width="1346" height="1200"/>
+        <image name="bgmetro12.png" width="1400" height="1200"/>
         <image name="clarity-shutdown-icon.png" width="50" height="50"/>
         <image name="com.png" width="96" height="96"/>
         <image name="customer-&amp;con (1).png" width="350" height="350"/>
