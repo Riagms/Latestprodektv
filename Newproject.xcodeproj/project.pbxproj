@@ -41,6 +41,8 @@
 		646A28B61937350400902C4A /* Detaileventmanpwr.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B51937350400902C4A /* Detaileventmanpwr.m */; };
 		646A28B91937351D00902C4A /* Eqeventmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B81937351D00902C4A /* Eqeventmdl.m */; };
 		646A28BC193743CF00902C4A /* OthereventMaodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28BB193743CF00902C4A /* OthereventMaodel.m */; };
+		647871A71A889599008A9453 /* biglogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871A61A889599008A9453 /* biglogo.png */; };
+		647871AD1A889FE0008A9453 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871AC1A889FE0008A9453 /* background.png */; };
 		6481615C176EF0C50017F4CC /* rightarowblack.png in Resources */ = {isa = PBXBuildFile; fileRef = 6481615B176EF0C50017F4CC /* rightarowblack.png */; };
 		648D12FE17716C7F006BB41A /* rectangle3.png in Resources */ = {isa = PBXBuildFile; fileRef = 648D12FD17716C7F006BB41A /* rectangle3.png */; };
 		648DE20B1777F7B400261F74 /* ContactInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649AE8811772DFDA00CAECE7 /* ContactInfoViewController.xib */; };
@@ -712,6 +714,8 @@
 		646A28B81937351D00902C4A /* Eqeventmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Eqeventmdl.m; sourceTree = "<group>"; };
 		646A28BA193743CF00902C4A /* OthereventMaodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthereventMaodel.h; sourceTree = "<group>"; };
 		646A28BB193743CF00902C4A /* OthereventMaodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthereventMaodel.m; sourceTree = "<group>"; };
+		647871A61A889599008A9453 /* biglogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biglogo.png; sourceTree = "<group>"; };
+		647871AC1A889FE0008A9453 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		6481615B176EF0C50017F4CC /* rightarowblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarowblack.png; sourceTree = "<group>"; };
 		648D12FD17716C7F006BB41A /* rectangle3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle3.png; sourceTree = "<group>"; };
 		648D12FF17716E0E006BB41A /* appbar.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.close.png; sourceTree = "<group>"; };
@@ -2237,6 +2241,8 @@
 		D4D570151772BE4A00671A35 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				647871AC1A889FE0008A9453 /* background.png */,
+				647871A61A889599008A9453 /* biglogo.png */,
 				D423E2541A63C45000DAB75E /* Jobimage.png */,
 				64CB04EF1A5BAB85005394D5 /* create-a-new-job.png */,
 				64C27A561A35987400B66C77 /* com.png */,
@@ -3040,6 +3046,7 @@
 				D4004057185B174A00C38E12 /* TileViewController.xib in Resources */,
 				D4A16B911974EEE0002CA2A2 /* sumbidcell.xib in Resources */,
 				6426F5ED18C060CF002471AC /* planning.png in Resources */,
+				647871A71A889599008A9453 /* biglogo.png in Resources */,
 				D4036FFA19FE24D10031C4F1 /* Plandocuscell.xib in Resources */,
 				D4E658CA17F2DDFA00202B14 /* rightdisclosure.png in Resources */,
 				64A41244194080D6003EE113 /* contract-mangement.png in Resources */,
@@ -3138,6 +3145,7 @@
 				64C27A5F1A35A3B300B66C77 /* company-documents.png in Resources */,
 				6426F5F518C062F6002471AC /* payroll.png in Resources */,
 				D44ECC601A5D098500B3082A /* PMJobsViewController.xib in Resources */,
+				647871AD1A889FE0008A9453 /* background.png in Resources */,
 				D4A338E418F3EEEF00E53FAC /* MarkupViewController.xib in Resources */,
 				D4A16B621974EEA8002CA2A2 /* Editplanview.xib in Resources */,
 				D4F053E11A0CA37A00672C88 /* planning2@2X.png in Resources */,
