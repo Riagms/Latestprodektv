@@ -541,7 +541,7 @@ NSString*useridname = [defaults objectForKey:@"Userid"];
             //if (!self.ReVCtrl) {
                 self.ReVCtrl=[[ResViewController alloc]initWithNibName:@"ResViewController" bundle:nil];
            // }
-            _ReVCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
+            //_ReVCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:_ReVCtrl
                                animated:YES completion:NULL];
 
