@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" id="Iq7-xF-ejM">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bground.png" id="Iq7-xF-ejM">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -83,7 +83,7 @@
                                 <action selector="toforgetaction:" destination="-1" eventType="touchUpInside" id="hqK-s7-1Uo"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biglogo.png" id="Gws-8g-NMF">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bglogo.png" id="Gws-8g-NMF">
                             <rect key="frame" x="402" y="183" width="221" height="61"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -107,8 +107,8 @@
         </view>
     </objects>
     <resources>
-        <image name="background.png" width="1999" height="1081"/>
-        <image name="biglogo.png" width="221" height="61"/>
+        <image name="bglogo.png" width="221" height="61"/>
+        <image name="bground.png" width="1999" height="1081"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
