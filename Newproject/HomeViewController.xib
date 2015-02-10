@@ -28,13 +28,13 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgmetro12.png" id="E1N-Ki-sPL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Newbakground.png" id="E1N-Ki-sPL">
                     <rect key="frame" x="0.0" y="44" width="1024" height="980"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.79992426658163263" green="0.52500741717769073" blue="0.64225350220352428" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="qnU-NH-UGi">
-                    <rect key="frame" x="561" y="320" width="150" height="144"/>
+                    <rect key="frame" x="601" y="320" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleet.png" id="y5G-LG-75f">
@@ -52,7 +52,7 @@
                     <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="xd7-8t-xvt">
-                    <rect key="frame" x="393" y="320" width="150" height="144"/>
+                    <rect key="frame" x="433" y="320" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Productivity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QUo-D3-e3q">
@@ -70,7 +70,7 @@
                     <color key="backgroundColor" red="0.54509803921568623" green="0.27058823529411763" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="Adm-Er-93r">
-                    <rect key="frame" x="221" y="320" width="150" height="144"/>
+                    <rect key="frame" x="261" y="320" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="payroll.png" id="kcT-hr-AvI">
@@ -87,31 +87,8 @@
                     </subviews>
                     <color key="backgroundColor" red="0.69019607843137254" green="0.76862745098039209" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view contentMode="scaleToFill" id="d8t-0b-D1U">
-                    <rect key="frame" x="742" y="168" width="150" height="144"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estimation.png" id="Z7C-Er-Qzm">
-                            <rect key="frame" x="30" y="26" width="91" height="92"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="iMu-MA-vyt">
-                            <rect key="frame" x="57" y="53" width="37" height="37"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </activityIndicatorView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cost&amp;Estimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yiy-Na-P9u">
-                            <rect key="frame" x="21" y="123" width="109" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="0.51582458941605835" blue="0.53142107664233573" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <view contentMode="scaleToFill" id="EPr-1o-t3c">
-                    <rect key="frame" x="53" y="320" width="150" height="144"/>
+                    <rect key="frame" x="93" y="320" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jobs.png" id="H3N-iW-ilZ">
@@ -123,8 +100,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </activityIndicatorView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Progress Measurement and Reporting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3c5-1S-wOe">
-                            <rect key="frame" x="17" y="119" width="119" height="17"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Progress Measurement and Reporting" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3c5-1S-wOe">
+                            <rect key="frame" x="2" y="106" width="147" height="38"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,7 +111,7 @@
                     <color key="backgroundColor" red="0.50196078431372548" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="4">
-                    <rect key="frame" x="393" y="168" width="150" height="144"/>
+                    <rect key="frame" x="433" y="168" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customer-&amp;con (1).png" id="fcS-RP-N2F">
@@ -157,7 +134,7 @@
                     <color key="backgroundColor" red="0.88195711678832112" green="0.20643248175182483" blue="0.31797445255474371" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="QcF-Qj-Fym">
-                    <rect key="frame" x="221" y="168" width="150" height="144"/>
+                    <rect key="frame" x="261" y="168" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rs.png" id="1gz-bU-rN4">
@@ -180,7 +157,7 @@
                     <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="Pjb-zn-1HX">
-                    <rect key="frame" x="561" y="168" width="150" height="144"/>
+                    <rect key="frame" x="601" y="168" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planning&amp;Scope Developement" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KTq-4D-Fth">
@@ -207,7 +184,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.62420280610000001" green="0.40847113340000002" blue="0.50701583500000003" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="0.62420280610000001" green="0.40847113340000002" blue="0.50701583500000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="barTintColor" red="0.62420280610000001" green="0.40847113340000002" blue="0.50701583500000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <textAttributes key="titleTextAttributes">
                         <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                     </textAttributes>
@@ -239,26 +216,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" id="Ql8-8b-aiG">
-                    <rect key="frame" x="742" y="320" width="150" height="144"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SasteyPicture.png" id="2Bt-at-5ym">
-                            <rect key="frame" x="15" y="14" width="121" height="116"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Safety 360" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ujV-M3-T0v">
-                            <rect key="frame" x="26" y="123" width="99" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.85490196078431369" green="0.4392156862745098" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <view contentMode="scaleToFill" id="26">
-                    <rect key="frame" x="53" y="168" width="150" height="144"/>
+                    <rect key="frame" x="93" y="168" width="150" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="com.png" id="gSe-gt-Ipl">
@@ -280,6 +239,47 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.77183681029999995" blue="0.043825061339999999" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <view contentMode="scaleToFill" id="d8t-0b-D1U">
+                    <rect key="frame" x="770" y="168" width="150" height="144"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estimation.png" id="Z7C-Er-Qzm">
+                            <rect key="frame" x="30" y="26" width="91" height="92"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="iMu-MA-vyt">
+                            <rect key="frame" x="57" y="53" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cost&amp;Estimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yiy-Na-P9u">
+                            <rect key="frame" x="21" y="123" width="109" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.51582458941605835" blue="0.53142107664233573" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="Ql8-8b-aiG">
+                    <rect key="frame" x="770" y="320" width="150" height="144"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SasteyPicture.png" id="2Bt-at-5ym">
+                            <rect key="frame" x="15" y="14" width="121" height="116"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Safety 360" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ujV-M3-T0v">
+                            <rect key="frame" x="26" y="123" width="99" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.85490196078431369" green="0.4392156862745098" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
@@ -287,9 +287,9 @@
         </view>
     </objects>
     <resources>
+        <image name="Newbakground.png" width="1400" height="1200"/>
         <image name="SasteyPicture.png" width="512" height="512"/>
         <image name="accounting.png" width="512" height="512"/>
-        <image name="bgmetro12.png" width="1400" height="1200"/>
         <image name="clarity-shutdown-icon.png" width="50" height="50"/>
         <image name="com.png" width="96" height="96"/>
         <image name="customer-&amp;con (1).png" width="350" height="350"/>

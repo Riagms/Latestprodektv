@@ -18,6 +18,8 @@
 //#import "CrewsetupViewController.h"
 #import "GPSetupTileViewController.h"
 #import "Rightscheck.h"
+#import "HRViewController.h"
+#import "TilehrViewController.h"
 
 
 @interface ResViewController : UIViewController
@@ -27,7 +29,7 @@
     NSInteger checkWS;
 }
 
-
+@property(strong,nonatomic)TilehrViewController*TilehrVCtrl;
 @property (strong, nonatomic) IBOutlet UIView *manpwrview;
 @property(strong,nonatomic)IBOutlet UIView *eqpView;
 @property(strong,nonatomic)IBOutlet UIView *materialView;
@@ -37,6 +39,8 @@
 @property (strong, nonatomic) IBOutlet UIView *consumbleview;
 @property (strong, nonatomic) IBOutlet UIView *cmpanyassetview;
 @property (strong, nonatomic) IBOutlet UIView *crewview;
+@property (strong, nonatomic) IBOutlet UIView *hrview;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *hrindicator;
 
 //ViewControllers
 ////neww

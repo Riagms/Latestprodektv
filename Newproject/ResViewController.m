@@ -93,6 +93,13 @@
     doubleTap8.delegate=(id)self;
     [self.crewview addGestureRecognizer:doubleTap8];
 
+    UITapGestureRecognizer *doubleTap9 = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(hrpage)];
+    doubleTap9.numberOfTapsRequired=1;
+    doubleTap9.delegate=(id)self;
+    [self.hrview addGestureRecognizer:doubleTap9];
+    [self.hrview setExclusiveTouch:YES];
 
 
 }
@@ -130,6 +137,24 @@
     
     
     
+}
+-(void)hrpage{
+    _ModuleID=8;
+    [self UserLogmaininsert];
+    //_custindictr.hidden=YES;
+   // _ledactvtyindctr.hidden=YES;
+   // _planactivityindctr.hidden=YES;
+    //_estactvityindicator.hidden=YES;
+    
+   // _promgmtindicatr.hidden=YES;
+   // _compactivityindctr.hidden=YES;
+   // _resactivtyindictr.hidden=YES;
+    
+    _hrindicator.hidden=NO;
+    _hrview.userInteractionEnabled=NO;
+    [_hrindicator startAnimating];
+    [self UserRightsforparticularmoduleselect];
+
 }
 -(void)equipPage
 {
@@ -1128,6 +1153,67 @@
        
        
     }
+        if (_ModuleID==8)
+        {
+            Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
+            if (rightsmodel.ViewModule==1) {
+                _hrindicator.hidden=YES;
+                _hrview.userInteractionEnabled=YES;
+                [_hrindicator stopAnimating];
+              
+                _hrview.userInteractionEnabled=YES;
+                
+                // if (!self.TilehrVCtrl) {
+                self.TilehrVCtrl=[[TilehrViewController alloc]initWithNibName:@"TilehrViewController" bundle:nil];
+                // }
+                
+                _TilehrVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
+                
+                [self presentViewController:_TilehrVCtrl
+                                   animated:YES completion:NULL];
+                
+            }
+            else
+            {
+                _hrindicator.hidden=YES;
+                [_hrindicator stopAnimating];
+                _hrview.userInteractionEnabled=YES;
+//                _compactivityindctr.hidden=YES;
+//                [_compactivityindctr stopAnimating];
+//                _resactivtyindictr.hidden=YES;
+//                [_resactivtyindictr stopAnimating];
+//                _custindictr.hidden=YES;
+//                [_custindictr stopAnimating];
+//                _ledactvtyindctr.hidden=YES;
+//                [_ledactvtyindctr stopAnimating];
+//                _planactivityindctr.hidden=YES;
+//                [_planactivityindctr stopAnimating];
+//                _estactvityindicator.hidden=YES;
+//                [_estactvityindicator stopAnimating];
+                _hrindicator.hidden=YES;
+                [_hrindicator stopAnimating];
+//                _promgmtindicatr.hidden=YES;
+//                [_promgmtindicatr stopAnimating];
+//                _companyView.userInteractionEnabled=YES;
+//                _reurceview.userInteractionEnabled=YES;
+//                _customerview.userInteractionEnabled=YES;
+//                _leadView.userInteractionEnabled=YES;
+//                _planngview.userInteractionEnabled=YES;
+//                _estimtnview.userInteractionEnabled=YES;
+//                _projectview.userInteractionEnabled=YES;
+                _hrview.userInteractionEnabled=YES;
+                
+                
+                
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"You don’t have right to view this form" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+                
+            }
+        
+        
+        
+    }
+          
     if (_ModuleID==37)
     {
         Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
@@ -1218,6 +1304,7 @@
     }
         checkWS=0;
     }
+    
     
 }
 
