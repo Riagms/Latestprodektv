@@ -72,6 +72,14 @@
     doubleTap4.numberOfTapsRequired=1;
     doubleTap4.delegate=(id)self;
     [self.billingview addGestureRecognizer:doubleTap4];
+    UITapGestureRecognizer *doubleTap5 = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(LeadPage)];
+    doubleTap5.numberOfTapsRequired=1;
+    doubleTap5.delegate=(id)self;
+    [self.leadview addGestureRecognizer:doubleTap5];
+    [self.leadview setExclusiveTouch:YES];
+
 
 
 }
@@ -95,6 +103,23 @@
 
     
 }
+-(void)LeadPage
+{
+    
+    _Moduleid=4;
+    //_leadView.userInteractionEnabled=YES;
+    [self UserLogmaininsert];
+    
+       _leadindicator.hidden=NO;
+    [_leadindicator startAnimating];
+    
+    [self UserRightsforparticularmoduleselect];
+    _leadview.userInteractionEnabled=NO;
+    
+    
+    
+}
+
 -(void)contractpage{
     _Contmgmtindictr.hidden=NO;
     
@@ -373,6 +398,33 @@
             
             
         }
+        if (_Moduleid==4)
+        {
+            Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
+            if (rightsmodel.ViewModule==1) {
+                _leadindicator.hidden=YES;
+                [_leadindicator stopAnimating];
+                _leadview.userInteractionEnabled=YES;
+                
+                //if (!self.LCtrl) {
+                self.LCtrl=[[TLLeadsViewController alloc]initWithNibName:@"TLLeadsViewController" bundle:nil];
+                // }
+                _LCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
+                [self presentViewController:_LCtrl
+                                   animated:YES completion:NULL];
+            }
+            else
+            {
+                
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"You don’t have right to view this form" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+                _leadindicator.hidden=YES;
+                [_leadindicator stopAnimating];
+                
+                
+            }
+        }
+
         if (_Moduleid==39) {
             Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
             if (rightsmodel.ViewModule==1) {

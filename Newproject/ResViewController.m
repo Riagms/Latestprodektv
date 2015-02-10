@@ -105,6 +105,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    _hrindicator.hidden=YES;
     _manpwrview.userInteractionEnabled=YES;
     _manactivity.hidden=YES;
     _eqpView.userInteractionEnabled=YES;

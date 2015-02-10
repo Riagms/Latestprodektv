@@ -12,6 +12,8 @@
                 <outlet property="billingview" destination="PfP-wn-gCt" id="8wv-Xq-ch4"/>
                 <outlet property="cntrctview" destination="og0-Lm-9yu" id="HPO-0d-XpA"/>
                 <outlet property="custmrview" destination="x1W-xC-WFt" id="eqR-Ig-qHI"/>
+                <outlet property="leadindicator" destination="qGm-ci-iMJ" id="wbc-3p-5PM"/>
+                <outlet property="leadview" destination="Uoa-oo-vCV" id="Oji-ed-CvO"/>
                 <outlet property="markupview" destination="YY1-Rm-qTX" id="1Vv-DU-h1D"/>
                 <outlet property="mrkupindictr" destination="lYD-WM-Lxi" id="Ywk-oR-fhC"/>
                 <outlet property="navgtnbar" destination="8S6-wq-uHc" id="4Ya-EN-cR6"/>
