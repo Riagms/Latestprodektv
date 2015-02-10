@@ -659,6 +659,10 @@
     NSInteger parnt;
     
           parnt=0;
+//    NSString*newstrg=  [_phasetextfld.text stringByReplacingOccurrencesOfString:@"&" withString:@"&amp;"];
+//    newstrg=  [newstrg stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+//    newstrg=  [newstrg stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
+//    newstrg=  [newstrg stringByReplacingOccurrencesOfString:@"'" withString:@"&#39;"];
    
     recordresults = FALSE;
     NSString *soapMessage;
