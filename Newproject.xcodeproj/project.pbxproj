@@ -41,8 +41,8 @@
 		646A28B61937350400902C4A /* Detaileventmanpwr.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B51937350400902C4A /* Detaileventmanpwr.m */; };
 		646A28B91937351D00902C4A /* Eqeventmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B81937351D00902C4A /* Eqeventmdl.m */; };
 		646A28BC193743CF00902C4A /* OthereventMaodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28BB193743CF00902C4A /* OthereventMaodel.m */; };
-		647871A71A889599008A9453 /* biglogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871A61A889599008A9453 /* biglogo.png */; };
-		647871AD1A889FE0008A9453 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871AC1A889FE0008A9453 /* background.png */; };
+		647871B01A88C08C008A9453 /* bglogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871AE1A88C08C008A9453 /* bglogo.png */; };
+		647871B11A88C08C008A9453 /* bground.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871AF1A88C08C008A9453 /* bground.png */; };
 		6481615C176EF0C50017F4CC /* rightarowblack.png in Resources */ = {isa = PBXBuildFile; fileRef = 6481615B176EF0C50017F4CC /* rightarowblack.png */; };
 		648D12FE17716C7F006BB41A /* rectangle3.png in Resources */ = {isa = PBXBuildFile; fileRef = 648D12FD17716C7F006BB41A /* rectangle3.png */; };
 		648DE20B1777F7B400261F74 /* ContactInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649AE8811772DFDA00CAECE7 /* ContactInfoViewController.xib */; };
@@ -274,7 +274,6 @@
 		D413816A1946BD4A0056574C /* EqOthersMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D41381691946BD4A0056574C /* EqOthersMdl.m */; };
 		D413816C1947107A0056574C /* createjob.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816B1947107A0056574C /* createjob.png */; };
 		D413816E194710830056574C /* site.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816D194710830056574C /* site.png */; };
-		D413971C1A88B72200612227 /* bgmetro12.png in Resources */ = {isa = PBXBuildFile; fileRef = D413971B1A88B72100612227 /* bgmetro12.png */; };
 		D41499AF194573A2001E9146 /* ManagemttileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41499AD194573A2001E9146 /* ManagemttileViewController.m */; };
 		D41499B0194573A2001E9146 /* ManagemttileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41499AE194573A2001E9146 /* ManagemttileViewController.xib */; };
 		D41499B4194575BB001E9146 /* MovementtileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41499B2194575BB001E9146 /* MovementtileViewController.m */; };
@@ -715,8 +714,8 @@
 		646A28B81937351D00902C4A /* Eqeventmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Eqeventmdl.m; sourceTree = "<group>"; };
 		646A28BA193743CF00902C4A /* OthereventMaodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthereventMaodel.h; sourceTree = "<group>"; };
 		646A28BB193743CF00902C4A /* OthereventMaodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthereventMaodel.m; sourceTree = "<group>"; };
-		647871A61A889599008A9453 /* biglogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biglogo.png; sourceTree = "<group>"; };
-		647871AC1A889FE0008A9453 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		647871AE1A88C08C008A9453 /* bglogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bglogo.png; sourceTree = "<group>"; };
+		647871AF1A88C08C008A9453 /* bground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bground.png; sourceTree = "<group>"; };
 		6481615B176EF0C50017F4CC /* rightarowblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarowblack.png; sourceTree = "<group>"; };
 		648D12FD17716C7F006BB41A /* rectangle3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle3.png; sourceTree = "<group>"; };
 		648D12FF17716E0E006BB41A /* appbar.close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.close.png; sourceTree = "<group>"; };
@@ -1034,7 +1033,6 @@
 		D41381691946BD4A0056574C /* EqOthersMdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqOthersMdl.m; sourceTree = "<group>"; };
 		D413816B1947107A0056574C /* createjob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createjob.png; sourceTree = "<group>"; };
 		D413816D194710830056574C /* site.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = site.png; sourceTree = "<group>"; };
-		D413971B1A88B72100612227 /* bgmetro12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgmetro12.png; sourceTree = "<group>"; };
 		D41499AC194573A2001E9146 /* ManagemttileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagemttileViewController.h; sourceTree = "<group>"; };
 		D41499AD194573A2001E9146 /* ManagemttileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagemttileViewController.m; sourceTree = "<group>"; };
 		D41499AE194573A2001E9146 /* ManagemttileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagemttileViewController.xib; sourceTree = "<group>"; };
@@ -2243,9 +2241,8 @@
 		D4D570151772BE4A00671A35 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D413971B1A88B72100612227 /* bgmetro12.png */,
-				647871AC1A889FE0008A9453 /* background.png */,
-				647871A61A889599008A9453 /* biglogo.png */,
+				647871AE1A88C08C008A9453 /* bglogo.png */,
+				647871AF1A88C08C008A9453 /* bground.png */,
 				D423E2541A63C45000DAB75E /* Jobimage.png */,
 				64CB04EF1A5BAB85005394D5 /* create-a-new-job.png */,
 				64C27A561A35987400B66C77 /* com.png */,
@@ -2857,7 +2854,6 @@
 				64428BBF192E08E800CB2CF9 /* Notepad.png in Resources */,
 				64A3B82418DFEF0B0015887F /* CommentsViewController.xib in Resources */,
 				6481615C176EF0C50017F4CC /* rightarowblack.png in Resources */,
-				D413971C1A88B72200612227 /* bgmetro12.png in Resources */,
 				64A3B82618E02FC90015887F /* branchcell.xib in Resources */,
 				64A2F9BC19CBEC17009B1018 /* FLPViewController.xib in Resources */,
 				D4F2F91E193C41F300B732E9 /* iconleftblack.png in Resources */,
@@ -2888,6 +2884,7 @@
 				D443A33317716FE60011C5DB /* appbar.close.png in Resources */,
 				D4A123D419A7249C00A4ED9B /* Newuserrightscell.xib in Resources */,
 				D4F7D9D6196E646200B8F4D4 /* labour.png in Resources */,
+				647871B11A88C08C008A9453 /* bground.png in Resources */,
 				64C0ACFD1A5CF80E00B31F52 /* IssueCell.xib in Resources */,
 				64B12DDA19D520940074A404 /* BscTypViewController.xib in Resources */,
 				D41BAF3D1A2D925F00674DDB /* leadsnew.png in Resources */,
@@ -3050,7 +3047,6 @@
 				D4004057185B174A00C38E12 /* TileViewController.xib in Resources */,
 				D4A16B911974EEE0002CA2A2 /* sumbidcell.xib in Resources */,
 				6426F5ED18C060CF002471AC /* planning.png in Resources */,
-				647871A71A889599008A9453 /* biglogo.png in Resources */,
 				D4036FFA19FE24D10031C4F1 /* Plandocuscell.xib in Resources */,
 				D4E658CA17F2DDFA00202B14 /* rightdisclosure.png in Resources */,
 				64A41244194080D6003EE113 /* contract-mangement.png in Resources */,
@@ -3065,6 +3061,7 @@
 				645875CE1A28899800906869 /* congroupcell.xib in Resources */,
 				D4A6748E19345E6C00D5A77E /* IconCamera.png in Resources */,
 				D4A16B3E1974EEA8002CA2A2 /* Jobsitecellview.xib in Resources */,
+				647871B01A88C08C008A9453 /* bglogo.png in Resources */,
 				D4E658CC17F2DED100202B14 /* detailDisclosureButton.png in Resources */,
 				D41BAF3F1A2D9B6F00674DDB /* work-entry.png in Resources */,
 				D413816E194710830056574C /* site.png in Resources */,
@@ -3149,7 +3146,6 @@
 				64C27A5F1A35A3B300B66C77 /* company-documents.png in Resources */,
 				6426F5F518C062F6002471AC /* payroll.png in Resources */,
 				D44ECC601A5D098500B3082A /* PMJobsViewController.xib in Resources */,
-				647871AD1A889FE0008A9453 /* background.png in Resources */,
 				D4A338E418F3EEEF00E53FAC /* MarkupViewController.xib in Resources */,
 				D4A16B621974EEA8002CA2A2 /* Editplanview.xib in Resources */,
 				D4F053E11A0CA37A00672C88 /* planning2@2X.png in Resources */,
