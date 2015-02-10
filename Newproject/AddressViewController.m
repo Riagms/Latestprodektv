@@ -897,4 +897,19 @@
     _addresstable.userInteractionEnabled=NO;
 
 }
+#pragma mark-textfld delegates
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    if(textField==_headrtxtfld)
+    {
+        NSUInteger newLength = [_headrtxtfld.text length] + [string length] - range.length;
+        return (newLength > 50) ? NO : YES;
+    }
+    return YES;
+}
+#pragma mark-textview Delegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    return _adrsstxtview.text.length + (text.length - range.length) <= 200;
+}
 @end
