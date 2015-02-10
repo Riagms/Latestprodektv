@@ -36,7 +36,7 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="Project Management" id="Usj-jb-ZmQ">
+                        <navigationItem title="Progress Measurement and Reporting" id="Usj-jb-ZmQ">
                             <barButtonItem key="rightBarButtonItem" style="plain" id="Nme-gc-hbK">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jCD-2A-cpd">
                                     <rect key="frame" x="474" y="-3" width="50" height="50"/>

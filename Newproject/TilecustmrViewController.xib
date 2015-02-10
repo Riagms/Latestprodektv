@@ -34,7 +34,7 @@
                         <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="Customer &amp; Contract" id="7H7-RH-pNR">
+                        <navigationItem title="CRM" id="7H7-RH-pNR">
                             <barButtonItem key="rightBarButtonItem" id="j5Z-4N-pAd">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FkB-Bg-ukV">
                                     <rect key="frame" x="474" y="-3" width="50" height="50"/>
