@@ -50,9 +50,9 @@ BOOL recordResults;
 /*controllers*/
 
 @property (strong, nonatomic)TilecustmrViewController*custmrVCtrl;
-
-@property(strong,nonatomic)TileViewController*tileVCtrl;
 @property(strong,nonatomic)ResViewController*ReVCtrl;
+@property(strong,nonatomic)TileViewController*tileVCtrl;
+
 @property(strong,nonatomic)TilehrViewController*TilehrVCtrl;
 
 @property(strong,nonatomic)EsttileViewController *EstmVCtrl;

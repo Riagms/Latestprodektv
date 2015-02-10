@@ -17,6 +17,8 @@
                 <outlet property="fleetactivity" destination="MD5-9m-Ynn" id="69N-yC-j0u"/>
                 <outlet property="fleetview" destination="yKf-d8-Ry2" id="An9-eI-glt"/>
                 <outlet property="gpactivity" destination="uZS-us-Hsb" id="EQk-bP-NgL"/>
+                <outlet property="hrindicator" destination="Xx7-Ra-VfC" id="KNy-5K-pbE"/>
+                <outlet property="hrview" destination="FWT-rC-yz9" id="5Tg-21-6wX"/>
                 <outlet property="manactivity" destination="DMl-vq-AHf" id="Xvr-cf-4FW"/>
                 <outlet property="manpwrview" destination="kx6-sO-Rmf" id="6wj-Qb-uHJ"/>
                 <outlet property="matactivity" destination="7OA-2O-aUF" id="vb8-hK-h2x"/>
