@@ -50,7 +50,7 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="Planning" id="NLx-tl-1Mr">
+                        <navigationItem title="Planning&amp;Scope Developement" id="NLx-tl-1Mr">
                             <barButtonItem key="rightBarButtonItem" style="plain" id="7bN-FN-ule">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="geg-jn-X3R">
                                     <rect key="frame" x="474" y="-3" width="50" height="50"/>
