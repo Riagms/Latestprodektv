@@ -50,7 +50,7 @@
     [_popovrdict setObject:@"10" forKey:@"Bid Estimates"];
     [_popovrdict setObject:@"11" forKey:@"Contract"];
     [_popovrdict setObject:@"12" forKey:@"Company Info"];
-    [_popovrdict setObject:@"13" forKey:@"Basic Requirements"];
+    [_popovrdict setObject:@"13" forKey:@"Basic Requirement"];
     _popoverArry=[[NSMutableArray alloc]initWithArray:[_popovrdict allKeys]];
 
     [[self.cmmnttxtview layer] setBorderColor:[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor];
