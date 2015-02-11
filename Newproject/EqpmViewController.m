@@ -1878,7 +1878,7 @@ finishedSavingWithError:(NSError *)error
            
 
                    }
-        if ([_soapResults isEqualToString:@"Updated Successfully"]) {
+       else if ([_soapResults isEqualToString:@"Updated Successfully"]) {
             mesgstrg=_soapResults;
            
            // [self UploadAnyImage];
@@ -1900,7 +1900,7 @@ finishedSavingWithError:(NSError *)error
             webtype=0;
             
         }
-        if ([_soapResults isEqualToString:@"Already In Use"]) {
+      else  if ([_soapResults isEqualToString:@"Already In Use"]) {
             mesgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:mesgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
@@ -1916,7 +1916,7 @@ finishedSavingWithError:(NSError *)error
               _addequipmentview.userInteractionEnabled=YES;
             [self SelectAllEquipment];
         }
-         if ([_soapResults isEqualToString:@"Already Exists"])
+        else if ([_soapResults isEqualToString:@"Already Exists"])
              {
                   mesgstrg=_soapResults;
                   _activitybtn.hidden=YES;
@@ -1927,6 +1927,9 @@ finishedSavingWithError:(NSError *)error
                  
              }
         
+        else{
+              [self SelectAllEquipment];
+        }
         
       _soapResults = nil;
         

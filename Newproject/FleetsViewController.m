@@ -1827,7 +1827,7 @@
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
-        if ([_soapResults isEqualToString:@"Inserted Successfully"]) {
+       else if ([_soapResults isEqualToString:@"Inserted Successfully"]) {
             
             msgstrg=_soapResults;
             if(imagechecker==1){
@@ -1849,7 +1849,7 @@
             
             
         }
-        if ([_soapResults isEqualToString:@"Description Already Exists"]) {
+      else  if ([_soapResults isEqualToString:@"Description Already Exists"]) {
             
             msgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -1859,7 +1859,7 @@
              _addview.userInteractionEnabled=YES;
         }
 
-        if ([_soapResults isEqualToString:@"Updated Successfully"]) {
+     else   if ([_soapResults isEqualToString:@"Updated Successfully"]) {
               msgstrg=_soapResults;
             
             if(imagechecker==1){
@@ -1888,8 +1888,12 @@
                     _activitybtn.hidden=YES;
                     [_activitybtn stopAnimating];
                      _addview.userInteractionEnabled=YES;
-            [self SelectAllfleet];
+             [self SelectAllfleet];
         }
+                else{
+                    
+                     [self SelectAllfleet];
+                }
        
         _soapResults = nil;
 
@@ -2544,18 +2548,18 @@ if([elementName isEqualToString:@"url"])
     if(textField==_insuredtxtfld)
     {
         NSUInteger newLength = [_insuredtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_hurstxtfld)
     {
         NSUInteger newLength = [_hurstxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_fueltxtfld)
     {
         NSUInteger newLength = [_fueltxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_condtntxtfld)
     {
@@ -2565,39 +2569,39 @@ if([elementName isEqualToString:@"url"])
     if(textField==_hurlytxtfld)
     {
         NSUInteger newLength = [_hurlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_dailytxtfld)
     {
         NSUInteger newLength = [_dailytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_shiftwisetxtfld)
     {
         NSUInteger newLength = [_shiftwisetxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_weeklytxtfld)
     {
         NSUInteger newLength = [_weeklytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_monthlytxtfld)
     {
         NSUInteger newLength = [_monthlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_yearlytxtfld)
     {
         NSUInteger newLength = [_yearlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_stockinhandtxtfld)
     {
         NSUInteger newLength = [_stockinhandtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     

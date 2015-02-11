@@ -1337,7 +1337,7 @@ Manpwr*pwrmdl=(Manpwr *)[_toolarray objectAtIndex:path];
            
             
         }
-        if ([_soapResults isEqualToString:@"Updated Successfully"]) {
+      else  if ([_soapResults isEqualToString:@"Updated Successfully"]) {
              msgstrg=_soapResults;
             if(imagechecker==1){
                 UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -1356,7 +1356,7 @@ Manpwr*pwrmdl=(Manpwr *)[_toolarray objectAtIndex:path];
            
             
         }
-        if ([_soapResults isEqualToString:@"Already Exists"]) {
+       else  if ([_soapResults isEqualToString:@"Already Exists"]) {
             
             msgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -1366,7 +1366,7 @@ Manpwr*pwrmdl=(Manpwr *)[_toolarray objectAtIndex:path];
             _addview.userInteractionEnabled=YES;
             
         }
-        if ([_soapResults isEqualToString:@"Already In Use"]) {
+       else  if ([_soapResults isEqualToString:@"Already In Use"]) {
             msgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
@@ -1378,6 +1378,9 @@ Manpwr*pwrmdl=(Manpwr *)[_toolarray objectAtIndex:path];
             _activitybtn.hidden=YES;
             [_activitybtn stopAnimating];
                   _addview.userInteractionEnabled=YES;
+            [self SelectAllSmallTools];
+        }
+        else {
             [self SelectAllSmallTools];
         }
         
@@ -1938,13 +1941,13 @@ else
     if(textField==_costtxtfld)
     {
         NSUInteger newLength = [_costtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_stockinhandtxtfld)
     {
         NSUInteger newLength = [_stockinhandtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     
