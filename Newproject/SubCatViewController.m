@@ -624,6 +624,7 @@
 
 - (IBAction)clsebtn:(id)sender {
     _addview.hidden=YES;
+    [self FleetCategoryselect];
 }
 
 - (IBAction)viewclsebtn:(id)sender {
@@ -661,7 +662,7 @@
     
     else{
         [super setEditing:YES animated:YES];
-[_categorytabe setEditing:YES animated:YES];
+         [_categorytabe setEditing:YES animated:YES];
         [_categorytabe reloadData];
         
         

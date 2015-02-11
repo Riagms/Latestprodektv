@@ -2628,7 +2628,7 @@ _shiftwisetxtfld.text=@"";
     if(textField==_serialtxtfld)
     {
         NSUInteger newLength = [_serialtxtfld.text length] + [string length] - range.length;
-        return (newLength > 50) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_manufattxtfld)
@@ -2639,18 +2639,18 @@ _shiftwisetxtfld.text=@"";
     if(textField==_insuredtxtfld)
     {
         NSUInteger newLength = [_insuredtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_hurstxtfld)
     {
         NSUInteger newLength = [_hurstxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_fueltxtfld)
     {
         NSUInteger newLength = [_fueltxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_condtntxtfld)
     {
@@ -2660,39 +2660,39 @@ _shiftwisetxtfld.text=@"";
     if(textField==_hurlytxtfld)
     {
         NSUInteger newLength = [_hurlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_dailytxtfld)
     {
         NSUInteger newLength = [_dailytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_shiftwisetxtfld)
     {
         NSUInteger newLength = [_shiftwisetxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_weeklytxtfld)
     {
         NSUInteger newLength = [_weeklytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_monthlytxtfld)
     {
         NSUInteger newLength = [_monthlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength >9) ? NO : YES;
     }
        if(textField==_yearlytxtfld)
     {
         NSUInteger newLength = [_yearlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_stockinhndtxtfld)
     {
         NSUInteger newLength = [_stockinhndtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
        
     
