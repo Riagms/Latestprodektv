@@ -357,9 +357,10 @@
                    
                    "<JobSequenceSearch xmlns=\"http://ios.kontract360.com/\">\n"
                    "<searchtext>%@</searchtext>\n"
+                   "<skillid>%d</skillid>\n"
                    "</JobSequenceSearch>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_searchstring];
+                   "</soap:Envelope>\n",_searchstring,_skillid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
