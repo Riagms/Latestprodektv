@@ -1756,13 +1756,13 @@ finishedSavingWithError:(NSError *)error
 
             }else{
                    [self Insertanyimage];
-            }
+           }
          
             webtype=0;
            
             
         }
-         if ([_soapResults isEqualToString:@"Updated Successfully"]) {
+        else if ([_soapResults isEqualToString:@"Updated Successfully"]) {
              msgstrg=_soapResults;
              if(imagechecker==1){
                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -1782,12 +1782,12 @@ finishedSavingWithError:(NSError *)error
            
              
         }
-        if ([_soapResults isEqualToString:@"Already In Use"]) {
+      else  if ([_soapResults isEqualToString:@"Already In Use"]) {
             msgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
-       if ([_soapResults isEqualToString:@"Already Exists"]) {
+      else if ([_soapResults isEqualToString:@"Already Exists"]) {
             
             msgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -1809,6 +1809,9 @@ finishedSavingWithError:(NSError *)error
             [self SelectAllThirdParty];
         }
         
+                else{
+                     [self SelectAllThirdParty];
+                }
         
         _soapResults = nil;
         
@@ -2680,18 +2683,18 @@ finishedSavingWithError:(NSError *)error
     if(textField==_insuredtxtfld)
     {
         NSUInteger newLength = [_insuredtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_hurstxtfld)
     {
         NSUInteger newLength = [_hurstxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_fueltxtfld)
     {
         NSUInteger newLength = [_fueltxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_condtntxtfld)
     {
@@ -2701,44 +2704,44 @@ finishedSavingWithError:(NSError *)error
     if(textField==_hurlytxtfld)
     {
         NSUInteger newLength = [_hurlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_dailytxtfld)
     {
         NSUInteger newLength = [_dailytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_shiftwisetxtfld)
     {
         NSUInteger newLength = [_shiftwisetxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_weeklytxtfld)
     {
         NSUInteger newLength = [_weeklytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_monthlytxtfld)
     {
         NSUInteger newLength = [_monthlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_yearlytxtfld)
     {
         NSUInteger newLength = [_yearlytxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_stckinhandtxtdfld)
     {
         NSUInteger newLength = [_stckinhandtxtdfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     if(textField==_unitcsttxtfld)
     {
         NSUInteger newLength = [_unitcsttxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     //_picker.hidden=YES;
