@@ -50,15 +50,18 @@
 }
 #pragma mark-Actions
 -(IBAction)closevendorpage:(id)sender
-{ _venderaddview.hidden=YES;
+{
+    _venderaddview.hidden=YES;
     _vendelisttable.userInteractionEnabled=YES;
     if ([self.delegate respondsToSelector:@selector(newaction)])
     {
     [self.delegate newaction];
-    [self dismissViewControllerAnimated:YES completion:NULL];
-
+        _nametextfld.delegate=nil;
+   
+ [self dismissViewControllerAnimated:YES completion:NULL];
     
 }
+    
 
     
 }
@@ -106,6 +109,8 @@
     _addresstextfld.text=@"";
     _phonetextfld.text=@"";
     _ratetextfld.text=@"";
+    [_nametextfld resignFirstResponder];
+    
     //_vendelisttable.userInteractionEnabled=NO;
 }
 -(IBAction)updatevender:(id)sender
@@ -1010,8 +1015,9 @@
     
     return YES;
 }
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+- (BOOL)textFieldDidEndEditing:(UITextField *)textField
 {
+    
     
     Validation*val=[[Validation alloc]init];
     if(textField==_nametextfld)
@@ -1019,7 +1025,7 @@
         int value1=[val isBlank:_nametextfld.text];
         if(value1==0)
         {
-            UIAlertView *alert1=[[UIAlertView alloc]initWithTitle:@"" message:@"Name Is Required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert1=[[UIAlertView alloc]initWithTitle:@"" message:@"Name is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert1 show];
 
         }

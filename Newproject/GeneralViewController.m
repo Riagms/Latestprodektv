@@ -1355,7 +1355,8 @@
 }
 #pragma mark- Button Action
 -(IBAction)closegeneralpage:(id)sender
-{ _updatebtn.enabled=YES;
+{
+    _updatebtn.enabled=YES;
     if ([self.delegate respondsToSelector:@selector(updatedata)]) {
         [self.delegate updatedata];
         [self dismissViewControllerAnimated:YES completion:nil];

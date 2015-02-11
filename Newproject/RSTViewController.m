@@ -179,6 +179,41 @@
     _addview.hidden=YES;
      _updatebtn.enabled=YES;
     _subtypetable.userInteractionEnabled=YES;
+    if (_moduleid==26) {
+        
+        
+        [self ManPowersubtypeselect];
+    }
+    if (_moduleid==27) {
+        
+        
+        [self Equipmentsubtypeselect];
+    }
+    else if (_moduleid==28)
+    {
+        [self Materialsubtypeselect];
+    }
+    else if (_moduleid==29)
+    {
+        [self FleetmultipleSubtypeselect];
+    }
+    else if (_moduleid==34)
+    {
+        [self ThirdpartySubTypeselect];
+    }
+    else if (_moduleid==35)
+    {
+        [self ConsumableSubTypeselect];
+    }
+    else if (_moduleid==36)
+    {
+        [self SmallToolsSubTypeselect];
+    }
+    else if (_moduleid==37)
+    {
+        [self OthercompanySubTypeselect];
+    }
+
 
 }
 - (IBAction)subtpebtn:(id)sender
