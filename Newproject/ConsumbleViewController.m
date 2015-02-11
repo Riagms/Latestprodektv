@@ -169,6 +169,7 @@ finishedSavingWithError:(NSError *)error
 -(void)viewWillAppear:(BOOL)animated{
     _updatebtn.enabled=YES;
     [super viewWillAppear:animated];
+    checksub=0;
     
     if (_frmplan==1) {
         /*searchbar*/
@@ -1561,9 +1562,10 @@ finishedSavingWithError:(NSError *)error
             _addView.userInteractionEnabled=YES;
              [self SelectAllConsumables];
         }
+          else if ([_soapResults isEqualToString:@"deleted"]) {
 
-
-        
+              [self SelectAllConsumables];
+          }
         
         _soapResults = nil;
         
@@ -2154,13 +2156,13 @@ finishedSavingWithError:(NSError *)error
     if(textField==_unitcosttxtfld)
     {
         NSUInteger newLength = [_unitcosttxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     if(textField==_stckinhandtxtfld)
     {
         NSUInteger newLength = [_stckinhandtxtfld.text length] + [string length] - range.length;
-        return (newLength > 18) ? NO : YES;
+        return (newLength > 9) ? NO : YES;
     }
     
     
