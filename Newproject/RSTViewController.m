@@ -75,6 +75,9 @@
     {
         [self OthercompanySubTypeselect];
     }
+    else{
+        //[self ReadMTSubTypes]
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -2075,6 +2078,207 @@
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     [theRequest addValue: @"http://ios.kontract360.com/OthercompanysubtypeDelete" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+#pragma mark-Small Tools
+
+-(void)ReadMTSubTypes{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadMTSubTypes xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<SFMTItemCode>%d</SFMTItemCode>\n"
+                   "</ReadMTSubTypes>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_equipmainid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadMTSubTypes" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+
+//-(void)MultiSmalltoolsubtypeselect{
+//    recordResults = FALSE;
+//    NSString *soapMessage;
+//    
+//    
+//    soapMessage = [NSString stringWithFormat:
+//                   
+//                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+//                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+//                   
+//                   
+//                   "<soap:Body>\n"
+//                   
+//                   "<MultiSmalltoolsubtypeselect xmlns=\"http://ios.kontract360.com/\">\n"
+//                   "<STStSmallToolId>%d</STStSmallToolId>\n"
+//                   "</MultiSmalltoolsubtypeselect>\n"
+//                   "</soap:Body>\n"
+//                   "</soap:Envelope>\n",_equipmainid];
+//    NSLog(@"soapmsg%@",soapMessage);
+//    
+//    
+//    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+//    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+//    
+//    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+//    
+//    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+//    
+//    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+//    
+//    [theRequest addValue: @"http://ios.kontract360.com/MultiSmalltoolsubtypeselect" forHTTPHeaderField:@"Soapaction"];
+//    
+//    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+//    [theRequest setHTTPMethod:@"POST"];
+//    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+//    
+//    
+//    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+//    
+//    if( theConnection )
+//    {
+//        _webData = [NSMutableData data];
+//    }
+//    else
+//    {
+//        ////NSLog(@"theConnection is NULL");
+//    }
+//    
+//}
+
+-(void)CreateSFSubTypes{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                  
+                   "<soap:Body>\n"
+                   
+                   "<CreateSFSubTypes xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<MTStSubTypeId>%d</MTStSubTypeId>\n"
+                   "<SFMTItemCode>%d</SFMTItemCode>\n"
+                   "</CreateSFSubTypes>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_equipmainid,[[_subtypelistdictionary objectForKey:[_Subtypelistarray objectAtIndex:path]]integerValue]];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/CreateSFSubTypes" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)DestroySFSubTypes{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    Craftreqmtmdl*subtypemdl=(Craftreqmtmdl *)[_selectedsubtypearray objectAtIndex:deletepath];
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<DestroySFSubTypes xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<MTStEntryId>%d</MTStEntryId>\n"
+                   "</DestroySFSubTypes>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",[subtypemdl.Brentryid integerValue]];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/DestroySFSubTypes" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
