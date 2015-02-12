@@ -1883,8 +1883,7 @@
     
 }
 - (IBAction)goToBranchaddform:(id)sender {
-    _branchsubctrl=[[BranchsubViewController alloc]initWithNibName:@"BranchsubViewController" bundle:nil];
-    self.branchsubctrl.modalPresentationStyle = UIModalPresentationFormSheet;
+}
 
     [self presentViewController:_branchsubctrl animated:YES completion:nil];
 }
@@ -1895,6 +1894,7 @@
         [_allbranchcheckbox setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
         branchcheck=0;
         _branchbtn.userInteractionEnabled=YES;
+        
         
         
         
