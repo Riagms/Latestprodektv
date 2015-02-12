@@ -1859,7 +1859,7 @@
 {poptype=3;
     [self createpopover];
 }
-#pragma mark-IBActions
+
 - (IBAction)activatebtn:(id)sender {
   
     actvatestring=@"activate";
@@ -1882,6 +1882,31 @@
     
     
 }
+- (IBAction)goToBranchaddform:(id)sender {
+}
+
+- (IBAction)allbranchcheckaction:(id)sender {
+    branchstring=@"checked";
+    if(branchcheck==1){
+        [_allbranchcheckbox setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+        branchcheck=0;
+        
+        
+        
+        
+    }
+    else{
+        [_allbranchcheckbox setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
+        branchcheck=1;
+        
+        
+        
+        
+    }
+
+    
+}
+
 
 #pragma mark-create popover
 -(void)createpopover{

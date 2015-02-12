@@ -29,6 +29,8 @@
     NSString *empname;
     NSInteger activate;
     NSString *actvatestring;
+    NSInteger branchcheck;
+    NSString *branchstring;
 }
 @property(readwrite)NSInteger moduleid;
 @property(strong,nonatomic)NSArray *custmrrarry;
@@ -84,7 +86,8 @@
 - (IBAction)usertype2btn:(id)sender;
 - (IBAction)activatebtn:(id)sender;
 - (IBAction)Selectdevice:(id)sender;
-
+- (IBAction)goToBranchaddform:(id)sender;
+- (IBAction)allbranchcheckaction:(id)sender;
 
 /* xmlparser*/
 @property(strong,nonatomic)NSXMLParser *xmlParser;
@@ -99,6 +102,9 @@
 @property(strong,nonatomic)NSMutableArray *userrightsarray;
 @property(strong,nonatomic)Rightscheck *rights;
 @property(strong,nonatomic)IBOutlet UIButton *updatebtn;
+
+@property (strong, nonatomic) IBOutlet UIButton *allbranchcheckbox;
+@property (strong, nonatomic) IBOutlet UIButton *branchbtn;
 
 
 
