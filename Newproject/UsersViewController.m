@@ -1883,6 +1883,10 @@
     
 }
 - (IBAction)goToBranchaddform:(id)sender {
+    _branchsubctrl=[[BranchsubViewController alloc]initWithNibName:@"BranchsubViewController" bundle:nil];
+    self.branchsubctrl.modalPresentationStyle = UIModalPresentationFormSheet;
+
+    [self presentViewController:_branchsubctrl animated:YES completion:nil];
 }
 
 - (IBAction)allbranchcheckaction:(id)sender {
@@ -1890,7 +1894,7 @@
     if(branchcheck==1){
         [_allbranchcheckbox setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
         branchcheck=0;
-        
+        _branchbtn.userInteractionEnabled=YES;
         
         
         
@@ -1898,6 +1902,7 @@
     else{
         [_allbranchcheckbox setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
         branchcheck=1;
+        _branchbtn.userInteractionEnabled=NO;
         
         
         
