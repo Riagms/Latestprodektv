@@ -100,6 +100,13 @@
     doubleTap9.delegate=(id)self;
     [self.hrview addGestureRecognizer:doubleTap9];
     [self.hrview setExclusiveTouch:YES];
+    UITapGestureRecognizer *doubleTap10 = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(saftypage)];
+    doubleTap10.numberOfTapsRequired=1;
+    doubleTap10.delegate=(id)self;
+    [self.saftyview addGestureRecognizer:doubleTap10];
+    [self.saftyview setExclusiveTouch:YES];
 
 
 }
@@ -156,6 +163,16 @@
     [_hrindicator startAnimating];
     [self UserRightsforparticularmoduleselect];
 
+}
+-(void)saftypage{
+    
+    _SafetyVCtrl=[[SafetyViewController alloc]initWithNibName:@"SafetyViewController" bundle:nil];
+      _SafetyVCtrl.modalPresentationStyle = UIModalPresentationPageSheet;
+  
+    [self presentViewController:_SafetyVCtrl
+                       animated:YES completion:NULL];
+
+    
 }
 -(void)equipPage
 {

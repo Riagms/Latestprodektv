@@ -23,6 +23,7 @@
                 <outlet property="manpwrview" destination="kx6-sO-Rmf" id="6wj-Qb-uHJ"/>
                 <outlet property="matactivity" destination="7OA-2O-aUF" id="vb8-hK-h2x"/>
                 <outlet property="materialView" destination="x37-9A-cDc" id="aUg-dc-TvM"/>
+                <outlet property="saftyview" destination="eyl-zt-AnT" id="IH6-B2-oKC"/>
                 <outlet property="smalltoolview" destination="MK9-xc-jmE" id="GSf-Xy-hGh"/>
                 <outlet property="stactivity" destination="SOo-JP-8Dj" id="KvY-eH-Yea"/>
                 <outlet property="thirdpartyview" destination="IOP-uK-izv" id="S8E-UY-PHb"/>
