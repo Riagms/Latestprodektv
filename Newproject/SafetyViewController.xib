@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SafetyViewController">
             <connections>
+                <outlet property="activityindictor" destination="XXh-Kx-5k5" id="U13-dZ-6UZ"/>
                 <outlet property="addview" destination="Q2L-70-Dum" id="h1l-DU-sj4"/>
                 <outlet property="codedestxtfld" destination="Eam-LM-mh3" id="tQK-x6-q8l"/>
                 <outlet property="codetxtfld" destination="BfC-RI-eY5" id="x91-wh-otm"/>
@@ -14,9 +15,10 @@
                 <outlet property="saftytable" destination="Oo0-tq-D1C" id="kdh-cf-0nN"/>
                 <outlet property="stocktxtfld" destination="A9j-CT-5cY" id="dqF-cw-gwB"/>
                 <outlet property="subtypebtnlbl" destination="ynk-DW-nWy" id="zEN-kI-YSQ"/>
-                <outlet property="titleview" destination="k7d-II-gPu" id="Fq8-XH-QuG"/>
+                <outlet property="titleview" destination="k7d-II-gPu" id="hfN-6O-E75"/>
                 <outlet property="unitcosttxtfld" destination="KgO-m2-yFe" id="kqV-IF-zEo"/>
                 <outlet property="unitmeasuretxtfld" destination="cLl-Kt-h4x" id="Hj4-tP-srY"/>
+                <outlet property="updatebtnlbl" destination="s7O-gy-SaK" id="cGe-H9-MxZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -104,16 +106,16 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="rEB-dZ-IIL"/>
-                        <outlet property="delegate" destination="-1" id="wLK-9j-JZb"/>
+                        <outlet property="dataSource" destination="-1" id="aEv-Ze-6Gk"/>
+                        <outlet property="delegate" destination="-1" id="tzA-VB-2I6"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" id="Q2L-70-Dum">
-                    <rect key="frame" x="42" y="93" width="685" height="512"/>
+                <view hidden="YES" contentMode="scaleToFill" id="Q2L-70-Dum">
+                    <rect key="frame" x="72" y="88" width="624" height="512"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" id="tFe-te-JLI">
-                            <rect key="frame" x="0.0" y="0.0" width="685" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="624" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="barTintColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
