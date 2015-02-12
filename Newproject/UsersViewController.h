@@ -10,6 +10,7 @@
 #import "listusermdl.h"
 #import "Validation.h"
 #import "Rightscheck.h"
+#import "BranchsubViewController.h"
 
 @interface UsersViewController : UIViewController<UITextFieldDelegate>
 {
@@ -32,6 +33,9 @@
     NSInteger branchcheck;
     NSString *branchstring;
 }
+
+@property(strong,nonatomic)BranchsubViewController *branchsubctrl;
+
 @property(readwrite)NSInteger moduleid;
 @property(strong,nonatomic)NSArray *custmrrarry;
 @property(strong,nonatomic)NSMutableDictionary *custmrdict;

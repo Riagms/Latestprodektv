@@ -12,7 +12,7 @@
 #import "MarkupViewController.h"
 #import "BillingViewController.h"
 #import "Rightscheck.h"
-#import "TLLeadsViewController.h"
+#import "LeadsViewController.h"
 
 @interface TilecustmrViewController : UIViewController
 {
@@ -22,7 +22,7 @@
 }
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *leadindicator;
 //@property (strong, nonatomic) IBOutlet UIImageView *leadindictor;
-@property(strong,nonatomic)TLLeadsViewController*LCtrl;
+@property(strong,nonatomic)LeadsViewController*LCtrl;
 @property (strong, nonatomic) IBOutlet UIView *leadview;
 - (IBAction)clsebtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navgtnbar;

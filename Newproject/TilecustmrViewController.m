@@ -36,6 +36,7 @@
     _Custmgmtindictr.hidden=YES;
     _Contmgmtindictr.hidden=YES;
     _mrkupindictr.hidden=YES;
+    _leadindicator.hidden=YES;
     
     _custmrview.userInteractionEnabled=YES;
     _cntrctview.userInteractionEnabled=YES;
@@ -43,6 +44,7 @@
     [_Contmgmtindictr stopAnimating];
     [_Custmgmtindictr stopAnimating];
     [_mrkupindictr stopAnimating];
+    [_leadindicator stopAnimating];
 
     _result=@"";
     _Moduleid=0;
@@ -106,7 +108,7 @@
 -(void)LeadPage
 {
     
-    _Moduleid=4;
+    _Moduleid=42;
     //_leadView.userInteractionEnabled=YES;
     [self UserLogmaininsert];
     
@@ -398,7 +400,7 @@
             
             
         }
-        if (_Moduleid==4)
+        if (_Moduleid==42)
         {
             Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
             if (rightsmodel.ViewModule==1) {
@@ -407,10 +409,10 @@
                 _leadview.userInteractionEnabled=YES;
                 
                 //if (!self.LCtrl) {
-                self.LCtrl=[[TLLeadsViewController alloc]initWithNibName:@"TLLeadsViewController" bundle:nil];
+                self.LCtrl=[[LeadsViewController alloc]initWithNibName:@"LeadsViewController" bundle:nil];
                 // }
-                _LCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
-                [self presentViewController:_LCtrl
+                _LCtrl.userrightsarray=_userrightsarray;
+                               [self presentViewController:_LCtrl
                                    animated:YES completion:NULL];
             }
             else

@@ -38,6 +38,10 @@
 		645875CC1A28899800906869 /* GPConusumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645875C81A28899800906869 /* GPConusumViewController.xib */; };
 		645875CD1A28899800906869 /* Setconsumcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645875C91A28899800906869 /* Setconsumcell.xib */; };
 		645875CE1A28899800906869 /* congroupcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 645875CA1A28899800906869 /* congroupcell.xib */; };
+		64614A271A8C69EF009E3A8C /* BranchsubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64614A251A8C69EF009E3A8C /* BranchsubViewController.m */; };
+		64614A281A8C69EF009E3A8C /* BranchsubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64614A261A8C69EF009E3A8C /* BranchsubViewController.xib */; };
+		64614A2A1A8C6A2A009E3A8C /* SBBranchcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64614A291A8C6A2A009E3A8C /* SBBranchcell.xib */; };
+		64614A2D1A8C7686009E3A8C /* Bsubmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 64614A2C1A8C7686009E3A8C /* Bsubmdl.m */; };
 		646A28B61937350400902C4A /* Detaileventmanpwr.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B51937350400902C4A /* Detaileventmanpwr.m */; };
 		646A28B91937351D00902C4A /* Eqeventmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B81937351D00902C4A /* Eqeventmdl.m */; };
 		646A28BC193743CF00902C4A /* OthereventMaodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28BB193743CF00902C4A /* OthereventMaodel.m */; };
@@ -712,6 +716,12 @@
 		645875C81A28899800906869 /* GPConusumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPConusumViewController.xib; sourceTree = "<group>"; };
 		645875C91A28899800906869 /* Setconsumcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Setconsumcell.xib; sourceTree = "<group>"; };
 		645875CA1A28899800906869 /* congroupcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = congroupcell.xib; sourceTree = "<group>"; };
+		64614A241A8C69EF009E3A8C /* BranchsubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BranchsubViewController.h; sourceTree = "<group>"; };
+		64614A251A8C69EF009E3A8C /* BranchsubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BranchsubViewController.m; sourceTree = "<group>"; };
+		64614A261A8C69EF009E3A8C /* BranchsubViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BranchsubViewController.xib; sourceTree = "<group>"; };
+		64614A291A8C6A2A009E3A8C /* SBBranchcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBBranchcell.xib; sourceTree = "<group>"; };
+		64614A2B1A8C7686009E3A8C /* Bsubmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bsubmdl.h; sourceTree = "<group>"; };
+		64614A2C1A8C7686009E3A8C /* Bsubmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bsubmdl.m; sourceTree = "<group>"; };
 		646A28B41937350400902C4A /* Detaileventmanpwr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detaileventmanpwr.h; sourceTree = "<group>"; };
 		646A28B51937350400902C4A /* Detaileventmanpwr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detaileventmanpwr.m; sourceTree = "<group>"; };
 		646A28B71937351D00902C4A /* Eqeventmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Eqeventmdl.h; sourceTree = "<group>"; };
@@ -1684,6 +1694,10 @@
 				D4ACE56519C1B1010060A352 /* CraftViewController.m */,
 				D4ACE56619C1B1010060A352 /* CraftViewController.xib */,
 				D4ACE56919C1B1120060A352 /* craftcell.xib */,
+				64614A241A8C69EF009E3A8C /* BranchsubViewController.h */,
+				64614A251A8C69EF009E3A8C /* BranchsubViewController.m */,
+				64614A261A8C69EF009E3A8C /* BranchsubViewController.xib */,
+				64614A291A8C6A2A009E3A8C /* SBBranchcell.xib */,
 			);
 			name = Company;
 			sourceTree = "<group>";
@@ -2571,6 +2585,8 @@
 				D42C5EA31A5F9F790050EB02 /* Purchsemdl.m */,
 				D42C5EA51A5F9FA30050EB02 /* Workordrmdl.h */,
 				D42C5EA61A5F9FA30050EB02 /* Workordrmdl.m */,
+				64614A2B1A8C7686009E3A8C /* Bsubmdl.h */,
+				64614A2C1A8C7686009E3A8C /* Bsubmdl.m */,
 			);
 			name = model;
 			path = Newproject;
@@ -2839,6 +2855,7 @@
 				64C3BB3C1A2836D000E5A3EA /* GSmallViewController.xib in Resources */,
 				D4A16B901974EEE0002CA2A2 /* Bidreviewcell.xib in Resources */,
 				D4A16B4F1974EEA8002CA2A2 /* PGcell.xib in Resources */,
+				64614A281A8C69EF009E3A8C /* BranchsubViewController.xib in Resources */,
 				D4A338EC18F3EEEF00E53FAC /* billingcell.xib in Resources */,
 				649E1F7C18615A240010CBD8 /* customequipcell.xib in Resources */,
 				D40DD25D1873D26100E7BC2C /* FleetsViewController.xib in Resources */,
@@ -2868,6 +2885,7 @@
 				64428BBF192E08E800CB2CF9 /* Notepad.png in Resources */,
 				64A3B82418DFEF0B0015887F /* CommentsViewController.xib in Resources */,
 				6481615C176EF0C50017F4CC /* rightarowblack.png in Resources */,
+				64614A2A1A8C6A2A009E3A8C /* SBBranchcell.xib in Resources */,
 				64A3B82618E02FC90015887F /* branchcell.xib in Resources */,
 				64A2F9BC19CBEC17009B1018 /* FLPViewController.xib in Resources */,
 				D4F2F91E193C41F300B732E9 /* iconleftblack.png in Resources */,
@@ -3427,9 +3445,11 @@
 				D49F874918EEA36B00413CAD /* Section.m in Sources */,
 				64335939198B81F800982CFC /* forgetViewController.m in Sources */,
 				D49F874B18EEA36B00413CAD /* Processsectionheaderview.m in Sources */,
+				64614A2D1A8C7686009E3A8C /* Bsubmdl.m in Sources */,
 				D4A16B851974EEE0002CA2A2 /* EsttileViewController.m in Sources */,
 				D44BEA7118E0252600719ED5 /* BranchViewController.m in Sources */,
 				649ED79E187FB8260086CDDE /* CompanyViewController.m in Sources */,
+				64614A271A8C69EF009E3A8C /* BranchsubViewController.m in Sources */,
 				649316C119AB4629008CB7BF /* TLLeadsViewController.m in Sources */,
 				D49F876118EEA36B00413CAD /* Scaffoldsubtypemodel.m in Sources */,
 				D44ECC651A5D166C00B3082A /* PMjobsmdl.m in Sources */,
