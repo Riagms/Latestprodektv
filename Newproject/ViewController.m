@@ -542,8 +542,8 @@
          NSDate *dates = [dateFormat dateFromString:date1];
          [dateFormat setDateFormat:@"MM-dd-yyy"];
          NSString *myFormattedDate = [dateFormat stringFromDate:dates];
-        
-         logintime=[NSString stringWithFormat:@"%@ %@",[array1 objectAtIndex:1],myFormattedDate];
+         NSArray *array2=[[array1 objectAtIndex:1]componentsSeparatedByString:@"."];
+         logintime=[NSString stringWithFormat:@"%@ %@",[array2 objectAtIndex:0],myFormattedDate];
          
          _soapResults = nil;
          
