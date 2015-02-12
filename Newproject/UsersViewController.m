@@ -1883,7 +1883,8 @@
     
 }
 - (IBAction)goToBranchaddform:(id)sender {
-}
+    _branchsubctrl=[[BranchsubViewController alloc]initWithNibName:@"BranchsubViewController" bundle:nil];
+    self.branchsubctrl.modalPresentationStyle = UIModalPresentationFormSheet;
 
     [self presentViewController:_branchsubctrl animated:YES completion:nil];
 }
