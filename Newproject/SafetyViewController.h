@@ -12,6 +12,7 @@
 #import "Manpwr.h"
 #import "Base64.h"
 #import "RSTViewController.h"
+#import "Validation.h"
 
 @interface SafetyViewController : UIViewController{
     NSInteger imagechecker,webtype,btninfr;
@@ -20,7 +21,9 @@
     NSInteger subtypevalue,editpath,deletepath;
     NSString* safetycode,*msgstrg;
 }
+@property (strong, nonatomic)NSString*searchstring;
 
+@property (strong, nonatomic) IBOutlet UISearchBar *searchbar;
 @property (strong, nonatomic)RSTViewController *subtypctrlr;
 @property(strong,nonatomic)Manpwr *SaftyMdl;
 @property(strong,nonatomic)NSMutableArray *SafetyArray;
@@ -36,6 +39,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *unitmeasuretxtfld;
 @property (strong, nonatomic) IBOutlet UITextField *stocktxtfld;
 @property (strong, nonatomic) IBOutlet UIView *addview;
+@property (strong, nonatomic) IBOutlet UITextField *itemcodetxtfld;
+
+
 
 /* xmlparser*/
 @property(strong,nonatomic)NSXMLParser *xmlParser;
