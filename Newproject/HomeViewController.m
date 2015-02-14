@@ -768,11 +768,12 @@ NSString*useridname = [defaults objectForKey:@"Userid"];
             _hrview.userInteractionEnabled=YES;
 
             //if (!self.PlnCtrl) {
-                self.PlnCtrl=[[PlngTileViewController alloc]initWithNibName:@"PlngTileViewController" bundle:nil];
+                self.PlnCtrl=[[PlanningViewController alloc]initWithNibName:@"PlanningViewController" bundle:nil];
+            _PlnCtrl.userrightsarray=_userrightsarray;
                 
            // }
             // _PlangVCtrl.view.frame=CGRectMake(100, 171, 768, 768);
-             _PlnCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
+            // _PlnCtrl.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:_PlnCtrl
                                animated:YES completion:NULL];
         }

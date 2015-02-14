@@ -41,36 +41,26 @@
   
     _plangtable.layer.borderWidth=2.0f;
     _plangtable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor;
-    if (_plntype==1) {
+   
         _tabletitleview.hidden=NO;
     
-         _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Add Services",@"Site Visit",@"Documents",@"Create a New Plan",nil];
+         _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Work Entry",@"Create New Plan",nil];
         _addbtn.hidden=NO;
         _deletebtn.hidden=NO;
         _plnnavitem.title=@"Planning";
+    [self.navigationItem setHidesBackButton:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
        // _editbtn.hidden=NO;
-    }
-    else
-    {
-        _tabletitleview2.hidden=NO;
-      
-
-        _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Services",nil];
-        _addbtn.hidden=YES;
-        _deletebtn.hidden=YES;
-        _plnnavitem.title=@"Work Entry";
-       // _editbtn.hidden=YES;
-    }
    
+    
     [self WorkTypeSelect];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
    
-    if (_fromestmn==1) {
-        _searchstring=_Estmnplan;
-        _searchbar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 220, 44)];
+           _searchbar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 220, 44)];
         _searchbar.delegate=(id)self;
         _searchbar.tintColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
         self.plangtable.tableHeaderView=_searchbar;
@@ -78,26 +68,11 @@
         searchctrlr.searchResultsDelegate=(id)self;
         searchctrlr.searchResultsDataSource=(id)self;
         searchctrlr.delegate=(id)self;
-        searchctrlr.searchBar.text=_Estmnplan;
-
-        [self SearchPlan];
-        
-        
-    }
-    else{
-        _searchbar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 220, 44)];
-        _searchbar.delegate=(id)self;
-        _searchbar.tintColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
-        self.plangtable.tableHeaderView=_searchbar;
-        UISearchDisplayController *searchctrlr=[[UISearchDisplayController alloc]initWithSearchBar:_searchbar contentsController:self];
-        searchctrlr.searchResultsDelegate=(id)self;
-        searchctrlr.searchResultsDataSource=(id)self;
-        searchctrlr.delegate=(id)self;
-      
+    [self UserRightsforparticularmoduleselect];
 
 
          [self SelectAllPlans];
-    }
+    
     
     
 }
@@ -167,17 +142,10 @@
     
     if(tableView==_plangtable)
     {
-        if (_plntype==1) {
+       
             [[NSBundle mainBundle]loadNibNamed:@"customplancell" owner:self options:nil];
             cell=_planingcell;
-        }
-        else{
-            
         
-        [[NSBundle mainBundle]loadNibNamed:@"workentrycell" owner:self options:nil];
-        cell=_wrkentrycell;
-            
-        }
     }
     }
     if(tableView==_popovertableview)
@@ -216,14 +184,14 @@
          
          
      {
-          if (_plntype==1) {
+        
          planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:indexPath.row];
          _organizationname=(UILabel*)[cell viewWithTag:1];
          cell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
          _organizationname.text=planmdl.customername;
-              UITapGestureRecognizer *tapGesture =
-              [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap:)];
-              [_organizationname addGestureRecognizer:tapGesture];
+//              UITapGestureRecognizer *tapGesture =
+//              [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap:)];
+//              [_organizationname addGestureRecognizer:tapGesture];
 
 //         _leadlabel=(UILabel*)[cell viewWithTag:2];
 //         NSString *led=[NSString stringWithFormat:@"%d",planmdl.leadid];
@@ -247,38 +215,8 @@
               _masterplanlabel=(UILabel*)[cell viewWithTag:12];
               _masterplanlabel.text=planmdl.masterplan;
 
-          }
-          else{
-              
-              planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:indexPath.row];
-              _worgnztnlbl=(UILabel*)[cell viewWithTag:1];
-              _worgnztnlbl.text=planmdl.customername;
-              UITapGestureRecognizer *tapGesture =
-              [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTap:)];
-              [_worgnztnlbl addGestureRecognizer:tapGesture];
-
-              _wplanlbl=(UILabel*)[cell viewWithTag:3];
-              _wplanlbl.text=planmdl.planid;
-              _wmanhrslbl=(UILabel*)[cell viewWithTag:5];
-              _wmanhrslbl.text=[NSString stringWithFormat:@"%.2f",[planmdl.manhrs doubleValue]];
-              _weqhrslbl=(UILabel*)[cell viewWithTag:6];
-              _weqhrslbl.text=[NSString stringWithFormat:@"%.2f",[planmdl.equphrs doubleValue]];
-              _mathrslabel=(UILabel*)[cell viewWithTag:7];
-              _mathrslabel.text=[NSString stringWithFormat:@"%d",[planmdl.mathrs integerValue]];
-              
-          }
          
-         if (_plntype==1) {
-             _editbtn.hidden=NO;
-             _seperatorview.hidden=NO;
-         }
-         else
-         {
-             _editbtn.hidden=YES;
-             _seperatorview.hidden=YES;
-         }
-             }
-    
+     }
     return cell;
     
 }
@@ -287,7 +225,7 @@
 {
     if (tableView==_popovertableview) {
         
-        //Coursemdl*coursemdl2=(Coursemdl *)[_requirementArray objectAtIndex:textFieldIndexPath.row];
+        
         
         switch (poptype) {
                 
@@ -319,123 +257,54 @@
                     
                 }
                 
+        
 
-
-               // [_customerselectionBtn setTitle:[_customerlistarray objectAtIndex:indexPath.row]forState:UIControlStateNormal];
                
                 
 
                 
                 
                 break;
+            
             case 2:
-                if (_plntype==1) {
-                    
                 
-                if (indexPath.row==0) {
-                  //  if (!self.servVctrl) {
-                        self.servVctrl=[[AddserviceViewController alloc]initWithNibName:@"AddserviceViewController" bundle:nil];
-                  //  }
-                    planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
-                    _servVctrl.planID=planmdl.planid;
-                    NSLog(@"%@",planmdl.planid);
-                    _servVctrl.modalPresentationStyle=UIModalPresentationPageSheet;
-                    _servVctrl.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
                     
-                    [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_servVctrl
+            if (indexPath.row==0) {
+                 
+                        self.tilctrl=[[PlngTileViewController alloc]initWithNibName:@"PlngTileViewController" bundle:nil];
+                
+                _tilctrl.modalPresentationStyle=UIModalPresentationFormSheet;
+                    [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_tilctrl
                                                                                                 animated:YES completion:NULL];
                     }];
-//                    [self presentViewController:_servVctrl
-//                                       animated:YES completion:NULL];
                     _searchbar.text=@"";
                     [self SelectAllPlans];
-                }
-
+                
                                    }
-                else
-                {
-                    if (indexPath.row==0) {
-                        //if (!self.psctrlr) {
-                            self.psctrlr=[[PServiceViewController alloc]initWithNibName:@"PServiceViewController" bundle:nil];
-                       // }
-                        planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
-                        _psctrlr.planID=planmdl.planid;
-                        _psctrlr.delegate=self;
-                        NSLog(@"%@",planmdl.planid);
-                        _psctrlr.wrktypid=planmdl.worktypeid;
-                        _psctrlr.modalPresentationStyle=UIModalPresentationPageSheet;
-                        _psctrlr.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-                        [self dismissViewControllerAnimated:YES completion:^{     [self presentViewController:_psctrlr
-                                                                                                     animated:YES completion:NULL];
-                        }];
-
-//                        [self presentViewController:_psctrlr
-//                                           animated:YES completion:NULL];
-                        _searchbar.text=@"";
-                        [self SelectAllPlans];
-
-                }
-                }
                 if (indexPath.row==1) {
-                    //if (!self.sitevisitVctrl) {
-                        self.sitevisitVctrl=[[SitevisitViewController alloc]initWithNibName:@"SitevisitViewController" bundle:nil];
-                    //}
+                    
                     planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
-                    _sitevisitVctrl.companyid=planmdl.planid;
-                    _sitevisitVctrl.companyname=planmdl.customername;
-                    NSLog(@"%@",planmdl.customername);
-                    _sitevisitVctrl.modalPresentationStyle=UIModalPresentationFullScreen;
-                    _sitevisitVctrl.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-                    [self dismissViewControllerAnimated:YES completion:^{   [self presentViewController:_sitevisitVctrl
-                                                                                               animated:YES completion:NULL];
-
-                    }];
-//                    [self presentViewController:_sitevisitVctrl
-//                                       animated:YES completion:NULL];
+                    Existplanstrg=[NSString stringWithFormat:@"Are you sure to create a new plan under-%@",planmdl.planid];
+                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"Are you sure to create a new plan under-%@",planmdl.planid] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+                    [alert show];
                     
                     
-                _searchbar.text=@"";
-                [self SelectAllPlans];
                 }
-                
-                if (indexPath.row==2) {
-                     self.PlandocsVCtrl=[[PlandocsViewController alloc]initWithNibName:@"PlandocsViewController" bundle:nil];
-                
-                  planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
-                _PlandocsVCtrl.planid=planmdl.planid;
-                   self.PlandocsVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
-                    [self dismissViewControllerAnimated:YES completion:^{       [self presentViewController:_PlandocsVCtrl
-                                                                                                   animated:YES completion:NULL];
-                    }];
+                break;
 
-                
-                
-                
-                }
-                 if (indexPath.row==3) {
-                     planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
-                     Existplanstrg=[NSString stringWithFormat:@"Are you sure to create a new plan under-%@",planmdl.planid];
-                     UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"Are you sure to create a new plan under-%@",planmdl.planid] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
-                     [alert show];
-                 
-                 }
-                
-                
-                
-                break;
-                
-            default:
-                break;
-        }
+             
+    }
+    
         [self.popovercontroller dismissPopoverAnimated:YES];
 
-        
-        
+    
+    
     }
     
     
-    
 }
+
+
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (editingStyle==UITableViewCellEditingStyleDelete) {
@@ -507,60 +376,15 @@
     }
 }
 
-#pragma mark-Touch Gesture
 
--(void)labelTap:(UITapGestureRecognizer *)sender{
-    
-    CGPoint location = [sender locationInView:self.view];
-    CGPoint locationInTableview = [self.plangtable convertPoint:location fromView:self.view];
-    NSIndexPath *indexPath = [self.plangtable indexPathForRowAtPoint:locationInTableview];
-    
-    //    if (CGRectContainsPoint([self.view convertRect:self.estmntable.frame fromView:self.estmntable.superview], location))
-    //    {
-    //        CGPoint locationInTableview = [self.estmntable convertPoint:location fromView:self.view];
-    //        NSIndexPath *indexPath = [self.estmntable indexPathForRowAtPoint:locationInTableview];
-    //        if (indexPath)
-    //            [self tableView:self.estmntable didSelectRowAtIndexPath:indexPath];
-    //
-    //        return;
-    //    }
-    
-    //    CGPoint rootViewPoint = [label.superview convertPoint:center toView:self.estmntable];
-    //    NSIndexPath *textFieldIndexPath = [self.estmntable indexPathForRowAtPoint:rootViewPoint];
-    NSLog(@"textFieldIndexPath%d",indexPath.row);
-    
-    planmodel*pmdl=(planmodel *)[_planlistarray objectAtIndex:indexPath.row];
-    
-    if (pmdl.leadid==0) {
-        
-        
-    }
-    else{
-        _leadctrl=[[LeadsViewController alloc]initWithNibName:@"LeadsViewController" bundle:nil];
-        _leadctrl.frmplan=1;
-        _leadctrl.planorganztn=pmdl.customername;
-        [self presentViewController:_leadctrl animated:YES completion:nil];
-    }
-    if (pmdl.customerid==0) {
-        
-        
-    }
-    else{
-        _customerctrl=[[NewCustmrViewController alloc]initWithNibName:@"NewCustmrViewController" bundle:nil];
-        _customerctrl.frmplan=1;
-        _customerctrl.planorganztn=pmdl.customername;
-        [self presentViewController:_customerctrl animated:YES completion:nil];
 
-    }
-
-    
-}
 
 #pragma mark-Button Actions
-- (IBAction)clseVCtrlbtn:(id)sender {
+- (IBAction)close:(id)sender {
     _updatebtn.enabled=YES;
-     _addplanview.hidden=YES;
+    _addplanview.hidden=YES;
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (IBAction)addplan:(id)sender {
@@ -688,7 +512,7 @@
     _popovertableview.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     [popoverview addSubview:_popovertableview];
     popovercontent.view=popoverview;
-    popovercontent.contentSizeForViewInPopover=CGSizeMake(210, 200);
+    popovercontent.preferredContentSize=CGSizeMake(210, 200);
     self.popovercontroller=[[UIPopoverController alloc]initWithContentViewController:popovercontent];
     self.popovercontroller.popoverContentSize=CGSizeMake(210.0f, 200.0f);
     self.popovercontroller=_popovercontroller;
@@ -700,20 +524,20 @@
 -(IBAction)selectdisclosure:(id)sender
 {
     poptype=2;
-    if (_plntype==1) {
+   
         
     
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 135, 120)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 135, 60)];
     popoverView.backgroundColor = [UIColor whiteColor];
-    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 135, 120)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 135, 60)];
     _popovertableview.delegate=(id)self;
     _popovertableview.dataSource=(id)self;
     _popovertableview.rowHeight= 31;
     //_popovertableview.separatorColor=[UIColor blackColor];
     [popoverView addSubview:_popovertableview];
     popoverContent.view = popoverView;
-    popoverContent.contentSizeForViewInPopover = CGSizeMake(135, 120);
+    popoverContent.preferredContentSize = CGSizeMake(135, 60);
     
     button = (UIButton *)sender;
     UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
@@ -725,10 +549,10 @@
     
     //UITableView *table = (UITableView *)[cell superview];
     self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-        self.popovercontroller.popoverContentSize=CGSizeMake(135.0f, 120.0f);
+        self.popovercontroller.popoverContentSize=CGSizeMake(135.0f, 60.0f);
         self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclosurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
-    }
+    
        //[_popovertableview reloadData];
 }
 
@@ -921,7 +745,7 @@
     _popovertableview.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     [popoverview addSubview:_popovertableview];
     popovercontent.view=popoverview;
-    popovercontent.contentSizeForViewInPopover=CGSizeMake(210, 120);
+    popovercontent.preferredContentSize=CGSizeMake(210, 120);
     self.popovercontroller=[[UIPopoverController alloc]initWithContentViewController:popovercontent];
     self.popovercontroller.popoverContentSize=CGSizeMake(210.0f, 120.0f);
     self.popovercontroller=_popovercontroller;
@@ -943,7 +767,7 @@
     _popovertableview.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     [popoverview addSubview:_popovertableview];
     popovercontent.view=popoverview;
-    popovercontent.contentSizeForViewInPopover=CGSizeMake(210, 200);
+    popovercontent.preferredContentSize=CGSizeMake(210, 200);
     self.popovercontroller=[[UIPopoverController alloc]initWithContentViewController:popovercontent];
     self.popovercontroller.popoverContentSize=CGSizeMake(210.0f, 200.0f);
     self.popovercontroller=_popovercontroller;
@@ -980,6 +804,66 @@
     
 }
 #pragma mark-webservices
+#pragma mark- WebService
+
+-(void)UserRightsforparticularmoduleselect{
+    webtype=10;
+    recordResults = FALSE;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    userid = [defaults objectForKey:@"Userid"];
+    moduleid=5;
+    
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<UserRightsforparticularmoduleselect xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<UserId>%d</UserId>\n"
+                   "<ModuleId>%d</ModuleId>\n"
+                   "</UserRightsforparticularmoduleselect>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",[userid integerValue],moduleid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/UserRightsforparticularmoduleselect" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+  
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+
 -(void)SelectAllPlans
 {
     recordResults = FALSE;
@@ -1924,6 +1808,65 @@
     }
     
 }
+-(void)Logoutselect{
+    recordResults = FALSE;
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *zone = [NSTimeZone localTimeZone];
+    [formatter setTimeZone:zone];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    // NSLog(@"Date %@",[formatter stringFromDate:date]);
+    NSString*curntdate=[formatter stringFromDate:date];
+    
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<Logoutselect xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<UserName>%@</UserName>\n"
+                   "<LogOutTime>%@</LogOutTime>\n"
+                   "</Logoutselect>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_username,curntdate];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/Logoutselect" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
 
 
 #pragma mark - Connection
@@ -1970,6 +1913,111 @@
 #pragma mark-xml parser
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *) namespaceURI qualifiedName:(NSString *)qName
    attributes: (NSDictionary *)attributeDict{
+    if([elementName isEqualToString:@"UserRightsforparticularmoduleselectResponse"])
+    {
+        
+        checkws=2;
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    
+    if([elementName isEqualToString:@"EntryId"])
+    {
+        _userrightsarray=[[NSMutableArray alloc]init];
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"UserId"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"ModuleId"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"ViewModule"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"EditModule"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"DeleteModule"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"PrintModule"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+
+    if([elementName isEqualToString:@"LogoutselectResponse"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"message"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
     if([elementName isEqualToString:@"SelectAllLeadsResult"])
     {
         _planslectionarray=[[NSMutableArray alloc]init];
@@ -2348,6 +2396,135 @@
 }
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    if([elementName isEqualToString:@"EntryId"])
+    {
+        
+        
+        recordResults = FALSE;
+        _rights=[[Rightscheck alloc]init];
+        _rights.entryid=[_soapResults integerValue];
+        
+        _soapResults=nil;
+    }
+//    if([elementName isEqualToString:@"result"])
+//    {
+//        
+//        
+//        recordResults = FALSE;
+//        
+//        _result=@"Not yet set";
+//        //        if ([_soapResults isEqualToString:@"0"]) {
+//        //            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"You don’t have right to view this form" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        //            [alert show];
+//        //        }
+//        
+//        _soapResults=nil;
+//    }
+    
+    if([elementName isEqualToString:@"UserId"])
+    {
+        
+        
+        recordResults = FALSE;
+        
+        _rights.userid=[_soapResults integerValue];
+        
+        _soapResults=nil;
+    }
+    
+    if([elementName isEqualToString:@"ModuleId"])
+    {
+        
+        
+        recordResults = FALSE;
+        
+        _rights.moduleid=[_soapResults integerValue];
+        
+        _soapResults=nil;
+        
+    }
+    if([elementName isEqualToString:@"ViewModule"])
+    {
+        
+        recordResults = FALSE;
+        
+        if ([_soapResults isEqualToString:@"true"]) {
+            _rights.ViewModule=1;
+            
+            
+        }
+        else{
+            _rights.ViewModule=0;
+            
+        }
+        
+        
+        
+        _soapResults=nil;
+        
+        
+    }
+    if([elementName isEqualToString:@"EditModule"])
+    {
+        recordResults = FALSE;
+        if ([_soapResults isEqualToString:@"true"]) {
+            _rights.EditModule=1;
+            
+            
+        }
+        else{
+            _rights.EditModule=0;
+            
+        }
+        _soapResults=nil;
+        
+        
+    }
+    if([elementName isEqualToString:@"DeleteModule"])
+    {
+        recordResults = FALSE;
+        if ([_soapResults isEqualToString:@"true"]) {
+            _rights.DeleteModule=1;
+            
+            
+        }
+        else{
+            _rights.DeleteModule=0;
+            
+        }
+        _soapResults=nil;
+        
+    }
+    if([elementName isEqualToString:@"PrintModule"])
+    {
+        recordResults = FALSE;
+        if ([_soapResults isEqualToString:@"true"]) {
+            _rights.PrintModule=1;
+            
+            
+        }
+        else{
+            _rights.PrintModule=0;
+            
+        }
+        
+        
+        
+        [_userrightsarray addObject:_rights];
+        _soapResults=nil;
+        
+    }
+
+    
+    if([elementName isEqualToString:@"message"]){
+        
+        recordResults = FALSE;
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+        
+        _soapResults=nil;
+    }
+
     if([elementName isEqualToString:@"SelectAllLeadsResult"])
     {
         
@@ -2608,15 +2785,19 @@
        // }
 
       //else
+         if ([_soapResults isEqualToString:@"0"])  {
+            _result=@"Not yet set";
+        }
+        else
+        {
           if (webtype!=3) {
             
-          
-            
+              
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:_soapResults delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
                 [self SelectAllPlans];
                 _searchbar.text=@"";
-
+              
         
         }
         else if (webtype==3) {
@@ -2634,7 +2815,7 @@
             }
  
         }
-        
+        }
         _soapResults = nil;
 
         
@@ -2680,6 +2861,7 @@
 
             
         }
+        
                 _soapResults = nil;
 
     }
@@ -2696,6 +2878,22 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
+//    if ([alertView.message isEqualToString:@"Are you sure you want to logout"]) {
+//        
+//        
+//        if (buttonIndex==[alertView cancelButtonIndex]){
+//            [alertView resignFirstResponder];
+//            [self disablesAutomaticKeyboardDismissal];
+//            [self Logoutselect];
+//            
+//            
+//        }
+//        
+//        else{
+//            
+//            
+//        }
+//    }
     if ([alertView.message isEqualToString:_result]) {
         _updatebtn.enabled=YES;
         _planselectionbtn.enabled=NO;
@@ -2853,7 +3051,7 @@
         //_popovertableview.separatorColor=[UIColor blackColor];
         [popoverView addSubview:_popovertableview];
         popoverContent.view = popoverView;
-        popoverContent.contentSizeForViewInPopover = CGSizeMake(132, 43);
+        popoverContent.preferredContentSize = CGSizeMake(132, 43);
         
         button = (UIButton *)sender;
         UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];

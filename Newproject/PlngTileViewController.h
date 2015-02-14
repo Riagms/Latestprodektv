@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PlanningViewController.h"
+
 #import "Rightscheck.h"
+#import "WorkViewController.h"
+#import "ChartViewController.h"
 
 
 @interface PlngTileViewController : UIViewController
@@ -19,11 +21,13 @@
     NSInteger checkws;
 }
 
-
--(IBAction)closethistilepage:(id)sender;
+@property(strong,nonatomic)NSString *username;
+-(IBAction)close:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *planngview;
 @property (strong, nonatomic) IBOutlet UIView *workentryview;
-@property(strong,nonatomic)PlanningViewController *PlangVCtrl;
+
+@property(strong,nonatomic)WorkViewController *workctrlr;
+@property(strong,nonatomic)ChartViewController *chartctrl;
 
 @property(strong,nonatomic)Rightscheck *rights;
 @property(readwrite)NSInteger ModuleID;

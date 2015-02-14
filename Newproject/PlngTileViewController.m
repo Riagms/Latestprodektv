@@ -45,54 +45,59 @@
     self.view.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
     UITapGestureRecognizer *doubleTap1 = [[UITapGestureRecognizer alloc]
                                           initWithTarget:self
-                                          action:@selector(plangpage)];
+                                          action:@selector(workentrylist)];
     doubleTap1.numberOfTapsRequired=1;
     doubleTap1.delegate=(id)self;
     [self.planngview addGestureRecognizer:doubleTap1];
     UITapGestureRecognizer *doubleTap2 = [[UITapGestureRecognizer alloc]
                                           initWithTarget:self
-                                          action:@selector(workentrypage)];
+                                          action:@selector(ganttchart)];
     doubleTap2.numberOfTapsRequired=1;
     doubleTap2.delegate=(id)self;
     [self.workentryview addGestureRecognizer:doubleTap2];
 
 }
--(void)plangpage{
+-(void)workentrylist{
     _plnindictr.hidden=NO;
     _planngview.userInteractionEnabled=NO;
     
     [_plnindictr startAnimating];
-    plntype=1;
-    _ModuleID=43;
-    [self UserLogmaininsert];
-    [self UserRightsforparticularmoduleselect];
+    self.workctrlr=[[WorkViewController alloc]initWithNibName:@"WorkViewController" bundle:nil];
+    
+    
+    [self presentViewController:_workctrlr
+                       animated:YES completion:NULL];
+    _plnindictr.hidden=YES;
+    _planngview.userInteractionEnabled=YES;
+    
+    [_plnindictr stopAnimating];
+//    plntype=1;
+//    _ModuleID=43;
+//    [self UserLogmaininsert];
+//    [self UserRightsforparticularmoduleselect];
     
     
 }
--(void)workentrypage{
-     [self UserLogmaininsert];
+-(void)ganttchart{
+    // [self UserLogmaininsert];
     _wrkindctr.hidden=NO;
     _workentryview.userInteractionEnabled=NO;
     
     [_wrkindctr startAnimating];
     plntype=2;
-    //if (!self.PlangVCtrl) {
-        self.PlangVCtrl=[[PlanningViewController alloc]initWithNibName:@"PlanningViewController" bundle:nil];
-   // }
-     _ModuleID=43;
-    _PlangVCtrl.modalPresentationStyle=UIModalPresentationCustom;
-    _PlangVCtrl.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-    _PlangVCtrl.userrightsarray=_userrightsarray;
-    _PlangVCtrl.plntype=plntype;
-    [self presentViewController:_PlangVCtrl
+    
+    self.chartctrl=[[ChartViewController alloc]initWithNibName:@"ChartViewController" bundle:nil];
+    
+    
+    [self presentViewController:_chartctrl
                        animated:YES completion:NULL];
+
     _wrkindctr.hidden=YES;
     _workentryview.userInteractionEnabled=YES;
     
     [_wrkindctr stopAnimating];
   
-   // _ModuleID=43;
-    //[self UserRightsforparticularmoduleselect];
+  
     
     
 }
@@ -102,12 +107,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(IBAction)closethistilepage:(id)sender
+-(IBAction)close:(id)sender
 {
-    _result=@"";
-    _ModuleID=0;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 -(void)UserRightsforparticularmoduleselect{
     recordResults = FALSE;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -237,6 +241,66 @@
     
 }
 
+#pragma mark- WebService
+-(void)Logoutselect{
+    recordResults = FALSE;
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *zone = [NSTimeZone localTimeZone];
+    [formatter setTimeZone:zone];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    // NSLog(@"Date %@",[formatter stringFromDate:date]);
+    NSString*curntdate=[formatter stringFromDate:date];
+    
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<Logoutselect xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<UserName>%@</UserName>\n"
+                   "<LogOutTime>%@</LogOutTime>\n"
+                   "</Logoutselect>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_username,curntdate];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/Logoutselect" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
 
 #pragma mark - Connection
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -311,17 +375,17 @@
                 
                 _planngview.userInteractionEnabled=YES;
                 _workentryview.userInteractionEnabled=YES;
-                
-               // if (!self.PlangVCtrl) {
-                    self.PlangVCtrl=[[PlanningViewController alloc]initWithNibName:@"PlanningViewController" bundle:nil];
-               // }
-                
-                _PlangVCtrl.modalPresentationStyle=UIModalPresentationCustom;
-                _PlangVCtrl.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
-                _PlangVCtrl.userrightsarray=_userrightsarray;
-                _PlangVCtrl.plntype=plntype;
-                [self presentViewController:_PlangVCtrl
-                                   animated:YES completion:NULL];
+//                
+//               // if (!self.PlangVCtrl) {
+//                    self.PlangVCtrl=[[PlanningViewController alloc]initWithNibName:@"PlanningViewController" bundle:nil];
+//               // }
+//                
+//                _PlangVCtrl.modalPresentationStyle=UIModalPresentationCustom;
+//                _PlangVCtrl.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+//                _PlangVCtrl.userrightsarray=_userrightsarray;
+//                _PlangVCtrl.plntype=plntype;
+//                [self presentViewController:_PlangVCtrl
+//                                   animated:YES completion:NULL];
             }
             else
             {
@@ -376,6 +440,27 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"LogoutselectResponse"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"message"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
     
     
     //    if([elementName isEqualToString:@"UserRightsforparticularmoduleselectResult"])
@@ -482,6 +567,15 @@
 }
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    if([elementName isEqualToString:@"message"]){
+        
+        recordResults = FALSE;
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+        
+        _soapResults=nil;
+    }
+
     if([elementName isEqualToString:@"EntryId"])
     {
         

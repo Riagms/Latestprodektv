@@ -22,6 +22,8 @@
                 <outlet property="gpthirdactivity" destination="KB6-a0-kX6" id="zUR-dr-muK"/>
                 <outlet property="manview" destination="cRA-LT-RkS" id="gfi-fH-bBk"/>
                 <outlet property="materview" destination="DO1-2D-JUb" id="JQm-M4-kfx"/>
+                <outlet property="safetyactivity" destination="RoS-PS-kdE" id="oAn-JW-jER"/>
+                <outlet property="safetyview" destination="06z-Cy-d8q" id="WRU-JW-gvb"/>
                 <outlet property="smalltoolview" destination="dH8-cC-AzU" id="IUj-uB-5zm"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -252,6 +254,11 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="RoS-PS-kdE">
+                            <rect key="frame" x="57" y="57" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.20000000000000001" green="0.80942062039999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
