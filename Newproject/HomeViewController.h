@@ -16,7 +16,7 @@
 #import "ManagemttileViewController.h"
 #import "Rightscheck.h"
 #import "TLLeadsViewController.h"
-#import "PlngTileViewController.h"
+#import "PlanningViewController.h"
 #import "AppDelegate.h"
 
 @interface HomeViewController : UIViewController{
@@ -58,7 +58,7 @@ BOOL recordResults;
 @property(strong,nonatomic)EsttileViewController *EstmVCtrl;
 @property(strong,nonatomic)ManagemttileViewController*mangVCtrl;
 @property(strong,nonatomic)TLLeadsViewController*LCtrl;
-@property(strong,nonatomic)PlngTileViewController*PlnCtrl;
+@property(strong,nonatomic)PlanningViewController*PlnCtrl;
 
 
 @property(strong,nonatomic)Rightscheck *rights;

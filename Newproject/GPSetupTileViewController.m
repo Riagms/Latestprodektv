@@ -80,6 +80,13 @@
     doubleTap7.numberOfTapsRequired=1;
     doubleTap7.delegate=(id)self;
     [self.Astview addGestureRecognizer:doubleTap7];
+    UITapGestureRecognizer *doubleTap8 = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(safetypage)];
+    doubleTap8.numberOfTapsRequired=1;
+    doubleTap8.delegate=(id)self;
+    [self.safetyview addGestureRecognizer:doubleTap8];
+
 
 
    
@@ -117,6 +124,9 @@
     _consumview.userInteractionEnabled=YES;
     _smalltoolview.userInteractionEnabled=YES;
     _Astview.userInteractionEnabled=YES;
+    _safetyactivity.hidden=YES;
+    [_safetyactivity stopAnimating];
+    _safetyview.userInteractionEnabled=YES;
     
     
 
@@ -141,6 +151,20 @@
     _manview.userInteractionEnabled=NO;
 
   
+}
+-(void)safetypage
+{     _safetyactivity.hidden=NO;
+    [_safetyactivity startAnimating];
+    
+    _safeVCtrl=[[GPsafetyViewController alloc]initWithNibName:@"GPsafetyViewController" bundle:nil];
+    // }
+    //_crewctrl.modalPresentationStyle = UIModalPresentationPageSheet;
+    
+    [self presentViewController:_safeVCtrl
+                       animated:YES completion:NULL];
+    
+    
+    
 }
 
 -(void)equipPage{

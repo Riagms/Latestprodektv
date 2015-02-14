@@ -8,17 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "AddserviceViewController.h"
-#import "SitevisitViewController.h"
-#import "DetailplanViewController.h"
+#import "PlngTileViewController.h"
 #import "planmodel.h"
 #import "Validation.h"
 #import "Rightscheck.h"
-#import "PServiceViewController.h"
-#import "PlandocsViewController.h"
-#import "LeadsViewController.h"
-#import "NewCustmrViewController.h"
-@interface PlanningViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,WorkentryDelgate>
+
+@interface PlanningViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     NSInteger leadcheck;
     NSInteger customercheck;
@@ -36,17 +31,18 @@
     NSString *bidstring;
     NSString*Existplanstrg;
     
-    
-    
+    NSString *userid;
+    NSInteger moduleid;
+    NSInteger checkws;
     
     
 }
 
+@property(strong,nonatomic)PlngTileViewController *tilctrl;
 /* newcomment*/
-@property(strong,nonatomic)PlandocsViewController *PlandocsVCtrl;
-@property(strong,nonatomic)NewCustmrViewController *customerctrl;
-@property(strong,nonatomic)LeadsViewController *leadctrl;
-@property(strong,nonatomic)PServiceViewController *psctrlr;
+
+@property(strong,nonatomic)NSString *username;
+
 @property(readwrite)NSInteger plntype;
 @property(readwrite)NSInteger fromestmn;
 @property(strong,nonatomic)NSString *Estmnplan;
@@ -54,9 +50,7 @@
 @property(strong,nonatomic)NSString *result;
 @property(strong,nonatomic)planmodel *plnmdl;
 @property(strong,nonatomic)Validation *val;
-@property(strong,nonatomic)AddserviceViewController *servVctrl;
-@property(strong,nonatomic)SitevisitViewController *sitevisitVctrl;
-@property(strong,nonatomic)DetailplanViewController *DetailplanVctrl;
+
 
 /* xmlparser*/
 @property(strong,nonatomic)NSXMLParser *xmlParser;
@@ -96,7 +90,7 @@
 
 
 /*IBAction*/
-- (IBAction)clseVCtrlbtn:(id)sender;
+- (IBAction)close:(id)sender;
 - (IBAction)addplan:(id)sender;
 -(IBAction)closeaddview:(id)sender;
 -(IBAction)checkleadaction:(id)sender;
