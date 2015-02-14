@@ -1132,6 +1132,7 @@ _subtypctrlr.equipmainid=safty.entryid;
 
 - (IBAction)editbtn:(id)sender {
     btninfr=2;
+     _searchbar.text=@"";
     _addview.hidden=NO;
     button = (UIButton *)sender;
     CGPoint center= button.center;
@@ -1178,6 +1179,7 @@ _subtypctrlr.equipmainid=safty.entryid;
 }
 
 - (IBAction)Addbtn:(id)sender {
+    _searchbar.text=@"";
     btninfr=1;
     _addview.hidden=NO;
     _subtypebtnlbl.enabled=YES;
@@ -1216,6 +1218,7 @@ _subtypctrlr.equipmainid=safty.entryid;
 }
 
 - (IBAction)addclsebtn:(id)sender {
+    
      _addview.hidden=YES;
 }
 
@@ -1236,6 +1239,8 @@ _subtypctrlr.equipmainid=safty.entryid;
 }
 
 - (IBAction)picclsebtn:(id)sender {
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Are you sure you want to delete this picture?" delegate:self cancelButtonTitle:@"Yes" otherButtonTitles:@"No", nil];
+    [alert show];
     
 }
 - (IBAction)updatebtn:(id)sender {
@@ -1386,6 +1391,33 @@ _subtypctrlr.equipmainid=safty.entryid;
     //  [searchBar resignFirstResponder];
     
     
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+   
+    if(textField==_itemcodetxtfld)
+    {
+        NSUInteger newLength = [_itemcodetxtfld.text length] + [string length] - range.length;
+        return (newLength > 100) ? NO : YES;
+    }
+    if(textField==_unitcosttxtfld)
+    {
+        NSUInteger newLength = [_unitcosttxtfld.text length] + [string length] - range.length;
+        return (newLength > 9) ? NO : YES;
+    }
+    
+    if(textField==_stocktxtfld)
+    {
+        NSUInteger newLength = [_stocktxtfld.text length] + [string length] - range.length;
+        return (newLength > 9) ? NO : YES;
+    }
+    if(textField==_unitmeasuretxtfld)
+    {
+        NSUInteger newLength = [_unitmeasuretxtfld.text length] + [string length] - range.length;
+        return (newLength > 9) ? NO : YES;
+    }
+
+    
+    return YES;
 }
 
 @end
