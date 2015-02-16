@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D40D1EA6176B086E00379DD5"
-               BuildableName = "Newproject.app"
-               BlueprintName = "Newproject"
-               ReferencedContainer = "container:Newproject.xcodeproj">
+               BuildableName = "Prodektive.app"
+               BlueprintName = "Prodektive"
+               ReferencedContainer = "container:Prodektive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D40D1EA6176B086E00379DD5"
-            BuildableName = "Newproject.app"
-            BlueprintName = "Newproject"
-            ReferencedContainer = "container:Newproject.xcodeproj">
+            BuildableName = "Prodektive.app"
+            BlueprintName = "Prodektive"
+            ReferencedContainer = "container:Prodektive.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D40D1EA6176B086E00379DD5"
-            BuildableName = "Newproject.app"
-            BlueprintName = "Newproject"
-            ReferencedContainer = "container:Newproject.xcodeproj">
+            BuildableName = "Prodektive.app"
+            BlueprintName = "Prodektive"
+            ReferencedContainer = "container:Prodektive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D40D1EA6176B086E00379DD5"
-            BuildableName = "Newproject.app"
-            BlueprintName = "Newproject"
-            ReferencedContainer = "container:Newproject.xcodeproj">
+            BuildableName = "Prodektive.app"
+            BlueprintName = "Prodektive"
+            ReferencedContainer = "container:Prodektive.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1018,14 +1018,14 @@
 		D40A99C918C5A9B5005384F9 /* EmplyhrmgntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmplyhrmgntViewController.h; sourceTree = "<group>"; };
 		D40A99CA18C5A9B5005384F9 /* EmplyhrmgntViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmplyhrmgntViewController.m; sourceTree = "<group>"; };
 		D40A99CB18C5A9B5005384F9 /* EmplyhrmgntViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmplyhrmgntViewController.xib; sourceTree = "<group>"; };
-		D40D1EA7176B086F00379DD5 /* Newproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D40D1EA7176B086F00379DD5 /* Prodektive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prodektive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40D1EAA176B086F00379DD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D40D1EAC176B086F00379DD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D40D1EAE176B086F00379DD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D40D1EB2176B086F00379DD5 /* Newproject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Newproject-Info.plist"; sourceTree = "<group>"; };
+		D40D1EB2176B086F00379DD5 /* Prodektive-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Prodektive-Info.plist"; sourceTree = "<group>"; };
 		D40D1EB4176B086F00379DD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D40D1EB6176B086F00379DD5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D40D1EB8176B086F00379DD5 /* Newproject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Newproject-Prefix.pch"; sourceTree = "<group>"; };
+		D40D1EB8176B086F00379DD5 /* Prodektive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prodektive-Prefix.pch"; sourceTree = "<group>"; };
 		D40D1EB9176B086F00379DD5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D40D1EBA176B086F00379DD5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D40D1EBC176B086F00379DD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -1853,7 +1853,7 @@
 		D40D1EA8176B086F00379DD5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D40D1EA7176B086F00379DD5 /* Newproject.app */,
+				D40D1EA7176B086F00379DD5 /* Prodektive.app */,
 			);
 			name = Products;
 			path = ..;
@@ -1899,10 +1899,10 @@
 		D40D1EB1176B086F00379DD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D40D1EB2176B086F00379DD5 /* Newproject-Info.plist */,
+				D40D1EB2176B086F00379DD5 /* Prodektive-Info.plist */,
 				D40D1EB3176B086F00379DD5 /* InfoPlist.strings */,
 				D40D1EB6176B086F00379DD5 /* main.m */,
-				D40D1EB8176B086F00379DD5 /* Newproject-Prefix.pch */,
+				D40D1EB8176B086F00379DD5 /* Prodektive-Prefix.pch */,
 				D40D1EBC176B086F00379DD5 /* Default.png */,
 				D40D1EBE176B086F00379DD5 /* Default@2x.png */,
 				D40D1EC0176B086F00379DD5 /* Default-568h@2x.png */,
@@ -2782,9 +2782,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D40D1EA6176B086E00379DD5 /* Newproject */ = {
+		D40D1EA6176B086E00379DD5 /* Prodektive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D40D1ECA176B086F00379DD5 /* Build configuration list for PBXNativeTarget "Newproject" */;
+			buildConfigurationList = D40D1ECA176B086F00379DD5 /* Build configuration list for PBXNativeTarget "Prodektive" */;
 			buildPhases = (
 				D40D1EA3176B086E00379DD5 /* Sources */,
 				D40D1EA4176B086E00379DD5 /* Frameworks */,
@@ -2794,9 +2794,9 @@
 			);
 			dependencies = (
 			);
-			name = Newproject;
+			name = Prodektive;
 			productName = Newproject;
-			productReference = D40D1EA7176B086F00379DD5 /* Newproject.app */;
+			productReference = D40D1EA7176B086F00379DD5 /* Prodektive.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2817,7 +2817,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D40D1EA2176B086E00379DD5 /* Build configuration list for PBXProject "Newproject" */;
+			buildConfigurationList = D40D1EA2176B086E00379DD5 /* Build configuration list for PBXProject "Prodektive" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2829,7 +2829,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D40D1EA6176B086E00379DD5 /* Newproject */,
+				D40D1EA6176B086E00379DD5 /* Prodektive */,
 			);
 		};
 /* End PBXProject section */
@@ -3573,7 +3573,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "940fc7b4-45b1-425b-b31c-d9b476f20491";
+				PROVISIONING_PROFILE = "b2ab553f-49b9-4e49-b67a-f9957d7b3ed1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -3600,7 +3600,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "940fc7b4-45b1-425b-b31c-d9b476f20491";
+				PROVISIONING_PROFILE = "b2ab553f-49b9-4e49-b67a-f9957d7b3ed1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -3613,11 +3613,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Distribution: Arvin Varghese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Newproject/Newproject-Prefix.pch";
-				INFOPLIST_FILE = "Newproject/Newproject-Info.plist";
+				GCC_PREFIX_HEADER = "Newproject/Prodektive-Prefix.pch";
+				INFOPLIST_FILE = "Newproject/Prodektive-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "940fc7b4-45b1-425b-b31c-d9b476f20491";
+				PRODUCT_NAME = Prodektive;
+				PROVISIONING_PROFILE = "b2ab553f-49b9-4e49-b67a-f9957d7b3ed1";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3629,11 +3629,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Distribution: Arvin Varghese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Newproject/Newproject-Prefix.pch";
-				INFOPLIST_FILE = "Newproject/Newproject-Info.plist";
+				GCC_PREFIX_HEADER = "Newproject/Prodektive-Prefix.pch";
+				INFOPLIST_FILE = "Newproject/Prodektive-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "940fc7b4-45b1-425b-b31c-d9b476f20491";
+				PRODUCT_NAME = Prodektive;
+				PROVISIONING_PROFILE = "b2ab553f-49b9-4e49-b67a-f9957d7b3ed1";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3642,7 +3642,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D40D1EA2176B086E00379DD5 /* Build configuration list for PBXProject "Newproject" */ = {
+		D40D1EA2176B086E00379DD5 /* Build configuration list for PBXProject "Prodektive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D40D1EC8176B086F00379DD5 /* Debug */,
@@ -3651,7 +3651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D40D1ECA176B086F00379DD5 /* Build configuration list for PBXNativeTarget "Newproject" */ = {
+		D40D1ECA176B086F00379DD5 /* Build configuration list for PBXNativeTarget "Prodektive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D40D1ECB176B086F00379DD5 /* Debug */,
