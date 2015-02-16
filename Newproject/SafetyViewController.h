@@ -21,6 +21,8 @@
     NSInteger subtypevalue,editpath,deletepath;
     NSString* safetycode,*msgstrg;
 }
+@property(readwrite)NSInteger frmplan;
+@property(strong,nonatomic)NSString *itemfromgp;
 @property (strong, nonatomic)NSString*searchstring;
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchbar;
