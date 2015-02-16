@@ -162,8 +162,6 @@
 		64C058D51A8F178C001331F2 /* Scaffcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058D41A8F178C001331F2 /* Scaffcell.xib */; };
 		64C058D91A8F18C4001331F2 /* PlngTileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C058D71A8F18C4001331F2 /* PlngTileViewController.m */; };
 		64C058DA1A8F18C4001331F2 /* PlngTileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058D81A8F18C4001331F2 /* PlngTileViewController.xib */; };
-		64C058E31A8F25FE001331F2 /* GPsafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C058E11A8F25FE001331F2 /* GPsafetyViewController.m */; };
-		64C058E41A8F25FE001331F2 /* GPsafetyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058E21A8F25FE001331F2 /* GPsafetyViewController.xib */; };
 		64C058E61A8F2668001331F2 /* FSafe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058E51A8F2668001331F2 /* FSafe.xib */; };
 		64C058E81A8F267E001331F2 /* Ssafe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058E71A8F267E001331F2 /* Ssafe.xib */; };
 		64C0ACEF1A5CF7D600B31F52 /* AbsentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C0ACEC1A5CF7D600B31F52 /* AbsentViewController.m */; };
@@ -289,6 +287,8 @@
 		D40DE15119E69DA4008FFD15 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DE14819E69DA3008FFD15 /* UIImageView+AFNetworking.m */; };
 		D4109A1519DC1B8B008E9949 /* ICON_Biz_P_info-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = D4109A1419DC1B8B008E9949 /* ICON_Biz_P_info-grey.png */; };
 		D4109A1719DC1EE2008E9949 /* 070537-glossy-black-3d-button-icon-alphanumeric-information2-ps.png in Resources */ = {isa = PBXBuildFile; fileRef = D4109A1619DC1EE2008E9949 /* 070537-glossy-black-3d-button-icon-alphanumeric-information2-ps.png */; };
+		D410BB331A91C20300922B3F /* SDPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D410BB321A91C20300922B3F /* SDPViewController.m */; };
+		D410BB351A91C20A00922B3F /* SDPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D410BB341A91C20A00922B3F /* SDPViewController.xib */; };
 		D410CC5119AB4AE50093DDE6 /* FtileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D410CC4F19AB4AE50093DDE6 /* FtileViewController.m */; };
 		D410CC5219AB4AE50093DDE6 /* FtileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D410CC5019AB4AE50093DDE6 /* FtileViewController.xib */; };
 		D410CC5419AB4C8F0093DDE6 /* userrights.png in Resources */ = {isa = PBXBuildFile; fileRef = D410CC5319AB4C8F0093DDE6 /* userrights.png */; };
@@ -898,9 +898,6 @@
 		64C058D61A8F18C4001331F2 /* PlngTileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlngTileViewController.h; sourceTree = "<group>"; };
 		64C058D71A8F18C4001331F2 /* PlngTileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlngTileViewController.m; sourceTree = "<group>"; };
 		64C058D81A8F18C4001331F2 /* PlngTileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlngTileViewController.xib; sourceTree = "<group>"; };
-		64C058E01A8F25FD001331F2 /* GPsafetyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPsafetyViewController.h; sourceTree = "<group>"; };
-		64C058E11A8F25FE001331F2 /* GPsafetyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPsafetyViewController.m; sourceTree = "<group>"; };
-		64C058E21A8F25FE001331F2 /* GPsafetyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPsafetyViewController.xib; sourceTree = "<group>"; };
 		64C058E51A8F2668001331F2 /* FSafe.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSafe.xib; sourceTree = "<group>"; };
 		64C058E71A8F267E001331F2 /* Ssafe.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Ssafe.xib; sourceTree = "<group>"; };
 		64C0ACEB1A5CF7D600B31F52 /* AbsentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsentViewController.h; sourceTree = "<group>"; };
@@ -1072,6 +1069,9 @@
 		D40DE14819E69DA3008FFD15 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		D4109A1419DC1B8B008E9949 /* ICON_Biz_P_info-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON_Biz_P_info-grey.png"; sourceTree = "<group>"; };
 		D4109A1619DC1EE2008E9949 /* 070537-glossy-black-3d-button-icon-alphanumeric-information2-ps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "070537-glossy-black-3d-button-icon-alphanumeric-information2-ps.png"; sourceTree = "<group>"; };
+		D410BB311A91C1F400922B3F /* SDPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPViewController.h; sourceTree = "<group>"; };
+		D410BB321A91C20300922B3F /* SDPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPViewController.m; sourceTree = "<group>"; };
+		D410BB341A91C20A00922B3F /* SDPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPViewController.xib; sourceTree = "<group>"; };
 		D410CC4E19AB4AE50093DDE6 /* FtileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FtileViewController.h; sourceTree = "<group>"; };
 		D410CC4F19AB4AE50093DDE6 /* FtileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FtileViewController.m; sourceTree = "<group>"; };
 		D410CC5019AB4AE50093DDE6 /* FtileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FtileViewController.xib; sourceTree = "<group>"; };
@@ -1830,11 +1830,11 @@
 				645875BF1A2867F700906869 /* AstGpViewController.xib */,
 				645875C21A28681A00906869 /* GPastFcell.xib */,
 				645875C41A28684600906869 /* GpASSecell.xib */,
-				64C058E01A8F25FD001331F2 /* GPsafetyViewController.h */,
-				64C058E11A8F25FE001331F2 /* GPsafetyViewController.m */,
-				64C058E21A8F25FE001331F2 /* GPsafetyViewController.xib */,
 				64C058E51A8F2668001331F2 /* FSafe.xib */,
 				64C058E71A8F267E001331F2 /* Ssafe.xib */,
+				D410BB311A91C1F400922B3F /* SDPViewController.h */,
+				D410BB321A91C20300922B3F /* SDPViewController.m */,
+				D410BB341A91C20A00922B3F /* SDPViewController.xib */,
 			);
 			name = "Group SetUp";
 			sourceTree = "<group>";
@@ -2927,6 +2927,7 @@
 				64A4124A194080F1003EE113 /* estimate.png in Resources */,
 				64A2F9BE19CBEC2E009B1018 /* Flpcell.xib in Resources */,
 				D47A9B0E19403CA5001CC416 /* Empjobcell.xib in Resources */,
+				D410BB351A91C20A00922B3F /* SDPViewController.xib in Resources */,
 				D49E056518C71B9300AF6330 /* Namecrewcell.xib in Resources */,
 				D4A338CC18F3C22C00E53FAC /* worktypecell.xib in Resources */,
 				6426F5F118C06157002471AC /* hr.png in Resources */,
@@ -2978,7 +2979,6 @@
 				D44DF4EE19A5D73B00F3E9AB /* Sign-RadioButton01.png in Resources */,
 				64A09DAF1860549E001F74E2 /* appbar.checkmark.thick.unchecked.png in Resources */,
 				D4A16B5D1974EEA8002CA2A2 /* Destequcell.xib in Resources */,
-				64C058E41A8F25FE001331F2 /* GPsafetyViewController.xib in Resources */,
 				64C0AD191A5D2ABF00B31F52 /* LbrSecdgcell.xib in Resources */,
 				D4A16B5C1974EEA8002CA2A2 /* Srcequcell.xib in Resources */,
 				D40367F118ED3A5200139E7D /* MangmntdetailsViewController.xib in Resources */,
@@ -3336,6 +3336,7 @@
 				D400406A185B180200C38E12 /* ResViewController.m in Sources */,
 				D42E73DE1907E26300F7C99A /* Metgenmdl.m in Sources */,
 				D49F875618EEA36B00413CAD /* phasesmodel.m in Sources */,
+				D410BB331A91C20300922B3F /* SDPViewController.m in Sources */,
 				D4EBA85D1978ED7B00B612E1 /* deliverymdl.m in Sources */,
 				D4A338C918F3BD1900E53FAC /* WorktypeViewController.m in Sources */,
 				D42D8C1518D2D8FF009D8085 /* BasicReqViewController.m in Sources */,
@@ -3511,7 +3512,6 @@
 				D4DEEDDA17F40BE70096A908 /* UploadDocViewController.m in Sources */,
 				D4A16B9A1974EEE0002CA2A2 /* CalEventDetailViewController.m in Sources */,
 				D49F875418EEA36B00413CAD /* Servicemdl.m in Sources */,
-				64C058E31A8F25FE001331F2 /* GPsafetyViewController.m in Sources */,
 				64A936B619E640A600C20D57 /* MasterHrViewController.m in Sources */,
 				D44ECC731A5D3EA300B3082A /* WorkorderViewController.m in Sources */,
 				D40367F018ED3A5200139E7D /* MangmntdetailsViewController.m in Sources */,

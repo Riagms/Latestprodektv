@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Manpwr.h"
 #import "Crewmodel.h"
+#import "SafetyViewController.h"
 
-@interface GPsafetyViewController : UIViewController<UIGestureRecognizerDelegate>
+@interface SDPViewController : UIViewController<UIGestureRecognizerDelegate>
 {
     UITableViewCell*    draggedCell;
     UIView*             dropArea;
@@ -25,10 +26,16 @@
     NSString *skill;
     NSInteger deletepath;
     NSInteger crewpath;
+    NSInteger setuptype;
+    NSString *crewid;
+      NSInteger clear;
 }
 @property (strong, nonatomic)NSString *existingstring;
+@property (strong, nonatomic)NSString *deletegpstring;
+@property (strong, nonatomic)NSString *deleteitemstring;
 @property (strong, nonatomic)Manpwr *manpwrmdl;
 @property (strong, nonatomic)Crewmodel *crewmdl1;
+@property (strong, nonatomic)SafetyViewController *safetyctrl;
 
 - (IBAction)safetygpselection:(id)sender;
 - (IBAction)deletesafetygpaction:(id)sender;
@@ -62,6 +69,8 @@
 @property(strong,nonatomic)NSMutableArray *secsafetyarray;
 @property(strong,nonatomic)NSMutableArray *Servicelistarray;
 @property(strong,nonatomic)NSMutableArray *gplistarray;
+@property (strong, nonatomic)NSMutableDictionary *crewdict;
+@property (strong, nonatomic)NSMutableDictionary *revcrewdict;
 @property(strong,nonatomic)NSMutableDictionary *servicedict;
 
 /*firstcell*/

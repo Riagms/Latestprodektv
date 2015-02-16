@@ -156,7 +156,7 @@
 {     _safetyactivity.hidden=NO;
     [_safetyactivity startAnimating];
     
-    _safeVCtrl=[[GPsafetyViewController alloc]initWithNibName:@"GPsafetyViewController" bundle:nil];
+    _safeVCtrl=[[SDPViewController alloc]initWithNibName:@"SDPViewController" bundle:nil];
     // }
     //_crewctrl.modalPresentationStyle = UIModalPresentationPageSheet;
     
