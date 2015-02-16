@@ -590,6 +590,7 @@
 		D4ACE56819C1B1020060A352 /* CraftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ACE56619C1B1010060A352 /* CraftViewController.xib */; };
 		D4ACE56A19C1B1120060A352 /* craftcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ACE56919C1B1120060A352 /* craftcell.xib */; };
 		D4ACE56D19C1B12D0060A352 /* Craftreqmtmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACE56C19C1B12D0060A352 /* Craftreqmtmdl.m */; };
+		D4B002A71A91EA4C00213D80 /* SafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B002A61A91EA4C00213D80 /* SafetyViewController.m */; };
 		D4B4CBA119738ED500696D37 /* Appreqmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4CBA019738ED500696D37 /* Appreqmdl.m */; };
 		D4CA2FD9176EC33E007EEF7D /* Customercell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CA2FD8176EC33E007EEF7D /* Customercell.xib */; };
 		D4CA2FDB176ED128007EEF7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CA2FDA176ED128007EEF7D /* QuartzCore.framework */; };
@@ -629,7 +630,6 @@
 		D4F053E11A0CA37A00672C88 /* planning2@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F053E01A0CA37A00672C88 /* planning2@2X.png */; };
 		D4F053E31A0CA54300672C88 /* planning2.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F053E21A0CA54300672C88 /* planning2.png */; };
 		D4F053E51A0CA5D900672C88 /* planning-s.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F053E41A0CA5D800672C88 /* planning-s.png */; };
-		D4F05AB61A8C61CC00D8C09C /* SafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F05AB41A8C61CC00D8C09C /* SafetyViewController.m */; };
 		D4F05AB71A8C61CC00D8C09C /* SafetyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F05AB51A8C61CC00D8C09C /* SafetyViewController.xib */; };
 		D4F05AB91A8C61F000D8C09C /* safetycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F05AB81A8C61F000D8C09C /* safetycell.xib */; };
 		D4F0940019F22C6100C3B527 /* BezierInterpView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F093FF19F22C6100C3B527 /* BezierInterpView.m */; };
@@ -1496,6 +1496,8 @@
 		D4ACE56919C1B1120060A352 /* craftcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = craftcell.xib; sourceTree = "<group>"; };
 		D4ACE56B19C1B12D0060A352 /* Craftreqmtmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Craftreqmtmdl.h; sourceTree = "<group>"; };
 		D4ACE56C19C1B12D0060A352 /* Craftreqmtmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Craftreqmtmdl.m; sourceTree = "<group>"; };
+		D4B002A51A91EA4C00213D80 /* SafetyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyViewController.h; sourceTree = "<group>"; };
+		D4B002A61A91EA4C00213D80 /* SafetyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyViewController.m; sourceTree = "<group>"; };
 		D4B4CB9F19738ED500696D37 /* Appreqmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appreqmdl.h; sourceTree = "<group>"; };
 		D4B4CBA019738ED500696D37 /* Appreqmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appreqmdl.m; sourceTree = "<group>"; };
 		D4CA2FD8176EC33E007EEF7D /* Customercell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Customercell.xib; sourceTree = "<group>"; };
@@ -1545,8 +1547,6 @@
 		D4F053E01A0CA37A00672C88 /* planning2@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planning2@2X.png"; sourceTree = "<group>"; };
 		D4F053E21A0CA54300672C88 /* planning2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planning2.png; sourceTree = "<group>"; };
 		D4F053E41A0CA5D800672C88 /* planning-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planning-s.png"; sourceTree = "<group>"; };
-		D4F05AB31A8C61CC00D8C09C /* SafetyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyViewController.h; sourceTree = "<group>"; };
-		D4F05AB41A8C61CC00D8C09C /* SafetyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyViewController.m; sourceTree = "<group>"; };
 		D4F05AB51A8C61CC00D8C09C /* SafetyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyViewController.xib; sourceTree = "<group>"; };
 		D4F05AB81A8C61F000D8C09C /* safetycell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = safetycell.xib; sourceTree = "<group>"; };
 		D4F093FE19F22C6100C3B527 /* BezierInterpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierInterpView.h; sourceTree = "<group>"; };
@@ -1775,8 +1775,8 @@
 				D404A2251A0389BD0086E40A /* SubCatViewController.m */,
 				D404A2261A0389BD0086E40A /* SubCatViewController.xib */,
 				D404A2291A03940F0086E40A /* SubcatCell.xib */,
-				D4F05AB31A8C61CC00D8C09C /* SafetyViewController.h */,
-				D4F05AB41A8C61CC00D8C09C /* SafetyViewController.m */,
+				D4B002A51A91EA4C00213D80 /* SafetyViewController.h */,
+				D4B002A61A91EA4C00213D80 /* SafetyViewController.m */,
 				D4F05AB51A8C61CC00D8C09C /* SafetyViewController.xib */,
 				D4F05AB81A8C61F000D8C09C /* safetycell.xib */,
 				D4049664192F17DD00685109 /* Group SetUp */,
@@ -3362,6 +3362,7 @@
 				D453DA211873F18C007EE3DC /* ThirdPartyViewController.m in Sources */,
 				D4F19DEB18D03AD1007617F0 /* FollowupViewController.m in Sources */,
 				D49F874518EEA36B00413CAD /* CKCalendarView.m in Sources */,
+				D4B002A71A91EA4C00213D80 /* SafetyViewController.m in Sources */,
 				D49F875118EEA36B00413CAD /* Infoleads.m in Sources */,
 				D4014FF318E3E05B00DB825A /* SerialViewController.m in Sources */,
 				64A1317D19485599009F5431 /* Countmdl.m in Sources */,
@@ -3494,7 +3495,6 @@
 				64C058D21A8F1740001331F2 /* AddplanViewController.m in Sources */,
 				D4A22007190A1DA90065840D /* Drageqmodel.m in Sources */,
 				D4A674B219345FAB00D5A77E /* DPCalendarMonthlySingleMonthViewLayout.m in Sources */,
-				D4F05AB61A8C61CC00D8C09C /* SafetyViewController.m in Sources */,
 				D49F874818EEA36B00413CAD /* Base64.m in Sources */,
 				D41499B4194575BB001E9146 /* MovementtileViewController.m in Sources */,
 				D42D8C0718D2D8AC009D8085 /* folderrightsViewController.m in Sources */,
