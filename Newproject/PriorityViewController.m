@@ -89,6 +89,7 @@
     _addview.hidden=NO;
 }
 - (IBAction)editbtn:(id)sender {
+    _addview.hidden=NO;
 }
 
 - (IBAction)Deletebtn:(id)sender {
