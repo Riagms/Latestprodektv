@@ -6,17 +6,18 @@
 //  Copyright (c) 2015 GMSIndia1. All rights reserved.
 //
 
-#import "ScaffoldingViewController.h"
+#import "ScafldingViewController.h"
 
-@interface ScaffoldingViewController ()
+@interface ScafldingViewController ()
 
 @end
 
-@implementation ScaffoldingViewController
+@implementation ScafldingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226.0/255.0f blue:226.0/255.0f alpha:1];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -24,6 +25,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+      //self.view.bounds = CGRectMake(0, 0, 768, 768);
+}
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    self.view.bounds = CGRectMake(0, 0, 540, 620);
+    
+    //[self.view addSubview:_scroll];
+    //self.scroll.bounds = CGRectMake(0, 0, 768, 768);
 }
 
 /*
@@ -47,7 +60,7 @@
                       duration:1
                        options:UIViewAnimationOptionTransitionFlipFromRight
                     completion:nil];
-    _allctrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    _allctrl.modalPresentationStyle=UIModalPresentationCustom;
     [self.navigationController pushViewController:_allctrl animated:NO];
 
 }

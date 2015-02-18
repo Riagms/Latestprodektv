@@ -45,8 +45,8 @@
 		646A28B61937350400902C4A /* Detaileventmanpwr.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B51937350400902C4A /* Detaileventmanpwr.m */; };
 		646A28B91937351D00902C4A /* Eqeventmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28B81937351D00902C4A /* Eqeventmdl.m */; };
 		646A28BC193743CF00902C4A /* OthereventMaodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 646A28BB193743CF00902C4A /* OthereventMaodel.m */; };
-		646B7F311A949BAE00E4DA6E /* ScaffoldingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646B7F2F1A949BAE00E4DA6E /* ScaffoldingViewController.m */; };
-		646B7F321A949BAE00E4DA6E /* ScaffoldingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646B7F301A949BAE00E4DA6E /* ScaffoldingViewController.xib */; };
+		646B7F311A949BAE00E4DA6E /* ScafldingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646B7F2F1A949BAE00E4DA6E /* ScafldingViewController.m */; };
+		646B7F321A949BAE00E4DA6E /* ScafldingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646B7F301A949BAE00E4DA6E /* ScafldingViewController.xib */; };
 		647871B01A88C08C008A9453 /* bglogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871AE1A88C08C008A9453 /* bglogo.png */; };
 		647871B11A88C08C008A9453 /* bground.png in Resources */ = {isa = PBXBuildFile; fileRef = 647871AF1A88C08C008A9453 /* bground.png */; };
 		6481615C176EF0C50017F4CC /* rightarowblack.png in Resources */ = {isa = PBXBuildFile; fileRef = 6481615B176EF0C50017F4CC /* rightarowblack.png */; };
@@ -743,9 +743,9 @@
 		646A28B81937351D00902C4A /* Eqeventmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Eqeventmdl.m; sourceTree = "<group>"; };
 		646A28BA193743CF00902C4A /* OthereventMaodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthereventMaodel.h; sourceTree = "<group>"; };
 		646A28BB193743CF00902C4A /* OthereventMaodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthereventMaodel.m; sourceTree = "<group>"; };
-		646B7F2E1A949BAE00E4DA6E /* ScaffoldingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaffoldingViewController.h; sourceTree = "<group>"; };
-		646B7F2F1A949BAE00E4DA6E /* ScaffoldingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaffoldingViewController.m; sourceTree = "<group>"; };
-		646B7F301A949BAE00E4DA6E /* ScaffoldingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScaffoldingViewController.xib; sourceTree = "<group>"; };
+		646B7F2E1A949BAE00E4DA6E /* ScafldingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScafldingViewController.h; sourceTree = "<group>"; };
+		646B7F2F1A949BAE00E4DA6E /* ScafldingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScafldingViewController.m; sourceTree = "<group>"; };
+		646B7F301A949BAE00E4DA6E /* ScafldingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScafldingViewController.xib; sourceTree = "<group>"; };
 		647871AE1A88C08C008A9453 /* bglogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bglogo.png; sourceTree = "<group>"; };
 		647871AF1A88C08C008A9453 /* bground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bground.png; sourceTree = "<group>"; };
 		6481615B176EF0C50017F4CC /* rightarowblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarowblack.png; sourceTree = "<group>"; };
@@ -2309,13 +2309,13 @@
 				D4A16B0C1974EEA8002CA2A2 /* SaftyCell.xib */,
 				D4A16B0D1974EEA8002CA2A2 /* siteEqupmtntcell.xib */,
 				D4A16B0E1974EEA8002CA2A2 /* Meetingnotesview.xib */,
-				D40227E51A948DAF009B8B36 /* PriorityViewController.h */,
-				D40227E61A948DAF009B8B36 /* PriorityViewController.m */,
-				D40227E71A948DAF009B8B36 /* PriorityViewController.xib */,
-				D40227EA1A94970F009B8B36 /* PriorityCell.xib */,
-				646B7F2E1A949BAE00E4DA6E /* ScaffoldingViewController.h */,
-				646B7F2F1A949BAE00E4DA6E /* ScaffoldingViewController.m */,
-				646B7F301A949BAE00E4DA6E /* ScaffoldingViewController.xib */,
+				D40227E51A948DAF009B8B36 /* PrirityViewController.h */,
+				D40227E61A948DAF009B8B36 /* PrirityViewController.m */,
+				D40227E71A948DAF009B8B36 /* PrirityViewController.xib */,
+				D40227EA1A94970F009B8B36 /* PrirityCell.xib */,
+				646B7F2E1A949BAE00E4DA6E /* ScafldingViewController.h */,
+				646B7F2F1A949BAE00E4DA6E /* ScafldingViewController.m */,
+				646B7F301A949BAE00E4DA6E /* ScafldingViewController.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -3119,7 +3119,7 @@
 				D4FED41217F18CB9004BE242 /* btn.png in Resources */,
 				64A3B81418DFEE980015887F /* LeadsViewController.xib in Resources */,
 				D4FED41417F18E28004BE242 /* tabbtn.png in Resources */,
-				646B7F321A949BAE00E4DA6E /* ScaffoldingViewController.xib in Resources */,
+				646B7F321A949BAE00E4DA6E /* ScafldingViewController.xib in Resources */,
 				D4ACE56A19C1B1120060A352 /* craftcell.xib in Resources */,
 				D4F05AB71A8C61CC00D8C09C /* SafetyViewController.xib in Resources */,
 				D4A16B961974EEE0002CA2A2 /* PhasecomponentsViewController.xib in Resources */,
@@ -3365,7 +3365,7 @@
 				D40D1ED0176B0A0800379DD5 /* HomeViewController.m in Sources */,
 				D40227E81A948DAF009B8B36 /* PrirityViewController.m in Sources */,
 				D400406A185B180200C38E12 /* ResViewController.m in Sources */,
-				646B7F311A949BAE00E4DA6E /* ScaffoldingViewController.m in Sources */,
+				646B7F311A949BAE00E4DA6E /* ScafldingViewController.m in Sources */,
 				D42E73DE1907E26300F7C99A /* Metgenmdl.m in Sources */,
 				D49F875618EEA36B00413CAD /* phasesmodel.m in Sources */,
 				D410BB331A91C20300922B3F /* SDPViewController.m in Sources */,

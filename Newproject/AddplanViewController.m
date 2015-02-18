@@ -110,8 +110,11 @@
 }
 
 - (IBAction)addscaffoldaction:(id)sender {
-    _scaffoldctrl=[[ScaffoldingViewController alloc]initWithNibName:@"ScaffoldingViewController" bundle:nil];
-    _scaffoldctrl.modalPresentationStyle=UIModalPresentationFormSheet;
-    [self presentViewController:_scaffoldctrl animated:YES completion:NULL];
+    _scaffoldctrl=[[ScafldingViewController alloc]initWithNibName:@"ScafldingViewController" bundle:nil];
+    modalViewNavController = [[UINavigationController alloc] initWithRootViewController:_scaffoldctrl];
+  //  modalViewNavController.modalPresentationStyle=UIModalPresentationFormSheet;
+     modalViewNavController.modalPresentationStyle=UIModalPresentationCustom;
+    [modalViewNavController setNavigationBarHidden:YES animated:YES];
+    [self presentViewController:modalViewNavController animated:YES completion:NULL];
 }
 @end

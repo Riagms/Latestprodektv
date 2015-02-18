@@ -108,7 +108,7 @@ srcData = [NSMutableArray arrayWithObjects:@"item0", @"item1", @"item2", @"item3
 {
     [super viewWillAppear:animated];
     [self Checknetavailabilty];
-  
+ // self.view.bounds = CGRectMake(0, 0, 1024, 768);
     
 }
 -(void)Checknetavailabilty{

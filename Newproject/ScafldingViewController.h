@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AllDetailsplandisplayViewController.h"
 
-@interface ScaffoldingViewController : UIViewController<animatndelegate>
+@interface ScafldingViewController : UIViewController<animatndelegate>
 
 
 @property(strong,nonatomic)AllDetailsplandisplayViewController *allctrl;

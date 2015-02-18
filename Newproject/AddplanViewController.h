@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ScaffoldingViewController.h"
+#import "ScafldingViewController.h"
 
 @interface AddplanViewController : UIViewController
 {
-    
+    UINavigationController *modalViewNavController;
 }
-@property(strong,nonatomic)ScaffoldingViewController *scaffoldctrl;
+@property(strong,nonatomic)ScafldingViewController *scaffoldctrl;
 - (IBAction)clsebtn:(id)sender;
 - (IBAction)serviceselection:(id)sender;
 @property(strong,nonatomic)IBOutlet UIPopoverController *popoverctrlr;
