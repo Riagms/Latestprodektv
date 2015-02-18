@@ -21,6 +21,7 @@
     _titleview.backgroundColor = [UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
     _worktable.layer.borderWidth=2.0f;
     _worktable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor;
+    _menuitemarray=[[NSMutableArray alloc]initWithObjects:@"Site visit",@"Plan",@"Resources",@"Feed Back", nil];
 
 }
 
@@ -38,7 +39,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-       return 6;
+    if(tableView==_popovertableview){
+        return [_menuitemarray count];
+    }
+    else{
+        
+        return 6;
+    }
+       return YES;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -50,13 +58,22 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+       
+        if(tableView==_worktable){
+        
         [[NSBundle mainBundle]loadNibNamed:@"WorkCell" owner:self options:nil];
         cell=_workcell;
     }
-    
+    }
+    cell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
+     if(tableView==_popovertableview){
+         cell.textLabel.text=[_menuitemarray objectAtIndex:indexPath.row];
+     }
+     else{
         cell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
    // cell.textLabel.text=@"WO0001";
-           
+     }
+    
     return cell;
 }
 
@@ -77,7 +94,30 @@
         }
     }
 }
+#pragma mark-Tableview delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView==_popovertableview) {
+        switch (indexPath.row) {
+            case 0:
+                
+                break;
+            case 1:
+                self.PlanVCtrl=[[AddplanViewController alloc]initWithNibName:@"AddplanViewController" bundle:nil];
+                
+              
+                [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_PlanVCtrl
+                                                                                            animated:YES completion:NULL];
+                }];
 
+                break;
+                
+            
+        }
+        
+    }
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -100,5 +140,33 @@
        [self presentViewController:_AddWCtrl
                            animated:YES completion:NULL];
  
+}
+- (IBAction)disclrebutn:(id)sender {
+    UIViewController* popoverContent = [[UIViewController alloc]init];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 130)];
+    // popoverView.backgroundColor = [UIColor whiteColor];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 130)];
+    _popovertableview.delegate=(id)self;
+    _popovertableview.dataSource=(id)self;
+    _popovertableview.rowHeight= 30;
+   // _popovertableview.separatorStyle=UITableViewCellSeparatorStyleNone;
+    _popovertableview.separatorColor=[UIColor lightGrayColor];
+    [popoverView addSubview:_popovertableview];
+    popoverContent.view = popoverView;
+    popoverContent.preferredContentSize = CGSizeMake(132, 130);
+    
+    button = (UIButton *)sender;
+    UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
+    CGPoint center= button.center;
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.worktable];
+    NSIndexPath *textFieldIndexPath = [self.worktable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    //btnindex=textFieldIndexPath.row;
+    
+    //UITableView *table = (UITableView *)[cell superview];
+    self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
+    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 130.0f);
+    self.popovercontroller=_popovercontroller;
+    [self.popovercontroller presentPopoverFromRect:_disclurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }
 @end
