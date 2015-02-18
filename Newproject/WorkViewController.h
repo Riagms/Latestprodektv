@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AddworkViewController.h"
 #import "AddplanViewController.h"
+#import "SitevisitViewController.h"
 
 @interface WorkViewController : UIViewController{
     UIButton *button;
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIView *titleview;
 @property (strong, nonatomic)AddworkViewController*AddWCtrl;
 @property (strong, nonatomic)AddplanViewController*PlanVCtrl;
+@property (strong, nonatomic)SitevisitViewController*SitevisitVCtrl;
 @property (strong, nonatomic)NSMutableArray*menuitemarray;
 
 - (IBAction)clsebtn:(id)sender;

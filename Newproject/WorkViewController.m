@@ -98,11 +98,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView==_popovertableview) {
-        switch (indexPath.row) {
-            case 0:
+        if (indexPath.row==0) {
+
+        
+                self.SitevisitVCtrl=[[SitevisitViewController alloc]initWithNibName:@"SitevisitViewController" bundle:nil];
                 
-                break;
-            case 1:
+                
+                [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_SitevisitVCtrl
+                                                                                            animated:YES completion:NULL];
+                }];
+        }
+        if (indexPath.row==1) {
+            
                 self.PlanVCtrl=[[AddplanViewController alloc]initWithNibName:@"AddplanViewController" bundle:nil];
                 
               
@@ -110,7 +117,7 @@
                                                                                             animated:YES completion:NULL];
                 }];
 
-                break;
+            
                 
             
         }
