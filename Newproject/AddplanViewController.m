@@ -109,4 +109,9 @@
     return cell;
 }
 
+- (IBAction)addscaffoldaction:(id)sender {
+    _scaffoldctrl=[[ScaffoldingViewController alloc]initWithNibName:@"ScaffoldingViewController" bundle:nil];
+    _scaffoldctrl.modalPresentationStyle=UIModalPresentationFormSheet;
+    [self presentViewController:_scaffoldctrl animated:YES completion:NULL];
+}
 @end

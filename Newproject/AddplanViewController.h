@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScaffoldingViewController.h"
 
 @interface AddplanViewController : UIViewController
 {
     
 }
-
+@property(strong,nonatomic)ScaffoldingViewController *scaffoldctrl;
 - (IBAction)clsebtn:(id)sender;
 - (IBAction)serviceselection:(id)sender;
 @property(strong,nonatomic)IBOutlet UIPopoverController *popoverctrlr;
@@ -24,5 +25,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *Workperformtextview;
 @property (strong, nonatomic) IBOutlet UIButton *servicebtn;
 @property (strong, nonatomic) IBOutlet UIScrollView *scroll;
+- (IBAction)addscaffoldaction:(id)sender;
 
 @end

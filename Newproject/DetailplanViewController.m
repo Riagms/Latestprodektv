@@ -2538,7 +2538,6 @@
 //        _allctrlr.modalPresentationStyle=UIModalPresentationFullScreen;
 //        _allctrlr.modalTransitionStyle=UIModalTransitionStylePartialCurl;
             _allctrlr.delegate=self;
-
             [UIView transitionFromView:self.addscaffoldrecordview
                                 toView:self.allctrlr.view
                               duration:1

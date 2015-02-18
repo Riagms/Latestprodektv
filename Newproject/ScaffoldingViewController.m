@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226.0/255.0f blue:226.0/255.0f alpha:1];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,4 +36,19 @@
 }
 */
 
+- (IBAction)closescaffoldpage:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)next:(id)sender {
+    _allctrl.delegate=self;
+    self.allctrl=[[AllDetailsplandisplayViewController alloc]initWithNibName:@"AllDetailsplandisplayViewController" bundle:nil];
+    [UIView transitionFromView:self.view
+                        toView:self.allctrl.view
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:nil];
+    _allctrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    [self.navigationController pushViewController:_allctrl animated:NO];
+
+}
 @end

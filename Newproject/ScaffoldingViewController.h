@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AllDetailsplandisplayViewController.h"
 
-@interface ScaffoldingViewController : UIViewController
+@interface ScaffoldingViewController : UIViewController<animatndelegate>
+
+
+@property(strong,nonatomic)AllDetailsplandisplayViewController *allctrl;
+- (IBAction)closescaffoldpage:(id)sender;
+- (IBAction)next:(id)sender;
 
 @end
