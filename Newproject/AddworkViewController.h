@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "PriorityViewController.h"
 
 @interface AddworkViewController : UIViewController
 - (IBAction)clsebtn:(id)sender;
+@property (strong, nonatomic)PriorityViewController *priorityVCtrl;
 @property (strong, nonatomic) IBOutlet UITextView *destxtview;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollview;
 
@@ -26,6 +28,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *approvetxtfld;
 
 @property (strong, nonatomic) IBOutlet UITextField *date2;
+
+- (IBAction)Prioritymaster:(id)sender;
+
 - (IBAction)updatebtn:(id)sender;
 - (IBAction)cancelbtn:(id)sender;
 
