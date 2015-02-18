@@ -220,9 +220,9 @@
 		D4014FF418E3E05B00DB825A /* SerialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4014FF218E3E05B00DB825A /* SerialViewController.xib */; };
 		D4014FF618E3E34000DB825A /* Snumcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4014FF518E3E34000DB825A /* Snumcell.xib */; };
 		D40209761A0B756D00E1428D /* iconclose.png in Resources */ = {isa = PBXBuildFile; fileRef = D40209751A0B756D00E1428D /* iconclose.png */; };
-		D40227E81A948DAF009B8B36 /* PriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40227E61A948DAF009B8B36 /* PriorityViewController.m */; };
-		D40227E91A948DAF009B8B36 /* PriorityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40227E71A948DAF009B8B36 /* PriorityViewController.xib */; };
-		D40227EB1A94970F009B8B36 /* PriorityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40227EA1A94970F009B8B36 /* PriorityCell.xib */; };
+		D40227E81A948DAF009B8B36 /* PrirityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40227E61A948DAF009B8B36 /* PrirityViewController.m */; };
+		D40227E91A948DAF009B8B36 /* PrirityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40227E71A948DAF009B8B36 /* PrirityViewController.xib */; };
+		D40227EB1A94970F009B8B36 /* PrirityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40227EA1A94970F009B8B36 /* PrirityCell.xib */; };
 		D40367F018ED3A5200139E7D /* MangmntdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40367EE18ED3A5100139E7D /* MangmntdetailsViewController.m */; };
 		D40367F118ED3A5200139E7D /* MangmntdetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40367EF18ED3A5200139E7D /* MangmntdetailsViewController.xib */; };
 		D4036FF319FE0FAF0031C4F1 /* workentrycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4036FF219FE0FAF0031C4F1 /* workentrycell.xib */; };
@@ -979,10 +979,10 @@
 		D4014FF218E3E05B00DB825A /* SerialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerialViewController.xib; sourceTree = "<group>"; };
 		D4014FF518E3E34000DB825A /* Snumcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Snumcell.xib; sourceTree = "<group>"; };
 		D40209751A0B756D00E1428D /* iconclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconclose.png; sourceTree = "<group>"; };
-		D40227E51A948DAF009B8B36 /* PriorityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityViewController.h; sourceTree = "<group>"; };
-		D40227E61A948DAF009B8B36 /* PriorityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriorityViewController.m; sourceTree = "<group>"; };
-		D40227E71A948DAF009B8B36 /* PriorityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriorityViewController.xib; sourceTree = "<group>"; };
-		D40227EA1A94970F009B8B36 /* PriorityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriorityCell.xib; sourceTree = "<group>"; };
+		D40227E51A948DAF009B8B36 /* PrirityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrirityViewController.h; sourceTree = "<group>"; };
+		D40227E61A948DAF009B8B36 /* PrirityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrirityViewController.m; sourceTree = "<group>"; };
+		D40227E71A948DAF009B8B36 /* PrirityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrirityViewController.xib; sourceTree = "<group>"; };
+		D40227EA1A94970F009B8B36 /* PrirityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrirityCell.xib; sourceTree = "<group>"; };
 		D40367ED18ED3A5100139E7D /* MangmntdetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangmntdetailsViewController.h; sourceTree = "<group>"; };
 		D40367EE18ED3A5100139E7D /* MangmntdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangmntdetailsViewController.m; sourceTree = "<group>"; };
 		D40367EF18ED3A5200139E7D /* MangmntdetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MangmntdetailsViewController.xib; sourceTree = "<group>"; };
@@ -3155,7 +3155,7 @@
 				645875CE1A28899800906869 /* congroupcell.xib in Resources */,
 				D4A6748E19345E6C00D5A77E /* IconCamera.png in Resources */,
 				D4A16B3E1974EEA8002CA2A2 /* Jobsitecellview.xib in Resources */,
-				D40227EB1A94970F009B8B36 /* PriorityCell.xib in Resources */,
+				D40227EB1A94970F009B8B36 /* PrirityCell.xib in Resources */,
 				647871B01A88C08C008A9453 /* bglogo.png in Resources */,
 				D4E658CC17F2DED100202B14 /* detailDisclosureButton.png in Resources */,
 				D41BAF3F1A2D9B6F00674DDB /* work-entry.png in Resources */,
@@ -3238,7 +3238,7 @@
 				D423E2551A63C45000DAB75E /* Jobimage.png in Resources */,
 				D40A99CD18C5A9B5005384F9 /* EmplyhrmgntViewController.xib in Resources */,
 				D4109A1519DC1B8B008E9949 /* ICON_Biz_P_info-grey.png in Resources */,
-				D40227E91A948DAF009B8B36 /* PriorityViewController.xib in Resources */,
+				D40227E91A948DAF009B8B36 /* PrirityViewController.xib in Resources */,
 				D400405C185B178F00C38E12 /* DocmntViewController.xib in Resources */,
 				64C27A5F1A35A3B300B66C77 /* company-documents.png in Resources */,
 				6426F5F518C062F6002471AC /* payroll.png in Resources */,
@@ -3363,7 +3363,7 @@
 				D4A16B3A1974EEA8002CA2A2 /* SitevisitViewController.m in Sources */,
 				D413816A1946BD4A0056574C /* EqOthersMdl.m in Sources */,
 				D40D1ED0176B0A0800379DD5 /* HomeViewController.m in Sources */,
-				D40227E81A948DAF009B8B36 /* PriorityViewController.m in Sources */,
+				D40227E81A948DAF009B8B36 /* PrirityViewController.m in Sources */,
 				D400406A185B180200C38E12 /* ResViewController.m in Sources */,
 				646B7F311A949BAE00E4DA6E /* ScaffoldingViewController.m in Sources */,
 				D42E73DE1907E26300F7C99A /* Metgenmdl.m in Sources */,

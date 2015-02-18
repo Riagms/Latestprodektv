@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 GMSIndia1. All rights reserved.
 //
 
-#import "PriorityViewController.h"
+#import "PrirityViewController.h"
 
-@interface PriorityViewController ()
+@interface PrirityViewController ()
 
 @end
 
-@implementation PriorityViewController
+@implementation PrirityViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,7 +63,7 @@
         
         if(tableView==_prioritytable){
             
-            [[NSBundle mainBundle]loadNibNamed:@"PriorityCell" owner:self options:nil];
+            [[NSBundle mainBundle]loadNibNamed:@"PrirityCell" owner:self options:nil];
             cell=_prioritycell;
         }
     }
@@ -89,6 +89,7 @@
     _addview.hidden=NO;
 }
 - (IBAction)editbtn:(id)sender {
+    _addview.hidden=NO;
 }
 
 - (IBAction)Deletebtn:(id)sender {

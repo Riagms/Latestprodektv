@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "PriorityViewController.h"
+#import "PrirityViewController.h"
 
 @interface AddworkViewController : UIViewController
 - (IBAction)clsebtn:(id)sender;
-@property (strong, nonatomic)PriorityViewController *priorityVCtrl;
+@property (strong, nonatomic)PrirityViewController *priorityVCtrl;
 @property (strong, nonatomic) IBOutlet UITextView *destxtview;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollview;
 

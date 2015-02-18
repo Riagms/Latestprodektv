@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PriorityViewController : UIViewController
+@interface PrirityViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITableView *prioritytable;
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navtitle;
