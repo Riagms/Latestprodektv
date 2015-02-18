@@ -271,10 +271,10 @@
                     
             if (indexPath.row==0) {
                  
-                        self.tilctrl=[[PlngTileViewController alloc]initWithNibName:@"PlngTileViewController" bundle:nil];
+                        self.WorkVctrl=[[WorkViewController alloc]initWithNibName:@"WorkViewController" bundle:nil];
                 
-                _tilctrl.modalPresentationStyle=UIModalPresentationFormSheet;
-                    [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_tilctrl
+                //_WorkVctrl.modalPresentationStyle=UIModalPresentationFormSheet;
+                    [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_WorkVctrl
                                                                                                 animated:YES completion:NULL];
                     }];
                     _searchbar.text=@"";

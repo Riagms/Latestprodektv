@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "PlngTileViewController.h"
+#import "WorkViewController.h"
 #import "planmodel.h"
 #import "Validation.h"
 #import "Rightscheck.h"
@@ -38,7 +38,7 @@
     
 }
 
-@property(strong,nonatomic)PlngTileViewController *tilctrl;
+@property(strong,nonatomic)WorkViewController *WorkVctrl;
 /* newcomment*/
 
 @property(strong,nonatomic)NSString *username;
