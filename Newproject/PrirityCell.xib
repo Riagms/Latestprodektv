@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PriorityViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrirityViewController">
             <connections>
                 <outlet property="prioritycell" destination="yvI-15-tDN" id="dLT-x8-O1R"/>
                 <outlet property="prioritylbl" destination="dfR-cl-6hA" id="aC0-pd-XNx"/>
