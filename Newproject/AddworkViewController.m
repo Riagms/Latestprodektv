@@ -53,6 +53,13 @@
 - (IBAction)clsebtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)Prioritymaster:(id)sender {
+    self.priorityVCtrl=[[PriorityViewController alloc]initWithNibName:@"PriorityViewController" bundle:nil];
+    self.priorityVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
+    [self presentViewController:_priorityVCtrl animated:YES completion:nil];
+    
+}
+
 - (IBAction)updatebtn:(id)sender {
 }
 

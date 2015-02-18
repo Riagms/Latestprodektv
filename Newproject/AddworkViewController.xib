@@ -241,6 +241,16 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="PLc-3V-U1H">
+                            <rect key="frame" x="675" y="26" width="22" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="Prioritymaster:" destination="-1" eventType="touchUpInside" id="lFE-Ed-Q3w"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </scrollView>
                 <navigationBar contentMode="scaleToFill" id="hSC-HF-8Gd">
