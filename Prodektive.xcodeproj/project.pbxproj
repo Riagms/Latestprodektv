@@ -1794,11 +1794,6 @@
 				64C058C41A8F130F001331F2 /* ChartViewController.m */,
 				64C058C51A8F130F001331F2 /* ChartViewController.xib */,
 				64C058C61A8F130F001331F2 /* ChartcellView.xib */,
-				D4A16B011974EEA8002CA2A2 /* customplancell.xib */,
-				64C058CF1A8F1740001331F2 /* AddplanViewController.h */,
-				64C058D01A8F1740001331F2 /* AddplanViewController.m */,
-				64C058D11A8F1740001331F2 /* AddplanViewController.xib */,
-				64C058D41A8F178C001331F2 /* Scaffcell.xib */,
 				D4036FF219FE0FAF0031C4F1 /* workentrycell.xib */,
 				D4A16B021974EEA8002CA2A2 /* AddserviceViewController.h */,
 				D4A16B031974EEA8002CA2A2 /* AddserviceViewController.m */,
@@ -2290,6 +2285,7 @@
 				64C058B71A8F10CB001331F2 /* PlanningViewController.h */,
 				64C058B81A8F10CB001331F2 /* PlanningViewController.m */,
 				64C058B91A8F10CB001331F2 /* PlanningViewController.xib */,
+				D4A16B011974EEA8002CA2A2 /* customplancell.xib */,
 				64C058BC1A8F1185001331F2 /* WorkViewController.h */,
 				64C058BD1A8F1185001331F2 /* WorkViewController.m */,
 				64C058BE1A8F1185001331F2 /* WorkViewController.xib */,
@@ -2297,6 +2293,10 @@
 				64C058CA1A8F13C5001331F2 /* AddworkViewController.h */,
 				64C058CB1A8F13C5001331F2 /* AddworkViewController.m */,
 				64C058CC1A8F13C5001331F2 /* AddworkViewController.xib */,
+				64C058CF1A8F1740001331F2 /* AddplanViewController.h */,
+				64C058D01A8F1740001331F2 /* AddplanViewController.m */,
+				64C058D11A8F1740001331F2 /* AddplanViewController.xib */,
+				64C058D41A8F178C001331F2 /* Scaffcell.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -3625,7 +3625,7 @@
 				INFOPLIST_FILE = "Newproject/Prodektive-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Prodektive;
-				PROVISIONING_PROFILE = "b2ab553f-49b9-4e49-b67a-f9957d7b3ed1";
+				PROVISIONING_PROFILE = "940fc7b4-45b1-425b-b31c-d9b476f20491";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3641,7 +3641,7 @@
 				INFOPLIST_FILE = "Newproject/Prodektive-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Prodektive;
-				PROVISIONING_PROFILE = "b2ab553f-49b9-4e49-b67a-f9957d7b3ed1";
+				PROVISIONING_PROFILE = "940fc7b4-45b1-425b-b31c-d9b476f20491";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
