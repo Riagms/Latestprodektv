@@ -15,6 +15,10 @@
 		6424B9CB1A27190B00BC4648 /* TPGPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6424B9C91A27190B00BC4648 /* TPGPViewController.xib */; };
 		6424B9CD1A27194300BC4648 /* Tpgpfirstcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6424B9CC1A27194300BC4648 /* Tpgpfirstcell.xib */; };
 		6424B9CF1A27195F00BC4648 /* Tpgpsecondcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6424B9CE1A27195F00BC4648 /* Tpgpsecondcell.xib */; };
+		64250B161A959629004458B9 /* WorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64250B141A959629004458B9 /* WorkViewController.m */; };
+		64250B171A959629004458B9 /* WorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64250B151A959629004458B9 /* WorkViewController.xib */; };
+		64250B1B1A959637004458B9 /* PResViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64250B191A959637004458B9 /* PResViewController.m */; };
+		64250B1C1A959637004458B9 /* PResViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64250B1A1A959637004458B9 /* PResViewController.xib */; };
 		6426F5E318C05C12002471AC /* bgmetro1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6426F5E218C05C12002471AC /* bgmetro1.png */; };
 		6426F5E918C05E88002471AC /* cos.png in Resources */ = {isa = PBXBuildFile; fileRef = 6426F5E818C05E88002471AC /* cos.png */; };
 		6426F5EB18C06062002471AC /* leads.png in Resources */ = {isa = PBXBuildFile; fileRef = 6426F5EA18C06062002471AC /* leads.png */; };
@@ -151,8 +155,6 @@
 		64BF722F1A2F079F00946718 /* Evempwrcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64BF722E1A2F079F00946718 /* Evempwrcell.xib */; };
 		64C058BA1A8F10CB001331F2 /* PlanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C058B81A8F10CB001331F2 /* PlanningViewController.m */; };
 		64C058BB1A8F10CB001331F2 /* PlanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058B91A8F10CB001331F2 /* PlanningViewController.xib */; };
-		64C058C01A8F1185001331F2 /* WorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C058BD1A8F1185001331F2 /* WorkViewController.m */; };
-		64C058C11A8F1185001331F2 /* WorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058BE1A8F1185001331F2 /* WorkViewController.xib */; };
 		64C058C21A8F1185001331F2 /* WorkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058BF1A8F1185001331F2 /* WorkCell.xib */; };
 		64C058C71A8F130F001331F2 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C058C41A8F130F001331F2 /* ChartViewController.m */; };
 		64C058C81A8F130F001331F2 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C058C51A8F130F001331F2 /* ChartViewController.xib */; };
@@ -705,6 +707,12 @@
 		6424B9C91A27190B00BC4648 /* TPGPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TPGPViewController.xib; sourceTree = "<group>"; };
 		6424B9CC1A27194300BC4648 /* Tpgpfirstcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tpgpfirstcell.xib; sourceTree = "<group>"; };
 		6424B9CE1A27195F00BC4648 /* Tpgpsecondcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tpgpsecondcell.xib; sourceTree = "<group>"; };
+		64250B131A959629004458B9 /* WorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkViewController.h; sourceTree = "<group>"; };
+		64250B141A959629004458B9 /* WorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkViewController.m; sourceTree = "<group>"; };
+		64250B151A959629004458B9 /* WorkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkViewController.xib; sourceTree = "<group>"; };
+		64250B181A959637004458B9 /* PResViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PResViewController.h; sourceTree = "<group>"; };
+		64250B191A959637004458B9 /* PResViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PResViewController.m; sourceTree = "<group>"; };
+		64250B1A1A959637004458B9 /* PResViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PResViewController.xib; sourceTree = "<group>"; };
 		6426F5E218C05C12002471AC /* bgmetro1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgmetro1.png; sourceTree = "<group>"; };
 		6426F5E818C05E88002471AC /* cos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cos.png; sourceTree = "<group>"; };
 		6426F5EA18C06062002471AC /* leads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leads.png; sourceTree = "<group>"; };
@@ -888,9 +896,6 @@
 		64C058B71A8F10CB001331F2 /* PlanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanningViewController.h; sourceTree = "<group>"; };
 		64C058B81A8F10CB001331F2 /* PlanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanningViewController.m; sourceTree = "<group>"; };
 		64C058B91A8F10CB001331F2 /* PlanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanningViewController.xib; sourceTree = "<group>"; };
-		64C058BC1A8F1185001331F2 /* WorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkViewController.h; sourceTree = "<group>"; };
-		64C058BD1A8F1185001331F2 /* WorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkViewController.m; sourceTree = "<group>"; };
-		64C058BE1A8F1185001331F2 /* WorkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkViewController.xib; sourceTree = "<group>"; };
 		64C058BF1A8F1185001331F2 /* WorkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkCell.xib; sourceTree = "<group>"; };
 		64C058C31A8F130F001331F2 /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
 		64C058C41A8F130F001331F2 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
@@ -1842,11 +1847,6 @@
 				D4A16B2C1974EEA8002CA2A2 /* scaffoldcell.xib */,
 				D4A16B2D1974EEA8002CA2A2 /* Srcequcell.xib */,
 				D4A16B2E1974EEA8002CA2A2 /* Destequcell.xib */,
-				D4A16B2F1974EEA8002CA2A2 /* AllDetailsplandisplayViewController.h */,
-				D4A16B301974EEA8002CA2A2 /* AllDetailsplandisplayViewController.m */,
-				D4A16B311974EEA8002CA2A2 /* AllDetailsplandisplayViewController.xib */,
-				D4A16B321974EEA8002CA2A2 /* Subtypecell.xib */,
-				D4A16B331974EEA8002CA2A2 /* maintablecell.xib */,
 				D4A16B341974EEA8002CA2A2 /* Editplanview.xib */,
 				D4A3977419CFE8DE00E2514C /* PServiceViewController.h */,
 				D4A3977519CFE8DE00E2514C /* PServiceViewController.m */,
@@ -2287,9 +2287,9 @@
 				64C058B81A8F10CB001331F2 /* PlanningViewController.m */,
 				64C058B91A8F10CB001331F2 /* PlanningViewController.xib */,
 				D4A16B011974EEA8002CA2A2 /* customplancell.xib */,
-				64C058BC1A8F1185001331F2 /* WorkViewController.h */,
-				64C058BD1A8F1185001331F2 /* WorkViewController.m */,
-				64C058BE1A8F1185001331F2 /* WorkViewController.xib */,
+				64250B131A959629004458B9 /* WorkViewController.h */,
+				64250B141A959629004458B9 /* WorkViewController.m */,
+				64250B151A959629004458B9 /* WorkViewController.xib */,
 				64C058BF1A8F1185001331F2 /* WorkCell.xib */,
 				64C058CA1A8F13C5001331F2 /* AddworkViewController.h */,
 				64C058CB1A8F13C5001331F2 /* AddworkViewController.m */,
@@ -2316,6 +2316,14 @@
 				646B7F2E1A949BAE00E4DA6E /* ScafldingViewController.h */,
 				646B7F2F1A949BAE00E4DA6E /* ScafldingViewController.m */,
 				646B7F301A949BAE00E4DA6E /* ScafldingViewController.xib */,
+				D4A16B2F1974EEA8002CA2A2 /* AllDetailsplandisplayViewController.h */,
+				D4A16B301974EEA8002CA2A2 /* AllDetailsplandisplayViewController.m */,
+				D4A16B311974EEA8002CA2A2 /* AllDetailsplandisplayViewController.xib */,
+				D4A16B321974EEA8002CA2A2 /* Subtypecell.xib */,
+				D4A16B331974EEA8002CA2A2 /* maintablecell.xib */,
+				64250B181A959637004458B9 /* PResViewController.h */,
+				64250B191A959637004458B9 /* PResViewController.m */,
+				64250B1A1A959637004458B9 /* PResViewController.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -3083,7 +3091,6 @@
 				D4A16B531974EEA8002CA2A2 /* GdargViewController.xib in Resources */,
 				D4A6749019345E6C00D5A77E /* IconDateGrey.png in Resources */,
 				64A3B81D18DFEEC90015887F /* ActivityViewController.xib in Resources */,
-				64C058C11A8F1185001331F2 /* WorkViewController.xib in Resources */,
 				64C27A571A35987400B66C77 /* com.png in Resources */,
 				D4A16B601974EEA8002CA2A2 /* Subtypecell.xib in Resources */,
 				D453DA301873F206007EE3DC /* Consumblecell.xib in Resources */,
@@ -3116,6 +3123,7 @@
 				64A936B919E640C900C20D57 /* Customhrcell.xib in Resources */,
 				649EE4C5196151A2008DEF02 /* Lbmgcell.xib in Resources */,
 				64F97983185ED60000E7722B /* appbar.addblack.png in Resources */,
+				64250B171A959629004458B9 /* WorkViewController.xib in Resources */,
 				D4FED41217F18CB9004BE242 /* btn.png in Resources */,
 				64A3B81418DFEE980015887F /* LeadsViewController.xib in Resources */,
 				D4FED41417F18E28004BE242 /* tabbtn.png in Resources */,
@@ -3273,6 +3281,7 @@
 				D4F29B0E19DD19FF009A30F8 /* 070537-glossy-black-3d-button-icon-alphanumeric-information2-ps copy@2X.png in Resources */,
 				64C058CE1A8F13C5001331F2 /* AddworkViewController.xib in Resources */,
 				D43DAA3718D1B62700280AA6 /* cmpnydocucell.xib in Resources */,
+				64250B1C1A959637004458B9 /* PResViewController.xib in Resources */,
 				D41708FE19A5B94C00F55599 /* Userrightscell.xib in Resources */,
 				64A654B5192F1F14004DDB84 /* GPSetupTileViewController.xib in Resources */,
 				D40A663C187131CA00AB7496 /* cb_mono_off.png in Resources */,
@@ -3385,6 +3394,7 @@
 				D4A123D219A6FE1100A4ED9B /* UserRightsmdl.m in Sources */,
 				D4097D0D1963D00B00D8E910 /* PSitereqmntViewController.m in Sources */,
 				D40DE14F19E69DA4008FFD15 /* AFURLConnectionOperation.m in Sources */,
+				64250B161A959629004458B9 /* WorkViewController.m in Sources */,
 				64CB04F81A5C0321005394D5 /* formanmdl.m in Sources */,
 				D4B4CBA119738ED500696D37 /* Appreqmdl.m in Sources */,
 				D49F876D18EEA36B00413CAD /* subcontract.m in Sources */,
@@ -3481,6 +3491,7 @@
 				64A654B4192F1F14004DDB84 /* GPSetupTileViewController.m in Sources */,
 				64C058BA1A8F10CB001331F2 /* PlanningViewController.m in Sources */,
 				64A3B81C18DFEEC90015887F /* ActivityViewController.m in Sources */,
+				64250B1B1A959637004458B9 /* PResViewController.m in Sources */,
 				D44BEA7618E0254900719ED5 /* TypeViewController.m in Sources */,
 				D49F876218EEA36B00413CAD /* NewscfldDetails.m in Sources */,
 				64BF72281A2ECB5A00946718 /* DPCalendarmnViewController.m in Sources */,
@@ -3540,7 +3551,6 @@
 				64B12DD919D520940074A404 /* BscTypViewController.m in Sources */,
 				D47A9B0B19402B89001CC416 /* EmpJobViewController.m in Sources */,
 				D40DE14E19E69DA4008FFD15 /* AFPropertyListRequestOperation.m in Sources */,
-				64C058C01A8F1185001331F2 /* WorkViewController.m in Sources */,
 				D4DEEDDA17F40BE70096A908 /* UploadDocViewController.m in Sources */,
 				D4A16B9A1974EEE0002CA2A2 /* CalEventDetailViewController.m in Sources */,
 				D49F875418EEA36B00413CAD /* Servicemdl.m in Sources */,

@@ -5,9 +5,21 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScaffoldingViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScafldingViewController">
             <connections>
+                <outlet property="elevationtextfield" destination="pQf-kH-bnH" id="gtE-Tk-oe4"/>
+                <outlet property="equiptextfield" destination="8Ju-Yp-IZC" id="Ktc-Iq-CZX"/>
+                <outlet property="heighttextfield" destination="qeP-MK-PTc" id="wDG-L2-qJw"/>
+                <outlet property="lengthtextfield" destination="OAv-ku-uXY" id="hXm-jc-0fL"/>
+                <outlet property="phasebtn" destination="l48-SR-kGc" id="gF7-9d-CgS"/>
+                <outlet property="phtextfield" destination="6QR-9Q-gr3" id="HAp-kI-7Nd"/>
+                <outlet property="qtytextfield" destination="I8S-5f-cLR" id="mVE-qZ-WMu"/>
+                <outlet property="scaffoldtypebtn" destination="1j0-3X-mQo" id="OoY-E9-PFb"/>
+                <outlet property="sequencebtn" destination="gaD-1u-Chu" id="ijF-RX-v33"/>
+                <outlet property="subunittextfield" destination="ew2-pj-Tt3" id="Qcd-S3-H4G"/>
+                <outlet property="unittextfield" destination="tDc-OT-sUP" id="h3b-oE-nrF"/>
                 <outlet property="view" destination="iyG-5m-kDN" id="Owc-MT-nx6"/>
+                <outlet property="widthtextfield" destination="05P-p8-PNN" id="4df-3h-XOp"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -43,12 +55,6 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="tDc-OT-sUP">
-                    <rect key="frame" x="18" y="95" width="195" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SNB-Wn-66D">
                     <rect key="frame" x="18" y="139" width="66" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,6 +159,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="scaffoldtypeselection:" destination="-1" eventType="touchUpInside" id="r8x-gW-V6K"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gaD-1u-Chu">
                     <rect key="frame" x="20" y="403" width="193" height="30"/>
@@ -162,6 +171,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="sequenceselection:" destination="-1" eventType="touchUpInside" id="LHa-Qg-goR"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uAl-Tg-YhY">
                     <rect key="frame" x="477" y="563" width="46" height="34"/>
@@ -201,6 +213,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="phaseselection:" destination="-1" eventType="touchUpInside" id="nv4-dB-I8n"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Internal Work Factor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D6d-LG-gVC">
                     <rect key="frame" x="60" y="474" width="124" height="21"/>
@@ -253,10 +268,16 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="tDc-OT-sUP">
+                    <rect key="frame" x="18" y="95" width="195" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-58" y="-559"/>
+            <point key="canvasLocation" x="-84" y="-582"/>
         </view>
     </objects>
     <resources>

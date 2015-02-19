@@ -125,7 +125,7 @@
 -(void)SaveBasicInfo{
     recordResults = FALSE;
     NSString *soapMessage;
-     NSString * letter=@"";
+    // NSString * letter=@"";
     NSString *stid;
     NSString *ctid;
     stid=[_statedict objectForKey:_statebtn.titleLabel.text];

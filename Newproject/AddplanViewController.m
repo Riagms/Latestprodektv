@@ -117,4 +117,19 @@
     [modalViewNavController setNavigationBarHidden:YES animated:YES];
     [self presentViewController:modalViewNavController animated:YES completion:NULL];
 }
+- (IBAction)editscaffoldaction:(id)sender
+{
+    button=(UIButton*)sender;
+    CGPoint center=button.center;
+    CGPoint rootviewpoint=[button.superview convertPoint:center fromView:_scaffoldtable];
+    NSIndexPath *btnindexpath=[self.scaffoldtable indexPathForRowAtPoint:rootviewpoint];
+    btnindex=btnindexpath.row;
+    _scaffoldctrl=[[ScafldingViewController alloc]initWithNibName:@"ScafldingViewController" bundle:nil];
+    modalViewNavController = [[UINavigationController alloc] initWithRootViewController:_scaffoldctrl];
+    //  modalViewNavController.modalPresentationStyle=UIModalPresentationFormSheet;
+    modalViewNavController.modalPresentationStyle=UIModalPresentationCustom;
+    [modalViewNavController setNavigationBarHidden:YES animated:YES];
+    [self presentViewController:modalViewNavController animated:YES completion:NULL];
+
+}
 @end

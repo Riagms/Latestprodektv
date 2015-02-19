@@ -271,9 +271,9 @@
                 
                     
             if (indexPath.row==0) {
-                 
+                  planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
                         self.WorkVctrl=[[WorkViewController alloc]initWithNibName:@"WorkViewController" bundle:nil];
-                
+                _WorkVctrl.planid=planmdl.planid;
                 //_WorkVctrl.modalPresentationStyle=UIModalPresentationFormSheet;
                     [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_WorkVctrl
                                                                                                 animated:YES completion:NULL];

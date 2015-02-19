@@ -10,15 +10,18 @@
 #import "AddworkViewController.h"
 #import "AddplanViewController.h"
 #import "SitevisitViewController.h"
+#import "PResViewController.h"
 
 @interface WorkViewController : UIViewController{
     UIButton *button;
 }
+@property(strong,nonatomic)NSString *planid;
 @property (strong, nonatomic) IBOutlet UITableView *worktable;
 @property (strong, nonatomic) IBOutlet UIView *titleview;
 @property (strong, nonatomic)AddworkViewController*AddWCtrl;
 @property (strong, nonatomic)AddplanViewController*PlanVCtrl;
 @property (strong, nonatomic)SitevisitViewController*SitevisitVCtrl;
+@property (strong, nonatomic)PResViewController*resVCtrl;
 @property (strong, nonatomic)NSMutableArray*menuitemarray;
 
 - (IBAction)clsebtn:(id)sender;

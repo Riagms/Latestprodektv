@@ -30,7 +30,7 @@
             <subviews>
                 <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYm-2C-3AL">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                    <color key="barTintColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <items>
                         <navigationItem title="Details" id="t9C-FE-E9t">
                             <barButtonItem key="rightBarButtonItem" image="appbar.close.png" id="fcO-aP-MjL">
@@ -50,7 +50,7 @@
                     </items>
                 </navigationBar>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLx-7I-aSO">
-                    <rect key="frame" x="0.0" y="63" width="1024" height="705"/>
+                    <rect key="frame" x="0.0" y="62" width="1024" height="705"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh1-4H-p4J">
                             <rect key="frame" x="20" y="7" width="49" height="21"/>

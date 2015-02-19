@@ -186,7 +186,7 @@
     
     CKCalendarView *calendar = [[CKCalendarView alloc] initWithStartDay:startMonday];
     self.calendar = calendar;
-    calendar.delegate = self;
+    calendar.delegate =(id) self;
     
     
     NSDate *date = [NSDate date];

@@ -102,6 +102,9 @@
                         <state key="normal" image="appbar.edit.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="editscaffoldaction:" destination="-1" eventType="touchUpInside" id="qH9-bl-kFo"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" id="zTp-mh-oxB">
                         <rect key="frame" x="586" y="-1" width="1" height="45"/>

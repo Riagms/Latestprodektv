@@ -12,6 +12,8 @@
 @interface AddplanViewController : UIViewController
 {
     UINavigationController *modalViewNavController;
+    UIButton *button;
+    NSInteger btnindex;
 }
 @property(strong,nonatomic)ScafldingViewController *scaffoldctrl;
 - (IBAction)clsebtn:(id)sender;

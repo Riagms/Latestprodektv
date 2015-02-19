@@ -103,7 +103,7 @@
         
                 self.SitevisitVCtrl=[[SitevisitViewController alloc]initWithNibName:@"SitevisitViewController" bundle:nil];
                 
-                
+            _SitevisitVCtrl.companyid=_planid;
                 [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_SitevisitVCtrl
                                                                                             animated:YES completion:NULL];
                 }];
@@ -121,7 +121,20 @@
                 
             
         }
-        
+        if (indexPath.row==2) {
+            
+            self.resVCtrl=[[PResViewController alloc]initWithNibName:@"PResViewController" bundle:nil];
+            
+            
+            [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_resVCtrl
+                                                                                        animated:YES completion:NULL];
+            }];
+            
+            
+            
+            
+        }
+
     }
     
 }

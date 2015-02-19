@@ -35,19 +35,65 @@
     [super viewWillLayoutSubviews];
     self.view.bounds = CGRectMake(0, 0, 540, 620);
     
-    //[self.view addSubview:_scroll];
-    //self.scroll.bounds = CGRectMake(0, 0, 768, 768);
+   
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)phaseselection:(id)sender {
+    UIViewController *popovercontent=[[UIViewController alloc]init];
+    UIView *popoverview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0,0, 200, 200)];
+    _popovertableview.delegate=(id)self;
+    _popovertableview.dataSource=(id)self;
+    _popovertableview.rowHeight=30;
+    _popovertableview.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [popoverview addSubview:_popovertableview];
+    popovercontent.view=popoverview;
+    popovercontent.preferredContentSize=CGSizeMake(200, 200);
+    self.popovercontroller=[[UIPopoverController alloc]initWithContentViewController:popovercontent];
+    self.popovercontroller.popoverContentSize=CGSizeMake(200, 200);
+    self.popovercontroller=_popovercontroller;
+    [self.popovercontroller presentPopoverFromRect:_phasebtn.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    }
+
+- (IBAction)scaffoldtypeselection:(id)sender {
+    UIViewController *popovercontent=[[UIViewController alloc]init];
+    UIView *popoverview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _popovertableview.delegate=(id)self;
+    _popovertableview.dataSource=(id)self;
+    _popovertableview.rowHeight=30;
+    _popovertableview.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [popoverview addSubview:_popovertableview];
+    popovercontent.view=popoverview;
+    popovercontent.preferredContentSize=CGSizeMake(200, 200);
+    self.popovercontroller=[[UIPopoverController alloc]initWithContentViewController:popovercontent];
+    self.popovercontroller.popoverContentSize=CGSizeMake(200, 200);
+    self.popovercontroller=_popovercontroller;
+    [self.popovercontroller presentPopoverFromRect:_scaffoldtypebtn.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    
+    
+    
 }
-*/
+
+- (IBAction)sequenceselection:(id)sender {
+    UIViewController *popovercontent=[[UIViewController alloc]init];
+    UIView *popoverview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _popovertableview.delegate=(id)self;
+    _popovertableview.dataSource=(id)self;
+    _popovertableview.rowHeight=30;
+    _popovertableview.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [popoverview addSubview:_popovertableview];
+    popovercontent.view=popoverview;
+    popovercontent.preferredContentSize=CGSizeMake(200, 200);
+    self.popovercontroller=[[UIPopoverController alloc]initWithContentViewController:popovercontent];
+    self.popovercontroller.popoverContentSize=CGSizeMake(200, 200);
+    self.popovercontroller=_popovercontroller;
+    [self.popovercontroller presentPopoverFromRect:_sequencebtn.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    
+    
+}
 
 - (IBAction)closescaffoldpage:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -64,4 +110,30 @@
     [self.navigationController pushViewController:_allctrl animated:NO];
 
 }
+
+#pragma mark-Tableview Delegates
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if(tableView==_popovertableview)
+    {
+        return 5;
+    }
+   
+    return YES;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    static NSString *cellidentifier=@"mycell";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellidentifier];
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellidentifier];
+            }
+    
+    return cell;
+}
+
 @end
