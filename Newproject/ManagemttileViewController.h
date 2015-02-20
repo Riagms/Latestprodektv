@@ -15,6 +15,8 @@
 #import "AbsentViewController.h"
 #import "Rightscheck.h"
 #import "PMJobsViewController.h"
+#import "SchedulerViewController.h"
+#import "TrackerViewController.h"
 //ghfgh
 @interface ManagemttileViewController : UIViewController
 
@@ -27,7 +29,8 @@
 @property (strong, nonatomic) IBOutlet UIView *issueview;
 @property (strong, nonatomic) IBOutlet UIView *timesheetview;
 @property (strong, nonatomic) IBOutlet UIView *labrview;
-
+@property (strong, nonatomic) IBOutlet UIView *schedulerview;
+@property (strong, nonatomic) IBOutlet UIView *trackerview;
 @property (strong, nonatomic) IBOutlet UIView *jobview;
 @property (strong, nonatomic)MovementtileViewController*movemtVCtrl;
 @property (strong, nonatomic)TimeSheetViewController*timesheetVCtrl;
@@ -36,6 +39,8 @@
 @property (strong, nonatomic)PSitereqmntViewController*SitereqVCtrl;
 @property (strong, nonatomic)AbsentViewController*absentVCtrl;
 @property (strong, nonatomic)PMJobsViewController *jobVCtrl;
+@property (strong, nonatomic)SchedulerViewController *schedVCtrl;
+@property (strong, nonatomic)TrackerViewController *trackVCtrl;
 
 - (IBAction)clsebtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *siteview;
@@ -62,5 +67,7 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *absentactivitybtn;
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *timeactivitybtn;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *schduleactivity;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *trackactivity;
 
 @end

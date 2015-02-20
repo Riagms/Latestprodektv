@@ -77,10 +77,35 @@
     doubleTap6.numberOfTapsRequired=1;
     doubleTap6.delegate=(id)self;
     [self.jobview addGestureRecognizer:doubleTap6];
+    UITapGestureRecognizer *doubleTap7 = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(schduler)];
+    doubleTap7.numberOfTapsRequired=1;
+    doubleTap7.delegate=(id)self;
+    [self.jobview addGestureRecognizer:doubleTap7];
+
+    UITapGestureRecognizer *doubleTap8 = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(tracker)];
+    doubleTap8.numberOfTapsRequired=1;
+    doubleTap8.delegate=(id)self;
+    [self.jobview addGestureRecognizer:doubleTap8];
 
 
 
 
+}
+-(void)schduler
+{
+    self.schedVCtrl=[[SchedulerViewController alloc]initWithNibName:@"SchedulerViewController" bundle:nil];
+    self.schedVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
+    [self presentViewController:self.schedVCtrl animated:YES completion:nil];
+}
+-(void)tracker
+{
+    self.trackVCtrl=[[TrackerViewController alloc]initWithNibName:@"TrackerViewController" bundle:nil];
+    self.trackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    [self presentViewController:self.trackVCtrl animated:YES completion:nil];
 }
 -(void)Resourcepage{
     _resurceactivitybtn.hidden=NO;
