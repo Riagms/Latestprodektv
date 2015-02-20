@@ -53,22 +53,63 @@
 }
 */
 
-- (IBAction)equipmentbtnlbl:(id)sender {
+
+
+#pragma mark-tableview datasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    
+    return 1;
 }
 
-- (IBAction)thirdbtnlbl:(id)sender {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;
+    
 }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"mycell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+//        if(tableView==_prioritytable){
+//            
+//            [[NSBundle mainBundle]loadNibNamed:@"PrirityCell" owner:self options:nil];
+//            cell=_prioritycell;
+//        }
+    }
+    cell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
+    
+    
+    
+    
+    return cell;
+}
+
 
 - (IBAction)closeresources:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)resucebt:(id)sender {
+    
+    
    
 }
 
 - (IBAction)crewdeletebtn:(id)sender {
+    
 }
+
+
+
+
+
 
 - (IBAction)crewbtn:(id)sender {
     
