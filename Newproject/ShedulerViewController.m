@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 GMSIndia1. All rights reserved.
 //
 
-#import "SchedulerViewController.h"
+#import "ShedulerViewController.h"
 
-@interface SchedulerViewController ()
+@interface ShedulerViewController ()
 
 @end
 
-@implementation SchedulerViewController
+@implementation ShedulerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

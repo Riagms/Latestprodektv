@@ -97,13 +97,13 @@
 }
 -(void)schduler
 {
-    self.schedVCtrl=[[SchedulerViewController alloc]initWithNibName:@"SchedulerViewController" bundle:nil];
+    self.schedVCtrl=[[ShedulerViewController alloc]initWithNibName:@"ShedulerViewController" bundle:nil];
     self.schedVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:self.schedVCtrl animated:YES completion:nil];
 }
 -(void)tracker
 {
-    self.trackVCtrl=[[TrackerViewController alloc]initWithNibName:@"TrackerViewController" bundle:nil];
+    self.trackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
     self.trackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
     [self presentViewController:self.trackVCtrl animated:YES completion:nil];
 }
