@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226.0/255.0f blue:226.0/255.0f alpha:1];
+   
+//    [[self.view layer] setBorderWidth:2];
+//    [[self.view layer] setCornerRadius:8];
+//     [[self.view layer] setBorderColor:[UIColor colorWithRed:234.0/255.0f green:226.0/255.0f blue:226.0/255.0f alpha:1].CGColor];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 
     // Do any additional setup after loading the view from its nib.
@@ -33,8 +37,13 @@
 }
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    self.view.bounds = CGRectMake(0, 0, 540, 620);
-    
+    self.view.bounds = CGRectMake(0, 0, 550, 650);
+    _scroll.frame=CGRectMake(0,50,550, 650);
+    [_scroll setContentSize:CGSizeMake(550,800)];
+    [[self.view layer] setBorderWidth:2];
+    [[self.view layer] setCornerRadius:8];
+    [[self.view layer] setBorderColor:[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:250.0/255.0f alpha:1].CGColor];
+
    
 }
 
@@ -100,6 +109,7 @@
 }
 - (IBAction)next:(id)sender {
     _allctrl.delegate=self;
+   
     self.allctrl=[[AllDetailsplandisplayViewController alloc]initWithNibName:@"AllDetailsplandisplayViewController" bundle:nil];
     [UIView transitionFromView:self.view
                         toView:self.allctrl.view
@@ -108,7 +118,17 @@
                     completion:nil];
     _allctrl.modalPresentationStyle=UIModalPresentationCustom;
     [self.navigationController pushViewController:_allctrl animated:NO];
-
+ 
+}
+-(void)navgteanimtn{
+    [UIView transitionFromView:self.allctrl.view
+                        toView:self.view
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self ScaffoldingSelectplan];
+    
 }
 
 #pragma mark-Tableview Delegates
