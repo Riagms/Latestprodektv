@@ -7,6 +7,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PResViewController">
             <connections>
+                <outlet property="Crewtable" destination="rxa-MN-lOE" id="Afb-Hs-4N3"/>
+                <outlet property="consumblebtnlbl" destination="xQO-pt-ILV" id="28j-Ej-8SY"/>
+                <outlet property="crewbtnlbl" destination="q40-H6-fUN" id="RL5-60-Wct"/>
+                <outlet property="crewdroptable" destination="Aii-DU-0Kb" id="Epp-hk-qLL"/>
+                <outlet property="crewview" destination="I7p-gp-HLr" id="KNs-Ca-aau"/>
+                <outlet property="equmntbutnlbl" destination="aef-pZ-XtS" id="58M-OM-c9w"/>
+                <outlet property="fleetbtnlbl" destination="bFk-NM-N2L" id="iaL-BW-FpQ"/>
+                <outlet property="manpowerbtn" destination="ISG-bS-yrs" id="7CF-VC-XLT"/>
+                <outlet property="materialsbtnlbl" destination="Jj2-sC-TBv" id="1JW-1c-qxx"/>
+                <outlet property="otherbtnlbl" destination="DD1-S1-u6A" id="Mo8-hc-dpe"/>
+                <outlet property="resurcebtnlbl" destination="KLJ-jg-cL4" id="SQK-iS-kKj"/>
+                <outlet property="resurcedroptable" destination="NLp-hM-QNI" id="RIZ-dQ-IoS"/>
+                <outlet property="resurcetable" destination="lqf-l1-QWI" id="3GE-HZ-2nm"/>
+                <outlet property="resurceview" destination="YUE-mI-n1y" id="PFY-qL-Hbf"/>
+                <outlet property="safetybtnlbl" destination="dFV-tt-OBG" id="dec-4J-adK"/>
+                <outlet property="smallbtnlbl" destination="KTI-Cn-OUr" id="fUV-2D-Noq"/>
+                <outlet property="thirdpartybtnlbl" destination="Y6p-xq-du7" id="yef-w8-KQ8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,47 +54,263 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tVd-AK-Uln">
-                    <rect key="frame" x="0.0" y="88" width="1024" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <barButtonItem title="Third Party" id="Y6p-xq-du7"/>
-                        <barButtonItem width="89" style="plain" systemItem="fixedSpace" id="uBK-aj-yrQ"/>
-                        <barButtonItem title="Consumables" id="xQO-pt-ILV"/>
-                        <barButtonItem width="112" style="plain" systemItem="fixedSpace" id="cqf-gl-Jos"/>
-                        <barButtonItem title="Small Tools" id="KTI-Cn-OUr"/>
-                        <barButtonItem width="158" style="plain" systemItem="fixedSpace" id="4xS-VL-oT1"/>
-                        <barButtonItem title="Safety" id="dFV-tt-OBG"/>
-                        <barButtonItem width="121" style="plain" systemItem="fixedSpace" id="5em-EU-jD3"/>
-                        <barButtonItem title="Others" id="DD1-S1-u6A"/>
-                    </items>
-                    <color key="barTintColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                </toolbar>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rll-b2-kWZ">
-                    <rect key="frame" x="0.0" y="44" width="1024" height="44"/>
+                    <rect key="frame" x="-15" y="44" width="1039" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <items>
-                        <barButtonItem title="Crew" id="q40-H6-fUN"/>
-                        <barButtonItem width="100" style="plain" systemItem="fixedSpace" id="wcw-Dy-VPJ"/>
-                        <barButtonItem title="Man Power" id="ISG-bS-yrs"/>
-                        <barButtonItem width="172" style="plain" systemItem="fixedSpace" id="vIR-Kg-8S7"/>
-                        <barButtonItem title="Equipment" id="aef-pZ-XtS"/>
-                        <barButtonItem width="133" style="plain" systemItem="fixedSpace" id="YaD-Vs-MG5"/>
-                        <barButtonItem title="Materials" id="Jj2-sC-TBv"/>
-                        <barButtonItem width="145" style="plain" systemItem="fixedSpace" id="hg1-8m-RJd"/>
-                        <barButtonItem title="Fleet" id="bFk-NM-N2L"/>
+                        <barButtonItem title="Crew" id="q40-H6-fUN">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="crewbtn:" destination="-1" id="tZR-zd-EOB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="28" style="plain" systemItem="fixedSpace" id="wcw-Dy-VPJ"/>
+                        <barButtonItem title="Man Power" id="ISG-bS-yrs">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="manbtn:" destination="-1" id="4m3-c6-PmT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="vIR-Kg-8S7"/>
+                        <barButtonItem title="Equipment" id="aef-pZ-XtS">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="equbtn:" destination="-1" id="uXy-jd-wjn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="21" style="plain" systemItem="fixedSpace" id="YaD-Vs-MG5"/>
+                        <barButtonItem title="Materials" id="Jj2-sC-TBv">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="matbtn:" destination="-1" id="5Zb-XE-8C4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="27" style="plain" systemItem="fixedSpace" id="hg1-8m-RJd"/>
+                        <barButtonItem title="Fleet" id="bFk-NM-N2L">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="fleetbtn:" destination="-1" id="G6f-lG-8VD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="31" style="plain" systemItem="fixedSpace" id="uBK-aj-yrQ"/>
+                        <barButtonItem title="Third Party" id="Y6p-xq-du7">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="thirdbtn:" destination="-1" id="72M-Yw-CYh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="cqf-gl-Jos"/>
+                        <barButtonItem title="Consumables" id="xQO-pt-ILV">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="consubtn:" destination="-1" id="Pvf-bv-g6t"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="18" style="plain" systemItem="fixedSpace" id="4xS-VL-oT1"/>
+                        <barButtonItem title="Small Tools" id="KTI-Cn-OUr">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="Smallbtn:" destination="-1" id="fxL-gt-7J8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="27" style="plain" systemItem="fixedSpace" id="5em-EU-jD3"/>
+                        <barButtonItem title="Safety" id="dFV-tt-OBG">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="Safetybtn:" destination="-1" id="Yiz-Yp-z9C"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="27" style="plain" systemItem="fixedSpace" id="7YO-9H-tV3"/>
+                        <barButtonItem title="Others" id="DD1-S1-u6A">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="othersbtn:" destination="-1" id="vAx-90-uC5"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                     <color key="barTintColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="KM8-I4-tFC">
+                    <rect key="frame" x="0.0" y="88" width="1024" height="680"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="I7p-gp-HLr" userLabel="Crewview">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="680"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Resource" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VhE-cA-ThS">
+                                    <rect key="frame" x="21" y="37" width="135" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KLJ-jg-cL4">
+                                    <rect key="frame" x="21" y="59" width="185" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                    <state key="normal" title="Select" backgroundImage="textbox.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="resucebt:" destination="-1" eventType="touchUpInside" id="kJ0-e0-CHZ"/>
+                                    </connections>
+                                </button>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aii-DU-0Kb">
+                                    <rect key="frame" x="583" y="144" width="420" height="447"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                                <view contentMode="scaleToFill" id="5JI-X6-f3J">
+                                    <rect key="frame" x="21" y="116" width="210" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crew" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t3h-GN-8mY">
+                                            <rect key="frame" x="79" y="4" width="68" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" id="4Lv-h2-wLS">
+                                    <rect key="frame" x="583" y="116" width="420" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crew Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5r6-vx-YiV">
+                                            <rect key="frame" x="83" y="4" width="68" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jy9-ok-dYN">
+                                            <rect key="frame" x="32" y="-3" width="41" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" backgroundImage="appbar.delete.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="crewdeletebtn:" destination="-1" eventType="touchUpInside" id="aCt-YU-bgE"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dLX-Hh-mAC">
+                                            <rect key="frame" x="274" y="4" width="84" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.png" id="Xp9-UQ-iQg">
+                                    <rect key="frame" x="328" y="314" width="130" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" id="rxa-MN-lOE">
+                                    <rect key="frame" x="21" y="146" width="210" height="445"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" id="YUE-mI-n1y" userLabel="Resourceview">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="680"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" id="NLp-hM-QNI">
+                                    <rect key="frame" x="547" y="83" width="460" height="504"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                                <view contentMode="scaleToFill" id="VLf-v8-zY1">
+                                    <rect key="frame" x="17" y="56" width="384" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w3J-ms-Z6v">
+                                            <rect key="frame" x="33" y="4" width="68" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Kp-UP-cwP">
+                                            <rect key="frame" x="216" y="4" width="77" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" id="6qj-2v-J7g">
+                                    <rect key="frame" x="547" y="56" width="460" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F7q-Ch-KCV">
+                                            <rect key="frame" x="51" y="4" width="68" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Na3-tS-95s">
+                                            <rect key="frame" x="0.0" y="-3" width="41" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" backgroundImage="appbar.delete.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="md1-VD-C44">
+                                            <rect key="frame" x="343" y="4" width="84" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6sK-ku-M89">
+                                            <rect key="frame" x="203" y="4" width="84" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.png" id="Gm1-7b-9DO">
+                                    <rect key="frame" x="409" y="269" width="130" height="52"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" id="lqf-l1-QWI">
+                                    <rect key="frame" x="17" y="85" width="384" height="504"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.58410863639999999" green="0.59999999999999998" blue="0.5690311589" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="483" y="300"/>
+            <point key="canvasLocation" x="193" y="287"/>
         </view>
     </objects>
     <resources>
         <image name="appbar.close.png" width="76" height="76"/>
+        <image name="appbar.delete.png" width="76" height="76"/>
+        <image name="drop.png" width="100" height="50"/>
+        <image name="textbox.png" width="298" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
