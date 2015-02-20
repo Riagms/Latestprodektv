@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 GMSIndia1. All rights reserved.
 //
 
-#import "TrackerViewController.h"
+#import "TrakerViewController.h"
 
-@interface TrackerViewController ()
+@interface TrakerViewController ()
 
 @end
 
-@implementation TrackerViewController
+@implementation TrakerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

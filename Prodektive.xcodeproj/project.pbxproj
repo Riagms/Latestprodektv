@@ -201,10 +201,10 @@
 		64C3BB3C1A2836D000E5A3EA /* GSmallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C3BB3A1A2836D000E5A3EA /* GSmallViewController.xib */; };
 		64C3BB3E1A2836F500E5A3EA /* GSTfcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C3BB3D1A2836F500E5A3EA /* GSTfcell.xib */; };
 		64C3BB401A28370900E5A3EA /* GStSecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C3BB3F1A28370900E5A3EA /* GStSecell.xib */; };
-		64C598FE1A97180500122EC9 /* SchedulerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C598FC1A97180500122EC9 /* SchedulerViewController.m */; };
-		64C598FF1A97180500122EC9 /* SchedulerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C598FD1A97180500122EC9 /* SchedulerViewController.xib */; };
-		64C599031A97182A00122EC9 /* TrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C599011A97182A00122EC9 /* TrackerViewController.m */; };
-		64C599041A97182A00122EC9 /* TrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C599021A97182A00122EC9 /* TrackerViewController.xib */; };
+		64C598FE1A97180500122EC9 /* ShedulerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C598FC1A97180500122EC9 /* ShedulerViewController.m */; };
+		64C598FF1A97180500122EC9 /* ShedulerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C598FD1A97180500122EC9 /* ShedulerViewController.xib */; };
+		64C599031A97182A00122EC9 /* TrakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C599011A97182A00122EC9 /* TrakerViewController.m */; };
+		64C599041A97182A00122EC9 /* TrakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C599021A97182A00122EC9 /* TrakerViewController.xib */; };
 		64CB04F01A5BAB85005394D5 /* create-a-new-job.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CB04EF1A5BAB85005394D5 /* create-a-new-job.png */; };
 		64CB04F41A5BAE00005394D5 /* RMLaborViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CB04F21A5BAE00005394D5 /* RMLaborViewController.m */; };
 		64CB04F51A5BAE00005394D5 /* RMLaborViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CB04F31A5BAE00005394D5 /* RMLaborViewController.xib */; };
@@ -961,12 +961,12 @@
 		64C3BB3A1A2836D000E5A3EA /* GSmallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSmallViewController.xib; sourceTree = "<group>"; };
 		64C3BB3D1A2836F500E5A3EA /* GSTfcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSTfcell.xib; sourceTree = "<group>"; };
 		64C3BB3F1A28370900E5A3EA /* GStSecell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GStSecell.xib; sourceTree = "<group>"; };
-		64C598FB1A97180500122EC9 /* SchedulerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchedulerViewController.h; sourceTree = "<group>"; };
-		64C598FC1A97180500122EC9 /* SchedulerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchedulerViewController.m; sourceTree = "<group>"; };
-		64C598FD1A97180500122EC9 /* SchedulerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchedulerViewController.xib; sourceTree = "<group>"; };
-		64C599001A97182A00122EC9 /* TrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackerViewController.h; sourceTree = "<group>"; };
-		64C599011A97182A00122EC9 /* TrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackerViewController.m; sourceTree = "<group>"; };
-		64C599021A97182A00122EC9 /* TrackerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackerViewController.xib; sourceTree = "<group>"; };
+		64C598FB1A97180500122EC9 /* ShedulerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShedulerViewController.h; sourceTree = "<group>"; };
+		64C598FC1A97180500122EC9 /* ShedulerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShedulerViewController.m; sourceTree = "<group>"; };
+		64C598FD1A97180500122EC9 /* ShedulerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShedulerViewController.xib; sourceTree = "<group>"; };
+		64C599001A97182A00122EC9 /* TrakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrakerViewController.h; sourceTree = "<group>"; };
+		64C599011A97182A00122EC9 /* TrakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrakerViewController.m; sourceTree = "<group>"; };
+		64C599021A97182A00122EC9 /* TrakerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrakerViewController.xib; sourceTree = "<group>"; };
 		64CB04EF1A5BAB85005394D5 /* create-a-new-job.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create-a-new-job.png"; sourceTree = "<group>"; };
 		64CB04F11A5BADFF005394D5 /* RMLaborViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLaborViewController.h; sourceTree = "<group>"; };
 		64CB04F21A5BAE00005394D5 /* RMLaborViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLaborViewController.m; sourceTree = "<group>"; };
@@ -2105,12 +2105,12 @@
 				64C0AD141A5D2A8800B31F52 /* LbrRMmaincell.xib */,
 				64C0AD161A5D2AB000B31F52 /* LbrFstdgcell.xib */,
 				64C0AD181A5D2ABF00B31F52 /* LbrSecdgcell.xib */,
-				64C598FB1A97180500122EC9 /* SchedulerViewController.h */,
-				64C598FC1A97180500122EC9 /* SchedulerViewController.m */,
-				64C598FD1A97180500122EC9 /* SchedulerViewController.xib */,
-				64C599001A97182A00122EC9 /* TrackerViewController.h */,
-				64C599011A97182A00122EC9 /* TrackerViewController.m */,
-				64C599021A97182A00122EC9 /* TrackerViewController.xib */,
+				64C598FB1A97180500122EC9 /* ShedulerViewController.h */,
+				64C598FC1A97180500122EC9 /* ShedulerViewController.m */,
+				64C598FD1A97180500122EC9 /* ShedulerViewController.xib */,
+				64C599001A97182A00122EC9 /* TrakerViewController.h */,
+				64C599011A97182A00122EC9 /* TrakerViewController.m */,
+				64C599021A97182A00122EC9 /* TrakerViewController.xib */,
 			);
 			name = "Project Management";
 			sourceTree = "<group>";
@@ -2924,8 +2924,8 @@
 				D49DE838185EB391006F1CDA /* closebutton.png in Resources */,
 				D413694C1A97265D003C88A9 /* CrewDropCell.xib in Resources */,
 				D40D1EC1176B086F00379DD5 /* Default-568h@2x.png in Resources */,
-				64C599041A97182A00122EC9 /* TrackerViewController.xib in Resources */,
-				64C598FF1A97180500122EC9 /* SchedulerViewController.xib in Resources */,
+				64C599041A97182A00122EC9 /* TrakerViewController.xib in Resources */,
+				64C598FF1A97180500122EC9 /* ShedulerViewController.xib in Resources */,
 				6426F5FB18C0685C002471AC /* SasteyPicture.png in Resources */,
 				D44ECC621A5D12CD00B3082A /* PMjobscell.xib in Resources */,
 				D4A16B541974EEA8002CA2A2 /* Gmateralview.xib in Resources */,
@@ -3365,7 +3365,7 @@
 				64A2F9B419CBE72E009B1018 /* STViewController.m in Sources */,
 				D40DE0C019E64C9A008FFD15 /* InprocessViewController.m in Sources */,
 				D49F876818EEA36B00413CAD /* Cbranch.m in Sources */,
-				64C599031A97182A00122EC9 /* TrackerViewController.m in Sources */,
+				64C599031A97182A00122EC9 /* TrakerViewController.m in Sources */,
 				645875CB1A28899800906869 /* GPConusumViewController.m in Sources */,
 				D49F874718EEA36B00413CAD /* NSData+Base64.m in Sources */,
 				D40DE15019E69DA4008FFD15 /* AFXMLRequestOperation.m in Sources */,
@@ -3458,7 +3458,7 @@
 				D4EC7E40192A10D400C60BA9 /* MyLineDrawingView.m in Sources */,
 				64A4D097195AE50E00C3F783 /* Bidmodel.m in Sources */,
 				D44BEA6C18E0243500719ED5 /* AddressViewController.m in Sources */,
-				64C598FE1A97180500122EC9 /* SchedulerViewController.m in Sources */,
+				64C598FE1A97180500122EC9 /* ShedulerViewController.m in Sources */,
 				D49F875D18EEA36B00413CAD /* SitevistMdl.m in Sources */,
 				64ACC62219A5E20E00FC3FD8 /* Rightscheck.m in Sources */,
 				D49F876018EEA36B00413CAD /* Scfflddetails.m in Sources */,

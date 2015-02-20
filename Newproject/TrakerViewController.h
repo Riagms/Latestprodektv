@@ -1,5 +1,5 @@
 //
-//  SchedulerViewController.h
+//  TrackerViewController.h
 //  Prodektive
 //
 //  Created by GMSIndia 2 on 20/02/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SchedulerViewController : UIViewController
+@interface TrakerViewController : UIViewController
 
 @end

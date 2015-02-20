@@ -15,8 +15,8 @@
 #import "AbsentViewController.h"
 #import "Rightscheck.h"
 #import "PMJobsViewController.h"
-#import "SchedulerViewController.h"
-#import "TrackerViewController.h"
+#import "ShedulerViewController.h"
+#import "TrakerViewController.h"
 //ghfgh
 @interface ManagemttileViewController : UIViewController
 
@@ -39,8 +39,8 @@
 @property (strong, nonatomic)PSitereqmntViewController*SitereqVCtrl;
 @property (strong, nonatomic)AbsentViewController*absentVCtrl;
 @property (strong, nonatomic)PMJobsViewController *jobVCtrl;
-@property (strong, nonatomic)SchedulerViewController *schedVCtrl;
-@property (strong, nonatomic)TrackerViewController *trackVCtrl;
+@property (strong, nonatomic)ShedulerViewController *schedVCtrl;
+@property (strong, nonatomic)TrakerViewController *trackVCtrl;
 
 - (IBAction)clsebtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *siteview;
