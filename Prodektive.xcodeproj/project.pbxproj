@@ -306,6 +306,7 @@
 		D413694C1A97265D003C88A9 /* CrewDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D413694B1A97265D003C88A9 /* CrewDropCell.xib */; };
 		D413694E1A972689003C88A9 /* ResurceDragCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D413694D1A972689003C88A9 /* ResurceDragCell.xib */; };
 		D41369501A97269A003C88A9 /* ResourceDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D413694F1A97269A003C88A9 /* ResourceDropCell.xib */; };
+		D41369521A9738C5003C88A9 /* SchedulerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41369511A9738C5003C88A9 /* SchedulerCell.xib */; };
 		D413816A1946BD4A0056574C /* EqOthersMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D41381691946BD4A0056574C /* EqOthersMdl.m */; };
 		D413816C1947107A0056574C /* createjob.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816B1947107A0056574C /* createjob.png */; };
 		D413816E194710830056574C /* site.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816D194710830056574C /* site.png */; };
@@ -1109,6 +1110,7 @@
 		D413694B1A97265D003C88A9 /* CrewDropCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrewDropCell.xib; sourceTree = "<group>"; };
 		D413694D1A972689003C88A9 /* ResurceDragCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResurceDragCell.xib; sourceTree = "<group>"; };
 		D413694F1A97269A003C88A9 /* ResourceDropCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourceDropCell.xib; sourceTree = "<group>"; };
+		D41369511A9738C5003C88A9 /* SchedulerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchedulerCell.xib; sourceTree = "<group>"; };
 		D41381681946BD4A0056574C /* EqOthersMdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqOthersMdl.h; sourceTree = "<group>"; };
 		D41381691946BD4A0056574C /* EqOthersMdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqOthersMdl.m; sourceTree = "<group>"; };
 		D413816B1947107A0056574C /* createjob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createjob.png; sourceTree = "<group>"; };
@@ -2108,6 +2110,7 @@
 				64C598FB1A97180500122EC9 /* ShedulerViewController.h */,
 				64C598FC1A97180500122EC9 /* ShedulerViewController.m */,
 				64C598FD1A97180500122EC9 /* ShedulerViewController.xib */,
+				D41369511A9738C5003C88A9 /* SchedulerCell.xib */,
 				64C599001A97182A00122EC9 /* TrakerViewController.h */,
 				64C599011A97182A00122EC9 /* TrakerViewController.m */,
 				64C599021A97182A00122EC9 /* TrakerViewController.xib */,
@@ -3228,6 +3231,7 @@
 				D4F05AB91A8C61F000D8C09C /* safetycell.xib in Resources */,
 				D42D8C1E18D2D91C009D8085 /* customvendercell.xib in Resources */,
 				64A11EE918683BE6008D20CC /* customphase.xib in Resources */,
+				D41369521A9738C5003C88A9 /* SchedulerCell.xib in Resources */,
 				D4DEEDDB17F40BE70096A908 /* UploadDocViewController.xib in Resources */,
 				64C27A631A35A95400B66C77 /* branches.png in Resources */,
 				D40DE0C119E64C9A008FFD15 /* InprocessViewController.xib in Resources */,

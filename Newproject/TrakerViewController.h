@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TrakerViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *clsebtn;
+- (IBAction)closebtn:(id)sender;
 
 @end

@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +35,7 @@
 }
 */
 
+- (IBAction)closebtn:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
