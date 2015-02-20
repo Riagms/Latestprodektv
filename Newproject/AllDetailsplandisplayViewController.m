@@ -354,7 +354,7 @@ return cell;
     dropAreaFrame.origin.y = kNavBarHeight;
     dropAreaFrame.size.height -= kNavBarHeight;
     
-    dropArea = [[UIView alloc] initWithFrame:CGRectMake(242, 63, 732, 340)];
+    dropArea = [[UIView alloc] initWithFrame:CGRectMake(243, 44, 732, 340)];
     [dropArea setBackgroundColor:[UIColor whiteColor]];
     [self.tuchgview addSubview:dropArea];
     

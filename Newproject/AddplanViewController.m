@@ -128,6 +128,7 @@
     modalViewNavController = [[UINavigationController alloc] initWithRootViewController:_scaffoldctrl];
     //  modalViewNavController.modalPresentationStyle=UIModalPresentationFormSheet;
     modalViewNavController.modalPresentationStyle=UIModalPresentationCustom;
+     modalViewNavController.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
     [modalViewNavController setNavigationBarHidden:YES animated:YES];
     [self presentViewController:modalViewNavController animated:YES completion:NULL];
 

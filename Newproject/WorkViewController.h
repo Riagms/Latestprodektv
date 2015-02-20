@@ -14,6 +14,7 @@
 
 @interface WorkViewController : UIViewController{
     UIButton *button;
+     BOOL recordResults;
 }
 @property(strong,nonatomic)NSString *planid;
 @property (strong, nonatomic) IBOutlet UITableView *worktable;
@@ -32,5 +33,11 @@
 @property(strong,nonatomic)UITableView *popovertableview;
 @property(strong,nonatomic)UIPopoverController *popovercontroller;
 - (IBAction)disclrebutn:(id)sender;
+
+/* xmlparser*/
+@property(strong,nonatomic)NSXMLParser *xmlParser;
+@property(strong,nonatomic)NSMutableString *soapResults;
+@property(strong,nonatomic)NSMutableData *webData;
+
 
 @end

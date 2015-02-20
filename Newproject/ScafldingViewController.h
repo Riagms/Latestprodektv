@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *heighttextfield;
 @property (strong, nonatomic) IBOutlet UITextField *elevationtextfield;
 @property (strong, nonatomic) IBOutlet UIButton *phasebtn;
+@property(strong,nonatomic)IBOutlet UIScrollView *scroll;
 
 @property(strong,nonatomic)IBOutlet UITableView *popovertableview;
 @property(strong,nonatomic)UIPopoverController *popovercontroller;
