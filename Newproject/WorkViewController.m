@@ -281,5 +281,274 @@
    
    }
 
+#pragma mark-xml parser
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *) namespaceURI qualifiedName:(NSString *)qName
+   attributes: (NSDictionary *)attributeDict{
+    if([elementName isEqualToString:@"ReadPlanningWorkEntImportResponse"])
+    {
+        
+       
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"menunamework"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
 
+    if([elementName isEqualToString:@"EntryId"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"plan"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"WorkNo"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"priority"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"plant"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"subunit"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"equipmet"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"outage"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+      if([elementName isEqualToString:@"clearence"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"reqBy"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"apprBy"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"reqDate"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"apprDate"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+
+
+}
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    
+    
+    
+    if( recordResults )
+        
+    {
+        [_soapResults appendString: string];
+    }
+}
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    if([elementName isEqualToString:@"menunamework"])
+    {
+        recordResults = FALSE;
+        
+       
+        
+        _soapResults=nil;
+
+        
+          }
+    
+    if([elementName isEqualToString:@"EntryId"])
+    {
+        
+        
+           }
+    
+    if([elementName isEqualToString:@"plan"])
+    {
+        
+        
+       
+    }
+    
+    if([elementName isEqualToString:@"WorkNo"])
+    {
+        
+        
+        
+    }
+    
+    if([elementName isEqualToString:@"priority"])
+    {
+        
+        
+        
+    }
+    if([elementName isEqualToString:@"plant"])
+    {
+        
+        
+        
+    }
+    
+    if([elementName isEqualToString:@"subunit"])
+    {
+        
+           }
+    
+    if([elementName isEqualToString:@"equipmet"])
+    {
+        
+     
+    }
+    if([elementName isEqualToString:@"outage"])
+    {
+        
+        
+           }
+    
+    if([elementName isEqualToString:@"clearence"])
+    {
+        
+        
+       
+    }
+    if([elementName isEqualToString:@"reqBy"])
+    {
+        
+        
+          }
+    if([elementName isEqualToString:@"apprBy"])
+    {
+        
+        
+          }
+    if([elementName isEqualToString:@"reqDate"])
+    {
+        
+        
+       
+    }
+    
+    if([elementName isEqualToString:@"apprDate"])
+    {
+        
+        
+      
+    }
+    
+
+}
 @end
