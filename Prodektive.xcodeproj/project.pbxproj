@@ -303,6 +303,9 @@
 		D410CC5119AB4AE50093DDE6 /* FtileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D410CC4F19AB4AE50093DDE6 /* FtileViewController.m */; };
 		D410CC5219AB4AE50093DDE6 /* FtileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D410CC5019AB4AE50093DDE6 /* FtileViewController.xib */; };
 		D410CC5419AB4C8F0093DDE6 /* userrights.png in Resources */ = {isa = PBXBuildFile; fileRef = D410CC5319AB4C8F0093DDE6 /* userrights.png */; };
+		D413694C1A97265D003C88A9 /* CrewDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D413694B1A97265D003C88A9 /* CrewDropCell.xib */; };
+		D413694E1A972689003C88A9 /* ResurceDragCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D413694D1A972689003C88A9 /* ResurceDragCell.xib */; };
+		D41369501A97269A003C88A9 /* ResourceDropCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D413694F1A97269A003C88A9 /* ResourceDropCell.xib */; };
 		D413816A1946BD4A0056574C /* EqOthersMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D41381691946BD4A0056574C /* EqOthersMdl.m */; };
 		D413816C1947107A0056574C /* createjob.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816B1947107A0056574C /* createjob.png */; };
 		D413816E194710830056574C /* site.png in Resources */ = {isa = PBXBuildFile; fileRef = D413816D194710830056574C /* site.png */; };
@@ -1103,6 +1106,9 @@
 		D410CC4F19AB4AE50093DDE6 /* FtileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FtileViewController.m; sourceTree = "<group>"; };
 		D410CC5019AB4AE50093DDE6 /* FtileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FtileViewController.xib; sourceTree = "<group>"; };
 		D410CC5319AB4C8F0093DDE6 /* userrights.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userrights.png; sourceTree = "<group>"; };
+		D413694B1A97265D003C88A9 /* CrewDropCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrewDropCell.xib; sourceTree = "<group>"; };
+		D413694D1A972689003C88A9 /* ResurceDragCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResurceDragCell.xib; sourceTree = "<group>"; };
+		D413694F1A97269A003C88A9 /* ResourceDropCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourceDropCell.xib; sourceTree = "<group>"; };
 		D41381681946BD4A0056574C /* EqOthersMdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EqOthersMdl.h; sourceTree = "<group>"; };
 		D41381691946BD4A0056574C /* EqOthersMdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EqOthersMdl.m; sourceTree = "<group>"; };
 		D413816B1947107A0056574C /* createjob.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createjob.png; sourceTree = "<group>"; };
@@ -2340,6 +2346,9 @@
 				64250B181A959637004458B9 /* PResViewController.h */,
 				64250B191A959637004458B9 /* PResViewController.m */,
 				64250B1A1A959637004458B9 /* PResViewController.xib */,
+				D413694B1A97265D003C88A9 /* CrewDropCell.xib */,
+				D413694D1A972689003C88A9 /* ResurceDragCell.xib */,
+				D413694F1A97269A003C88A9 /* ResourceDropCell.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -2913,6 +2922,7 @@
 				D4109A1719DC1EE2008E9949 /* 070537-glossy-black-3d-button-icon-alphanumeric-information2-ps.png in Resources */,
 				D44BEA6D18E0243500719ED5 /* AddressViewController.xib in Resources */,
 				D49DE838185EB391006F1CDA /* closebutton.png in Resources */,
+				D413694C1A97265D003C88A9 /* CrewDropCell.xib in Resources */,
 				D40D1EC1176B086F00379DD5 /* Default-568h@2x.png in Resources */,
 				64C599041A97182A00122EC9 /* TrackerViewController.xib in Resources */,
 				64C598FF1A97180500122EC9 /* SchedulerViewController.xib in Resources */,
@@ -2955,6 +2965,7 @@
 				D4F7D9DE196E65C800B8F4D4 /* GroupManpower.png in Resources */,
 				D4A16B9F1974EEE0002CA2A2 /* Sumcell.xib in Resources */,
 				D4CA2FD9176EC33E007EEF7D /* Customercell.xib in Resources */,
+				D41369501A97269A003C88A9 /* ResourceDropCell.xib in Resources */,
 				D44BEA7718E0254900719ED5 /* TypeViewController.xib in Resources */,
 				649E1F83186193790010CBD8 /* custommaterialcell.xib in Resources */,
 				D42D8C1D18D2D91C009D8085 /* venderViewController.xib in Resources */,
@@ -3155,6 +3166,7 @@
 				D4A16B401974EEA8002CA2A2 /* SaftyCell.xib in Resources */,
 				D4F7D9E0196E661700B8F4D4 /* work-phares.png in Resources */,
 				D4A16B9B1974EEE0002CA2A2 /* CalEventDetailViewController.xib in Resources */,
+				D413694E1A972689003C88A9 /* ResurceDragCell.xib in Resources */,
 				D4A16B9C1974EEE0002CA2A2 /* Eventcalcell.xib in Resources */,
 				D4A16B5A1974EEA8002CA2A2 /* Dragequip.xib in Resources */,
 				D4FED41817F1A04E004BE242 /* 2.png in Resources */,

@@ -160,6 +160,10 @@
                                     <rect key="frame" x="583" y="144" width="420" height="447"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="Vkm-8B-vMQ"/>
+                                        <outlet property="delegate" destination="-1" id="kRU-pV-Gsm"/>
+                                    </connections>
                                 </tableView>
                                 <view contentMode="scaleToFill" id="5JI-X6-f3J">
                                     <rect key="frame" x="21" y="116" width="210" height="29"/>
@@ -215,6 +219,10 @@
                                     <rect key="frame" x="21" y="146" width="210" height="445"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="JK4-be-Nr8"/>
+                                        <outlet property="delegate" destination="-1" id="OvY-u5-wSk"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,6 +235,10 @@
                                     <rect key="frame" x="547" y="83" width="460" height="504"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="31o-y6-AE3"/>
+                                        <outlet property="delegate" destination="-1" id="qZu-ic-QxV"/>
+                                    </connections>
                                 </tableView>
                                 <view contentMode="scaleToFill" id="VLf-v8-zY1">
                                     <rect key="frame" x="17" y="56" width="384" height="29"/>
@@ -293,6 +305,10 @@
                                     <rect key="frame" x="17" y="85" width="384" height="504"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="ZzO-mr-2gY"/>
+                                        <outlet property="delegate" destination="-1" id="FUD-pX-q38"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.58410863639999999" green="0.59999999999999998" blue="0.5690311589" alpha="1" colorSpace="calibratedRGB"/>

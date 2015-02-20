@@ -38,6 +38,8 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *safetybtnlbl;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *otherbtnlbl;
 
+
+
 - (IBAction)closeresources:(id)sender;
 - (IBAction)resucebt:(id)sender;
 - (IBAction)crewdeletebtn:(id)sender;
@@ -52,5 +54,13 @@
 - (IBAction)Smallbtn:(id)sender;
 - (IBAction)Safetybtn:(id)sender;
 - (IBAction)othersbtn:(id)sender;
+
+/*cell outlets*/
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *crewdropcell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *Resourcedragcell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *resourcedropcell;
+
+
 
 @end

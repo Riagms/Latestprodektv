@@ -77,11 +77,22 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
-//        if(tableView==_prioritytable){
-//            
-//            [[NSBundle mainBundle]loadNibNamed:@"PrirityCell" owner:self options:nil];
-//            cell=_prioritycell;
-//        }
+        if(tableView==_crewdroptable){
+            [[NSBundle mainBundle]loadNibNamed:@"CrewDropCell" owner:self options:nil];
+            cell=_crewdropcell;
+        }
+        if(tableView==_resurcetable){
+              [[NSBundle mainBundle]loadNibNamed:@"ResurceDragCell" owner:self options:nil];
+              cell=_Resourcedragcell;
+        }
+        if(tableView==_resurcedroptable){
+              [[NSBundle mainBundle]loadNibNamed:@"ResourceDropCell" owner:self options:nil];
+            cell=_resourcedropcell;
+            
+        }
+
+        
+        
     }
     cell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
     
