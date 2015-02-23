@@ -17,6 +17,7 @@
 #import "PMJobsViewController.h"
 #import "ShedulerViewController.h"
 #import "TrakerViewController.h"
+#import "NewTrackerViewController.h"
 //ghfgh
 @interface ManagemttileViewController : UIViewController
 
@@ -40,7 +41,7 @@
 @property (strong, nonatomic)AbsentViewController*absentVCtrl;
 @property (strong, nonatomic)PMJobsViewController *jobVCtrl;
 @property (strong, nonatomic)ShedulerViewController *schedVCtrl;
-@property (strong, nonatomic)TrakerViewController *trackVCtrl;
+@property (strong, nonatomic)NewTrackerViewController *trackVCtrl;
 
 - (IBAction)clsebtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UIView *siteview;

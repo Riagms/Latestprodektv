@@ -1,26 +1,28 @@
 //
-//  TrackerViewController.m
+//  NewTrackerViewController.m
 //  Prodektive
 //
-//  Created by GMSIndia 2 on 20/02/15.
+//  Created by Riya on 2/23/15.
 //  Copyright (c) 2015 GMSIndia1. All rights reserved.
 //
 
-#import "TrakerViewController.h"
+#import "NewTrackerViewController.h"
 
-@interface TrakerViewController ()
+@interface NewTrackerViewController ()
 
 @end
 
-@implementation TrakerViewController
+@implementation NewTrackerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
-    [[self.wrktxtlbl layer] setBorderColor:[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor];
-    [[self.wrktxtlbl layer] setBorderWidth:2];
-    [[self.wrktxtlbl layer] setCornerRadius:10];
+    _tracktable.layer.borderWidth=3.0;
+    _tracktable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:250.0/255.0f alpha:1.0f].CGColor;
+    _titleview.backgroundColor = [UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,20 +40,16 @@
 }
 */
 
-- (IBAction)closebtn:(id)sender {
+- (IBAction)clsebtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)foremanbtn:(id)sender {
+
+- (IBAction)Addbtn:(id)sender {
+    self.TrackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
+    self.TrackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    [self presentViewController:self.TrackVCtrl animated:YES completion:nil];
 }
 
-- (IBAction)jobidbtn:(id)sender {
-}
-- (IBAction)datebtn:(id)sender {
-}
-
-- (IBAction)starttimebtn:(id)sender {
-}
-
-- (IBAction)endtimebtn:(id)sender {
+- (IBAction)editbtn:(id)sender {
 }
 @end

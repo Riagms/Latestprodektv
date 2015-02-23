@@ -104,7 +104,7 @@
 }
 -(void)tracker
 {
-    self.trackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
+    self.trackVCtrl=[[NewTrackerViewController alloc]initWithNibName:@"NewTrackerViewController" bundle:nil];
     self.trackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
     [self presentViewController:self.trackVCtrl animated:YES completion:nil];
 }

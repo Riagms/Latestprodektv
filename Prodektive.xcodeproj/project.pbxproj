@@ -328,6 +328,9 @@
 		D41B14ED195C2F1700DEED6E /* calendarimg.png in Resources */ = {isa = PBXBuildFile; fileRef = D41B14EC195C2F1700DEED6E /* calendarimg.png */; };
 		D41BAF3D1A2D925F00674DDB /* leadsnew.png in Resources */ = {isa = PBXBuildFile; fileRef = D41BAF3C1A2D925E00674DDB /* leadsnew.png */; };
 		D41BAF3F1A2D9B6F00674DDB /* work-entry.png in Resources */ = {isa = PBXBuildFile; fileRef = D41BAF3E1A2D9B6F00674DDB /* work-entry.png */; };
+		D41F92291A9AEB6F005812B8 /* NewTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41F92271A9AEB6F005812B8 /* NewTrackerViewController.m */; };
+		D41F922A1A9AEB70005812B8 /* NewTrackerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41F92281A9AEB6F005812B8 /* NewTrackerViewController.xib */; };
+		D41F922E1A9AF053005812B8 /* NewTrackerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41F922D1A9AF053005812B8 /* NewTrackerCell.xib */; };
 		D423E2551A63C45000DAB75E /* Jobimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D423E2541A63C45000DAB75E /* Jobimage.png */; };
 		D42505CA19A46830001D16A2 /* SecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42505C819A46830001D16A2 /* SecurityViewController.m */; };
 		D42505CB19A46830001D16A2 /* SecurityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42505C919A46830001D16A2 /* SecurityViewController.xib */; };
@@ -1139,6 +1142,10 @@
 		D41B14EC195C2F1700DEED6E /* calendarimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarimg.png; sourceTree = "<group>"; };
 		D41BAF3C1A2D925E00674DDB /* leadsnew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leadsnew.png; sourceTree = "<group>"; };
 		D41BAF3E1A2D9B6F00674DDB /* work-entry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "work-entry.png"; sourceTree = "<group>"; };
+		D41F92261A9AEB6F005812B8 /* NewTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTrackerViewController.h; sourceTree = "<group>"; };
+		D41F92271A9AEB6F005812B8 /* NewTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackerViewController.m; sourceTree = "<group>"; };
+		D41F92281A9AEB6F005812B8 /* NewTrackerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTrackerViewController.xib; sourceTree = "<group>"; };
+		D41F922D1A9AF053005812B8 /* NewTrackerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTrackerCell.xib; sourceTree = "<group>"; };
 		D423E2541A63C45000DAB75E /* Jobimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jobimage.png; sourceTree = "<group>"; };
 		D42505C719A46830001D16A2 /* SecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityViewController.h; sourceTree = "<group>"; };
 		D42505C819A46830001D16A2 /* SecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityViewController.m; sourceTree = "<group>"; };
@@ -2114,6 +2121,10 @@
 				64C599001A97182A00122EC9 /* TrakerViewController.h */,
 				64C599011A97182A00122EC9 /* TrakerViewController.m */,
 				64C599021A97182A00122EC9 /* TrakerViewController.xib */,
+				D41F92261A9AEB6F005812B8 /* NewTrackerViewController.h */,
+				D41F92271A9AEB6F005812B8 /* NewTrackerViewController.m */,
+				D41F92281A9AEB6F005812B8 /* NewTrackerViewController.xib */,
+				D41F922D1A9AF053005812B8 /* NewTrackerCell.xib */,
 			);
 			name = "Project Management";
 			sourceTree = "<group>";
@@ -2946,6 +2957,7 @@
 				D44ECC6F1A5D3E8E00B3082A /* PurchaseViewController.xib in Resources */,
 				64C0AD081A5CF84400B31F52 /* StockViewController.xib in Resources */,
 				D49FA2F0196164560037BA7A /* TEqupcell.xib in Resources */,
+				D41F922E1A9AF053005812B8 /* NewTrackerCell.xib in Resources */,
 				64A5ED5019C2D7D3002E0018 /* Subcell.xib in Resources */,
 				64C3BB3C1A2836D000E5A3EA /* GSmallViewController.xib in Resources */,
 				D4A16B901974EEE0002CA2A2 /* Bidreviewcell.xib in Resources */,
@@ -3256,6 +3268,7 @@
 				D4D7A29117F5422000880E38 /* Untitled.png in Resources */,
 				D453DA2E1873F1F3007EE3DC /* Thirdpartycell.xib in Resources */,
 				64A4856D1A1B1D0C00B81DDF /* CalEqevnt.xib in Resources */,
+				D41F922A1A9AEB70005812B8 /* NewTrackerViewController.xib in Resources */,
 				D4F7D9CA196E5B4800B8F4D4 /* labourmanagement.png in Resources */,
 				D4A16B391974EEA8002CA2A2 /* AddserviceViewController.xib in Resources */,
 				D42D8C0918D2D8AC009D8085 /* custonfldrrigtscell.xib in Resources */,
@@ -3369,6 +3382,7 @@
 				64A2F9B419CBE72E009B1018 /* STViewController.m in Sources */,
 				D40DE0C019E64C9A008FFD15 /* InprocessViewController.m in Sources */,
 				D49F876818EEA36B00413CAD /* Cbranch.m in Sources */,
+				D41F92291A9AEB6F005812B8 /* NewTrackerViewController.m in Sources */,
 				64C599031A97182A00122EC9 /* TrakerViewController.m in Sources */,
 				645875CB1A28899800906869 /* GPConusumViewController.m in Sources */,
 				D49F874718EEA36B00413CAD /* NSData+Base64.m in Sources */,
