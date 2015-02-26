@@ -5,15 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PriorityViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrirityViewController">
             <connections>
-                <outlet property="addview" destination="ZXi-J3-yXq" id="hmv-C3-yge"/>
+                <outlet property="addview" destination="ZXi-J3-yXq" id="0uY-RA-kNU"/>
                 <outlet property="deletebtn" destination="fxT-95-ahK" id="GRl-qQ-jt8"/>
+                <outlet property="navitem" destination="AS5-h1-ydh" id="T7W-M4-m6B"/>
                 <outlet property="navtitle" destination="AS5-h1-ydh" id="fBt-Ac-2jS"/>
                 <outlet property="priorityleveltxtfld" destination="Brp-je-Q97" id="ys5-jb-ct5"/>
                 <outlet property="prioritytable" destination="D8o-Nm-z4b" id="McH-qp-zfP"/>
                 <outlet property="prioritytxtfld" destination="iGy-Co-gPg" id="2h3-dp-EeX"/>
                 <outlet property="titleview" destination="12K-zO-mKq" id="cB9-SL-bcK"/>
+                <outlet property="updatebtn" destination="ggQ-UI-zkJ" id="Pl5-Ao-B9e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,6 +24,15 @@
             <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D8o-Nm-z4b">
+                    <rect key="frame" x="14" y="109" width="503" height="439"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="lJT-MB-jue"/>
+                        <outlet property="delegate" destination="-1" id="uZO-Yb-xfG"/>
+                    </connections>
+                </tableView>
                 <navigationBar contentMode="scaleToFill" id="bOy-NY-bfT">
                     <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,7 +55,7 @@
                     </items>
                 </navigationBar>
                 <view hidden="YES" contentMode="scaleToFill" id="ZXi-J3-yXq">
-                    <rect key="frame" x="92" y="147" width="357" height="235"/>
+                    <rect key="frame" x="92" y="111" width="357" height="235"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <navigationBar contentMode="scaleToFill" id="AO0-hl-VZG">
@@ -78,7 +89,7 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="iGy-Co-gPg">
                             <rect key="frame" x="47" y="94" width="248" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority Level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1U4-2t-ddL">
@@ -90,8 +101,11 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Brp-je-Q97">
                             <rect key="frame" x="47" y="152" width="248" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="axb-k7-fAL"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ggQ-UI-zkJ">
                             <rect key="frame" x="141" y="197" width="60" height="30"/>
@@ -108,17 +122,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D8o-Nm-z4b">
-                    <rect key="frame" x="14" y="123" width="503" height="439"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="lJT-MB-jue"/>
-                        <outlet property="delegate" destination="-1" id="uZO-Yb-xfG"/>
-                    </connections>
-                </tableView>
                 <view contentMode="scaleToFill" id="12K-zO-mKq">
-                    <rect key="frame" x="14" y="83" width="503" height="40"/>
+                    <rect key="frame" x="14" y="69" width="503" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D0g-4i-WAj">

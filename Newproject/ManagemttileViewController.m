@@ -125,12 +125,15 @@
     
 }
 -(void)Timesheetpage{
-    _timeactivitybtn.hidden=NO;
-    [_timeactivitybtn startAnimating];
-
-    _Moduleid=54;
-    [self UserRightsforparticularmoduleselect];
+//    _timeactivitybtn.hidden=NO;
+//    [_timeactivitybtn startAnimating];
+//
+//    _Moduleid=54;
+//    [self UserRightsforparticularmoduleselect];
     
+    self.WorkVCtrl=[[WorKTrackViewController alloc]initWithNibName:@"WorKTrackViewController" bundle:nil];
+    self.WorkVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
+    [self presentViewController:self.WorkVCtrl animated:YES completion:nil];
     
 }
 -(void)labourPage{

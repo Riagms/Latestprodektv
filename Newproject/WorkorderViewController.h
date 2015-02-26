@@ -19,6 +19,7 @@
     NSString*msgstrg;
     
 }
+
 @property (strong, nonatomic)Validation *val;
 @property (strong, nonatomic)Purchsemdl *purchsemdl;
 @property (strong, nonatomic)NSString *jobid;

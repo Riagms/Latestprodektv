@@ -12,19 +12,30 @@
 #import "PMjobsmdl.h"
 #import "BidViewController.h"
 #import "WorkorderViewController.h"
+#import "ShedulerViewController.h"
+
+#import "NewTrackerViewController.h"
+#import "TicketViewController.h"
+#import "WorKTrackViewController.h"
+
+
 @interface PMJobsViewController : UIViewController{
     UIButton *button;
     BOOL  recordResults;
     NSInteger poptype,btnindex;
-    NSString *newstrg;
+    NSString *newstrg,*planid;
 }
 
 @property (strong, nonatomic)NSString*searchstring;
 
 @property (strong, nonatomic) IBOutlet UISearchBar * SearchingBar;
-
+@property (strong, nonatomic)WorKTrackViewController*WorktrackVCtrl;
 @property (strong, nonatomic)WorkorderViewController *WorkVCtrl;
 @property (strong, nonatomic)PurchaseViewController *purchaseVCtrl;
+@property (strong, nonatomic)ShedulerViewController *schedVCtrl;
+@property (strong, nonatomic)NewTrackerViewController *trackVCtrl;
+@property (strong, nonatomic)TicketViewController*TicketVCtrl;
+
 @property (strong, nonatomic)PMjobsmdl *jobmdl;
 @property (strong, nonatomic)BidViewController *bidVCtrl;
 @property (strong, nonatomic)NSMutableArray *jobarray;

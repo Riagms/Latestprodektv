@@ -46,6 +46,8 @@
                 <outlet property="notestitle" destination="qZp-Xx-jXf" id="z1Q-99-s3e"/>
                 <outlet property="notesview" destination="hdW-2l-gyZ" id="Zhz-R2-2U1"/>
                 <outlet property="picturepreviewimg" destination="iMR-tn-QE3" id="475-aW-4Et"/>
+                <outlet property="plandoctable" destination="0xx-co-Rq8" id="MD8-rD-MdW"/>
+                <outlet property="plandocview" destination="mVM-CV-E8S" id="8GY-Hq-0i9"/>
                 <outlet property="pratebtnlbl" destination="hZb-DZ-6b9" id="LeM-Ru-dXP"/>
                 <outlet property="prdunratetble" destination="YtF-Od-Rb5" id="hvt-Bp-jSo"/>
                 <outlet property="productionrateview" destination="4f2-od-eAq" id="aNf-Yf-EAR"/>
@@ -57,6 +59,7 @@
                 <outlet property="scpeofwrktxtview" destination="MGX-iK-94e" id="G1Z-el-mC0"/>
                 <outlet property="scrollview" destination="y3Y-fN-Sv9" id="lQv-fr-afv"/>
                 <outlet property="tabletitleview" destination="PHA-u6-Q1v" id="Q8Z-n5-vu0"/>
+                <outlet property="titleview" destination="3gd-nh-ZrL" id="tGw-Kj-zbZ"/>
                 <outlet property="view" destination="2" id="3"/>
                 <outlet property="weatherbtnlbl" destination="cVR-bp-EOA" id="bXZ-wS-VZU"/>
                 <outlet property="weathertable" destination="MRU-zb-2OY" id="T5e-0x-kF9"/>
@@ -917,6 +920,35 @@
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.64609256260000003" blue="0.58579468260000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
+                                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="mVM-CV-E8S" userLabel="planview">
+                                    <rect key="frame" x="242" y="1" width="540" height="620"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" id="3gd-nh-ZrL">
+                                            <rect key="frame" x="33" y="36" width="487" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Ds-ga-KHD">
+                                                    <rect key="frame" x="31" y="11" width="149" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.67843137249999996" green="0.84705882349999995" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" id="0xx-co-Rq8">
+                                            <rect key="frame" x="33" y="78" width="487" height="410"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="8yF-xu-QMs"/>
+                                                <outlet property="delegate" destination="-1" id="PzW-3R-oyx"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
                             </subviews>
                         </scrollView>
                         <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="YfS-a4-0AR">
@@ -1010,7 +1042,7 @@
                                 <barButtonItem width="33" style="plain" systemItem="fixedSpace" id="rGd-9w-Rhk">
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </barButtonItem>
-                                <barButtonItem title="Other Bidders" id="jp7-S0-OuB">
+                                <barButtonItem title="Documents" id="jp7-S0-OuB">
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <connections>
                                         <action selector="otherbiddersbtn:" destination="-1" id="DTs-jl-7py"/>

@@ -43,11 +43,11 @@
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Prb-k8-eTl">
-                        <rect key="frame" x="229" y="-3" width="1" height="50"/>
+                        <rect key="frame" x="229" y="0.0" width="1" height="44"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0o-q6-5Ng">
-                        <rect key="frame" x="412" y="-3" width="1" height="50"/>
+                        <rect key="frame" x="412" y="0.0" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-5z-Egb">

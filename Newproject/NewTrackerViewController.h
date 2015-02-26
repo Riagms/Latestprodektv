@@ -8,19 +8,30 @@
 
 #import <UIKit/UIKit.h>
 #import "TrakerViewController.h"
+#import "Trackmdl.h"
 
-@interface NewTrackerViewController : UIViewController
+@interface NewTrackerViewController : UIViewController{
+       BOOL recordResults;
+    UIButton*button;
+    NSInteger btnindex;
+}
+
+@property(strong,nonatomic)NSString*editpath,*workorder, *workorderdesc;
+
+@property (strong, nonatomic)Trackmdl*Trackmdl;
+@property (strong, nonatomic)NSMutableArray*Trackarray;
+
+/* xmlparser*/
+@property(strong,nonatomic)NSXMLParser *xmlParser;
+@property(strong,nonatomic)NSMutableString *soapResults;
+@property(strong,nonatomic)NSMutableData *webData;
+
 
 
 @property (strong, nonatomic)TrakerViewController*TrackVCtrl;
 @property (strong, nonatomic) IBOutlet UIView *titleview;
 @property (strong, nonatomic) IBOutlet UITableView *tracktable;
 
-- (IBAction)clsebtn:(id)sender;
-
-- (IBAction)Addbtn:(id)sender;
-
-- (IBAction)editbtn:(id)sender;
 
 
 /*cell outlets*/
@@ -31,6 +42,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *datelbl;
 @property (strong, nonatomic) IBOutlet UILabel *starttimelbl;
 @property (strong, nonatomic) IBOutlet UILabel *endtimelbl;
-@property (strong, nonatomic) IBOutlet UIButton *editbtn;
+//@property (strong, nonatomic) IBOutlet UIButton *editbtn;
 
+
+
+- (IBAction)clsebtn:(id)sender;
+
+- (IBAction)Addbtn:(id)sender;
+
+- (IBAction)editbtn:(id)sender;
 @end

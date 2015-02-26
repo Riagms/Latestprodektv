@@ -46,6 +46,11 @@
     UITableViewCell*draggedCell;
     
     }
+@property(strong,nonatomic)NSString *existstring;
+@property(strong,nonatomic)NSString *qty;
+@property(strong,nonatomic)NSDecimalNumber *sitefactor;
+@property(strong,nonatomic)NSDecimalNumber *chightrate;
+@property(strong,nonatomic)NSString *desvalue;
 @property(weak,nonatomic)id<animatndelegate>delegate;
 @property(strong,nonatomic)Scaffoldsubtypemodel  * scfldsubtypemdl;
 @property(strong,nonatomic)NewscfldDetails       * newscflddetails;
@@ -55,12 +60,12 @@
 @property(strong,nonatomic)NSString *searchstring;
 
 /*variables*/
-@property (nonatomic)double manpwr;
-@property (nonatomic)double dishr;
-@property (nonatomic)double erecrhr;
-@property (nonatomic)double sstmanpwr;
-@property (nonatomic)double sstdishr;
-@property (nonatomic)double ssterecrhr;
+//@property (nonatomic)double manpwr;
+//@property (nonatomic)double dishr;
+//@property (nonatomic)double erecrhr;
+@property (readwrite)NSDecimalNumber *manpwr;
+@property (readwrite)NSDecimalNumber *dishr;
+@property (readwrite)NSDecimalNumber *erecrhr;
 
 @property (readwrite)NSInteger btnindx;
 @property (readwrite)NSInteger optionidentifier;
@@ -76,7 +81,7 @@
 @property (strong, nonatomic)NSString  * equip;
 @property (strong, nonatomic)NSString  * ph;
 @property (strong, nonatomic)NSString  * sid;
-@property (strong, nonatomic)NSString  * qty;
+//@property (strong, nonatomic)NSString  * qty;
 @property (strong, nonatomic)NSString  * phaseid;
 @property (strong, nonatomic)NSString  * sequenceid;
 @property (strong, nonatomic)NSString  * subunit;

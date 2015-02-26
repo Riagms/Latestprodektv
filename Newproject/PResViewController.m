@@ -21,6 +21,9 @@
     //_titleview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:250.0/255.0f alpha:1.0f];
     self.crewview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
      self.resurceview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
+//    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
+//    panGesture.delegate=self;
+//    [self.dropview addGestureRecognizer:panGesture];
     
 }
 
@@ -41,6 +44,10 @@
     _smallbtnlbl.tintColor=[UIColor blackColor];
     _safetybtnlbl.tintColor=[UIColor blackColor];
     _otherbtnlbl.tintColor=[UIColor blackColor];
+    
+    //[self setupSourceTableWithFrame:CGRectMake(0, 0, 384,489)];
+   // [self setupDestinationTableWithFrame:CGRectMake(0, 0, 460, 493)];
+
 }
 
 /*
@@ -102,7 +109,327 @@
     return cell;
 }
 
+//#pragma mark -
+//#pragma mark UIGestureRecognizer
+//
+//- (void)handlePanning:(UIPanGestureRecognizer *)gestureRecognizer
+//{
+//    switch ([gestureRecognizer state]) {
+//        case UIGestureRecognizerStateBegan:
+//            [self startDragging:gestureRecognizer];
+//            break;
+//        case UIGestureRecognizerStateChanged:
+//            [self doDrag:gestureRecognizer];
+//            break;
+//        case UIGestureRecognizerStateEnded:
+//        case UIGestureRecognizerStateCancelled:
+//        case UIGestureRecognizerStateFailed:
+//            [self stopDragging:gestureRecognizer];
+//            break;
+//        default:
+//            break;
+//    }
+//}
 
+
+
+
+//#pragma mark -
+//#pragma mark Helper methods for initialization
+//
+//- (void)setupSourceTableWithFrame:(CGRect)frame
+//{
+//    
+//    [self.touchview addSubview:_manpwrtable];
+//}
+//
+//- (void)setupDestinationTableWithFrame:(CGRect)frame
+//{
+//    
+//    CGRect dropAreaFrame = frame;
+//    dropAreaFrame.origin.y = kNavBarHeight;
+//    dropAreaFrame.size.height -= kNavBarHeight;
+//    
+//    dropArea = [[UIView alloc] initWithFrame:CGRectMake(540, 30, 460, 700)];
+//    [dropArea setBackgroundColor:[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f]];
+//    [self.touchview addSubview:dropArea];
+//    
+//    CGRect contentFrame = dropAreaFrame;
+//    contentFrame.origin = CGPointMake(0, 0);
+//    
+//    UILabel* dropAreaLabel = [[UILabel alloc] initWithFrame:contentFrame];
+//    dropAreaLabel.backgroundColor = [UIColor clearColor];
+//    dropAreaLabel.font = [UIFont boldSystemFontOfSize:12];
+//    dropAreaLabel.textAlignment = NSTextAlignmentCenter;
+//    dropAreaLabel.textColor = [UIColor whiteColor];
+//    // dropAreaLabel.text = @"Drop items here...";
+//    [dropArea addSubview:dropAreaLabel];
+//    
+//    [dropArea addSubview:_crewnametable];
+//    
+//}
+//
+//- (void)initDraggedCellWithCell:(UITableViewCell*)cell AtPoint:(CGPoint)point
+//{
+//    NSIndexPath* indexPath = [_manpwrtable indexPathForRowAtPoint:point];
+//    //UITableViewCell* cell = [_subtypetable cellForRowAtIndexPath:indexPath];
+//    // get rid of old cell, if it wasn't disposed already
+//    if(draggedCell != nil)
+//    {
+//        [draggedCell removeFromSuperview];
+//        // [draggedCell release];
+//        draggedCell = nil;
+//    }
+//    
+//    //CGRect frame = CGRectMake(20, 250, cell.frame.size.width-5, cell.frame.size.height-10);
+//    CGRect frame;
+//    if(point.y>=489){
+//        
+//        frame= CGRectMake(point.x, 250, cell.frame.size.width-5, cell.frame.size.height-10);
+//    }
+//    else{
+//        frame = CGRectMake(point.x, point.y, cell.frame.size.width-5, cell.frame.size.height-10);
+//    }
+//    
+//    
+//    draggedCell = [[UITableViewCell alloc] init];
+//    draggedCell.selectionStyle = UITableViewCellSelectionStyleGray;
+//    //Manpwr*manmdl1=(Manpwr *)[_manpwrarray objectAtIndex:indexPath.row];
+//    draggedCell.textLabel.text =manmdl1.itemcode;
+//    draggedCell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
+//    
+//    draggedCell.textLabel.textColor = cell.textLabel.textColor;
+//    draggedCell.highlighted = YES;
+//    draggedCell.frame = frame;
+//    draggedCell.alpha = 0.8;
+//    
+//    [self.touchview addSubview:draggedCell];
+//}
+//
+//
+//#pragma mark Helper methods for dragging
+//
+//- (void)startDragging:(UIPanGestureRecognizer *)gestureRecognizer
+//{
+//    
+//    
+//    CGPoint pointInSrc = [gestureRecognizer locationInView:_manpwrtable];
+//    CGPoint pointInDst = [gestureRecognizer locationInView:_crewnametable];
+//    
+//    if([_manpwrtable pointInside:pointInSrc withEvent:nil])
+//    {
+//        [self startDraggingFromSrcAtPoint:pointInSrc];
+//        dragFromSource = YES;
+//    }
+//    else if([_crewnametable pointInside:pointInDst withEvent:nil])
+//    {
+//        //[self startDraggingFromDstAtPoint:pointInDst];
+//        dragFromSource = NO;
+//    }
+//    
+//}
+//
+//- (void)startDraggingFromSrcAtPoint:(CGPoint)point{
+//    
+//    if ([_crewbtnlbl.titleLabel.text isEqualToString:@"Select"]) {
+//        
+//        UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Please select Crew Name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [alert show];
+//        
+//    }
+//    else{
+//        
+//        NSIndexPath* indexPath = [_manpwrtable indexPathForRowAtPoint:point];
+//        UITableViewCell* cell = [_manpwrtable cellForRowAtIndexPath:indexPath];
+//        
+//        if(cell != nil)
+//        {
+//            CGPoint origin = cell.frame.origin;
+//            origin.x += _manpwrtable.frame.origin.x;
+//            origin.y += _manpwrtable.frame.origin.y-2;
+//            // origin.y += 100;
+//            
+//            [self initDraggedCellWithCell:cell AtPoint:origin];
+//            cell.highlighted = NO;
+//            
+//            if(draggedData != nil)
+//            {
+//                //[draggedData release];
+//                draggedData = nil;
+//            }
+//            
+//            crewpath=indexPath.row;
+//            
+//            Manpwr*manmdl1=(Manpwr *)[_manpwrarray objectAtIndex:crewpath];
+//            
+//            draggedData = manmdl1.itemcode;
+//            NSLog(@"%@",manmdl1.itemdescptn);
+//        }
+//    }
+//    
+//}
+//
+//- (void)startDraggingFromDstAtPoint:(CGPoint)point
+//{
+//    
+//    NSIndexPath* indexPath = [_crewnametable indexPathForRowAtPoint:point];
+//    UITableViewCell* cell = [_crewnametable cellForRowAtIndexPath:indexPath];
+//    if(cell != nil)
+//    {
+//        CGPoint origin = cell.frame.origin;
+//        origin.x += dropArea.frame.origin.x;
+//        origin.y += dropArea.frame.origin.y;
+//        
+//        [self initDraggedCellWithCell:cell AtPoint:origin];
+//        cell.highlighted = NO;
+//        
+//        if(draggedData != nil)
+//        {
+//            //[draggedData release];
+//            draggedData = nil;
+//        }
+//        Manpwr*manmdl1=(Manpwr *)[_manpwrarray objectAtIndex:indexPath.row];
+//        draggedData = manmdl1.itemcode;
+//        
+//        // remove old cell
+//        [_crewmembersarray removeObjectAtIndex:indexPath.row];
+//        [_crewnametable deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+//        pathFromDstTable = indexPath;
+//        
+//        [UIView animateWithDuration:0.2 animations:^
+//         {
+//             CGRect frame = _crewnametable.frame;
+//             //frame.size.height = kCellHeight * [dstData count];
+//             _crewnametable.frame = frame;
+//         }];
+//        
+//    }
+//    
+//    
+//}
+//
+//- (void)doDrag:(UIPanGestureRecognizer *)gestureRecognizer
+//{
+//    if(draggedCell != nil && draggedData != nil)
+//    {
+//        CGPoint translation = [gestureRecognizer translationInView:[draggedCell superview]];
+//        [draggedCell setCenter:CGPointMake([draggedCell center].x + translation.x,
+//                                           [draggedCell center].y + translation.y)];
+//        [gestureRecognizer setTranslation:CGPointZero inView:[draggedCell superview]];
+//    }
+//}
+//
+//- (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
+//{
+//    _existstring=@"";
+//    if(draggedCell != nil && draggedData != nil)
+//    {
+//        
+//        //NSLog(@"%d",[gestureRecognizer state]);
+//        //NSLog(@"%hhd",[dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil]);
+//        
+//        
+//        if([gestureRecognizer state] == UIGestureRecognizerStateEnded
+//           && [dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil])
+//        {
+//            NSIndexPath* indexPath = [_crewnametable indexPathForRowAtPoint:[gestureRecognizer locationInView:_crewnametable]];
+//            if(indexPath != nil)
+//            {
+//                
+//                Crewmodel *crewmdl1=(Crewmodel *)[_crewmembersarray objectAtIndex:indexPath.row];
+//                crewmdl1.manpower=draggedData;
+//                [_crewmembersarray addObject:crewmdl1];
+//                
+//                //  [_crewmembersarray insertObject:draggedData atIndex:indexPath.row];
+//                [_crewnametable insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+//                [self UserLogcrewMove];
+//                Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
+//                
+//                if (rightsmodel.EditModule==0) {
+//                    
+//                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"You dont have rights to drag this item" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//                    [alert show];
+//                }
+//                else
+//                {
+//                    
+//                    
+//                    [self crewinsert];
+//                }
+//                
+//            }
+//            else
+//            {
+//                if ([_crewmembersarray count]==0) {
+//                    Crewmodel *crewmdl1=[[Crewmodel alloc]init];
+//                    crewmdl1.manpower=draggedData;
+//                    [_crewmembersarray addObject:crewmdl1];
+//                    
+//                }
+//                else{
+//                    
+//                    Crewmodel *crewmdl1=(Crewmodel *)[_crewmembersarray objectAtIndex:indexPath.row];
+//                    crewmdl1.manpower=draggedData;
+//                    [_crewmembersarray addObject:crewmdl1];
+//                }
+//                [self UserLogcrewMove];
+//                Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
+//                
+//                if (rightsmodel.EditModule==0) {
+//                    
+//                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"You dont have rights to drag this item" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//                    [alert show];
+//                }
+//                else
+//                {
+//                    
+//                    
+//                    [self crewinsert];
+//                }
+//            }
+//        }
+//        else if(!dragFromSource && pathFromDstTable != nil)
+//        {
+//            // insert cell back where it came from
+//            [_crewmembersarray insertObject:draggedData atIndex:pathFromDstTable.row];
+//            [_crewnametable insertRowsAtIndexPaths:[NSArray arrayWithObject:pathFromDstTable] withRowAnimation:UITableViewRowAnimationMiddle];
+//            
+//            //[pathFromDstTable release];
+//            pathFromDstTable = nil;
+//        }
+//        if ([_existstring isEqualToString:@"This Man Power is  Already Exists"]) {
+//            
+//            [draggedCell removeFromSuperview];
+//            //[draggedCell release];
+//            draggedCell = nil;
+//            
+//            //[draggedData release];
+//            draggedData = nil;
+//        }
+//        
+//        else
+//        {
+//            
+//            [UIView animateWithDuration:0.3 animations:^
+//             {
+//                 CGRect frame = _crewnametable.frame;
+//                 //frame.size.height = kCellHeight * [_Maintablescflddetailsarray count];
+//                 _crewnametable.frame = frame;
+//             }];
+//            
+//            [draggedCell removeFromSuperview];
+//            //[draggedCell release];
+//            draggedCell = nil;
+//            
+//            //[draggedData release];
+//            draggedData = nil;
+//        }
+//    }
+//}
+//
+//
+
+#pragma mark-button Action
 - (IBAction)closeresources:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

@@ -27,9 +27,11 @@
     NSInteger viewclck;
     NSInteger webtype;
     NSInteger optionidntfr,Edittype;
+    NSString *docname;
+
 
 }
-
+@property (strong, nonatomic)NSString *workorderid;
 @property(strong,nonatomic)IBOutlet UIView *productionrateview;
 @property (strong, nonatomic)NSString *passingdate;
 @property (strong, nonatomic)UIImage *Editedimage;
@@ -317,4 +319,12 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *bidnamelbl;
 
+/*plandocument*/
+@property (strong, nonatomic) IBOutlet UIView *plandocview;
+@property (strong, nonatomic) IBOutlet UITableView *plandoctable;
+@property (strong, nonatomic) IBOutlet UITableViewCell *pldoccell;
+@property (strong, nonatomic) IBOutlet UIButton *pldocviewbtn;
+@property (strong, nonatomic)NSMutableArray *documntarray;
+@property (strong, nonatomic)NSMutableDictionary *docmntdict;
+@property (strong, nonatomic) IBOutlet UIView *titleview;
 @end

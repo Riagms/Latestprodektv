@@ -234,9 +234,10 @@ drawtype=1;
                    "<Value>%f</Value>\n"
                    "<PlanId>%@</PlanId>\n"
                    "<ServiceId>%d</ServiceId>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</InsertSitevisitProductionRates>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",newstrg,[_valuetxtfld.text floatValue],_companyid,[serviceid integerValue]];
+                   "</soap:Envelope>\n",newstrg,[_valuetxtfld.text floatValue],_companyid,[serviceid integerValue],_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
        NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
@@ -291,9 +292,10 @@ drawtype=1;
                    "<typeId>%d</typeId>\n"
                    "<cost>%f</cost>\n"
                    "<planId>%@</planId>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertjobsiterequirements>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",jobid,breq.code,breq.type,[_jobcosttxtfld.text floatValue],_companyid];
+                   "</soap:Envelope>\n",jobid,breq.code,breq.type,[_jobcosttxtfld.text floatValue],_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -349,9 +351,10 @@ drawtype=1;
                    "<ruletitle>%@</ruletitle>\n"
                    "<description>%@</description>\n"
                    "<planId>%@</planId>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertsafetyrules>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",newstrg,_ruldescptn.text,_companyid];
+                   "</soap:Envelope>\n",newstrg,_ruldescptn.text,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -408,9 +411,10 @@ drawtype=1;
                    "<area>%f</area>\n"
                    "<unit>%@</unit>\n"
                    "<planId>%@</planId>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertequipment>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_equpnotxtfld.text,newstrg,[_equpareatxtfld.text floatValue],_equnittxtfld.text,_companyid];
+                   "</soap:Envelope>\n",_equpnotxtfld.text,newstrg,[_equpareatxtfld.text floatValue],_equnittxtfld.text,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -485,9 +489,10 @@ NSString*    dateString = [dateFormat2 stringFromDate:dates];
                    "<enddate>%@</enddate>\n"
                    "<description>%@</description>\n"
                    "<planId>%@</planId>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertworkschedule>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",dateString, dateString1,newstrg,_companyid];
+                   "</soap:Envelope>\n",dateString, dateString1,newstrg,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -655,9 +660,10 @@ NSString*    dateString = [dateFormat2 stringFromDate:dates];
                    "<planId>%@</planId>\n"
                    "<FileName>%@</FileName>\n"
                    "<Type>%d</Type>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertMeetingnotes>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_datesstrg,_meetgdetailslbl.text,[useridname integerValue],_companyid,nestrg,typ];
+                   "</soap:Envelope>\n",_datesstrg,_meetgdetailslbl.text,[useridname integerValue],_companyid,nestrg,typ,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -786,9 +792,10 @@ NSString*    dateString = [dateFormat2 stringFromDate:dates];
                    "<WeatherTo>%@</WeatherTo>\n"
                    "<WeatherDescription>%@</WeatherDescription>\n"
                    "<planId>%@</planId>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertweatheroutlook>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",   dateString ,dateString1,_wathrcndtnlbl.text,_companyid];
+                   "</soap:Envelope>\n",   dateString ,dateString1,_wathrcndtnlbl.text,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -936,9 +943,10 @@ NSString*    dateString = [dateFormat2 stringFromDate:dates];
                    "<DateTime>%@</DateTime>\n"
                    "<FileName>%@</FileName>\n"
                    "<Type>%d</Type>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                     "</SitevisitInsertNotes>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_datesstrg ,_notestxtfld.text,[useridname integerValue],_companyid,_datesstrg,nestrg,typ];
+                   "</soap:Envelope>\n",_datesstrg ,_notestxtfld.text,[useridname integerValue],_companyid,_datesstrg,nestrg,typ,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -1149,9 +1157,10 @@ NSString*    dateString = [dateFormat2 stringFromDate:dates];
                    "<planId>%@</planId>\n"
                    "<FileName>%@</FileName>\n"
                    "<Type>%d</Type>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertAccessibility>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_datesstrg,dettext,[useridname integerValue],_companyid,nestrg,drawtype];
+                   "</soap:Envelope>\n",_datesstrg,dettext,[useridname integerValue],_companyid,nestrg,drawtype,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -1258,9 +1267,10 @@ NSString*    dateString = [dateFormat2 stringFromDate:dates];
                    "<planId>%@</planId>\n"
                    "<FileName>%@</FileName>\n"
                    "<Type>%d</Type>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitInsertEquipmentStag>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_datesstrg,dettext,[useridname integerValue],_companyid,nestrg,drawtype];
+                   "</soap:Envelope>\n",_datesstrg,dettext,[useridname integerValue],_companyid,nestrg,drawtype,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     

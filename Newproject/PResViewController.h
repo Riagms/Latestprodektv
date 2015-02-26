@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 
 
-@interface PResViewController : UIViewController
+@interface PResViewController : UIViewController{
+    BOOL recordResults;
+    UITableViewCell*    draggedCell;
+    UIView*             dropArea;
+    id                  draggedData;
+    
+    BOOL            dragFromSource;     // used for reodering
+    NSIndexPath*    pathFromDstTable;
+}
 
+@property (strong, nonatomic) IBOutlet UIView *touchview;
 @property (strong, nonatomic) IBOutlet UIButton *resurcebtnlbl;
 
 

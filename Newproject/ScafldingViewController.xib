@@ -7,18 +7,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScafldingViewController">
             <connections>
+                <outlet property="IWFbtn" destination="s26-j6-zXd" id="eyS-eZ-FNO"/>
+                <outlet property="destextview" destination="46N-PR-Oxa" id="hxR-k7-f55"/>
                 <outlet property="elevationtextfield" destination="pQf-kH-bnH" id="gtE-Tk-oe4"/>
                 <outlet property="equiptextfield" destination="8Ju-Yp-IZC" id="Ktc-Iq-CZX"/>
                 <outlet property="heighttextfield" destination="qeP-MK-PTc" id="wDG-L2-qJw"/>
                 <outlet property="lengthtextfield" destination="OAv-ku-uXY" id="hXm-jc-0fL"/>
                 <outlet property="phasebtn" destination="l48-SR-kGc" id="gF7-9d-CgS"/>
                 <outlet property="phtextfield" destination="6QR-9Q-gr3" id="HAp-kI-7Nd"/>
+                <outlet property="ppebtn" destination="Ita-f4-Cd0" id="QYR-e4-Zxz"/>
                 <outlet property="qtytextfield" destination="I8S-5f-cLR" id="mVE-qZ-WMu"/>
                 <outlet property="scaffoldtypebtn" destination="1j0-3X-mQo" id="OoY-E9-PFb"/>
                 <outlet property="scroll" destination="Jjm-fk-WCk" id="QLn-F4-OdA"/>
                 <outlet property="sequencebtn" destination="gaD-1u-Chu" id="ijF-RX-v33"/>
                 <outlet property="subunittextfield" destination="ew2-pj-Tt3" id="Qcd-S3-H4G"/>
                 <outlet property="unittextfield" destination="tDc-OT-sUP" id="h3b-oE-nrF"/>
+                <outlet property="upwbtn" destination="uOj-B1-A2L" id="VJW-ih-zz1"/>
                 <outlet property="view" destination="iyG-5m-kDN" id="Owc-MT-nx6"/>
                 <outlet property="widthtextfield" destination="05P-p8-PNN" id="4df-3h-XOp"/>
             </connections>
@@ -71,6 +75,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="yNi-TP-8BA"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Header" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czo-Sc-X2j">
                             <rect key="frame" x="326" y="71" width="93" height="21"/>
@@ -83,6 +90,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Wwy-gF-K6J"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scaffold Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mZh-m7-J4I">
                             <rect key="frame" x="20" y="132" width="93" height="21"/>
@@ -203,6 +213,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Q2M-xo-UpM"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7q0-Vh-hZK">
                             <rect key="frame" x="326" y="319" width="58" height="21"/>
@@ -242,6 +255,9 @@
                             <state key="normal" image="cb_mono_off.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="checkunplanned:" destination="-1" eventType="touchUpInside" id="X0b-2z-2Rt"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ita-f4-Cd0">
                             <rect key="frame" x="196" y="523" width="22" height="21"/>
@@ -249,6 +265,9 @@
                             <state key="normal" image="cb_mono_off.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="checkppefactor:" destination="-1" eventType="touchUpInside" id="Miy-7q-nus"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s26-j6-zXd">
                             <rect key="frame" x="19" y="522" width="22" height="22"/>
@@ -256,12 +275,18 @@
                             <state key="normal" image="cb_mono_off.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="checkworkfactor:" destination="-1" eventType="touchUpInside" id="sDa-kC-f4h"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="tDc-OT-sUP">
                             <rect key="frame" x="20" y="27" width="195" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="MIc-3n-U5l"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NxE-xd-mKe">
                             <rect key="frame" x="20" y="380" width="75" height="21"/>

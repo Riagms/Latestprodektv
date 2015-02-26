@@ -44,10 +44,10 @@
    
         _tabletitleview.hidden=NO;
     
-         _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Work Entry",@"Create New Plan",nil];
+         _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Work Entry",@"Create New Project",nil];
         _addbtn.hidden=NO;
         _deletebtn.hidden=NO;
-        _plnnavitem.title=@"Planning";
+        _plnnavitem.title=@"Project";
     [self.navigationItem setHidesBackButton:YES animated:YES];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
@@ -274,6 +274,10 @@
                   planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
                         self.WorkVctrl=[[WorkViewController alloc]initWithNibName:@"WorkViewController" bundle:nil];
                 _WorkVctrl.planid=planmdl.planid;
+                _WorkVctrl.companyname=planmdl.customername;
+                _WorkVctrl.worktypeid=planmdl.worktypeid;
+                _WorkVctrl.sitefactor=[NSDecimalNumber decimalNumberWithString:planmdl.sitefactor];
+                NSLog(@"%f",[planmdl.sitefactor doubleValue]);
                 //_WorkVctrl.modalPresentationStyle=UIModalPresentationFormSheet;
                     [self dismissViewControllerAnimated:YES completion:^{    [self presentViewController:_WorkVctrl
                                                                                                 animated:YES completion:NULL];
@@ -285,8 +289,8 @@
                 if (indexPath.row==1) {
                     
                     planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:btnindex];
-                    Existplanstrg=[NSString stringWithFormat:@"Are you sure to create a new plan under-%@",planmdl.planid];
-                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"Are you sure to create a new plan under-%@",planmdl.planid] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+                    Existplanstrg=[NSString stringWithFormat:@"Are you sure to create a new project under-%@",planmdl.planid];
+                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"Are you sure to create a new project under-%@",planmdl.planid] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
                     [alert show];
                     
                     
@@ -529,16 +533,16 @@
         
     
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 135, 60)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, 60)];
     popoverView.backgroundColor = [UIColor whiteColor];
-    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 135, 60)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 150, 60)];
     _popovertableview.delegate=(id)self;
     _popovertableview.dataSource=(id)self;
     _popovertableview.rowHeight= 31;
     //_popovertableview.separatorColor=[UIColor blackColor];
     [popoverView addSubview:_popovertableview];
     popoverContent.view = popoverView;
-    popoverContent.preferredContentSize = CGSizeMake(135, 60);
+    popoverContent.preferredContentSize = CGSizeMake(150, 60);
     
     button = (UIButton *)sender;
     UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
@@ -550,7 +554,7 @@
     
     //UITableView *table = (UITableView *)[cell superview];
     self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-        self.popovercontroller.popoverContentSize=CGSizeMake(135.0f, 60.0f);
+        self.popovercontroller.popoverContentSize=CGSizeMake(150.0f, 60.0f);
         self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclosurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
     
@@ -2599,7 +2603,7 @@
         
         recordResults = FALSE;
         _plnmdl=[[planmodel alloc]init];
-        _plnmdl.planid=_soapResults;
+        _plnmdl.planid=[_soapResults stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         _soapResults = nil;
     }
     if([elementName isEqualToString:@"customername"])

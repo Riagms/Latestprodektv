@@ -36,6 +36,7 @@
     
   //  id <newrecordDelgate>Delegate;
 }
+@property(strong,nonatomic)NSString*workorderid;
 @property(readwrite)NSInteger edittype;
 @property(strong,nonatomic)BasicReqViewController *basicctrl;
 @property (strong, nonatomic) IBOutlet UIButton *timebtn;

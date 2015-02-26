@@ -23,7 +23,7 @@
     _jobtable.layer.borderWidth=3.0;
     _jobtable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:250.0/255.0f alpha:1.0f].CGColor;
     _titleview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:250.0/255.0f alpha:1.0f];
-    _disclurearray=[[NSMutableArray alloc]initWithObjects:@"Link Contract",@"Purchase Order",@"Work Order", nil];
+    _disclurearray=[[NSMutableArray alloc]initWithObjects:@"Link Contract",@"Purchase Order",@"Work Order",@"Scheduler",@"Tickets",@"Tracker", nil];
 
 }
 
@@ -415,6 +415,16 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"SelectedBidId"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
 
     if([elementName isEqualToString:@"ContractAmount"])
     {
@@ -426,7 +436,19 @@
         }
         recordResults = TRUE;
     }
-    if([elementName isEqualToString:@"SelectedBidId"])
+    if([elementName isEqualToString:@"JobOTHER"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+  
+
+    if([elementName isEqualToString:@"PlanId"])
     {
         
         
@@ -691,7 +713,9 @@
         _jobmdl.amount=_soapResults;
         _soapResults = nil;
     }
-    if([elementName isEqualToString:@"SelectedBidId"])
+    
+    
+       if([elementName isEqualToString:@"SelectedBidId"])
     {
         
         recordResults = FALSE;
@@ -778,10 +802,18 @@
         
         recordResults = FALSE;
          _jobmdl.others=_soapResults;
-        [_jobarray addObject:_jobmdl];
+        
         _soapResults = nil;
 
     }
+    if([elementName isEqualToString:@"PlanId"])
+    {
+        recordResults = FALSE;
+        _jobmdl.planid=_soapResults;
+        [_jobarray addObject:_jobmdl];
+        _soapResults = nil;
+    }
+
     if([elementName isEqualToString:@"entryid"])
     {
         
@@ -950,8 +982,37 @@
                 }];
                
             }
+            else if (path==3) {
+                self.schedVCtrl=[[ShedulerViewController alloc]initWithNibName:@"ShedulerViewController" bundle:nil];
+                //self.schedVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
+                self.schedVCtrl.planid=planid;
+                [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.schedVCtrl animated:YES completion:nil];
+                }];
+                
+            }
+            else if (path==4) {
+                self.TicketVCtrl=[[TicketViewController alloc]initWithNibName:@"TicketViewController" bundle:nil];
+                self.TicketVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+                self.TicketVCtrl.planid=planid;
+               
+                [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
+                }];
+                
+            }
+            else if (path==5) {
+                 self.WorktrackVCtrl=[[WorKTrackViewController alloc]initWithNibName:@"WorKTrackViewController" bundle:nil];
+                self.WorktrackVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
+                self.WorktrackVCtrl.planid=planid;
+                
+                [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.WorktrackVCtrl animated:YES completion:nil];
+                }];
+            }
 
-                }
+            
+        
+        
+        
+        }
         else{
             PMjobsmdl *jobmdl1=(PMjobsmdl *)[_jobarray objectAtIndex:btnindex];
             NSArray*array=[_linkdict allKeys];
@@ -1054,9 +1115,9 @@
 - (IBAction)disclurebtn:(id)sender {
     poptype=1;
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 121)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 241)];
     // popoverView.backgroundColor = [UIColor whiteColor];
-    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 121)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 241)];
     _popovertableview.delegate=(id)self;
     _popovertableview.dataSource=(id)self;
     _popovertableview.rowHeight= 41;
@@ -1064,7 +1125,7 @@
     //_popovertableview.separatorColor=[UIColor blackColor];
     [popoverView addSubview:_popovertableview];
     popoverContent.view = popoverView;
-    popoverContent.contentSizeForViewInPopover = CGSizeMake(132, 121);
+    popoverContent.contentSizeForViewInPopover = CGSizeMake(132, 241);
     
     button = (UIButton *)sender;
     UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
@@ -1073,10 +1134,12 @@
     NSIndexPath *textFieldIndexPath = [self.jobtable indexPathForRowAtPoint:rootViewPoint];
     NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
     btnindex=textFieldIndexPath.row;
+     PMjobsmdl *jobmdl1=(PMjobsmdl *)[_jobarray objectAtIndex:btnindex];
+    planid=[jobmdl1.planid stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     //UITableView *table = (UITableView *)[cell superview];
     self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 121.0f);
+    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 241.0f);
     self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclsurbtnlbl.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }

@@ -42,7 +42,7 @@
     _biddersview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
     _weatherview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
     _notesview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
-
+_plandocview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:226/255.0f blue:226/255.0f alpha:1.0f];
     // Do any additional setup after loading the view from its nib.
     
     [[UIToolbar appearance] setTintColor:[UIColor redColor]];
@@ -80,7 +80,8 @@
     _notestitle.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
     _notestable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor;
     _notestable.layer.borderWidth=3.0;
-    
+    _plandoctable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor;
+    _plandoctable.layer.borderWidth=3.0;
     _cmpxtyofwrk=[[NSMutableArray alloc]initWithObjects:@"Easy",@"Moderate",@"Difficult", nil];
     
     _gernalbtnlbl.tintColor=[UIColor whiteColor];
@@ -105,7 +106,7 @@
     [[self.Accibltylblview layer] setCornerRadius:10];
     
   _mtghandtitleview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
-    
+    _titleview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
     
 }
 
@@ -215,7 +216,7 @@
     
 
     
-    
+    _plandocview.hidden=YES;
     _gernalview.hidden=NO;
     _rateview.hidden=YES;
     _docmntview.hidden=YES;
@@ -254,10 +255,11 @@
                    "<soap:Body>\n"
                    
                    "<ListSiteVisitGeneral xmlns=\"http://ios.kontract360.com/\">\n"
-                     "<planid>%@</planid>\n"
+                    "<planid>%@</planid>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</ListSiteVisitGeneral>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -324,9 +326,10 @@
                    "<Accessibility>%@</Accessibility>\n"
                    "<Equipment>%@</Equipment>\n"
                    "<PlanId>%@</PlanId>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SaveSiteVisitGeneral>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companynametxtfld.text,_loctntxtfld.text,_ziptxtfld.text,_complextyofwrkbtnlbl.titleLabel.text,newstrg,newstrg2,_Accibltylblview.text,_equipmnttxtview.text,_companyid];
+                   "</soap:Envelope>\n",_companynametxtfld.text,_loctntxtfld.text,_ziptxtfld.text,_complextyofwrkbtnlbl.titleLabel.text,newstrg,newstrg2,_Accibltylblview.text,_equipmnttxtview.text,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -380,9 +383,10 @@
                    "<SaveSiteVisitAccessibility xmlns=\"http://ios.kontract360.com/\">\n"
                    "<Accessibility>%@</Accessibility>\n"
                    "<PlanId>%@</PlanId>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SaveSiteVisitAccessibility>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",newstrg,_companyid];
+                   "</soap:Envelope>\n",newstrg,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -435,9 +439,10 @@
                    "<SaveSiteVisitEquipments xmlns=\"http://ios.kontract360.com/\">\n"
                    "<equipment>%@</equipment>\n"
                    "<PlanId>%@</PlanId>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SaveSiteVisitEquipments>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",newstrg,_companyid];
+                   "</soap:Envelope>\n",newstrg,_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -486,9 +491,10 @@
                    
                    "<SitevisitSelectproductionrate xmlns=\"http://ios.kontract360.com/\">\n"
                    "<PlanId>%@</PlanId>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitSelectproductionrate>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -536,9 +542,10 @@
                    
                    "<SitevisitSelectjobsitereq xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitSelectjobsitereq>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -586,9 +593,10 @@
                    
                    "<Selectsafetyrulessitevisit xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                    "<WorkOrderID>%@</WorkOrderID>\n"
                    "</Selectsafetyrulessitevisit>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -686,9 +694,10 @@
                    
                    "<SitevisitSelectequipment xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitSelectequipment>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -735,9 +744,10 @@
                    
                    "<SitevisitSelectWorkSchedule xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                    "<WorkOrderID>%@</WorkOrderID>"
                    "</SitevisitSelectWorkSchedule>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -785,9 +795,10 @@
                    
                    "<SitevisitSelectMeetingNotes xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitSelectMeetingNotes>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -885,9 +896,10 @@
                    
                    "<SitevisitSelectWeatherOutlook xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitSelectWeatherOutlook>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -935,9 +947,10 @@
                    
                    "<SitevisitSelectNotes xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</SitevisitSelectNotes>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_companyid];
+                   "</soap:Envelope>\n",_companyid,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -2211,9 +2224,10 @@ _passingdate=dateString;
                    
                    "<Accessibilityselect xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</Accessibilityselect>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",trimmestrg];
+                   "</soap:Envelope>\n",trimmestrg,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -2264,9 +2278,10 @@ _passingdate=dateString;
                    
                    "<EquipmentStagselect xmlns=\"http://ios.kontract360.com/\">\n"
                    "<planid>%@</planid>\n"
+                   "<WorkOrderID>%@</WorkOrderID>\n"
                    "</EquipmentStagselect>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",trimmestrg];
+                   "</soap:Envelope>\n",trimmestrg,_workorderid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -2299,6 +2314,59 @@ _passingdate=dateString;
     
     
 }
+#pragma mark-webservice
+-(void)PlanDocumentsSelect
+{
+    
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<PlanDocumentsSelect xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<PlanId>%@</PlanId>\n"
+                   "</PlanDocumentsSelect>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_companyid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/PlanDocumentsSelect" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+
 
 #pragma mark - Connection
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -2343,7 +2411,7 @@ _passingdate=dateString;
      [_accebilitytable reloadData];
     [_ESAtble reloadData];
     
-    
+     [_plandoctable reloadData];
 //    if (webtype==1) {
 //         [_accebilitytable reloadData];
 //        webtype=0;
@@ -2413,6 +2481,11 @@ _passingdate=dateString;
         if (tableView==_accebilitytable){
             
             return [_accessarray count];
+            
+        }
+        if (tableView==_plandoctable){
+            
+            return [_docmntdict count];
             
         }
 
@@ -2500,6 +2573,13 @@ _passingdate=dateString;
      [[NSBundle mainBundle]loadNibNamed:@"Meetingnotesview" owner:self options:nil];
      
      cell=_meetgcell;
+     
+ }
+ else  if (tableView==_plandoctable) {
+     
+     [[NSBundle mainBundle]loadNibNamed:@"Plandocuscell" owner:self options:nil];
+     
+     cell=_pldoccell;
      
  }
 
@@ -2614,7 +2694,11 @@ _passingdate=dateString;
       _biddernamelbl=(UILabel *)[cell viewWithTag:1];
       _biddernamelbl.text=sitemdl1.biddername;
             }
-    
+     else   if (tableView==_plandoctable) {
+         _documntarray=[[_docmntdict allKeys]mutableCopy];
+         _doculbl=(UILabel *)[cell viewWithTag:1];
+         _doculbl.text=[_documntarray objectAtIndex:indexPath.row];
+     }
     
   else   if (tableView==_weathertable) {
         SitevistMdl *sitemdl1=(SitevistMdl *)[_weatherarray objectAtIndex:indexPath.row];
@@ -2847,6 +2931,37 @@ _passingdate=dateString;
 #pragma mark-xml parser
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *) namespaceURI qualifiedName:(NSString *)qName
    attributes: (NSDictionary *)attributeDict{
+    if([elementName isEqualToString:@"PlanDocumentsSelectResponse"])
+    {
+        //_brcraftarray=[[NSMutableArray alloc]init];
+        _docmntdict=[[NSMutableDictionary alloc]init];
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"DocumentType"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"FilePath"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+   
     if([elementName isEqualToString:@"ListSiteVisitGeneralResult"])
     {
         if(!_soapResults)
@@ -3494,7 +3609,20 @@ _passingdate=dateString;
 }
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-  
+        if([elementName isEqualToString:@"DocumentType"])
+    {
+        recordResults = FALSE;
+        docname=[_soapResults stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"FilePath"])
+    {
+        recordResults = FALSE;
+        [_docmntdict setObject:_soapResults forKey:docname];
+        
+        _soapResults = nil;
+    }
+   
     if([elementName isEqualToString:@"Location"])
     {
         recordResults = FALSE;
@@ -4271,6 +4399,7 @@ _passingdate=dateString;
     _biddersview.hidden=YES;
     _weatherview.hidden=YES;
     _notesview.hidden=YES;
+    _plandocview.hidden=YES;
 }
 
 - (IBAction)prductnbtn:(id)sender {
@@ -4304,7 +4433,7 @@ _passingdate=dateString;
     _biddersview.hidden=YES;
     _weatherview.hidden=YES;
     _notesview.hidden=YES;
-
+_plandocview.hidden=YES;
 
 }
 
@@ -4360,7 +4489,7 @@ _passingdate=dateString;
     _biddersbtnlbl.tintColor=[UIColor blackColor];
     _weatherbtnlbl.tintColor=[UIColor blackColor];
     _notesbtnlbl.tintColor=[UIColor blackColor];
-
+_plandocview.hidden=YES;
     _gernalview.hidden=YES;
     _rateview.hidden=YES;
     _docmntview.hidden=YES;
@@ -4396,7 +4525,7 @@ _passingdate=dateString;
     _weatherbtnlbl.tintColor=[UIColor blackColor];
     _notesbtnlbl.tintColor=[UIColor blackColor];
 
-    
+    _plandocview.hidden=YES;
     _gernalview.hidden=YES;
     _rateview.hidden=YES;
     _docmntview.hidden=YES;
@@ -4432,7 +4561,7 @@ _passingdate=dateString;
     _biddersbtnlbl.tintColor=[UIColor blackColor];
     _weatherbtnlbl.tintColor=[UIColor blackColor];
     _notesbtnlbl.tintColor=[UIColor blackColor];
-
+_plandocview.hidden=YES;
     _gernalview.hidden=YES;
     _rateview.hidden=YES;
     _docmntview.hidden=YES;
@@ -4514,7 +4643,7 @@ _passingdate=dateString;
     _biddersview.hidden=YES;
     _weatherview.hidden=YES;
     _notesview.hidden=YES;
-
+_plandocview.hidden=YES;
 
     
 }
@@ -4548,7 +4677,7 @@ _passingdate=dateString;
     _biddersview.hidden=YES;
     _weatherview.hidden=YES;
     _notesview.hidden=YES;
-
+_plandocview.hidden=YES;
     
 
     
@@ -4586,12 +4715,13 @@ _passingdate=dateString;
     _weatherview.hidden=YES;
     _notesview.hidden=YES;
     
-
+_plandocview.hidden=YES;
 
 }
 
 - (IBAction)otherbiddersbtn:(id)sender {
-    [self SitevisitSelectOtherBidders];
+     tabtype=6;
+    [self PlanDocumentsSelect];
      [self NotesPlanDrawingSelect];
     _gernalbtnlbl.tintColor=[UIColor blackColor];
     _pratebtnlbl.tintColor=[UIColor blackColor];
@@ -4617,10 +4747,10 @@ _passingdate=dateString;
     _neweqmntview.hidden=YES;
     _workschdleview.hidden=YES;
     _meetingview.hidden=YES;
-      _biddersview.hidden=NO;
+      _biddersview.hidden=YES;
     _weatherview.hidden=YES;
     _notesview.hidden=YES;
-
+_plandocview.hidden=NO;
 }
 
 - (IBAction)weatheroutlookbtn:(id)sender {
@@ -4650,7 +4780,7 @@ _passingdate=dateString;
     _workschdleview.hidden=YES;
     _meetingview.hidden=YES;
     _biddersview.hidden=YES;
-
+    _plandocview.hidden=YES;
     _weatherview.hidden=NO;
     _notesview.hidden=YES;
 
@@ -4789,6 +4919,7 @@ _passingdate=dateString;
     self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"NewrecordViewController" bundle:nil];
     self.newrecordVCtrl.companyid=_companyid;
     self.newrecordVCtrl.delegate=self;
+    self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4834,7 +4965,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.companyid=_companyid;
     self.newrecordVCtrl.tabtype=tabtype;
     
-    
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4860,6 +4991,7 @@ _passingdate=dateString;
         self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"Jobsiterecord" bundle:nil];
      self.newrecordVCtrl.delegate=self;
       self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4870,6 +5002,7 @@ _passingdate=dateString;
         self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"Roolsrecordaddview" bundle:nil];
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4882,6 +5015,7 @@ _passingdate=dateString;
         self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"EqaddRecordview" bundle:nil];
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4892,6 +5026,7 @@ _passingdate=dateString;
         self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"addworkscheduleview" bundle:nil];
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4909,7 +5044,7 @@ _passingdate=dateString;
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
     self.newrecordVCtrl.tabtype=tabtype;
-
+ self.newrecordVCtrl.workorderid=_workorderid;
     
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
@@ -4941,6 +5076,7 @@ _passingdate=dateString;
         self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"otherbiddrecordaddview" bundle:nil];
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4951,6 +5087,7 @@ _passingdate=dateString;
     self.newrecordVCtrl=[[NewrecordViewController alloc]initWithNibName:@"Outlookrecordaddview" bundle:nil];
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -4980,6 +5117,7 @@ _passingdate=dateString;
      self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
      self.newrecordVCtrl.tabtype=tabtype;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
                        animated:YES completion:NULL];
@@ -5177,6 +5315,7 @@ _passingdate=dateString;
             self.newrecordVCtrl.datendtime=sitemdl1.meetingdate;
             self.newrecordVCtrl.details=sitemdl1.meetingdetails;
             self.newrecordVCtrl.viewtype=4;
+             self.newrecordVCtrl.workorderid=_workorderid;
             //           self.newrecordVCtrl.companyid=_companyid;
             //           self.newrecordVCtrl.tabtype=tabtype;
             self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5209,6 +5348,7 @@ _passingdate=dateString;
          self.newrecordVCtrl.datendtime=sitemdl1.meetingdate;
          self.newrecordVCtrl.details=sitemdl1.meetingdetails;
          self.newrecordVCtrl.viewtype=4;
+          self.newrecordVCtrl.workorderid=_workorderid;
          //           self.newrecordVCtrl.companyid=_companyid;
          //           self.newrecordVCtrl.tabtype=tabtype;
          self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5240,6 +5380,7 @@ _passingdate=dateString;
            self.newrecordVCtrl.datendtime=sitemdl1.meetingdate;
            self.newrecordVCtrl.details=sitemdl1.meetingdetails;
             self.newrecordVCtrl.viewtype=4;
+            self.newrecordVCtrl.workorderid=_workorderid;
 //           self.newrecordVCtrl.companyid=_companyid;
 //           self.newrecordVCtrl.tabtype=tabtype;
            self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5269,6 +5410,7 @@ _passingdate=dateString;
             self.newrecordVCtrl.displaydate=sitemdl1.notedate;
             self.newrecordVCtrl.displaynote=sitemdl1.Notes;
             self.newrecordVCtrl.viewtype=4;
+             self.newrecordVCtrl.workorderid=_workorderid;
             //           self.newrecordVCtrl.companyid=_companyid;
             //           self.newrecordVCtrl.tabtype=tabtype;
             self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5279,6 +5421,27 @@ _passingdate=dateString;
         
         
     }
+    else   if (tabtype==6) {
+        
+        
+        button = (UIButton *)sender;
+        CGPoint center= button.center;
+        CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.plandoctable];
+        NSIndexPath *textFieldIndexPath = [self.plandoctable indexPathForRowAtPoint:rootViewPoint];
+        
+        NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+        fetchindex=textFieldIndexPath.row;
+        NSString *fullURL =[NSString stringWithFormat:@"http://ios.kontract360.com%@",[_docmntdict objectForKey:[_documntarray objectAtIndex:textFieldIndexPath.row]]];
+        NSLog(@"fullurl%@",fullURL);
+        self.webVCtrl=[[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
+        
+        _webVCtrl.modalPresentationStyle = UIModalPresentationPageSheet;
+        _webVCtrl.urlstring=fullURL;
+        
+        [self presentViewController:_webVCtrl
+                           animated:YES completion:NULL];
+
+    }
 
 }
 - (IBAction)addest:(id)sender {
@@ -5287,7 +5450,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
     self.newrecordVCtrl.tabtype=tabtype;
-    
+     self.newrecordVCtrl.workorderid=_workorderid;
     
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
@@ -5312,6 +5475,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.companyid=_companyid;
     self.newrecordVCtrl.edittype=Edittype;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.navjobsitearry=newarray;
     self.newrecordVCtrl.optionidntfr=2;
      self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5339,6 +5503,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.edittype=Edittype;
     self.newrecordVCtrl.companyid=_companyid;
     self.newrecordVCtrl.navsaftyarray=newarray;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.optionidntfr=2;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_newrecordVCtrl
@@ -5364,6 +5529,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.edittype=Edittype;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.Navequipmntarray=newarray;
     self.newrecordVCtrl.optionidntfr=2;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5392,6 +5558,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.edittype=Edittype;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.Navwrkschdulearray=newarray;
     self.newrecordVCtrl.optionidntfr=2;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5419,6 +5586,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.edittype=Edittype;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.Navwatherarray=newarray;
     self.newrecordVCtrl.optionidntfr=2;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
@@ -5444,6 +5612,7 @@ _passingdate=dateString;
     self.newrecordVCtrl.delegate=self;
     self.newrecordVCtrl.edittype=Edittype;
     self.newrecordVCtrl.companyid=_companyid;
+     self.newrecordVCtrl.workorderid=_workorderid;
     self.newrecordVCtrl.Navbidderarray=newarray;
     self.newrecordVCtrl.optionidntfr=2;
     self.newrecordVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;

@@ -25,4 +25,5 @@
 @property(strong,nonatomic) NSString *equipment;
 @property(strong,nonatomic) NSString *material;
 @property(strong,nonatomic) NSString *others;
+@property(strong,nonatomic) NSString *planid;
 @end

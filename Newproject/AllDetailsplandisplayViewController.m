@@ -58,9 +58,9 @@ srcData = [NSMutableArray arrayWithObjects:@"item0", @"item1", @"item2", @"item3
     UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanning:)];
     panGesture.delegate=self;
     [self.tuchgview addGestureRecognizer:panGesture];
+   
     [self ScaffoldingSelectScaffoldsubtype];
-    [self Selectcheight];
-    
+   [self ScaffodDetailselect];
     
     if(_optionidentifier==1)
     {
@@ -107,27 +107,27 @@ srcData = [NSMutableArray arrayWithObjects:@"item0", @"item1", @"item2", @"item3
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self Checknetavailabilty];
+    //[self Checknetavailabilty];
  // self.view.bounds = CGRectMake(0, 0, 1024, 768);
     
 }
 -(void)Checknetavailabilty{
     /* for checking Connectivity*/
     
-    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
-    _Availablityresult = [[NSString alloc] init];
-    _Availablityresult = ( URLString != NULL ) ? @"Yes" : @"No";
-    NSLog(@"Internet connection availability : %@", _Availablityresult);
-    if([_Availablityresult isEqualToString:@"No"]){
-        
-      
-        [self fetchscaffoldFromDB];
-        
-        
-    }
-    else if ([_Availablityresult isEqualToString:@"Yes"])
-        
-        [self Selectplanfactors];
+//    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
+//    _Availablityresult = [[NSString alloc] init];
+//    _Availablityresult = ( URLString != NULL ) ? @"Yes" : @"No";
+//    NSLog(@"Internet connection availability : %@", _Availablityresult);
+//    if([_Availablityresult isEqualToString:@"No"]){
+//        
+//      
+//        [self fetchscaffoldFromDB];
+//        
+//        
+//    }
+//    else if ([_Availablityresult isEqualToString:@"Yes"])
+    
+       
     if(_optionidentifier==1)
     {
         _lengthfld.text=_len;
@@ -135,39 +135,17 @@ srcData = [NSMutableArray arrayWithObjects:@"item0", @"item1", @"item2", @"item3
         _hightfld.text=_height;
         _elvatnfld.text=_ele;
     }
-    else if(_optionidentifier==2)
+    else
     {
         
         _lengthfld.text=_len;
         _widthfld.text=_wid;
         _hightfld.text=_height;
         _elvatnfld.text=_ele;
-        if (_upwcheck==1) {
-            [_upwbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
-        }
-        else
-        {
-            [_upwbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
-        }
-        if (_ppecheck==1) {
-            [_spfbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
-        }
-        else{
-            [_spfbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
-        }
-        if (_iwfcheck==1) {
-            [_iwfbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
-            
-        }
-        else
-        {
-            [_iwfbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
-        }
-        
         
         
     }
-    [self Selectcheight];
+  
     [self ScaffodDetailselect];
     
 
@@ -500,229 +478,165 @@ return cell;
     }
 }
 
+//- (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
+//{
+//    if(draggedCell != nil && draggedData != nil)
+//    {
+//        
+//        NSLog(@"%d",[gestureRecognizer state]);
+//        NSLog(@"%hhd",[dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil]);
+//
+//        if([gestureRecognizer state] == UIGestureRecognizerStateEnded
+//           && [dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil])
+//        {
+//            NSIndexPath* indexPath = [_maintable indexPathForRowAtPoint:[gestureRecognizer locationInView:_maintable]];
+//            if(indexPath != nil)
+//            {
+//                NewscfldDetails *dmdl=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:indexPath.row];
+//                dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
+//               
+//            }
+//            else
+//            {
+//                if ([_Maintablescflddetailsarray count]==0)
+//                {
+//                    NewscfldDetails*nwscfld1=[[NewscfldDetails alloc]init];
+//                    nwscfld1.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
+//                    NSLog(@"%d",nwscfld1.scaffolddetailid);
+//                    
+//                    [_Maintablescflddetailsarray addObject:nwscfld1];
+//                    
+//                }
+//                else
+//                {
+//                    NewscfldDetails *dmdl=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:indexPath.row];
+//                     dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
+//                    [_Maintablescflddetailsarray addObject:dmdl];
+//                }
+//                 [_maintable reloadData];
+//                [self manhoursfordetail];
+//
+//               
+//            }
+//        }
+//        else if(!dragFromSource && pathFromDstTable != nil)
+//        {
+//            // insert cell back where it came from
+//            [_Maintablescflddetailsarray insertObject:draggedData atIndex:pathFromDstTable.row];
+//            [_maintable insertRowsAtIndexPaths:[NSArray arrayWithObject:pathFromDstTable] withRowAnimation:UITableViewRowAnimationMiddle];
+//            
+//            //[pathFromDstTable release];
+//            pathFromDstTable = nil;
+//        }
+//        
+//        [UIView animateWithDuration:0.3 animations:^
+//         {
+//             CGRect frame = _maintable.frame;
+//             frame.size.height = kCellHeight * [_Maintablescflddetailsarray count];
+//             _maintable.frame = frame;
+//         }];
+//        
+//        [draggedCell removeFromSuperview];
+//        //[draggedCell release];
+//        draggedCell = nil;
+//        
+//        //[draggedData release];
+//        draggedData = nil;
+//    }
+//}
+
+
 - (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
 {
+   // _existstring=@"";
     if(draggedCell != nil && draggedData != nil)
     {
         
-        NSLog(@"%d",[gestureRecognizer state]);
-        NSLog(@"%hhd",[dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil]);
-
+        //NSLog(@"%d",[gestureRecognizer state]);
+        //NSLog(@"%hhd",[dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil]);
+        
+        
         if([gestureRecognizer state] == UIGestureRecognizerStateEnded
            && [dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil])
         {
-            NSIndexPath* indexPath = [_maintable indexPathForRowAtPoint:[gestureRecognizer locationInView:_maintable]];
+              NSIndexPath* indexPath = [_maintable indexPathForRowAtPoint:[gestureRecognizer locationInView:_maintable]];
             if(indexPath != nil)
             {
                 NewscfldDetails *dmdl=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:indexPath.row];
                 dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
-               // [_Maintablescflddetailsarray addObject:dmdl];
-               // [_Maintablescflddetailsarray insertObject:draggedData atIndex:indexPath.row];
-               // [_maintable insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+                [_Maintablescflddetailsarray addObject:dmdl];
+               
+                
+                
+                [_maintable insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+                
+             [self manhoursfordetail];
+                
             }
             else
             {
-                if ([_Maintablescflddetailsarray count]==0)
-                {
+                if ([_Maintablescflddetailsarray count]==0) {
                     NewscfldDetails*nwscfld1=[[NewscfldDetails alloc]init];
                     nwscfld1.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
                     NSLog(@"%d",nwscfld1.scaffolddetailid);
                     
                     [_Maintablescflddetailsarray addObject:nwscfld1];
+                   
                     
                 }
-                else
-                {
+                else{
+                    
                     NewscfldDetails *dmdl=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:indexPath.row];
-                     dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
+                    dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
                     [_Maintablescflddetailsarray addObject:dmdl];
+                  
                 }
-                 [_maintable reloadData];
-                [self manhoursfordetail];
-
                
+                
+                    
+                
+                [self manhoursfordetail];
+                
             }
         }
         else if(!dragFromSource && pathFromDstTable != nil)
         {
-            // insert cell back where it came from
             [_Maintablescflddetailsarray insertObject:draggedData atIndex:pathFromDstTable.row];
             [_maintable insertRowsAtIndexPaths:[NSArray arrayWithObject:pathFromDstTable] withRowAnimation:UITableViewRowAnimationMiddle];
             
             //[pathFromDstTable release];
             pathFromDstTable = nil;
+                   }
+        if ([_existstring isEqualToString:@"Already Exists"]) {
+            [draggedCell removeFromSuperview];
+            //[draggedCell release];
+            draggedCell = nil;
+            
+            //[draggedData release];
+            draggedData = nil;
         }
-        
-        [UIView animateWithDuration:0.3 animations:^
-         {
-             CGRect frame = _maintable.frame;
-             frame.size.height = kCellHeight * [_Maintablescflddetailsarray count];
-             _maintable.frame = frame;
-         }];
-        
-        [draggedCell removeFromSuperview];
-        //[draggedCell release];
-        draggedCell = nil;
-        
-        //[draggedData release];
-        draggedData = nil;
+        else
+        {
+            
+            [UIView animateWithDuration:0.3 animations:^
+             {
+                 CGRect frame = _maintable.frame;
+                 //frame.size.height = kCellHeight * [_Maintablescflddetailsarray count];
+                 _maintable.frame = frame;
+             }];
+            
+            [draggedCell removeFromSuperview];
+            //[draggedCell release];
+            draggedCell = nil;
+            
+            //[draggedData release];
+            draggedData = nil;
+        }
     }
 }
 
 
 
-
-#pragma mark-WebService
-
--(void)Selectcheight{
-    recordResults = FALSE;
-    NSString *soapMessage;
-    
-    _customsccfldmdl=(Customscaffoldingplan *)[_Scafldarry objectAtIndex:_btnindx];
-    
-    soapMessage = [NSString stringWithFormat:
-                   
-                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
-                   
-                   
-                   "<soap:Body>\n"
-                   
-                   "<Selectcheight xmlns=\"http://ios.kontract360.com/\">\n"
-                   "<ht>%d</ht>\n"
-                   "</Selectcheight>\n"
-                   "</soap:Body>\n"
-                   "</soap:Envelope>\n",[_customsccfldmdl.elevation integerValue]];
-    NSLog(@"soapmsg%@",soapMessage);
-    
-    
-    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
-    
-    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-    [theRequest addValue: @"http://ios.kontract360.com/Selectcheight" forHTTPHeaderField:@"Soapaction"];
-    
-    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    
-    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    if( theConnection )
-    {
-        _webData = [NSMutableData data];
-    }
-    else
-    {
-        ////NSLog(@"theConnection is NULL");
-    }
-    
-}
--(void)Selectplanfactors{
-    recordResults = FALSE;
-    NSString *soapMessage;
-    
-    
-    soapMessage = [NSString stringWithFormat:
-                   
-                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
-                   
-                   
-                   "<soap:Body>\n"
-                   
-                   "<Selectplanfactors xmlns=\"http://ios.kontract360.com/\">\n"
-                   "<planid>%@</planid>\n"
-                   "</Selectplanfactors>\n"
-                   "</soap:Body>\n"
-                   "</soap:Envelope>\n",_planid];
-    NSLog(@"soapmsg%@",soapMessage);
-    
-    
-    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
-    
-    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-    [theRequest addValue: @"http://ios.kontract360.com/Selectplanfactors" forHTTPHeaderField:@"Soapaction"];
-    
-    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    
-    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    if( theConnection )
-    {
-        _webData = [NSMutableData data];
-    }
-    else
-    {
-        ////NSLog(@"theConnection is NULL");
-    }
-    
-}
-
--(void)ScaffoldingSelectScaffoldsubtype{
-    recordResults = FALSE;
-    NSString *soapMessage;
-  
-    
-    
-    soapMessage = [NSString stringWithFormat:
-                   
-                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
-                   
-                   
-                   "<soap:Body>\n"
-                   
-                   "<ScaffoldingSelectScaffoldsubtype xmlns=\"http://ios.kontract360.com/\">\n"
-                                 "</ScaffoldingSelectScaffoldsubtype>\n"
-                   "</soap:Body>\n"
-                   "</soap:Envelope>\n"];
-    NSLog(@"soapmsg%@",soapMessage);
-    
-    
-    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
-    
-    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-    [theRequest addValue: @"http://ios.kontract360.com/ScaffoldingSelectScaffoldsubtype" forHTTPHeaderField:@"Soapaction"];
-    
-    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    
-    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    if( theConnection )
-    {
-        _webData = [NSMutableData data];
-    }
-    else
-    {
-        ////NSLog(@"theConnection is NULL");
-    }
-    
-}
 -(void)ScaffoldDetailinsert{
     recordResults = FALSE;
     NSString *soapMessage;
@@ -791,7 +705,7 @@ return cell;
                    "<DismantleHours>%f</DismantleHours>\n"
                    "</ScaffoldDetailinsert>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",mainscffldid,[sstypemdl.scaffoldsubtypeId integerValue],l,w,h,1,_sstmanpwr,_ssterecrhr,_sstdishr];
+                   "</soap:Envelope>\n",mainscffldid,[sstypemdl.scaffoldsubtypeId integerValue],l,w,h,1,[_manpwr doubleValue],[_erecrhr doubleValue],[_dishr doubleValue]];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -856,166 +770,6 @@ return cell;
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     [theRequest addValue: @"http://ios.kontract360.com/Planfactorsinsert" forHTTPHeaderField:@"Soapaction"];
-    
-    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    
-    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    if( theConnection )
-    {
-        _webData = [NSMutableData data];
-    }
-    else
-    {
-        ////NSLog(@"theConnection is NULL");
-    }
-    
-}
--(void)Scaffoldinsert{
-    recordResults = FALSE;
-    NSString *soapMessage;
-    if (_optionidentifier==1) {
-        
-       // _customsccfldmdl=(Customscaffoldingplan *)[_Scafldarry objectAtIndex:0];
-        int iwf;
-        int spf;
-        int upw;
-        if (btntouch%2) {
-            iwf=1;
-        }
-        else{
-            iwf=0;
-        }
-        
-        if (chektouch%2) {
-            spf=1;
-        }
-        else{
-            spf=0;
-        }
-        if (ticktouch%2) {
-            upw=1;
-        }
-        else{
-            upw=0;
-        }
-        
-        soapMessage = [NSString stringWithFormat:
-                       
-                       @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-                       "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
-                       
-                       
-                       "<soap:Body>\n"
-                       
-                       "<Scaffoldinsert xmlns=\"http://ios.kontract360.com/\">\n"
-                       "<id>%d</id>\n"
-                       "<length>%@</length>\n"
-                       "<width>%@</width>\n"
-                       "<height>%@</height>\n"
-                       "<qty>%@</qty>\n"
-                       "<elevation>%@</elevation>\n"
-                       "<unit>%@</unit>\n"
-                       "<equp>%@</equp>\n"
-                       "<description>%@</description>\n"
-                       "<typeofscaffold>%d</typeofscaffold>\n"
-                       "<ManHours>%f</ManHours>\n"
-                       "<ErectHours>%f</ErectHours>\n"
-                       "<DismantleHours>%f</DismantleHours>\n"
-                       "<planId>%@</planId>\n"
-                       "<InternalWorkFactor>%d</InternalWorkFactor>\n"
-                       "<PPE>%d</PPE>\n"
-                       "<UnplannedWork>%d</UnplannedWork>\n"
-                       "<ph>%@</ph>\n"
-                       "<Sequence>%d</Sequence>\n"
-                       "<Phase>%d</Phase>\n"
-                       "<SubUnit>%@</SubUnit>\n"
-                       "</Scaffoldinsert>\n"
-                       "</soap:Body>\n"
-                       "</soap:Envelope>\n",[_Scfldid integerValue],_len,_wid,_height,_qty,_ele,_unit,
-                       _equip,_Destxtfld.text,[_sid integerValue],_manpwr,_erecrhr,_dishr,_planid,iwf,spf,upw,_ph,[_sequenceid integerValue],[_phaseid integerValue],_subunit];
-        NSLog(@"soapmsg%@",soapMessage);
-
-    }
-    else if(_optionidentifier==2)
-    {
-    
-   
-    _customsccfldmdl=(Customscaffoldingplan *)[_Scafldarry objectAtIndex:_btnindx];
-        NSLog(@"%d",_customsccfldmdl.idvalue);
-    int iwf;
-    int spf;
-    int upw;
-    if (btntouch%2) {
-        iwf=1;
-    }
-    else{
-        iwf=0;
-    }
-    
-    if (chektouch%2) {
-        spf=1;
-    }
-    else{
-        spf=0;
-    }
-    if (ticktouch%2) {
-        upw=1;
-    }
-    else{
-        upw=0;
-    }
-
-    soapMessage = [NSString stringWithFormat:
-                   
-                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
-                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
-                   
-                   
-                   "<soap:Body>\n"
-                   
-                   "<Scaffoldinsert xmlns=\"http://ios.kontract360.com/\">\n"
-                   "<id>%d</id>\n"
-                   "<length>%@</length>\n"
-                   "<width>%@</width>\n"
-                   "<height>%@</height>\n"
-                   "<qty>%@</qty>\n"
-                   "<elevation>%@</elevation>\n"
-                   "<unit>%@</unit>\n"
-                   "<equp>%@</equp>\n"
-                   "<description>%@</description>\n"
-                   "<typeofscaffold>%d</typeofscaffold>\n"
-                   "<ManHours>%f</ManHours>\n"
-                   "<ErectHours>%f</ErectHours>\n"
-                   "<DismantleHours>%f</DismantleHours>\n"
-                   "<planId>%@</planId>\n"
-                   "<InternalWorkFactor>%d</InternalWorkFactor>\n"
-                   "<PPE>%d</PPE>\n"
-                   "<UnplannedWork>%d</UnplannedWork>\n"
-                   "<ph>%@</ph>\n"
-                   "<Sequence>%d</Sequence>\n"
-                   "<Phase>%d</Phase>\n"
-                   "<SubUnit>%@</SubUnit>\n"
-                   "</Scaffoldinsert>\n"
-                   "</soap:Body>\n"
-                   "</soap:Envelope>\n",_customsccfldmdl.idvalue,_len,_wid,_height,_qty,_ele,_unit,
-                   _equip,_Destxtfld.text,[_sid integerValue],_manpwr,_erecrhr,_dishr,_planid,iwf,spf,upw,_ph,[_sequenceid integerValue],[_phaseid integerValue],_subunit];
-    NSLog(@"soapmsg%@",soapMessage);
-    }
-    
-    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
-    
-    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-    [theRequest addValue: @"http://ios.kontract360.com/Scaffoldinsert" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -1147,6 +901,55 @@ return cell;
     }
     
 }
+-(void)ScaffoldingSelectScaffoldsubtype{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ScaffoldingSelectScaffoldsubtype xmlns=\"http://ios.kontract360.com/\">\n"
+                   "</ScaffoldingSelectScaffoldsubtype>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n"];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ScaffoldingSelectScaffoldsubtype" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+
 
 #pragma mark - Connection
 -(void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response
@@ -1633,185 +1436,93 @@ return cell;
         }
 
 }
-#pragma mark-Equatn
--(void)calulatemanhrs{
-    NSString *rate;
-    NSInteger l=[_lengthfld.text integerValue];
-    NSInteger w=[_widthfld.text integerValue];
-    NSInteger h=[_hightfld.text integerValue];
-    NSInteger sf=[_sitefctrfld.text integerValue];
-   Scaffoldtypemdl*typmdl=(Scaffoldtypemdl *)[_newscfoldtypearry objectAtIndex:_scaffoldtypeindex];
-
-    NSLog(@"%d",[_sid integerValue]);
-    if([_sid integerValue]==1)
-    {
-        if(h<=33)
-        {
-            rate=typmdl.ftupto33;
-            NSLog(@"%@",typmdl.ftupto33);
-            NSLog(@"%@",rate);
-        }
-        else if(h>33 && h<=100)
-        {
-            rate=typmdl.ftupto100;
-        }
-        else if(h>100 && h<=165)
-        {
-            rate=typmdl.ftupto165;
-        }
-        else if(h>165)
-        {
-            rate=typmdl.ftg165;
-        }
-
-    }
-   else if([_sid integerValue]==2)
-    {
-        
-        rate=typmdl.rate;
-    }
-   else if([_sid integerValue]==3)
-   {
-    rate=typmdl.rate;
-       NSLog(@"%@",typmdl.rate);
-
-   }
-   else if([_sid integerValue]==4)
-   {
-       NSInteger result=l*w*h;
-       if(result<=1750)
-       {
-           rate=typmdl.ft3upto1750;
-       }
-       else if(result>1750 && result<=1750)
-       {
-           rate=typmdl.ft3upto7000;
-       }
-       else if(result>7000 && result<=18000)
-       {
-           rate=typmdl.ft3upto18000;
-       }
-       else if(result>18000)
-       {
-           rate=typmdl.ft3g18000;
-       }
-
-
-   }
-   else
-   {
-       rate=typmdl.rate;
-
-   }
-
-
-
-    
-    int iwf;
-    int spf;
-    int upw;
-    if (btntouch%2) {
-        iwf=1;
-    }
-    else{
-        iwf=0;
-    }
-    
-    if (chektouch%2) {
-        spf=1;
-    }
-    else{
-        spf=0;
-    }
-    if (ticktouch%2) {
-        upw=1;
-    }
-    else{
-        upw=0;
-    }
-    _manpwr=((chrate+iwf+spf+upw+1)*sf)*l*w*h*1*[rate doubleValue];
-     _dishr=_manpwr*0.33;
-    _erecrhr=_manpwr*0.67;
-    if([_Availablityresult isEqualToString:@"No"]){
-        [self UpdateScaffold];
-    }
-    else if([_Availablityresult isEqualToString:@"Yes"]){
-      [self Scaffoldinsert];
-      [self Planfactorsinsert];
-    }
-    
-}
 
 -(void)manhoursfordetail{
     NSLog(@"path%d",path);
     Scaffoldsubtypemodel *sstypemdl=(Scaffoldsubtypemodel *)[_scfldsubtypearray objectAtIndex:path];
     NSLog(@"name%@",sstypemdl.scaffoldtypename);
-    NSString *rate;
-    NSInteger l;
-    NSInteger w;
-    NSInteger h;
-    NSInteger sf;
+    NSDecimalNumber *l;
+    NSDecimalNumber *w;
+    NSDecimalNumber *h;
+    NSDecimalNumber *sf;
+    NSDecimalNumber *rate;
+    NSDecimalNumber *qty;
     if ([sstypemdl.lbit isEqualToString:@"true"]) {
-        l=[_lengthfld.text integerValue];
+        l=[NSDecimalNumber decimalNumberWithString:_lengthfld.text];
         
     }
     else{
-        l=1;
+        l=[NSDecimalNumber decimalNumberWithString:@"1"];
     }
     
+    if ([sstypemdl.nbit isEqualToString:@"true"]) {
+        qty=[NSDecimalNumber decimalNumberWithString:_qty];
+        
+    }
+
+    else{
+        qty=[NSDecimalNumber decimalNumberWithString:@"1"];
+    }
     
+
     
     if ([sstypemdl.wbit isEqualToString:@"true"]) {
-        w=[_widthfld.text integerValue];
+        w=[NSDecimalNumber decimalNumberWithString:_widthfld.text];
         
     }
     else{
-        w=1;
+        w=[NSDecimalNumber decimalNumberWithString:@"1"];
+
     }
     
     if ([sstypemdl.hbit isEqualToString:@"true"]) {
-        h=[_hightfld.text integerValue];
+        h=[NSDecimalNumber decimalNumberWithString:_heihtlbl.text];
         
     }
     else{
-        h=1;
-    }
-    
-    
-    sf=[_sitefctrfld.text integerValue];
-        
-    
+        h=[NSDecimalNumber decimalNumberWithString:@"1"];
 
-    rate=sstypemdl.rate;
-    
-    int iwf;
-    int spf;
-    int upw;
-    if (btntouch%2) {
-        iwf=1;
-    }
-    else{
-        iwf=0;
     }
     
-    if (chektouch%2) {
-        spf=1;
+    
+    sf=_sitefactor;
+    
+    rate=[NSDecimalNumber decimalNumberWithString:sstypemdl.rate];
+    NSDecimalNumber *a;
+    NSDecimalNumber *b;
+    NSDecimalNumber *c;
+    if (_iwfcheck==0) {
+     a=[NSDecimalNumber decimalNumberWithString:@"0"];    }
+    else
+    {
+       a=[NSDecimalNumber decimalNumberWithString:@"0.40"];
     }
-    else{
-        spf=0;
+    if (_ppecheck==0) {
+       b= [NSDecimalNumber decimalNumberWithString:@"0"];
     }
-    if (ticktouch%2) {
-        upw=1;
+    else
+    {
+        b=[NSDecimalNumber decimalNumberWithString:@"1"];
     }
-    else{
-        upw=0;
+    if (_upwcheck==0) {
+        c=[NSDecimalNumber decimalNumberWithString:@"0"];
     }
-    _sstmanpwr=((chrate+iwf+spf+upw+1)*sf)*l*w*h*1*[rate doubleValue];
-    _sstdishr=_sstmanpwr*0.33;
-    _ssterecrhr=_sstmanpwr*0.67;
-//    NewscfldDetails *scfd1=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:0];
-//    NSLog(@"main%@",scfd1.scfldprevious);
-//    firstscfldid=[scfd1.scfldprevious integerValue];
+    else
+    {
+        c=[NSDecimalNumber decimalNumberWithString:@"0.1"];
+    }
+   
+   
+    
+    NSDecimalNumber *lwhqr=[[[[[l decimalNumberByMultiplyingBy:w] decimalNumberByMultiplyingBy:h] decimalNumberByMultiplyingBy:qty]decimalNumberByMultiplyingBy:rate]decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"1"]];
+    NSDecimalNumber *checktot=[[[[a decimalNumberByAdding:b]decimalNumberByAdding:c]decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:@"1"]]decimalNumberByAdding:_chightrate];
+    
+    NSDecimalNumber *first=[checktot decimalNumberByMultiplyingBy:_sitefactor];
+    NSLog(@"Subtotal: %@", [lwhqr decimalNumberByMultiplyingBy:first]);
+    
+    _manpwr=[lwhqr decimalNumberByMultiplyingBy:first];
+    _dishr=[_manpwr decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"0.33"]];
+    _erecrhr=[_manpwr decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"0.67"]];
     [self ScaffoldDetailinsert];
     
 }
@@ -1836,7 +1547,7 @@ return cell;
 
         }
         else{
-        [self calulatemanhrs];
+        //[self calulatemanhrs];
         }
     }
 
