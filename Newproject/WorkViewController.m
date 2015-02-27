@@ -135,6 +135,18 @@
     }
     
 }
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     if(tableView==_popovertableview)
+        
+    {
+        return self.editing ;
+    }
+    
+    return YES;
+    
+}
+
 #pragma mark-Tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
