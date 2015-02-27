@@ -52,7 +52,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manhrs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2O-5Z-hqH">
-                        <rect key="frame" x="490" y="10" width="42" height="21"/>
+                        <rect key="frame" x="483" y="10" width="63" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -67,31 +67,31 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2k2-Re-jiZ">
-                        <rect key="frame" x="160" y="-5" width="1" height="49"/>
+                        <rect key="frame" x="160" y="-1" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nxl-Ca-xiV">
-                        <rect key="frame" x="247" y="-2" width="1" height="49"/>
+                        <rect key="frame" x="247" y="0.0" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0q-5R-qki">
-                        <rect key="frame" x="322" y="-5" width="1" height="49"/>
+                        <rect key="frame" x="322" y="-1" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOi-DP-IaG">
-                        <rect key="frame" x="397" y="-5" width="1" height="49"/>
+                        <rect key="frame" x="397" y="-1" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0C2-hx-lnb">
-                        <rect key="frame" x="474" y="-4" width="1" height="49"/>
+                        <rect key="frame" x="474" y="-1" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z18-Si-4LK">
-                        <rect key="frame" x="540" y="-4" width="1" height="49"/>
+                        <rect key="frame" x="553" y="-1" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWH-EL-IfF">
-                        <rect key="frame" x="631" y="-4" width="1" height="49"/>
+                        <rect key="frame" x="631" y="-1" width="1" height="46"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>

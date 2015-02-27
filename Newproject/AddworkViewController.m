@@ -28,6 +28,9 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    outagestring=@"";
+    spacestring=@"";
+    clearstring=@"";
     [self ReadPriority];
     _updatebtn.enabled=YES;
     _scrollview.frame=CGRectMake(0, 44, 1024, 980);
@@ -96,6 +99,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)Prioritymaster:(id)sender {
+    [_prioritybtn setTitle:@"Select" forState:UIControlStateNormal];
     self.priorityVCtrl=[[PrirityViewController alloc]initWithNibName:@"PrirityViewController" bundle:nil];
     self.priorityVCtrl.modalPresentationStyle=UIModalPresentationFormSheet;
     [self presentViewController:_priorityVCtrl animated:YES completion:nil];
@@ -472,7 +476,7 @@
                    "<EntryId>%d</EntryId>\n"
                    "</UpdatePlanningWorkorder>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_workordrtxtfld.text,[pid integerValue],_planttxtfld.text,_subunittxtfld.text,_equmnttxtfld.text,_tagtxtfld.text,_destxtview.text,outage,clear,space,_requsttxtfld.text,_approvetxtfld.text,_user1textfield.text,_user2textfield.text,[_workmdl.workorderid integerValue]];
+                   "</soap:Envelope>\n",_workordrtxtfld.text,[pid integerValue],_planttxtfld.text,_subunittxtfld.text,_equmnttxtfld.text,_tagtxtfld.text,_destxtview.text,a,b,c,_requsttxtfld.text,_approvetxtfld.text,_user1textfield.text,_user2textfield.text,[_workmdl.workorderid integerValue]];
     NSLog(@"soapmsg%@",soapMessage);
     
     

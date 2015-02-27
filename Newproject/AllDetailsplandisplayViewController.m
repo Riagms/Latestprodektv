@@ -336,7 +336,7 @@ return cell;
     dropAreaFrame.size.height -= kNavBarHeight;
     
     dropArea = [[UIView alloc] initWithFrame:CGRectMake(243, 44, 732, 340)];
-    [dropArea setBackgroundColor:[UIColor whiteColor]];
+    [dropArea setBackgroundColor:[UIColor redColor]];
     [self.tuchgview addSubview:dropArea];
     
     CGRect contentFrame = dropAreaFrame;
@@ -378,7 +378,7 @@ return cell;
     
     draggedCell = [[UITableViewCell alloc] init];
     draggedCell.selectionStyle = UITableViewCellSelectionStyleGray;
-    Scaffoldsubtypemodel *sstypemdl=(Scaffoldsubtypemodel *)[_scfldsubtypearray objectAtIndex:indexPath.row-1];
+    Scaffoldsubtypemodel *sstypemdl=(Scaffoldsubtypemodel *)[_scfldsubtypearray objectAtIndex:indexPath.row];
     draggedCell.textLabel.text =sstypemdl.scaffoldtypename;
     NSLog(@"name1%@",sstypemdl.scaffoldtypename);
      NSLog(@"apath%d",indexPath.row);
@@ -490,72 +490,6 @@ return cell;
     }
 }
 
-//- (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer
-//{
-//    if(draggedCell != nil && draggedData != nil)
-//    {
-//        
-//        NSLog(@"%d",[gestureRecognizer state]);
-//        NSLog(@"%hhd",[dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil]);
-//
-//        if([gestureRecognizer state] == UIGestureRecognizerStateEnded
-//           && [dropArea pointInside:[gestureRecognizer locationInView:dropArea] withEvent:nil])
-//        {
-//            NSIndexPath* indexPath = [_maintable indexPathForRowAtPoint:[gestureRecognizer locationInView:_maintable]];
-//            if(indexPath != nil)
-//            {
-//                NewscfldDetails *dmdl=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:indexPath.row];
-//                dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
-//               
-//            }
-//            else
-//            {
-//                if ([_Maintablescflddetailsarray count]==0)
-//                {
-//                    NewscfldDetails*nwscfld1=[[NewscfldDetails alloc]init];
-//                    nwscfld1.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
-//                    NSLog(@"%d",nwscfld1.scaffolddetailid);
-//                    
-//                    [_Maintablescflddetailsarray addObject:nwscfld1];
-//                    
-//                }
-//                else
-//                {
-//                    NewscfldDetails *dmdl=(NewscfldDetails *)[_Maintablescflddetailsarray objectAtIndex:indexPath.row];
-//                     dmdl.scaffolddetailid=[[_subtypdict objectForKey:draggedData]integerValue];
-//                    [_Maintablescflddetailsarray addObject:dmdl];
-//                }
-//                 [_maintable reloadData];
-//                [self manhoursfordetail];
-//
-//               
-//            }
-//        }
-//        else if(!dragFromSource && pathFromDstTable != nil)
-//        {
-//            // insert cell back where it came from
-//            [_Maintablescflddetailsarray insertObject:draggedData atIndex:pathFromDstTable.row];
-//            [_maintable insertRowsAtIndexPaths:[NSArray arrayWithObject:pathFromDstTable] withRowAnimation:UITableViewRowAnimationMiddle];
-//            
-//            //[pathFromDstTable release];
-//            pathFromDstTable = nil;
-//        }
-//        
-//        [UIView animateWithDuration:0.3 animations:^
-//         {
-//             CGRect frame = _maintable.frame;
-//             frame.size.height = kCellHeight * [_Maintablescflddetailsarray count];
-//             _maintable.frame = frame;
-//         }];
-//        
-//        [draggedCell removeFromSuperview];
-//        //[draggedCell release];
-//        draggedCell = nil;
-//        
-//        //[draggedData release];
-//        draggedData = nil;
-//    }
-//}
 
 
 - (void)stopDragging:(UIPanGestureRecognizer *)gestureRecognizer

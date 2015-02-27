@@ -422,7 +422,7 @@
 {
      _updatebtn.enabled=YES;
     _addplanview.hidden=YES;
-     _selectionlabel.hidden=YES;
+    // _selectionlabel.hidden=YES;
     _plangtable.userInteractionEnabled=YES;
     
 }
@@ -613,7 +613,7 @@
 
      if([_planselectionbtn.titleLabel.text isEqualToString:@"Select"]||[_planselectionbtn.titleLabel.text isEqualToString:@""])
     {
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Lead/Customer is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Customer is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
     else if([_typebtnlbl.titleLabel.text isEqualToString:@"Select"]||[_typebtnlbl.titleLabel.text isEqualToString:@""])
@@ -704,6 +704,7 @@
     _sitefactortxtfld.text=planmdl.sitefactor;
     NSLog(@"%@",_revtypelistdict);
       NSLog(@"%@",planmdl.worktypeid);
+    [_typebtnlbl setTitle:planmdl.worktype forState:UIControlStateNormal];
      //planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:textFieldIndexPath.row];
 //    if([planmdl.masterplan stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
 //    {

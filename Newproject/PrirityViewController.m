@@ -570,9 +570,14 @@
     {
         recordResults = FALSE;
         _result=_soapResults;
+        if ([_soapResults isEqualToString:@"Deleted"]) {
+            
+        }
+        else
+        {
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:_soapResults delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
-        
+        }
         
         [self ReadPriority];
         _soapResults=nil;
