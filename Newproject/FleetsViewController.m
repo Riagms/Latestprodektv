@@ -2119,6 +2119,21 @@ if([elementName isEqualToString:@"url"])
     {
         [self UserLogmainupdate];
     }
+    if (_frmplan==1) {
+        
+        if (btntype==1) {
+            _updatebtn.enabled=NO;
+            [self Insertfleet];
+        }
+        if (btntype==2) {
+            _updatebtn.enabled=NO;
+            [self Updatefleet];
+        }
+
+    }
+    else{
+        
+    
     Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
     
     if (rightsmodel.EditModule==0) {
@@ -2172,6 +2187,7 @@ if([elementName isEqualToString:@"url"])
     if (btntype==2) {
         _updatebtn.enabled=NO;
         [self Updatefleet];
+    }
     }
     }
     }

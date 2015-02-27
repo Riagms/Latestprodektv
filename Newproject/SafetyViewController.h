@@ -21,10 +21,9 @@
     NSInteger subtypevalue,editpath,deletepath;
     NSString* safetycode,*msgstrg;
 }
+@property (strong, nonatomic)NSString*searchstring;
 @property(readwrite)NSInteger frmplan;
 @property(strong,nonatomic)NSString *itemfromgp;
-@property (strong, nonatomic)NSString*searchstring;
-
 @property (strong, nonatomic) IBOutlet UISearchBar *searchbar;
 @property (strong, nonatomic)RSTViewController *subtypctrlr;
 @property(strong,nonatomic)Manpwr *SaftyMdl;
@@ -59,6 +58,7 @@
 @property(strong,nonatomic)NSString*imgstring;
 
 /*cell outlets*/
+@property (strong, nonatomic) IBOutlet UINavigationItem *navtitle;
 
 @property (strong, nonatomic) IBOutlet UILabel *itemcodelbl;
 @property (strong, nonatomic) IBOutlet UILabel *codedeslbl;
@@ -82,9 +82,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableViewCell *saftycell;
 @property (strong, nonatomic) IBOutlet UIButton *updatebtnlbl;
-
 @property (strong, nonatomic) IBOutlet UIButton *cancelbtnlbl;
-
-@property (strong, nonatomic) IBOutlet UINavigationItem *navtitle;
 
 @end

@@ -54,6 +54,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     imagechecker=1;
+    [self ReadSafetyMaterials];
+    _activityindictor.hidden=YES;
     if (_frmplan==1) {
         /*searchbar*/
         _searchbar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 220, 44)];
@@ -69,7 +71,7 @@
         _searchstring=[_itemfromgp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         _searchbar.text=[_itemfromgp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         [self SearchSafetyMaterials];
-
+        
     }
     else
     {
@@ -84,11 +86,13 @@
         searchController.searchResultsDataSource = (id)self;
         searchController.searchResultsDelegate =(id)self;
         searchController.delegate = (id)self;
-
-    [self ReadSafetyMaterials];
-    _activityindictor.hidden=YES;
+        
+        [self ReadSafetyMaterials];
+        _activityindictor.hidden=YES;
     }
 }
+
+
 /*
 #pragma mark - Navigation
 
@@ -236,7 +240,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -300,7 +304,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -366,7 +370,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -417,7 +421,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -467,7 +471,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -526,7 +530,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -584,7 +588,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -639,7 +643,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1006,17 +1010,7 @@ finishedSavingWithError:(NSError *)error
 //            
 //            
 //        }
-        if ([_soapResults isEqualToString:@"Already Exists"]) {
-            
-            msgstrg=_soapResults;
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [alert show];
-            _activityindictor.hidden=YES;
-            [_activityindictor stopAnimating];
-            _addview.userInteractionEnabled=YES;
-            
-        }
-        if ([_soapResults isEqualToString:@"Already In Use"]) {
+                if ([_soapResults isEqualToString:@"Already in Use"]) {
             msgstrg=_soapResults;
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
@@ -1113,7 +1107,17 @@ finishedSavingWithError:(NSError *)error
         webtype=0;
         
     }
-        
+        if ([_soapResults containsString:@"Already Exists"]) {
+            
+            msgstrg=_soapResults;
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+            _activityindictor.hidden=YES;
+            [_activityindictor stopAnimating];
+            _addview.userInteractionEnabled=YES;
+            
+        }
+
         
     }
 
@@ -1263,18 +1267,17 @@ _subtypctrlr.equipmainid=safty.entryid;
 
 - (IBAction)editbtn:(id)sender {
     btninfr=2;
-    _navtitle.title=@"Edit";
-
      _searchbar.text=@"";
     _addview.hidden=NO;
+    _navtitle.title=@"Edit";
+        _cancelbtnlbl.enabled=NO;
+      [_cancelbtnlbl setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     button = (UIButton *)sender;
     CGPoint center= button.center;
     CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.saftytable];
     NSIndexPath *textFieldIndexPath = [self.saftytable indexPathForRowAtPoint:rootViewPoint];
     editpath=textFieldIndexPath.row;
     
-    _cancelbtnlbl.enabled=NO;
-    [_cancelbtnlbl setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     Manpwr*saftymdl2=(Manpwr *)[_SafetyArray objectAtIndex:editpath];
     _itemcodetxtfld.text=saftymdl2.itemcode;
          _codedestxtfld.text=saftymdl2.itemdescptn;
@@ -1311,22 +1314,25 @@ _subtypctrlr.equipmainid=safty.entryid;
 }
 
 - (IBAction)clsebtn:(id)sender {
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SecondViewControllerDismissed"
+                                                        object:nil
+                                                      userInfo:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)Addbtn:(id)sender {
-     _cancelbtnlbl.enabled=YES;
+    _cancelbtnlbl.enabled=YES;
     _searchbar.text=@"";
-    _navtitle.title=@"Create";
     btninfr=1;
     _addview.hidden=NO;
-    _itemcodetxtfld.text=@"";
+     _navtitle.title=@"Create";
+_picimgeview.image=[UIImage imageNamed:@"mNoImage"];
     _subtypebtnlbl.enabled=YES;
     _updatebtnlbl.enabled=YES;
     _activityindictor.hidden=YES;
     [_activityindictor stopAnimating];
     
+    _itemcodetxtfld.text=@"";
     _codedestxtfld.text=@"";
     _unitcosttxtfld.text=@"";
     _unitmeasuretxtfld.text=@"";
@@ -1395,6 +1401,14 @@ _subtypctrlr.equipmainid=safty.entryid;
         [alert show];
         _codedestxtfld.text=@"";
     }
+    else if ([_unitmeasuretxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0){
+        
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Unit of measure field is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [alert show];
+        
+    }
+
     
     else
     {
@@ -1413,9 +1427,9 @@ _subtypctrlr.equipmainid=safty.entryid;
                 [alert show];
                 _codedestxtfld.text=@"";
             }
-            else if ([_Cellsubbtnlbl.titleLabel.text isEqualToString:@""]||[_Cellsubbtnlbl.titleLabel.text isEqualToString:@"Select"]){
+            else if ([_unitmeasuretxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0){
                 
-                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Subtype field is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Unit of measure field is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 
                 [alert show];
                 
@@ -1456,6 +1470,7 @@ _subtypctrlr.equipmainid=safty.entryid;
             _saftytable.userInteractionEnabled=YES;
             _updatebtnlbl.enabled=YES;
         }
+        _picimgeview.image=[UIImage imageNamed:@"mNoImage"];
         _updatebtnlbl.enabled=YES;
         _activityindictor.hidden=YES;
         [_activityindictor stopAnimating];
@@ -1503,6 +1518,8 @@ _subtypctrlr.equipmainid=safty.entryid;
         _stocktxtfld.text=@"";
         
     }
+    
+    
 
 }
 #pragma mark-Alertview delegate
@@ -1528,14 +1545,14 @@ _subtypctrlr.equipmainid=safty.entryid;
             
         }
     }
-    if (textField==_unitmeasuretxtfld) {
-        int value15=[val isNumeric:_unitmeasuretxtfld.text];
-        if (value15==0) {
-            UIAlertView *alert1=[[UIAlertView alloc]initWithTitle:@"" message:@"Invalid unit of measure" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert1 show];
-            
-        }
-    }
+//    if (textField==_unitmeasuretxtfld) {
+//        int value15=[val isNumeric:_unitmeasuretxtfld.text];
+//        if (value15==0) {
+//            UIAlertView *alert1=[[UIAlertView alloc]initWithTitle:@"" message:@"Invalid unit of measure" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//            [alert1 show];
+//            
+//        }
+//    }
 
     return YES;
     

@@ -1656,6 +1656,25 @@ Manpwr*pwrmdl=(Manpwr *)[_toolarray objectAtIndex:path];
         [self UserLogmainupdate];
         
     }
+    
+    if (_frmplan==1) {
+        if (butntype==1) {
+            
+            _activitybtn.hidden=NO;
+            [_activitybtn startAnimating];
+            _addview.userInteractionEnabled=NO;
+            _updatebtn.enabled=NO;
+            [self InsertSmallTools];
+        }
+        
+         else if (butntype==2){
+             _activitybtn.hidden=NO;
+             [_activitybtn startAnimating];
+             _updatebtn.enabled=NO;
+             [self UpdateSmallTools];
+         }
+    }
+    else{
     Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
     
     if (rightsmodel.EditModule==0) {
@@ -1730,6 +1749,7 @@ else
         [self UpdateSmallTools];
 }
         
+    }
     }
     }
 }

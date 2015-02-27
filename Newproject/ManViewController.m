@@ -2155,6 +2155,84 @@ _SearchingBar.text=@"";
         
     }
 
+      if (_frmplan==1) {
+          
+          if (btnidtfr==11) {
+              if([_itemdestxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
+              {
+                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Classification  is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  [alert show];
+                  _itemdestxtfld.text=@"";
+                  
+                  
+              }
+              else if([_craftcodetextfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
+              {
+                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Craft Code  is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  [alert show];
+                  _craftcodetextfld.text=@"";
+                  
+              }
+              else if ([_searchbtnlbl.titleLabel.text isEqualToString:@""]||[_searchbtnlbl.titleLabel.text isEqualToString:@"Select"]){
+                  
+                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Subtype is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  
+                  [alert show];
+                  
+                  
+              }
+              
+              else
+              {
+                  _updatebtn.enabled=NO;
+                  [self UpdateManpower];
+              }
+          }
+          else if (btnidtfr==22){
+              if([_itemdestxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
+              {
+                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Classification  is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  [alert show];
+                  _itemdestxtfld.text=@"";
+                  
+              }
+              else if([_craftcodetextfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
+              {
+                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Craft Code  is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  [alert show];
+                  _craftcodetextfld.text=@"";
+              }
+              
+              else if ([_searchbtnlbl.titleLabel.text isEqualToString:@""]||[_searchbtnlbl.titleLabel.text isEqualToString:@"Select"]){
+                  
+                  UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Subtype is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                  
+                  [alert show];
+                  
+              }
+              
+              else
+              {
+                  _updatebtn.enabled=NO;
+                  [self InsertManpower];
+              }
+              
+              
+              //        if ([_Availablityresult isEqualToString:@"Yes"]) {
+              //
+              //             [self InsertManpower];
+              //        }
+              //        else if([_Availablityresult isEqualToString:@"No"]){
+              //           [self InsertManpowerDatastoDB];
+              //        }
+              
+          }
+      }
+    
+      
+      else{
+    
+    
     Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
     
     if (rightsmodel.EditModule==0) {
@@ -2242,6 +2320,7 @@ _SearchingBar.text=@"";
             
         }
     }
+      }
 }
 
 - (IBAction)cancel:(id)sender {

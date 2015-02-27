@@ -336,6 +336,9 @@
 		D417165A1A9F1FCE00087BFA /* WorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41716581A9F1FCE00087BFA /* WorkViewController.xib */; };
 		D417165E1A9F202100087BFA /* PrirityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D417165C1A9F202100087BFA /* PrirityViewController.m */; };
 		D417165F1A9F202100087BFA /* PrirityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D417165D1A9F202100087BFA /* PrirityViewController.xib */; };
+		D41716641AA051D100087BFA /* SafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41716611AA051D100087BFA /* SafetyViewController.m */; };
+		D41716651AA051D100087BFA /* SafetyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41716621AA051D100087BFA /* SafetyViewController.xib */; };
+		D41716661AA051D100087BFA /* safetycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41716631AA051D100087BFA /* safetycell.xib */; };
 		D41A63D51961302A00FBDBC6 /* TimeSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A63D31961302900FBDBC6 /* TimeSheetViewController.m */; };
 		D41A63D61961302A00FBDBC6 /* TimeSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41A63D41961302900FBDBC6 /* TimeSheetViewController.xib */; };
 		D41B14E9195C0CF500DEED6E /* RelatedtoMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D41B14E8195C0CF500DEED6E /* RelatedtoMdl.m */; };
@@ -615,7 +618,6 @@
 		D4ACE56819C1B1020060A352 /* CraftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ACE56619C1B1010060A352 /* CraftViewController.xib */; };
 		D4ACE56A19C1B1120060A352 /* craftcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ACE56919C1B1120060A352 /* craftcell.xib */; };
 		D4ACE56D19C1B12D0060A352 /* Craftreqmtmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4ACE56C19C1B12D0060A352 /* Craftreqmtmdl.m */; };
-		D4B002A71A91EA4C00213D80 /* SafetyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B002A61A91EA4C00213D80 /* SafetyViewController.m */; };
 		D4B4CBA119738ED500696D37 /* Appreqmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B4CBA019738ED500696D37 /* Appreqmdl.m */; };
 		D4BB03711A9D7ECE00F4FF70 /* TicketcellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BB03701A9D7ECE00F4FF70 /* TicketcellView.xib */; };
 		D4BB03751A9D83B300F4FF70 /* TicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BB03731A9D83B300F4FF70 /* TicDetailViewController.m */; };
@@ -667,8 +669,6 @@
 		D4F053E11A0CA37A00672C88 /* planning2@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F053E01A0CA37A00672C88 /* planning2@2X.png */; };
 		D4F053E31A0CA54300672C88 /* planning2.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F053E21A0CA54300672C88 /* planning2.png */; };
 		D4F053E51A0CA5D900672C88 /* planning-s.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F053E41A0CA5D800672C88 /* planning-s.png */; };
-		D4F05AB71A8C61CC00D8C09C /* SafetyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F05AB51A8C61CC00D8C09C /* SafetyViewController.xib */; };
-		D4F05AB91A8C61F000D8C09C /* safetycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F05AB81A8C61F000D8C09C /* safetycell.xib */; };
 		D4F0940019F22C6100C3B527 /* BezierInterpView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F093FF19F22C6100C3B527 /* BezierInterpView.m */; };
 		D4F0940C19F22F2300C3B527 /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F0940B19F22F2300C3B527 /* eraser.png */; };
 		D4F0940E19F22F3100C3B527 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = D4F0940D19F22F3100C3B527 /* pencil.png */; };
@@ -1171,6 +1171,10 @@
 		D417165B1A9F202100087BFA /* PrirityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrirityViewController.h; sourceTree = "<group>"; };
 		D417165C1A9F202100087BFA /* PrirityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrirityViewController.m; sourceTree = "<group>"; };
 		D417165D1A9F202100087BFA /* PrirityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrirityViewController.xib; sourceTree = "<group>"; };
+		D41716601AA051D100087BFA /* SafetyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyViewController.h; sourceTree = "<group>"; };
+		D41716611AA051D100087BFA /* SafetyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyViewController.m; sourceTree = "<group>"; };
+		D41716621AA051D100087BFA /* SafetyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyViewController.xib; sourceTree = "<group>"; };
+		D41716631AA051D100087BFA /* safetycell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = safetycell.xib; sourceTree = "<group>"; };
 		D41A63D21961302900FBDBC6 /* TimeSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSheetViewController.h; sourceTree = "<group>"; };
 		D41A63D31961302900FBDBC6 /* TimeSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSheetViewController.m; sourceTree = "<group>"; };
 		D41A63D41961302900FBDBC6 /* TimeSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeSheetViewController.xib; sourceTree = "<group>"; };
@@ -1570,8 +1574,6 @@
 		D4ACE56919C1B1120060A352 /* craftcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = craftcell.xib; sourceTree = "<group>"; };
 		D4ACE56B19C1B12D0060A352 /* Craftreqmtmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Craftreqmtmdl.h; sourceTree = "<group>"; };
 		D4ACE56C19C1B12D0060A352 /* Craftreqmtmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Craftreqmtmdl.m; sourceTree = "<group>"; };
-		D4B002A51A91EA4C00213D80 /* SafetyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyViewController.h; sourceTree = "<group>"; };
-		D4B002A61A91EA4C00213D80 /* SafetyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyViewController.m; sourceTree = "<group>"; };
 		D4B4CB9F19738ED500696D37 /* Appreqmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appreqmdl.h; sourceTree = "<group>"; };
 		D4B4CBA019738ED500696D37 /* Appreqmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appreqmdl.m; sourceTree = "<group>"; };
 		D4BB03701A9D7ECE00F4FF70 /* TicketcellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketcellView.xib; sourceTree = "<group>"; };
@@ -1636,8 +1638,6 @@
 		D4F053E01A0CA37A00672C88 /* planning2@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planning2@2X.png"; sourceTree = "<group>"; };
 		D4F053E21A0CA54300672C88 /* planning2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planning2.png; sourceTree = "<group>"; };
 		D4F053E41A0CA5D800672C88 /* planning-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planning-s.png"; sourceTree = "<group>"; };
-		D4F05AB51A8C61CC00D8C09C /* SafetyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyViewController.xib; sourceTree = "<group>"; };
-		D4F05AB81A8C61F000D8C09C /* safetycell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = safetycell.xib; sourceTree = "<group>"; };
 		D4F093FE19F22C6100C3B527 /* BezierInterpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierInterpView.h; sourceTree = "<group>"; };
 		D4F093FF19F22C6100C3B527 /* BezierInterpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierInterpView.m; sourceTree = "<group>"; };
 		D4F0940B19F22F2300C3B527 /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
@@ -1864,10 +1864,10 @@
 				D404A2251A0389BD0086E40A /* SubCatViewController.m */,
 				D404A2261A0389BD0086E40A /* SubCatViewController.xib */,
 				D404A2291A03940F0086E40A /* SubcatCell.xib */,
-				D4B002A51A91EA4C00213D80 /* SafetyViewController.h */,
-				D4B002A61A91EA4C00213D80 /* SafetyViewController.m */,
-				D4F05AB51A8C61CC00D8C09C /* SafetyViewController.xib */,
-				D4F05AB81A8C61F000D8C09C /* safetycell.xib */,
+				D41716601AA051D100087BFA /* SafetyViewController.h */,
+				D41716611AA051D100087BFA /* SafetyViewController.m */,
+				D41716621AA051D100087BFA /* SafetyViewController.xib */,
+				D41716631AA051D100087BFA /* safetycell.xib */,
 				D4049664192F17DD00685109 /* Group SetUp */,
 			);
 			name = Resources;
@@ -3140,11 +3140,13 @@
 				D4A6749119345E6C00D5A77E /* IconDateGrey@2x.png in Resources */,
 				D44DF4EE19A5D73B00F3E9AB /* Sign-RadioButton01.png in Resources */,
 				64A09DAF1860549E001F74E2 /* appbar.checkmark.thick.unchecked.png in Resources */,
+				D41716651AA051D100087BFA /* SafetyViewController.xib in Resources */,
 				D4A16B5D1974EEA8002CA2A2 /* Destequcell.xib in Resources */,
 				64C0AD191A5D2ABF00B31F52 /* LbrSecdgcell.xib in Resources */,
 				D4A16B5C1974EEA8002CA2A2 /* Srcequcell.xib in Resources */,
 				D40367F118ED3A5200139E7D /* MangmntdetailsViewController.xib in Resources */,
 				D4A16B411974EEA8002CA2A2 /* siteEqupmtntcell.xib in Resources */,
+				D41716661AA051D100087BFA /* safetycell.xib in Resources */,
 				D4BB03881A9DFBED00F4FF70 /* customplancell.xib in Resources */,
 				D41716261A9ED4BD00087BFA /* Addnoterecordview.xib in Resources */,
 				649AE8791772DB8D00CAECE7 /* appbar.edit.png in Resources */,
@@ -3254,7 +3256,6 @@
 				64A3B81418DFEE980015887F /* LeadsViewController.xib in Resources */,
 				D4FED41417F18E28004BE242 /* tabbtn.png in Resources */,
 				D4ACE56A19C1B1120060A352 /* craftcell.xib in Resources */,
-				D4F05AB71A8C61CC00D8C09C /* SafetyViewController.xib in Resources */,
 				D4A16B961974EEE0002CA2A2 /* PhasecomponentsViewController.xib in Resources */,
 				D42505CB19A46830001D16A2 /* SecurityViewController.xib in Resources */,
 				64A1F8B718AA007500EE8850 /* customdoccell.xib in Resources */,
@@ -3319,7 +3320,6 @@
 				D4EBA85A1978E05100B612E1 /* Cfecell.xib in Resources */,
 				D42505D519A4A5A8001D16A2 /* lock.png in Resources */,
 				D4E658D417F2EF5B00202B14 /* wrong.png in Resources */,
-				D4F05AB91A8C61F000D8C09C /* safetycell.xib in Resources */,
 				D42D8C1E18D2D91C009D8085 /* customvendercell.xib in Resources */,
 				64A11EE918683BE6008D20CC /* customphase.xib in Resources */,
 				D41369521A9738C5003C88A9 /* SchedulerCell.xib in Resources */,
@@ -3541,7 +3541,6 @@
 				D453DA211873F18C007EE3DC /* ThirdPartyViewController.m in Sources */,
 				D4F19DEB18D03AD1007617F0 /* FollowupViewController.m in Sources */,
 				D49F874518EEA36B00413CAD /* CKCalendarView.m in Sources */,
-				D4B002A71A91EA4C00213D80 /* SafetyViewController.m in Sources */,
 				D49F875118EEA36B00413CAD /* Infoleads.m in Sources */,
 				D4014FF318E3E05B00DB825A /* SerialViewController.m in Sources */,
 				64A1317D19485599009F5431 /* Countmdl.m in Sources */,
@@ -3574,6 +3573,7 @@
 				D49F876E18EEA36B00413CAD /* Vlumedismdl.m in Sources */,
 				646A28BC193743CF00902C4A /* OthereventMaodel.m in Sources */,
 				D49F875218EEA36B00413CAD /* commentmdl.m in Sources */,
+				D41716641AA051D100087BFA /* SafetyViewController.m in Sources */,
 				D44ECC6E1A5D3E8E00B3082A /* PurchaseViewController.m in Sources */,
 				D4A338D318F3EE8700E53FAC /* Mastermarkmodel.m in Sources */,
 				D4ED6FED19EF9F5A00A241F1 /* UIViewController+Neworientation.m in Sources */,

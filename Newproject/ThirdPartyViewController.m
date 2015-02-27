@@ -2108,6 +2108,16 @@ finishedSavingWithError:(NSError *)error
          [self UserLogmainupdate];
      }
     
+    
+     if (_frmplan==1) {
+         
+         
+         
+     }
+     else{
+         
+     
+    
     Rightscheck*rightsmodel=(Rightscheck *)[_userrightsarray objectAtIndex:0];
     
     if (rightsmodel.EditModule==0) {
@@ -2163,6 +2173,7 @@ finishedSavingWithError:(NSError *)error
     }
     }
     }
+}
 }
 
 - (IBAction)cancelbtn:(id)sender {
