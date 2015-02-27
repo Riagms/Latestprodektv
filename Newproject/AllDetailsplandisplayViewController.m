@@ -68,6 +68,8 @@ srcData = [NSMutableArray arrayWithObjects:@"item0", @"item1", @"item2", @"item3
         _widthfld.text=_wid;
         _hightfld.text=_height;
         _elvatnfld.text=_ele;
+        _Destxtfld.text=_desvalue;
+        
           }
     else if(_optionidentifier==2)
     {
@@ -75,6 +77,7 @@ srcData = [NSMutableArray arrayWithObjects:@"item0", @"item1", @"item2", @"item3
         _widthfld.text=_wid;
         _hightfld.text=_height;
         _elvatnfld.text=_ele;
+        _Destxtfld.text=_desvalue;
         if (_upwcheck==1) {
              [_upwbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
         }
@@ -361,8 +364,17 @@ return cell;
         // [draggedCell release];
         draggedCell = nil;
     }
+    CGRect frame;
+    if(point.y>=489){
+        
+        frame= CGRectMake(point.x, 250, cell.frame.size.width-5, cell.frame.size.height-10);
+    }
+    else{
+        frame = CGRectMake(point.x, point.y, cell.frame.size.width-5, cell.frame.size.height-10);
+    }
+
     
-    CGRect frame = CGRectMake(point.x, point.y, cell.frame.size.width-5, cell.frame.size.height-10);
+   // CGRect frame = CGRectMake(point.x, point.y, cell.frame.size.width-5, cell.frame.size.height-10);
     
     draggedCell = [[UITableViewCell alloc] init];
     draggedCell.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -710,7 +722,7 @@ return cell;
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -761,7 +773,7 @@ return cell;
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -822,7 +834,7 @@ return cell;
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -874,7 +886,7 @@ return cell;
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -923,7 +935,7 @@ return cell;
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];    
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];    
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];

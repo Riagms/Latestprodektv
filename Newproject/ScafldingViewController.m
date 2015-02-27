@@ -41,6 +41,7 @@
     _equiptextfield.text=_work.equipmet;
     if (_optionidentifier==2) {
         _smdl=(Customscaffoldingplan*)[_sccfarray objectAtIndex:0];
+        _navitem.title=@"Edit Scaffold";
         _unittextfield.text=_smdl.unit;
         _subunittextfield.text=_work.subunit;
         _equiptextfield.text=_smdl.equp;
@@ -77,6 +78,10 @@
         }
 
         
+    }
+    else
+    {
+    _navitem.title=@"Create Scaffold";
     }
     [self UnitSelect];
     [self SubUnitSelect];
@@ -558,7 +563,7 @@ if (tableView==_popovertableview)
     
     
     //  NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -608,7 +613,7 @@ if (tableView==_popovertableview)
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
 
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
@@ -660,7 +665,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -744,7 +749,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -874,7 +879,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -926,7 +931,7 @@ if (tableView==_popovertableview)
     
     
     //  NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -975,7 +980,7 @@ if (tableView==_popovertableview)
     
     
     //  NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1024,7 +1029,7 @@ if (tableView==_popovertableview)
     
     
     //  NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1074,7 +1079,7 @@ if (tableView==_popovertableview)
     
     
     //  NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1123,7 +1128,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1778,7 +1783,8 @@ if (tableView==_popovertableview)
     {
         
         recordResults = FALSE;
-     if(_optionidentifier==2)
+       
+     if([_soapResults isEqualToString:@"updatedscaffold"])
         {
             _allctrl.delegate=self;
             

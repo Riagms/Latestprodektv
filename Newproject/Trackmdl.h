@@ -19,4 +19,8 @@
 
 @property(strong,nonatomic)NSString*fedbackpercentage;
 
+@property(strong,nonatomic)NSString*percentage;
+@property(strong,nonatomic)NSString*delay;
+@property(strong,nonatomic)NSString*delaycode;
+@property(strong,nonatomic)NSString*workhrs;
 @end

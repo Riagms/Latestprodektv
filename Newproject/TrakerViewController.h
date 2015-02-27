@@ -21,11 +21,16 @@
     UIButton *button;
     NSString* trackid,*Manpresent,*usedQtystrg;
     
+    NSInteger poptype;
 }
 @property(strong,nonatomic)TSManpwrmdl*Manpwrmdl;
 @property(strong,nonatomic)TSOtherMdl*Othermdl;
 @property(strong,nonatomic)NSMutableArray*manpwrarry;
 @property(strong,nonatomic)NSMutableArray*otherarray;
+@property(strong,nonatomic)NSMutableArray* delayarray;
+@property(strong,nonatomic)NSMutableDictionary*Delaydict;
+          
+
 @property(strong,nonatomic)Trackmdl*track1;
 @property(strong,nonatomic)NSString*editpath,*workorder,*workorderdesc;
 @property(strong,nonatomic)IBOutlet UIDatePicker *timepick;
@@ -138,5 +143,7 @@
 - (IBAction)percntbtn:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *percntbtnlbl;
+- (IBAction)delaybtn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *delaybtnlbl;
 
 @end

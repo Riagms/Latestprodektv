@@ -17,4 +17,7 @@
 @property(strong,nonatomic)NSString*foreman;
 @property(strong,nonatomic)NSString*equipment;
 @property(strong,nonatomic)NSString*wdate;
+@property(strong,nonatomic)NSString*allocatedhrs;
+@property(strong,nonatomic)NSString*workedhrs;
+
 @end

@@ -245,6 +245,7 @@
     _date2.text=@"";
     _user1textfield.text=@"";
     _user2textfield.text=@"";
+    _approvetxtfld.text=@"";
      [_spacebtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
      [_clearancebtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
      [_outagebtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
@@ -338,9 +339,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -388,8 +389,14 @@
         outagestring=@"";
     }
     else
+    {   if([_workmdl.outage isEqualToString:@"true"])
     {
-        a=[_workmdl.outage integerValue];
+        a=1;
+    }
+    else
+    {
+        a=0;
+    }
     }
     if([clearstring isEqualToString:@"clear"])
     {
@@ -404,7 +411,15 @@
     }
     else
     {
-        b=[_workmdl.clearence integerValue];
+        if([_workmdl.clearence isEqualToString:@"true"])
+        {
+            b=1;
+        }
+        else
+        {
+            b=0;
+        }
+        
     }
     if([spacestring isEqualToString:@"space"])
     {
@@ -419,7 +434,15 @@
     }
     else
     {
-        c=[_workmdl.space integerValue];
+        if([_workmdl.space isEqualToString:@"true"])
+        {
+            c=1;
+        }
+        else
+        {
+            c=0;
+        }
+        
     }
    
     NSString *pid=[_priyoritydict objectForKey:_prioritybtn.titleLabel.text];
@@ -453,9 +476,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -503,9 +526,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -704,16 +727,23 @@
 {
     if ([alertView.message isEqualToString:_result]) {
         _workordrtxtfld.text=@"";
-        _subunittxtfld.text=@"";
         _planttxtfld.text=@"";
-        _approvetxtfld.text=@"";
+        _subunittxtfld.text=@"";
+        _equmnttxtfld.text=@"";
+        _tagtxtfld.text=@"";
+        _destxtview.text=@"";
+        _requsttxtfld.text=@"";
         _date1.text=@"";
         _date2.text=@"";
         _user1textfield.text=@"";
         _user2textfield.text=@"";
-        _equmnttxtfld.text=@"";
-        _requsttxtfld.text=@"";
+        _approvetxtfld.text=@"";
+        [_spacebtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+        [_clearancebtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+        [_outagebtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+        [_prioritybtn setTitle:@"Select" forState:UIControlStateNormal];
         
+        [_prioritybtn setTitle:@"Select" forState:UIControlStateNormal];
         //_updatebtn.enabled=YES;
         if (_optiontype==2) {
            

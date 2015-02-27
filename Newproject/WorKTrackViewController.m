@@ -93,6 +93,41 @@
         _equipment.text=wmdl.equipment;
         _deftaglbl=(UILabel*)[cell viewWithTag:5];
         _deftaglbl.text=wmdl.deftag;
+        _allocatedhrslbl=(UILabel*)[cell viewWithTag:6];
+        _allocatedhrslbl.text=wmdl.allocatedhrs;
+        _usedhrslbl=(UILabel*)[cell viewWithTag:7];
+        _usedhrslbl.text=wmdl.workedhrs;
+        float Ahrs=[wmdl.allocatedhrs floatValue];
+         float whrs=[wmdl.workedhrs floatValue];
+        if (Ahrs<whrs) {
+           
+            UIView *bgColorView = [[UIView alloc] init];
+            [bgColorView setBackgroundColor:[UIColor colorWithRed:139.0/255.0f green:0.0/255.0f blue:0.0/255.0f alpha:1.0f]];
+            //[cell setSelectedBackgroundView:bgColorView];
+            cell.backgroundView =bgColorView;
+        }
+        else if (Ahrs>whrs&&whrs!=0) {
+            UIView *bgColorView = [[UIView alloc] init];
+            [bgColorView setBackgroundColor:[UIColor colorWithRed:61.0/255.0f green:145.0/255.0f blue:18.0/255.0f alpha:1.0f]];
+            //[cell setSelectedBackgroundView:bgColorView];
+            cell.backgroundView =bgColorView;
+        }
+        else if(Ahrs==whrs){
+            UIView *bgColorView = [[UIView alloc] init];
+            [bgColorView setBackgroundColor:[UIColor colorWithRed:255.0/255.0f green:207.0/255.0f blue:18.0/255.0f alpha:1.0f]];
+            //[cell setSelectedBackgroundView:bgColorView];
+            cell.backgroundView=bgColorView;
+        }
+            
+        else if(Ahrs>whrs&&whrs==0){
+            UIView *bgColorView = [[UIView alloc] init];
+            [bgColorView setBackgroundColor:[UIColor colorWithRed:39.0/255.0f green:64.0/255.0f blue:139.0/255.0f alpha:1.0f]];
+            //[cell setSelectedBackgroundView:bgColorView];
+            cell.backgroundView=bgColorView;
+        }
+        
+
+        
         
         
     }
@@ -148,7 +183,7 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -446,6 +481,38 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"manhrs"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+        
+    }
+    if([elementName isEqualToString:@"workedhrs"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+        
+    }
+
+    if([elementName isEqualToString:@"feet"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+        
+    }
+
 }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -660,7 +727,7 @@
         
         
         //_workmdl.priorityname=_soapResults;
-        [_workorderarray addObject:_workmdl];
+        
         _soapResults=nil;
         
     }
@@ -690,15 +757,47 @@
         _soapResults=nil;
         
     }
+    
+    if([elementName isEqualToString:@"manhrs"])
+    {
+        
+        recordResults = FALSE;
+        
+        
+        _workmdl.allocatedhrs=_soapResults;
+        
+        
+        _soapResults=nil;
+        
+    }
+    if([elementName isEqualToString:@"workedhrs"])
+    {
+        
+        recordResults = FALSE;
+        
+        
+        _workmdl.workedhrs=_soapResults;
+        
+        
+        _soapResults=nil;
+        
+    }
+    if([elementName isEqualToString:@"feet"])
+    {
+         recordResults = FALSE;
+        [_workorderarray addObject:_workmdl];
+         _soapResults=nil;
+    }
+
 }
 - (IBAction)clsebtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)disclurebtn:(id)sender {
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 41)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 46)];
     // popoverView.backgroundColor = [UIColor whiteColor];
-    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 41)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 46)];
     _popovertableview.delegate=(id)self;
     _popovertableview.dataSource=(id)self;
     _popovertableview.rowHeight= 41;
@@ -706,7 +805,7 @@
     //_popovertableview.separatorColor=[UIColor blackColor];
     [popoverView addSubview:_popovertableview];
     popoverContent.view = popoverView;
-    popoverContent.contentSizeForViewInPopover = CGSizeMake(132, 41);
+    popoverContent.contentSizeForViewInPopover = CGSizeMake(132, 46);
     
     button = (UIButton *)sender;
     UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
@@ -719,7 +818,7 @@
     _workorder=wmdl.entryid;
     //UITableView *table = (UITableView *)[cell superview];
     self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 41.0f);
+    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 46.0f);
     self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }

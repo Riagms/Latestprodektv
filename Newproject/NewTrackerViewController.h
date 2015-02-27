@@ -15,7 +15,9 @@
     UIButton*button;
     NSInteger btnindex;
 }
+@property (strong, nonatomic)NSString*searchstring;
 
+@property (strong, nonatomic) IBOutlet UISearchBar * SearchingBar;
 @property(strong,nonatomic)NSString*editpath,*workorder, *workorderdesc;
 
 @property (strong, nonatomic)Trackmdl*Trackmdl;
@@ -26,6 +28,7 @@
 @property(strong,nonatomic)NSMutableString *soapResults;
 @property(strong,nonatomic)NSMutableData *webData;
 
+@property (strong, nonatomic) IBOutlet UILabel *workedhrslbl;
 
 
 @property (strong, nonatomic)TrakerViewController*TrackVCtrl;
@@ -45,6 +48,7 @@
 //@property (strong, nonatomic) IBOutlet UIButton *editbtn;
 
 
+@property (strong, nonatomic) IBOutlet UILabel *delaylbl;
 
 - (IBAction)clsebtn:(id)sender;
 

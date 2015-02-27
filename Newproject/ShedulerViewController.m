@@ -254,7 +254,7 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -308,7 +308,7 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -362,7 +362,7 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -428,7 +428,7 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -474,14 +474,14 @@
                    
                    "<SearchSchedulerWork xmlns=\"http://ios.kontract360.com/\">\n"
                    "<searchtext>%@</searchtext>\n"
-                   
+                    "<planid>%@</planid>\n"
                    "</SearchSchedulerWork>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_searchstring];
+                   "</soap:Envelope>\n",_searchstring,_planid];
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     

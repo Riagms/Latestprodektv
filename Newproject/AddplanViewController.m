@@ -31,6 +31,15 @@
 
     _scaffoldtable.hidden=YES;
     _scafoldtitle.hidden=YES;
+//    _searchbar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 220, 44)];
+//    _searchbar.delegate=(id)self;
+//    _searchbar.tintColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
+//    self.scaffoldtable.tableHeaderView=_searchbar;
+//    UISearchDisplayController *searchctrlr=[[UISearchDisplayController alloc]initWithSearchBar:_searchbar contentsController:self];
+//    searchctrlr.searchResultsDelegate=(id)self;
+//    searchctrlr.searchResultsDataSource=(id)self;
+//    searchctrlr.delegate=(id)self;
+
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -221,11 +230,15 @@
 - (IBAction)editscaffoldaction:(id)sender
 {
     _optionidentifier=2;
-    button=(UIButton*)sender;
-    CGPoint center=button.center;
-    CGPoint rootviewpoint=[button.superview convertPoint:center fromView:_scaffoldtable];
-    NSIndexPath *btnindexpath=[self.scaffoldtable indexPathForRowAtPoint:rootviewpoint];
-    btnindex=btnindexpath.row;
+    button = (UIButton *)sender;
+    CGPoint center= button.center;
+    
+    
+    
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.scaffoldtable];
+    NSIndexPath *textFieldIndexPath = [self.scaffoldtable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    btnindex=textFieldIndexPath.row;
     Customscaffoldingplan*scaff=(Customscaffoldingplan *)[_scaffoldingplanlistarray objectAtIndex:btnindex];
   
     NSMutableArray *array1=[[NSMutableArray alloc]init];
@@ -277,8 +290,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -327,8 +340,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -337,6 +350,57 @@
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     [theRequest addValue: @"http://ios.kontract360.com/ReadWorkOrder" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)updateScaffoldWorkDet{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<updateScaffoldWorkDet xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<PlanId>%@</PlanId>\n"
+                   "<Work>%@</Work>\n"
+                   "<workDets>%@</workDets>\n"
+                   "</updateScaffoldWorkDet>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_planid,_workorderid,_Workperformtextview.text];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/updateScaffoldWorkDet" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -379,8 +443,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -874,6 +938,16 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"records"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
 
     
 
@@ -1335,12 +1409,28 @@
         _soapResults = nil;
         
     }
-
+    if([elementName isEqualToString:@"records"])
+    {
+        
+        recordResults=FALSE;
+        
+        _Workperformtextview.text=_soapResults;
+        
+        _soapResults = nil;
+        
+    }
 
 
 }
 - (IBAction)update:(id)sender
 {
-    
+    if ([_Workperformtextview.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Work Details is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        [self updateScaffoldWorkDet];
+    }
 }
 @end
