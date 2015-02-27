@@ -83,5 +83,8 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *saftycell;
 @property (strong, nonatomic) IBOutlet UIButton *updatebtnlbl;
 
+@property (strong, nonatomic) IBOutlet UIButton *cancelbtnlbl;
+
+@property (strong, nonatomic) IBOutlet UINavigationItem *navtitle;
 
 @end
