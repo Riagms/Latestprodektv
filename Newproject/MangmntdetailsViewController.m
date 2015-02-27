@@ -249,9 +249,9 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-       NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+       NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -300,9 +300,9 @@
                    "</soap:Envelope>\n"];
     NSLog(@"soapmsg%@",soapMessage);
     
-       NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+       NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -352,9 +352,9 @@
                    "</soap:Envelope>\n",_subcntrct.contractid,[markupidnew integerValue]];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+   //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -404,7 +404,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -455,7 +455,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -506,7 +506,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -557,7 +557,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -608,7 +608,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -659,7 +659,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -710,7 +710,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -761,7 +761,7 @@
                    "</soap:Envelope>\n",_subcntrct.contractid];
     NSLog(@"soapmsg%@",soapMessage);
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"http://192.168.0.125/service.asmx"];
     
@@ -2640,7 +2640,7 @@ _notesbtn.tintColor=[UIColor blackColor];
     NSIndexPath *textFieldIndexPath = [self.docutable indexPathForRowAtPoint:rootViewPoint];
     
     NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
-    NSString *fullURL =[NSString stringWithFormat:@"http://ios.kontract360.com%@",[_documntdict objectForKey:[_documentarray objectAtIndex:textFieldIndexPath.row]]];
+    NSString *fullURL =[NSString stringWithFormat:@"http://tools.prodektive.com%@",[_documntdict objectForKey:[_documentarray objectAtIndex:textFieldIndexPath.row]]];
         //if (!self.webctrl) {
         self.webctrl=[[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
    // }

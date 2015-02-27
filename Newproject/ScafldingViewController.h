@@ -40,7 +40,7 @@
 @property (readwrite)NSDecimalNumber *manpwr;
 @property (readwrite)NSDecimalNumber *dishr;
 @property (readwrite)NSDecimalNumber *erecrhr;
-
+@property(strong,nonatomic)IBOutlet UINavigationItem *navitem;
 @property(strong,nonatomic)UITableView * autotable;
 @property(strong,nonatomic)UITableView * autotable1;
 @property(strong,nonatomic)UITableView * autotable2;

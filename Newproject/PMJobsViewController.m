@@ -135,8 +135,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -185,8 +185,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -236,8 +236,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -802,7 +802,7 @@
         
         recordResults = FALSE;
          _jobmdl.others=_soapResults;
-        
+           [_jobarray addObject:_jobmdl];
         _soapResults = nil;
 
     }
@@ -810,7 +810,7 @@
     {
         recordResults = FALSE;
         _jobmdl.planid=_soapResults;
-        [_jobarray addObject:_jobmdl];
+     
         _soapResults = nil;
     }
 
@@ -1001,7 +1001,7 @@
             }
             else if (path==5) {
                  self.WorktrackVCtrl=[[WorKTrackViewController alloc]initWithNibName:@"WorKTrackViewController" bundle:nil];
-                self.WorktrackVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
+                //self.WorktrackVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
                 self.WorktrackVCtrl.planid=planid;
                 
                 [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.WorktrackVCtrl animated:YES completion:nil];

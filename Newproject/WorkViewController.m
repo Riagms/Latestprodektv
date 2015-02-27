@@ -21,7 +21,7 @@
     _titleview.backgroundColor = [UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
     _worktable.layer.borderWidth=2.0f;
     _worktable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f].CGColor;
-    _menuitemarray=[[NSMutableArray alloc]initWithObjects:@"Site visit",@"Plan",@"Resources",@"Feed Back", nil];
+    _menuitemarray=[[NSMutableArray alloc]initWithObjects:@"Site visit",@"Plan",@"Resources", nil];
 
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -261,9 +261,9 @@
 
 - (IBAction)disclrebutn:(id)sender {
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 130)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 132, 85)];
     // popoverView.backgroundColor = [UIColor whiteColor];
-    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 130)];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 132, 85)];
     _popovertableview.delegate=(id)self;
     _popovertableview.dataSource=(id)self;
     _popovertableview.rowHeight= 30;
@@ -271,7 +271,7 @@
     _popovertableview.separatorColor=[UIColor lightGrayColor];
     [popoverView addSubview:_popovertableview];
     popoverContent.view = popoverView;
-    popoverContent.preferredContentSize = CGSizeMake(132, 130);
+    popoverContent.preferredContentSize = CGSizeMake(132, 85);
     
     button = (UIButton *)sender;
     UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
@@ -283,7 +283,7 @@
     
     //UITableView *table = (UITableView *)[cell superview];
     self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 130.0f);
+    self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 85.0f);
     self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
 }
@@ -309,9 +309,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -360,9 +360,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -390,7 +390,7 @@
     
 }
 
--(void)SearchPlan
+-(void)SearchPlanningWorkEntImport
 {
     // webtype=1;
     
@@ -404,16 +404,16 @@
                    
                    
                    "<soap:Body>\n"
-                   "<SearchPlan xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<SearchPlanningWorkEntImport xmlns=\"http://ios.kontract360.com/\">\n"
                    "<searchtext>%@</searchtext>\n"
-                   "</SearchPlan>\n"
+                   "</SearchPlanningWorkEntImport>\n"
                    "</soap:Body>\n"
                    "</soap:Envelope>\n",_searchstring];
     NSLog(@"soapmsg%@",soapMessage);
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -421,7 +421,7 @@
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"http://ios.kontract360.com/SearchPlan" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/SearchPlanningWorkEntImport" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -490,6 +490,17 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"SearchPlanningWorkEntImportResponse"])
+    {
+        
+        _workorderarray=[[NSMutableArray alloc]init];
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
     if([elementName isEqualToString:@"menunamework"])
     {
         
@@ -989,7 +1000,7 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     _searchstring=_searchbar.text;
     //NSLog(@"search%@",searchstring);
-    [self SearchPlan];
+    [self SearchPlanningWorkEntImport];
     [searchBar resignFirstResponder];
     
 }
@@ -1007,6 +1018,5 @@
     
     
 }
-#pragma mark-webservices
 
 @end

@@ -13,6 +13,7 @@
                 <outlet property="equiptextfield" destination="8Ju-Yp-IZC" id="Ktc-Iq-CZX"/>
                 <outlet property="heighttextfield" destination="qeP-MK-PTc" id="wDG-L2-qJw"/>
                 <outlet property="lengthtextfield" destination="OAv-ku-uXY" id="hXm-jc-0fL"/>
+                <outlet property="navitem" destination="Xri-7x-cyc" id="zZb-bn-oIm"/>
                 <outlet property="phasebtn" destination="l48-SR-kGc" id="gF7-9d-CgS"/>
                 <outlet property="phtextfield" destination="6QR-9Q-gr3" id="HAp-kI-7Nd"/>
                 <outlet property="ppebtn" destination="Ita-f4-Cd0" id="QYR-e4-Zxz"/>
@@ -299,7 +300,7 @@
                             <rect key="frame" x="20" y="400" width="491" height="93"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unplanned Work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kfz-vX-WpH">

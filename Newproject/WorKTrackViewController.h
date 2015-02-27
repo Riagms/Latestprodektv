@@ -42,5 +42,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *deftaglbl;
 - (IBAction)disclurebtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *disclurebtn;
+@property (strong, nonatomic) IBOutlet UILabel *allocatedhrslbl;
+@property (strong, nonatomic) IBOutlet UILabel *usedhrslbl;
 
 @end

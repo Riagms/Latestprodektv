@@ -19,6 +19,8 @@
     BOOL recordResults;
     NSInteger path;
 }
+@property(strong,nonatomic)NSString *searchstring;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchbar;
 @property(strong,nonatomic)Customscaffoldingplan *scfldmdl;
 @property(strong,nonatomic)Workordrmdl *work;
 

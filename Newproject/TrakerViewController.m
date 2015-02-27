@@ -40,6 +40,12 @@
     _otherbtnlbl.tintColor=[UIColor blackColor];
     
     _percentagearray=[[NSMutableArray alloc]initWithObjects:@"10%",@"20%",@"30%",@"40%",@"50%",@"60%",@"70%",@"80%",@"90%",@"100%",nil];
+    _delayarray=[[NSMutableArray alloc]initWithObjects:@"Material",@"Training",@"Permit",@"Equipment",@"Crew",@"Weather", nil];
+    NSArray*array=[[NSArray alloc]initWithObjects:@"MD",@"TD",@"PD",@"ED",@"CD",@"WD", nil];
+    
+    
+    _Delaydict=[[NSMutableDictionary alloc]initWithObjects:array forKeys:_delayarray];
+
     
 }
 
@@ -60,9 +66,12 @@
         [_datebtnlbl setTitle:_track1.workdate forState:UIControlStateNormal];
          [_starttimebtnlbl setTitle:_track1.starttime forState:UIControlStateNormal];
          [_endbtnlbl setTitle:_track1.endtime forState:UIControlStateNormal];
+           [_percntbtnlbl setTitle:_track1.percentage forState:UIControlStateNormal];
+           [_delaybtnlbl setTitle:_track1.delaycode forState:UIControlStateNormal];
         
         trackid=_track1.entryid;
         [self ReadScaffold];
+        [self Readmanpower];
         
     }
     else{
@@ -184,7 +193,14 @@
         return [_otherarray count];
     }
     if(tableView==_popOverTableView){
-        return [_percentagearray count];
+        if(poptype==1){
+            return [_percentagearray count];
+        }
+        else if(poptype==2){
+            return [_delayarray count];
+        }
+            
+        
     }
 
     return YES;
@@ -237,6 +253,7 @@
         _heightlbl.text=smdl.height;
         _quantitylbl=(UILabel*)[cell viewWithTag:5];
         _quantitylbl.text=smdl.quanity;
+        
 
 
         
@@ -287,8 +304,15 @@
     }
     
 if(tableView==_popOverTableView){
-    
-    cell.textLabel.text=[_percentagearray objectAtIndex:indexPath.row];
+    if(poptype==1){
+         cell.textLabel.text=[_percentagearray objectAtIndex:indexPath.row];
+    }
+    else if(poptype==2){
+         cell.textLabel.text=[_delayarray objectAtIndex:indexPath.row];
+      
+    }
+
+   
 }
     
     
@@ -301,7 +325,15 @@ if(tableView==_popOverTableView){
     
     
     if (tableView==_popOverTableView) {
-       
+        if(poptype==1){
+           [_percntbtnlbl setTitle:[_percentagearray objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+        }
+        else if(poptype==2){
+             [_delaybtnlbl setTitle:[_delayarray objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+            
+            
+        }
+
         [_percntbtnlbl setTitle:[_percentagearray objectAtIndex:indexPath.row] forState:UIControlStateNormal];
     }
     
@@ -355,7 +387,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -412,7 +444,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -473,7 +505,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -532,13 +564,16 @@ if(tableView==_popOverTableView){
                    "<FedBak_End>%@</FedBak_End>\n"
                    "<Dates>%@</Dates>\n"
                    "<workorder>%@</workorder>\n"
+                   "<percentage>%@</percentage>\n"
+                   "<delay>%@</delay>\n"
+                   "<delaycode>%@</delaycode>\n"
                    "</CreateWorkPlanTracking>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_workorder,_starttimebtnlbl.titleLabel.text,_endbtnlbl.titleLabel.text,sqldate,_workorderdesc];
+                   "</soap:Envelope>\n",_workorder,_starttimebtnlbl.titleLabel.text,_endbtnlbl.titleLabel.text,sqldate,_workorderdesc,_percntbtnlbl.titleLabel.text,[_Delaydict objectForKey:_delaybtnlbl.titleLabel.text],_delaybtnlbl.titleLabel.text];
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -599,7 +634,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -652,7 +687,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -706,7 +741,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -760,7 +795,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -813,7 +848,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -866,7 +901,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -919,7 +954,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -972,7 +1007,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1025,7 +1060,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1078,7 +1113,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1139,7 +1174,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1200,7 +1235,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1261,7 +1296,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1322,7 +1357,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1383,7 +1418,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1444,7 +1479,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1505,7 +1540,7 @@ if(tableView==_popOverTableView){
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -2152,6 +2187,7 @@ if(tableView==_popOverTableView){
         recordResults = FALSE;
         trackid=_soapResults;
         [self ReadScaffold];
+        [self Readmanpower];
         _soapResults = nil;
         
     }
@@ -2728,6 +2764,7 @@ if(tableView==_popOverTableView){
 }
 
 - (IBAction)percntbtn:(id)sender {
+    poptype=1;
     [self createPopover];
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -2771,13 +2808,27 @@ if(tableView==_popOverTableView){
     self.popOverController.popoverContentSize=CGSizeMake(239.0f, 200.0f);
     self.popOverController=_popOverController;
     
+    if(poptype==1){
+        
     [self.popOverController presentPopoverFromRect:_percntbtnlbl.frame
                                             inView:self.view
                           permittedArrowDirections:UIPopoverArrowDirectionUp
                                           animated:YES];
+    }
     
-    
+    if(poptype==2){
+        
+        [self.popOverController presentPopoverFromRect:_delaybtnlbl.frame
+                                                inView:self.view
+                              permittedArrowDirections:UIPopoverArrowDirectionUp
+                                              animated:YES];
+    }
+
     
 }
 
+- (IBAction)delaybtn:(id)sender {
+    poptype=2;
+    [self createPopover];
+}
 @end

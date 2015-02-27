@@ -44,7 +44,8 @@
    
         _tabletitleview.hidden=NO;
     
-         _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Work Entry",@"Create New Project",nil];
+        // _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Work Entry",@"Create New Project",nil];
+     _disclosurearry=[[NSMutableArray alloc]initWithObjects:@"Work Entry",nil];
         _addbtn.hidden=NO;
         _deletebtn.hidden=NO;
         _plnnavitem.title=@"Project";
@@ -393,6 +394,8 @@
 }
 
 - (IBAction)addplan:(id)sender {
+    _selectionlabel.text=@"Customer";
+
      _updatebtn.enabled=YES;
     _plangtable.userInteractionEnabled=NO;
     _planslectionarray=[[NSMutableArray alloc]init];
@@ -401,7 +404,7 @@
     _cancelbtn.enabled=YES;
     //[self SelectAllCustomer];
     _addplanview.hidden=NO;
-    _planselectionbtn.enabled=NO;
+   // _planselectionbtn.enabled=NO;
     [_leadcheckbtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
      [_custcheckbtn setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
      [_planselectionbtn setTitle:@"Select" forState:UIControlStateNormal];
@@ -410,9 +413,9 @@
     _sitefactortxtfld.text=@"";
     _loctntxtfld.text=@"";
     _ziptxtfld.text=@"";
-    _selectionlabel.hidden=YES;
+    //_selectionlabel.hidden=YES;
     _typebtnlbl.enabled=YES;
-  
+  [self SelectAllCustomer];
 
 }
 -(IBAction)closeaddview:(id)sender
@@ -523,7 +526,7 @@
     self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_planselectionbtn.frame inView:_addplanview permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     
-    
+    [self SelectAllCustomer];
     
 }
 -(IBAction)selectdisclosure:(id)sender
@@ -533,16 +536,17 @@
         
     
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, 60)];
-    popoverView.backgroundColor = [UIColor whiteColor];
-    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 150, 60)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 130, 44)];
+    // popoverView.backgroundColor = [UIColor whiteColor];
+    _popovertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 130, 44)];
     _popovertableview.delegate=(id)self;
     _popovertableview.dataSource=(id)self;
-    _popovertableview.rowHeight= 31;
+    _popovertableview.rowHeight= 40;
+    _popovertableview.separatorStyle=UITableViewCellSeparatorStyleNone;
     //_popovertableview.separatorColor=[UIColor blackColor];
     [popoverView addSubview:_popovertableview];
     popoverContent.view = popoverView;
-    popoverContent.preferredContentSize = CGSizeMake(150, 60);
+    popoverContent.contentSizeForViewInPopover = CGSizeMake(130, 44);
     
     button = (UIButton *)sender;
     UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
@@ -554,8 +558,8 @@
     
     //UITableView *table = (UITableView *)[cell superview];
     self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-        self.popovercontroller.popoverContentSize=CGSizeMake(150.0f, 60.0f);
-        self.popovercontroller=_popovercontroller;
+    self.popovercontroller.popoverContentSize=CGSizeMake(130.0f, 44.0f);
+    self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclosurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
     
        //[_popovertableview reloadData];
@@ -656,7 +660,8 @@
     
     [self WorkTypecountSelect];
     
-    
+    _selectionlabel.text=@"Customer";
+
     
     optionidentifier=2;
      _updatebtn.enabled=YES;
@@ -700,27 +705,27 @@
     NSLog(@"%@",_revtypelistdict);
       NSLog(@"%@",planmdl.worktypeid);
      //planmodel*planmdl=(planmodel *)[_planlistarray objectAtIndex:textFieldIndexPath.row];
-    if([planmdl.masterplan stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
-    {
-        _leadcheckbtn.enabled=YES;
-        _custcheckbtn.enabled=YES;
-        _planselectionbtn.enabled=YES;
-        _typebtnlbl.enabled=YES;
-        //_typebtnlbl.userInteractionEnabled=YES;
-        [_typebtnlbl setTitle:planmdl.worktype forState:UIControlStateNormal];
-        
-    }
-    else
-    {
-        
-        _leadcheckbtn.enabled=NO;
-        _custcheckbtn.enabled=NO;
-        _planselectionbtn.enabled=NO;
-        _typebtnlbl.enabled=NO;
-        //_typebtnlbl.userInteractionEnabled=NO;
-        [_typebtnlbl setTitle:planmdl.worktype forState:UIControlStateDisabled];
-        
-    }
+//    if([planmdl.masterplan stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length==0)
+//    {
+//        _leadcheckbtn.enabled=YES;
+//        _custcheckbtn.enabled=YES;
+//        _planselectionbtn.enabled=YES;
+//        _typebtnlbl.enabled=YES;
+//        //_typebtnlbl.userInteractionEnabled=YES;
+//        [_typebtnlbl setTitle:planmdl.worktype forState:UIControlStateNormal];
+//        
+//    }
+//    else
+//    {
+//        
+//        _leadcheckbtn.enabled=NO;
+//        _custcheckbtn.enabled=NO;
+//        _planselectionbtn.enabled=NO;
+//        _typebtnlbl.enabled=NO;
+//        //_typebtnlbl.userInteractionEnabled=NO;
+//        [_typebtnlbl setTitle:planmdl.worktype forState:UIControlStateDisabled];
+//        
+//    }
 
    
     _loctntxtfld.text=planmdl.location;
@@ -839,9 +844,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -891,9 +896,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
- //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+ //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
 
-     NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+     NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -940,10 +945,10 @@
                    "</soap:Body>\n"
                    "</soap:Envelope>\n"];
     NSLog(@"soapmsg%@",soapMessage);
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
- //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+ //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -990,9 +995,9 @@
                    "</soap:Envelope>\n"];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-  //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+  //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1090,9 +1095,9 @@
                    "</soap:Envelope>\n",_planselectionbtn.titleLabel.text,[ledid integerValue],[custid integerValue],0,0,[[_typelistdict objectForKey:_typebtnlbl.titleLabel.text]integerValue],[_sitefactortxtfld.text floatValue],_loctntxtfld.text,_ziptxtfld.text,complex,lead,customer];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
 //NSURL *url = [NSURL URLWithString:@"testUSA.kontract360.com/service.asmx"];
- //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+ //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1182,9 +1187,9 @@
                    "</soap:Envelope>\n",floderplan,_planselectionbtn.titleLabel.text,lead,customer];
     NSLog(@"soapmsg%@",soapMessage);
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     //NSURL *url = [NSURL URLWithString:@"testUSA.kontract360.com/service.asmx"];
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1309,9 +1314,9 @@
                    "</soap:Envelope>\n",plmdl.planid,_planselectionbtn.titleLabel.text,lead,cust,0,[[_typelistdict objectForKey:_typebtnlbl.titleLabel.text]integerValue ],[_sitefactortxtfld.text floatValue],_loctntxtfld.text,_ziptxtfld.text,complex,newlead,newcust];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-  //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+  //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1361,9 +1366,9 @@
                    "</soap:Envelope>\n",plnmdl.planid];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-  //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+  //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1411,9 +1416,9 @@
                    "</soap:Envelope>\n",_searchstring];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-  //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+  //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1460,9 +1465,9 @@
                    "</soap:Envelope>\n"];
     NSLog(@"soapmsg%@",soapMessage);
     
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-  //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+  //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1534,8 +1539,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1609,8 +1614,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1684,8 +1689,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1735,9 +1740,9 @@
                    "</soap:Envelope>\n",plmdl.planid];
     NSLog(@"soapmsg%@",soapMessage);
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1785,9 +1790,9 @@
                    "</soap:Envelope>\n",plmdl.planid];
     NSLog(@"soapmsg%@",soapMessage);
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -1843,9 +1848,9 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    //    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
