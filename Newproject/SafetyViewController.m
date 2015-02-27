@@ -227,7 +227,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<ReadSafetyMaterials xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<ReadSafetyMaterials xmlns=\"http://ios.kontract360.com/\">\n"
                    
                    "</ReadSafetyMaterials>\n"
                    "</soap:Body>\n"
@@ -236,7 +236,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -244,7 +244,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/ReadSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/ReadSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -286,7 +286,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<CreateSafetyMaterials xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<CreateSafetyMaterials xmlns=\"http://ios.kontract360.com/\">\n"
                    "<description>%@</description>\n"
                    "<allsubtypes>%d</allsubtypes>\n"
                    "<unitcost>%d</unitcost>\n"
@@ -300,7 +300,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -308,7 +308,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/CreateSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/CreateSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -351,7 +351,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<UpdateSafetyMaterials xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<UpdateSafetyMaterials xmlns=\"http://ios.kontract360.com/\">\n"
                    "<description>%@</description>\n"
                    "<allsubtypes>%d</allsubtypes>\n"
                    "<unitcost>%d</unitcost>\n"
@@ -366,7 +366,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -374,7 +374,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/UpdateSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/UpdateSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -407,7 +407,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<DestroySafetyMaterials xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<DestroySafetyMaterials xmlns=\"http://ios.kontract360.com/\">\n"
                    "<ItemCode>%@</ItemCode>\n"
                    "<EntryId>%d</EntryId>\n"
                    "</DestroySafetyMaterials>\n"
@@ -417,7 +417,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -425,7 +425,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/DestroySafetyMaterials" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/DestroySafetyMaterials" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -458,7 +458,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<SearchSafetyMaterials xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<SearchSafetyMaterials xmlns=\"http://ios.kontract360.com/\">\n"
                    "<searchtext>%@</searchtext>\n"
                    "</SearchSafetyMaterials>\n"
                    "</soap:Body>\n"
@@ -467,7 +467,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -475,7 +475,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/SearchSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/SearchSafetyMaterials" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -516,7 +516,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<FetchAnyImage xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<FetchAnyImage xmlns=\"http://ios.kontract360.com/\">\n"
                    "<filename>%@</filename>\n"
                    "<type1>%@</type1>\n"
                    "</FetchAnyImage>\n"
@@ -526,7 +526,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -534,7 +534,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/FetchAnyImage" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/FetchAnyImage" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -572,7 +572,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<UploadAnyImage xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<UploadAnyImage xmlns=\"http://ios.kontract360.com/\">\n"
                    "<f>%@</f>\n"
                    "<fileName>%@</fileName>\n"
                    "<type>%@</type>\n"
@@ -584,7 +584,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -592,7 +592,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/UploadAnyImage" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/UploadAnyImage" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -627,7 +627,7 @@ finishedSavingWithError:(NSError *)error
                    
                    "<soap:Body>\n"
                    
-                   "<UploadAnyImage xmlns=\"https://vip.kontract360.com/\">\n"
+                   "<UploadAnyImage xmlns=\"http://ios.kontract360.com/\">\n"
                    "<f>%@</f>\n"
                    "<fileName>%@</fileName>\n"
                    "<type>%@</type>\n"
@@ -639,7 +639,7 @@ finishedSavingWithError:(NSError *)error
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"https://vip.kontract360.com/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;;
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -647,7 +647,7 @@ finishedSavingWithError:(NSError *)error
     
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
-    [theRequest addValue: @"https://vip.kontract360.com/UploadAnyImage" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: @"http://ios.kontract360.com/UploadAnyImage" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -1263,6 +1263,8 @@ _subtypctrlr.equipmainid=safty.entryid;
 
 - (IBAction)editbtn:(id)sender {
     btninfr=2;
+    _navtitle.title=@"Edit";
+
      _searchbar.text=@"";
     _addview.hidden=NO;
     button = (UIButton *)sender;
@@ -1271,6 +1273,8 @@ _subtypctrlr.equipmainid=safty.entryid;
     NSIndexPath *textFieldIndexPath = [self.saftytable indexPathForRowAtPoint:rootViewPoint];
     editpath=textFieldIndexPath.row;
     
+    _cancelbtnlbl.enabled=NO;
+    [_cancelbtnlbl setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     Manpwr*saftymdl2=(Manpwr *)[_SafetyArray objectAtIndex:editpath];
     _itemcodetxtfld.text=saftymdl2.itemcode;
          _codedestxtfld.text=saftymdl2.itemdescptn;
@@ -1312,9 +1316,12 @@ _subtypctrlr.equipmainid=safty.entryid;
 }
 
 - (IBAction)Addbtn:(id)sender {
+     _cancelbtnlbl.enabled=YES;
     _searchbar.text=@"";
+    _navtitle.title=@"Create";
     btninfr=1;
     _addview.hidden=NO;
+    _itemcodetxtfld.text=@"";
     _subtypebtnlbl.enabled=YES;
     _updatebtnlbl.enabled=YES;
     _activityindictor.hidden=YES;

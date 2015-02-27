@@ -47,17 +47,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="Y6M-MF-jOt">
-                        <rect key="frame" x="143" y="0.0" width="1" height="49"/>
+                        <rect key="frame" x="143" y="-5" width="1" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" id="byK-Da-e2Z">
-                        <rect key="frame" x="252" y="0.0" width="1" height="49"/>
+                        <rect key="frame" x="252" y="-5" width="1" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" id="U0p-ip-dDb">
-                        <rect key="frame" x="364" y="-3" width="1" height="49"/>
+                        <rect key="frame" x="364" y="-5" width="1" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -69,12 +69,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="yWf-w5-3MY">
-                        <rect key="frame" x="486" y="0.0" width="1" height="49"/>
+                        <rect key="frame" x="486" y="-5" width="1" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <view contentMode="scaleToFill" id="MKe-f8-UFN">
-                        <rect key="frame" x="604" y="0.0" width="1" height="48"/>
+                        <rect key="frame" x="604" y="-5" width="1" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -93,7 +93,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="DgR-cz-VWY">
-                        <rect key="frame" x="756" y="0.0" width="1" height="48"/>
+                        <rect key="frame" x="756" y="-5" width="1" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>

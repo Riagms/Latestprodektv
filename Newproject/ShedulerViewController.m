@@ -949,6 +949,7 @@
     }
     else{
 
+        _updatebtnlbl.enabled=NO;
     [self UpdateSchedulerWork];
     }
 }
@@ -981,6 +982,7 @@
     
        if ([alertView.message isEqualToString:@"Updated Successfully"]) {
         _addview.hidden=YES;
+           _updatebtnlbl.enabled=YES;
          
     }
 }
