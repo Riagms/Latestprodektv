@@ -562,8 +562,8 @@ if (tableView==_popovertableview)
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;
-      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];;
+      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -613,7 +613,7 @@ if (tableView==_popovertableview)
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
     
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
 
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
@@ -665,7 +665,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -749,7 +749,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -879,7 +879,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -930,8 +930,8 @@ if (tableView==_popovertableview)
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;
-   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];;
+   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -979,8 +979,8 @@ if (tableView==_popovertableview)
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];;
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1028,8 +1028,8 @@ if (tableView==_popovertableview)
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;
-   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];;
+   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1078,8 +1078,8 @@ if (tableView==_popovertableview)
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //  NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];;
-   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];;
+   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
@@ -1128,7 +1128,7 @@ if (tableView==_popovertableview)
     
     
     // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
-   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];

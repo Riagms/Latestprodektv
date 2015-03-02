@@ -19,6 +19,7 @@
 #import "TrakerViewController.h"
 #import "NewTrackerViewController.h"
 #import "WorKTrackViewController.h"
+#import "TicketViewController.h"
 //ghfgh
 @interface ManagemttileViewController : UIViewController
 
@@ -45,6 +46,7 @@
 @property (strong, nonatomic)NewTrackerViewController *trackVCtrl;
 //@property (strong, nonatomic)TicketViewController*TicketVCtrl;
 @property (strong, nonatomic)WorKTrackViewController*WorkVCtrl;
+@property (strong, nonatomic)TicketViewController*TicketVCtrl;
 
 
 - (IBAction)clsebtn:(id)sender;

@@ -146,4 +146,12 @@
 - (IBAction)delaybtn:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *delaybtnlbl;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
+- (IBAction)trackerbtn:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *trackerbtnlbl;
+@property (strong, nonatomic) IBOutlet UIButton *sequencebtnlbl;
+- (IBAction)sequencebtn:(id)sender;
+
+
 @end

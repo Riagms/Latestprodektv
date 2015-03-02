@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Schedulermdl.h"
-#import "NewTrackerViewController.h"
+#import "TrakerViewController.h"
 
 @interface WorKTrackViewController : UIViewController{
     UIButton*button;
@@ -21,7 +21,7 @@
 @property(strong,nonatomic)NSMutableString *soapResults;
 @property(strong,nonatomic)NSMutableData *webData;
 
-@property (strong, nonatomic)NewTrackerViewController*TicketVCtrl;
+@property (strong, nonatomic)TrakerViewController*TrackVCtrl;
 @property(strong,nonatomic)UITableView *popovertableview;
 @property(strong,nonatomic)UIPopoverController *popovercontroller;
 
@@ -44,5 +44,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *disclurebtn;
 @property (strong, nonatomic) IBOutlet UILabel *allocatedhrslbl;
 @property (strong, nonatomic) IBOutlet UILabel *usedhrslbl;
+- (IBAction)addbtn:(id)sender;
+- (IBAction)editbtn:(id)sender;
+
 
 @end

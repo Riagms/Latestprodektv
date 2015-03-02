@@ -104,9 +104,13 @@
 }
 -(void)tracker
 {
-    self.trackVCtrl=[[NewTrackerViewController alloc]initWithNibName:@"NewTrackerViewController" bundle:nil];
-    self.trackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
-    [self presentViewController:self.trackVCtrl animated:YES completion:nil];
+//    self.trackVCtrl=[[NewTrackerViewController alloc]initWithNibName:@"NewTrackerViewController" bundle:nil];
+//    self.trackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+//    [self presentViewController:self.trackVCtrl animated:YES completion:nil];
+    
+    self.WorkVCtrl=[[WorKTrackViewController alloc]initWithNibName:@"WorKTrackViewController" bundle:nil];
+    //self.WorkVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
+    [self presentViewController:self.WorkVCtrl animated:YES completion:nil];
 }
 -(void)Resourcepage{
     _resurceactivitybtn.hidden=NO;
@@ -131,9 +135,13 @@
 //    _Moduleid=54;
 //    [self UserRightsforparticularmoduleselect];
     
-    self.WorkVCtrl=[[WorKTrackViewController alloc]initWithNibName:@"WorKTrackViewController" bundle:nil];
-    self.WorkVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
-    [self presentViewController:self.WorkVCtrl animated:YES completion:nil];
+    self.TicketVCtrl=[[TicketViewController alloc]initWithNibName:@"TicketViewController" bundle:nil];
+    self.TicketVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    //self.TicketVCtrl.planid=planid;
+    
+    [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
+    }];
+
     
 }
 -(void)labourPage{
@@ -226,8 +234,8 @@
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    //   NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
-      NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+      NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     

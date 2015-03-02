@@ -143,11 +143,11 @@
     
     if (tableView==_popovertableview) {
       
-        self.TicketVCtrl=[[NewTrackerViewController alloc]initWithNibName:@"NewTrackerViewController" bundle:nil];
-        self.TicketVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
-        self.TicketVCtrl.workorder=_workorder;
-        [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
-        }];
+//        self.TicketVCtrl=[[NewTrackerViewController alloc]initWithNibName:@"NewTrackerViewController" bundle:nil];
+//        self.TicketVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+//        self.TicketVCtrl.workorder=_workorder;
+//        [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
+//        }];
 
     }
     
@@ -179,11 +179,11 @@
                    "<PlanIID>%@</PlanIID>\n"
                    "</ReadPlanningWorkEntImport>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_planid];
+                   "</soap:Envelope>\n",@"PJ-00001"];
     NSLog(@"soapmsg%@",soapMessage);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://tools.prodektive.com/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     
@@ -821,5 +821,39 @@
     self.popovercontroller.popoverContentSize=CGSizeMake(132.0f, 46.0f);
     self.popovercontroller=_popovercontroller;
     [self.popovercontroller presentPopoverFromRect:_disclurebtn.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+}
+- (IBAction)addbtn:(id)sender {
+    self.TrackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
+    self.TrackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    self.TrackVCtrl.editpath=@"1";
+    self.TrackVCtrl.workorder=_workorder;
+    //self.TrackVCtrl.workorderdesc=_workorderdesc;
+    [self presentViewController:self.TrackVCtrl animated:YES completion:nil];
+    
+}
+
+- (IBAction)editbtn:(id)sender {
+    button = (UIButton *)sender;
+    CGPoint center= button.center;
+    
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.worktable];
+    NSIndexPath *textFieldIndexPath = [self.worktable indexPathForRowAtPoint:rootViewPoint];
+    
+    btnindex=textFieldIndexPath.row;
+   // Trackmdl*track1=(Trackmdl *)[_Trackarray objectAtIndex:btnindex];
+    
+    self.TrackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
+    self.TrackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
+    
+    
+   // NSMutableArray*newarray=[[NSMutableArray alloc]init];
+   // [newarray addObject:track1];
+   // self.TrackVCtrl.trackarray=newarray;
+    self.TrackVCtrl.editpath=@"2";
+    self.TrackVCtrl.workorder=_workorder;
+    //self.TrackVCtrl.workorderdesc=track1.workorder;
+    
+    
+    [self presentViewController:self.TrackVCtrl animated:YES completion:nil];
 }
 @end
