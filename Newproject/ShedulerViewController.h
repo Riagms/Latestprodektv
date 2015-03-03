@@ -14,7 +14,7 @@
       BOOL recordResults;
     NSString*foremanid;
     UIButton*button;
-    NSInteger btnindex,webtype;
+    NSInteger btnindex,webtype,check;
 }
 
 @property (strong, nonatomic)NSString*searchstring ,*planid;
@@ -76,5 +76,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *datelbl;
 
 - (IBAction)editbtn:(id)sender;
+- (IBAction)checkbtn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *checkbtnlbl;
 
 @end

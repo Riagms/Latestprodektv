@@ -115,7 +115,7 @@
     self.popOverController=_popOverController;
     
     [self.popOverController presentPopoverFromRect:_datetxtfld.frame
-                                            inView:self.addview
+                                            inView:self.view
                           permittedArrowDirections:UIPopoverArrowDirectionUp
                                           animated:YES];
     
@@ -201,6 +201,21 @@
 
         _datelbl=(UILabel*)[cell viewWithTag:7];
         _datelbl.text=smdl.wdate;
+        if ([smdl.foremancheck isEqualToString:@"0"])
+            
+            
+        {
+            [_checkbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
+            
+            
+           
+}
+        else
+        {
+            [_checkbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+            
+        }
+
 
     }
     if (tableView==_popOverTableView) {
@@ -250,7 +265,7 @@
                   
                    "</InsertSchedulerDetails>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_planid];
+                   "</soap:Envelope>\n",@"PJ-00001"];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -304,7 +319,7 @@
                     "<PlanId>%@</PlanId>\n"
                    "</ReadSchedulerWork>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_planid];
+                   "</soap:Envelope>\n",@"PJ-00001"];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -915,7 +930,7 @@
     
     
     [self.popOverController presentPopoverFromRect:_foremanbtnlbl.frame
-                                            inView:self.addview
+                                            inView:self.view
                           permittedArrowDirections:UIPopoverArrowDirectionUp
                                           animated:YES];
     
@@ -977,6 +992,42 @@
     [_datetxtfld setTitle:smdl.wdate
                     forState:UIControlStateNormal];
     
+}
+
+- (IBAction)checkbtn:(id)sender {
+    button = (UIButton *)sender;
+    CGPoint center= button.center;
+  
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.schedulartable];
+    NSIndexPath *textFieldIndexPath = [self.schedulartable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    btnindex=textFieldIndexPath.row;
+    
+ 
+   Schedulermdl *smdl=(Schedulermdl *)[_schedulearray objectAtIndex:btnindex];
+    if ([smdl.foremancheck isEqualToString:@"0"])
+        
+        
+    {
+        
+        [_checkbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
+        
+        
+        check=1;
+        
+        
+    }
+    else
+    {
+        [_checkbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+        check=0;
+        
+    }
+    [_schedulartable reloadData];
+    [self UpdateSchedulerWork];
+    
+
+
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     

@@ -10,6 +10,7 @@
 #import "CKCalendarView.h"
 #import "TicDetailViewController.h"
 #import "Schedulermdl.h"
+#import "TrakerViewController.h"
 @interface TicketViewController : UIViewController{
     BOOL recordResults;
     NSString *selcteddate;
@@ -17,7 +18,7 @@
     
 }
 @property(strong,nonatomic)Schedulermdl*schmdl;
-
+@property (strong, nonatomic)TrakerViewController*TrackVCtrl;
 /* xmlparser*/
 @property(strong,nonatomic)NSXMLParser *xmlParser;
 @property(strong,nonatomic)NSMutableString *soapResults;

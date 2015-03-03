@@ -138,9 +138,9 @@
     self.TicketVCtrl=[[TicketViewController alloc]initWithNibName:@"TicketViewController" bundle:nil];
     self.TicketVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
     //self.TicketVCtrl.planid=planid;
-    
-    [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
-    }];
+    [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:^{ [self presentViewController:self.TicketVCtrl animated:YES completion:nil];
+//    }];
 
     
 }

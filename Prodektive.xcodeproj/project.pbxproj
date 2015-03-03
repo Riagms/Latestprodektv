@@ -424,6 +424,9 @@
 		D453DA301873F206007EE3DC /* Consumblecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D453DA2F1873F206007EE3DC /* Consumblecell.xib */; };
 		D453DA321873F215007EE3DC /* Assetcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D453DA311873F215007EE3DC /* Assetcell.xib */; };
 		D45E50C41A9C97B2001CD151 /* Schedulermdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E50C31A9C97B2001CD151 /* Schedulermdl.m */; };
+		D479FEF01AA46B120033AC60 /* Tickets.png in Resources */ = {isa = PBXBuildFile; fileRef = D479FEEF1AA46B120033AC60 /* Tickets.png */; };
+		D479FEF21AA46B150033AC60 /* schedulersss.png in Resources */ = {isa = PBXBuildFile; fileRef = D479FEF11AA46B150033AC60 /* schedulersss.png */; };
+		D479FEF41AA46B190033AC60 /* tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = D479FEF31AA46B190033AC60 /* tracker.png */; };
 		D47A9B0B19402B89001CC416 /* EmpJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47A9B0919402B89001CC416 /* EmpJobViewController.m */; };
 		D47A9B0C19402B89001CC416 /* EmpJobViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47A9B0A19402B89001CC416 /* EmpJobViewController.xib */; };
 		D47A9B0E19403CA5001CC416 /* Empjobcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47A9B0D19403CA5001CC416 /* Empjobcell.xib */; };
@@ -1289,6 +1292,9 @@
 		D453DA311873F215007EE3DC /* Assetcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Assetcell.xib; sourceTree = "<group>"; };
 		D45E50C21A9C97B2001CD151 /* Schedulermdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedulermdl.h; sourceTree = "<group>"; };
 		D45E50C31A9C97B2001CD151 /* Schedulermdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedulermdl.m; sourceTree = "<group>"; };
+		D479FEEF1AA46B120033AC60 /* Tickets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tickets.png; sourceTree = "<group>"; };
+		D479FEF11AA46B150033AC60 /* schedulersss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedulersss.png; sourceTree = "<group>"; };
+		D479FEF31AA46B190033AC60 /* tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracker.png; sourceTree = "<group>"; };
 		D47A9B0819402B89001CC416 /* EmpJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmpJobViewController.h; sourceTree = "<group>"; };
 		D47A9B0919402B89001CC416 /* EmpJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmpJobViewController.m; sourceTree = "<group>"; };
 		D47A9B0A19402B89001CC416 /* EmpJobViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmpJobViewController.xib; sourceTree = "<group>"; };
@@ -2164,10 +2170,6 @@
 				D41F922F1A9B04E6005812B8 /* TScafldCell.xib */,
 				D41F92311A9B0502005812B8 /* TManpwrCell.xib */,
 				D41F92331A9B051D005812B8 /* TOtherCell.xib */,
-				D41F92261A9AEB6F005812B8 /* NewTrackerViewController.h */,
-				D41F92271A9AEB6F005812B8 /* NewTrackerViewController.m */,
-				D41F92281A9AEB6F005812B8 /* NewTrackerViewController.xib */,
-				D41F922D1A9AF053005812B8 /* NewTrackerCell.xib */,
 				D41F92351A9B22A5005812B8 /* TicketViewController.h */,
 				D41F92361A9B22A5005812B8 /* TicketViewController.m */,
 				D41F92371A9B22A5005812B8 /* TicketViewController.xib */,
@@ -2177,6 +2179,10 @@
 				D4BB03741A9D83B300F4FF70 /* TicDetailViewController.xib */,
 				D4BB03771A9D935C00F4FF70 /* TcrewCell.xib */,
 				D4BB03791A9D938100F4FF70 /* TiallCell.xib */,
+				D41F92261A9AEB6F005812B8 /* NewTrackerViewController.h */,
+				D41F92271A9AEB6F005812B8 /* NewTrackerViewController.m */,
+				D41F92281A9AEB6F005812B8 /* NewTrackerViewController.xib */,
+				D41F922D1A9AF053005812B8 /* NewTrackerCell.xib */,
 			);
 			name = "Project Management";
 			sourceTree = "<group>";
@@ -2433,6 +2439,9 @@
 		D4D570151772BE4A00671A35 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D479FEF31AA46B190033AC60 /* tracker.png */,
+				D479FEF11AA46B150033AC60 /* schedulersss.png */,
+				D479FEEF1AA46B120033AC60 /* Tickets.png */,
 				D4E5298A1A89C1D2004AACBB /* Newbakground.png */,
 				647871AE1A88C08C008A9453 /* bglogo.png */,
 				647871AF1A88C08C008A9453 /* bground.png */,
@@ -3230,6 +3239,7 @@
 				64A5ED4E19C2C4EC002E0018 /* RSTViewController.xib in Resources */,
 				645875C31A28681A00906869 /* GPastFcell.xib in Resources */,
 				D4A16B9E1974EEE0002CA2A2 /* calothereventcell.xib in Resources */,
+				D479FEF41AA46B190033AC60 /* tracker.png in Resources */,
 				645875C11A2867F700906869 /* AstGpViewController.xib in Resources */,
 				D4F053E31A0CA54300672C88 /* planning2.png in Resources */,
 				D429C5F01952DD6100CE73A6 /* Siteinexcptncell.xib in Resources */,
@@ -3309,6 +3319,7 @@
 				D4A16B931974EEE0002CA2A2 /* PhsestViewController.xib in Resources */,
 				D4E658D217F2EF2500202B14 /* green-checkmark4-1.png in Resources */,
 				D4A16B8F1974EEE0002CA2A2 /* Tblebidcell.xib in Resources */,
+				D479FEF01AA46B120033AC60 /* Tickets.png in Resources */,
 				D4E7AD09192DC91F00C07497 /* Handnotes.png in Resources */,
 				D40DD2621873D29B00E7BC2C /* SmalltoolsViewController.xib in Resources */,
 				D42D8C0818D2D8AC009D8085 /* folderrightsViewController.xib in Resources */,
@@ -3386,6 +3397,7 @@
 				D44ECC601A5D098500B3082A /* PMJobsViewController.xib in Resources */,
 				D4A338E418F3EEEF00E53FAC /* MarkupViewController.xib in Resources */,
 				D4A16B621974EEA8002CA2A2 /* Editplanview.xib in Resources */,
+				D479FEF21AA46B150033AC60 /* schedulersss.png in Resources */,
 				D4F053E11A0CA37A00672C88 /* planning2@2X.png in Resources */,
 				D4014FF618E3E34000DB825A /* Snumcell.xib in Resources */,
 				649316C219AB4629008CB7BF /* TLLeadsViewController.xib in Resources */,

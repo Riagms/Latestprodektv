@@ -907,9 +907,9 @@ return [_sectionArray count];
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   
-Section *aSection=[_sectionArray objectAtIndex:section];
+ Section *aSection=[_sectionArray objectAtIndex:section];
     // Return the number of rows in the section.
-return aSection.open ? [aSection.sectionRows count]:0;
+ return aSection.open ? [aSection.sectionRows count]:0;
 //return aSection.open ? 1:0;
         
 // Return the number of rows in the section.

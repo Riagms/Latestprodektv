@@ -78,20 +78,20 @@
     _manpwrview.hidden=NO;
     _otherview.hidden=YES;
     if ([_editpath isEqualToString:@"2"]) {
-        _track1=(Trackmdl *)[_trackarray objectAtIndex:0];
-        _wrktxtlbl.text=_track1.workdescrptn;
+//        _track1=(Trackmdl *)[_trackarray objectAtIndex:0];
+//        _wrktxtlbl.text=_track1.workdescrptn;
+//        
+//        _datebtnlbl.titleLabel.text=_track1.workdate;
+//        
+//        [_datebtnlbl setTitle:_track1.workdate forState:UIControlStateNormal];
+//         [_starttimebtnlbl setTitle:_track1.starttime forState:UIControlStateNormal];
+//         [_endbtnlbl setTitle:_track1.endtime forState:UIControlStateNormal];
+//           [_percntbtnlbl setTitle:_track1.percentage forState:UIControlStateNormal];
+//           [_delaybtnlbl setTitle:_track1.delaycode forState:UIControlStateNormal];
         
-        _datebtnlbl.titleLabel.text=_track1.workdate;
-        
-        [_datebtnlbl setTitle:_track1.workdate forState:UIControlStateNormal];
-         [_starttimebtnlbl setTitle:_track1.starttime forState:UIControlStateNormal];
-         [_endbtnlbl setTitle:_track1.endtime forState:UIControlStateNormal];
-           [_percntbtnlbl setTitle:_track1.percentage forState:UIControlStateNormal];
-           [_delaybtnlbl setTitle:_track1.delaycode forState:UIControlStateNormal];
-        
-        trackid=_track1.entryid;
-        [self ReadScaffold];
-        [self Readmanpower];
+//        trackid=_track1.entryid;
+//        [self ReadScaffold];
+//        [self Readmanpower];
         
     }
     else{
@@ -219,7 +219,14 @@
         else if(poptype==2){
             return [_delayarray count];
         }
-            
+        else if(poptype==3){
+            return [_Trackarray count];
+        }
+        else if(poptype==4){
+            return [_sequencearray count];
+        }
+        
+
         
     }
 
@@ -331,8 +338,22 @@ if(tableView==_popOverTableView){
          cell.textLabel.text=[_delayarray objectAtIndex:indexPath.row];
       
     }
+    else if(poptype==3){
 
-   
+        Trackmdl*trakmdl=(Trackmdl *)[_Trackarray objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text=[NSString stringWithFormat:@"%@-%@-%@",trakmdl.workdate,trakmdl.starttime,trakmdl.endtime];
+
+    }
+
+    else if(poptype==4){
+        
+        NumbrSerMdl*smdl=(NumbrSerMdl *)[_sequencearray objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text=smdl.JobTask;
+        
+    }
+
 }
     
     
@@ -353,10 +374,40 @@ if(tableView==_popOverTableView){
             
             
         }
+        else if(poptype==3){
+            Trackmdl*trakmdl=(Trackmdl *)[_Trackarray objectAtIndex:indexPath.row];
+            [_trackerbtnlbl setTitle:[NSString stringWithFormat:@"%@-%@-%@",trakmdl.workdate,trakmdl.starttime,trakmdl.endtime] forState:UIControlStateNormal];
+            _wrktxtlbl.text=trakmdl.workdescrptn;
+            
+            _datebtnlbl.titleLabel.text=trakmdl.workdate;
+            
+            [_datebtnlbl setTitle:trakmdl.workdate forState:UIControlStateNormal];
+            [_starttimebtnlbl setTitle:trakmdl.starttime forState:UIControlStateNormal];
+            [_endbtnlbl setTitle:trakmdl.endtime forState:UIControlStateNormal];
+            [_percntbtnlbl setTitle:trakmdl.percentage forState:UIControlStateNormal];
+            [_delaybtnlbl setTitle:trakmdl.delay forState:UIControlStateNormal];
+            trackid=trakmdl.entryid;
+            _workorderdesc=trakmdl.workorder;
+            [self ReadScaffold];
+            [self Readmanpower];
+            
+            
+        }
 
-        [_percntbtnlbl setTitle:[_percentagearray objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+        else if(poptype==4){
+            NumbrSerMdl*smdl=(NumbrSerMdl *)[_sequencearray objectAtIndex:indexPath.row];
+
+            [_sequencebtnlbl setTitle:smdl.JobTask forState:UIControlStateNormal];
+            
+            
+        }
+
     }
     
+    
+    
+
+
     
     
     [self.popOverController dismissPopoverAnimated:YES];
@@ -367,6 +418,7 @@ if(tableView==_popOverTableView){
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     //alternating cell back ground color
     
+    if(tableView==_manpwrtable&&tableView==_scaffoldtable&&tableView==_othertable){
     if (indexPath.row%2 == 0) {
         [cell setBackgroundColor:[UIColor whiteColor]];
         
@@ -378,9 +430,116 @@ if(tableView==_popOverTableView){
         
         
     }
+    }
     
 }
+
+
 #pragma mark-Webservices
+
+-(void)JobsequenceSelect{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ServiceJobSequenceselect xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<SkillId>%d</SkillId>\n"
+                   "</ServiceJobSequenceselect>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",1];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //  NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ServiceJobSequenceselect" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+
+-(void)ReadWorkTracking{
+    recordResults=FALSE;
+    NSString *soapMessage;
+    
+    
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadWorkTracking xmlns=\"http://ios.kontract360.com/\">\n"
+                   
+                   "<WOID>%@</WOID>\n"
+                   "</ReadWorkTracking>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_workorder
+                   ];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadWorkTracking" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+    
+}
 
 -(void)ReadScaffold{
     recordResults=FALSE;
@@ -589,7 +748,7 @@ if(tableView==_popOverTableView){
                    "<delaycode>%@</delaycode>\n"
                    "</CreateWorkPlanTracking>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",_workorder,_starttimebtnlbl.titleLabel.text,_endbtnlbl.titleLabel.text,sqldate,_workorderdesc,_percntbtnlbl.titleLabel.text,[_Delaydict objectForKey:_delaybtnlbl.titleLabel.text],_delaybtnlbl.titleLabel.text];
+                   "</soap:Envelope>\n",_workorder,_starttimebtnlbl.titleLabel.text,_endbtnlbl.titleLabel.text,sqldate,_workorderdesc,_percntbtnlbl.titleLabel.text,_delaybtnlbl.titleLabel.text,[_Delaydict objectForKey:_delaybtnlbl.titleLabel.text]];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -1627,6 +1786,7 @@ if(tableView==_popOverTableView){
     [_scaffoldtable reloadData];
     [_manpwrtable reloadData];
     [_othertable reloadData];
+    [_popOverTableView reloadData];
     
     
 }
@@ -2034,7 +2194,187 @@ if(tableView==_popOverTableView){
     }
 
 
+
+if([elementName isEqualToString:@"ReadWorkTrackingResponse"])
+{
+    _Trackarray=[[NSMutableArray alloc]init];
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
 }
+if([elementName isEqualToString:@"FedBak_Per"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"EntryID"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+
+if([elementName isEqualToString:@"FedBak_Des"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+
+if([elementName isEqualToString:@"FedBak_Start"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"FedBak_End"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+
+if([elementName isEqualToString:@"plan"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"workorder"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"Dates"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"percentage"])
+{
+    
+    
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"delaycode"])
+{
+    
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+}
+if([elementName isEqualToString:@"Differ"])
+{
+    if(!_soapResults)
+    {
+        _soapResults = [[NSMutableString alloc] init];
+    }
+    recordResults = TRUE;
+    
+}
+    if([elementName isEqualToString:@"ServiceJobSequenceselectResponse"])
+    {
+        _sequencearray=[[NSMutableArray alloc]init];
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"JobSequenceId"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"JobTask"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"SkillId"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"SequenceNumber"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+}
+
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     
@@ -2050,6 +2390,42 @@ if(tableView==_popOverTableView){
 }
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    if([elementName isEqualToString:@"JobSequenceId"])
+    {
+        
+        recordResults = FALSE;
+        _seqmdl=[[NumbrSerMdl alloc]init];
+        _seqmdl.JobSequenceId=[_soapResults integerValue];
+        
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"JobTask"])
+    {
+        
+        recordResults = FALSE;
+        _seqmdl.JobTask=_soapResults;
+        
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"SkillId"])
+    {
+        
+        recordResults = FALSE;
+        _seqmdl.SkillId=_soapResults;
+        
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"SequenceNumber"])
+    {
+        
+        recordResults = FALSE;
+        
+        _seqmdl.SequenceNumber=_soapResults;
+        [_sequencearray addObject:_seqmdl];
+        _soapResults = nil;
+    }
+
        if([elementName isEqualToString:@"id"])
     {
         _Scaffldmdl=[[TScfTypemdl alloc]init];
@@ -2356,6 +2732,124 @@ if(tableView==_popOverTableView){
         _Othermdl.entryid=_soapResults;
         _soapResults = nil;
         
+    }
+    if([elementName isEqualToString:@"FedBak_Per"])
+    {
+        _Trackmdl=[[Trackmdl alloc]init];
+        
+        recordResults = FALSE;
+        _Trackmdl.fedbackpercentage=_soapResults;
+        
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"EntryID"])
+    {
+        
+        
+        
+        recordResults = FALSE;
+        
+        _Trackmdl.entryid=_soapResults;
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"FedBak_Des"])
+    {
+        
+        
+        recordResults = FALSE;
+        _Trackmdl.workdescrptn=_soapResults;
+        
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"FedBak_Start"])
+    {
+        
+        
+        
+        recordResults = FALSE;
+        _Trackmdl.starttime=_soapResults;
+        
+        _soapResults = nil;    }
+    if([elementName isEqualToString:@"FedBak_End"])
+    {
+        
+        
+        
+        recordResults = FALSE;
+        
+        _Trackmdl.endtime=_soapResults;
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"plan"])
+    {
+        
+        
+        
+        recordResults = FALSE;
+        _Trackmdl.plan=_soapResults;
+        
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"workorder"])
+    {
+        
+        
+        
+        recordResults = FALSE;
+        _Trackmdl.workorder=_soapResults;
+        
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"Dates"])
+    {
+        
+        
+        
+        recordResults = FALSE;
+        
+        NSArray *dateArray=[[NSArray alloc]init];
+        dateArray=[_soapResults componentsSeparatedByString:@"T"];
+        NSString *date1 =[dateArray objectAtIndex:0];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        NSDate *dates = [dateFormat dateFromString:date1];
+        [dateFormat setDateFormat:@"MM-dd-yyy"];
+        NSString *myFormattedDate = [dateFormat stringFromDate:dates];
+        
+        _Trackmdl.workdate=myFormattedDate;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"percentage"])
+    {
+        
+        recordResults = FALSE;
+        
+        _Trackmdl.percentage=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"delaycode"])
+    {
+        
+        recordResults = FALSE;
+        
+        _Trackmdl.delaycode=_soapResults;
+        
+        
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"Differ"])
+    {
+        
+        recordResults = FALSE;
+        
+        _Trackmdl.workhrs=_soapResults;
+        [_Trackarray addObject:_Trackmdl];
+        
+        _soapResults = nil;
     }
 
 }
@@ -2843,8 +3337,23 @@ if(tableView==_popOverTableView){
                               permittedArrowDirections:UIPopoverArrowDirectionUp
                                               animated:YES];
     }
+    if(poptype==3){
+        
+        [self.popOverController presentPopoverFromRect:_trackerbtnlbl.frame
+                                                inView:self.view
+                              permittedArrowDirections:UIPopoverArrowDirectionUp
+                                              animated:YES];
+    }
 
+    if(poptype==4){
+        
+        [self.popOverController presentPopoverFromRect:_sequencebtnlbl.frame
+                                                inView:self.view
+                              permittedArrowDirections:UIPopoverArrowDirectionUp
+                                              animated:YES];
+    }
     
+
 }
 
 - (IBAction)delaybtn:(id)sender {
@@ -2852,7 +3361,13 @@ if(tableView==_popOverTableView){
     [self createPopover];
 }
 - (IBAction)trackerbtn:(id)sender {
+    poptype=3;
+     [self createPopover];
+    [self ReadWorkTracking];
 }
 - (IBAction)sequencebtn:(id)sender {
+    poptype=4;
+    [self createPopover];
+    [self JobsequenceSelect];
 }
 @end

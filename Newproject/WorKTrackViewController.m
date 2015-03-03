@@ -93,12 +93,16 @@
         _equipment.text=wmdl.equipment;
         _deftaglbl=(UILabel*)[cell viewWithTag:5];
         _deftaglbl.text=wmdl.deftag;
-        _allocatedhrslbl=(UILabel*)[cell viewWithTag:6];
-        _allocatedhrslbl.text=wmdl.allocatedhrs;
-        _usedhrslbl=(UILabel*)[cell viewWithTag:7];
-        _usedhrslbl.text=wmdl.workedhrs;
+        
+       
         float Ahrs=[wmdl.allocatedhrs floatValue];
+     
+      
          float whrs=[wmdl.workedhrs floatValue];
+        _allocatedhrslbl=(UILabel*)[cell viewWithTag:6];
+        _allocatedhrslbl.text=[NSString stringWithFormat:@"%.02f",Ahrs];
+        _usedhrslbl=(UILabel*)[cell viewWithTag:7];
+        _usedhrslbl.text=[NSString stringWithFormat:@"%.02f",whrs];
         if (Ahrs<whrs) {
            
             UIView *bgColorView = [[UIView alloc] init];
@@ -841,6 +845,8 @@
     
     btnindex=textFieldIndexPath.row;
    // Trackmdl*track1=(Trackmdl *)[_Trackarray objectAtIndex:btnindex];
+    Schedulermdl*wmdl=(Schedulermdl *)[_workorderarray objectAtIndex:btnindex];
+    _workorder=wmdl.entryid;
     
     self.TrackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
     self.TrackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;

@@ -19,5 +19,6 @@
 @property(strong,nonatomic)NSString*wdate;
 @property(strong,nonatomic)NSString*allocatedhrs;
 @property(strong,nonatomic)NSString*workedhrs;
+@property(strong,nonatomic)NSString*foremancheck;
 
 @end

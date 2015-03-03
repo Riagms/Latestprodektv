@@ -162,7 +162,7 @@
                    "<PlanId>%@</PlanId>\n"
                    "</ReadTicketsWork>\n"
                    "</soap:Body>\n"
-                   "</soap:Envelope>\n",sqldate,_planid];
+                   "</soap:Envelope>\n",sqldate,@"PJ-00001"];
     NSLog(@"soapmsg%@",soapMessage);
     
     
@@ -511,13 +511,29 @@
     CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.tickettable];
     NSIndexPath *textFieldIndexPath = [self.tickettable indexPathForRowAtPoint:rootViewPoint];
        Schedulermdl *smdl=(Schedulermdl *)[_ticketarray objectAtIndex:textFieldIndexPath.row];
-    self.TicVCtrl=[[TicDetailViewController alloc]initWithNibName:@"TicDetailViewController" bundle:nil];
-    self.TicVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
-    self.TicVCtrl.workorder=smdl.workorder;
-
-    self.TicVCtrl.planid=_planid;
+//    self.TicVCtrl=[[TicDetailViewController alloc]initWithNibName:@"TicDetailViewController" bundle:nil];
+//    self.TicVCtrl.modalPresentationStyle=UIModalPresentationPageSheet;
+//    self.TicVCtrl.workorder=smdl.workorder;
+//
+//    self.TicVCtrl.planid=_planid;
+//    
+//    [self presentViewController:_TicVCtrl animated:YES completion:nil];
+    self.TrackVCtrl=[[TrakerViewController alloc]initWithNibName:@"TrakerViewController" bundle:nil];
+    self.TrackVCtrl.modalPresentationStyle=UIModalPresentationFullScreen;
     
-    [self presentViewController:_TicVCtrl animated:YES completion:nil];
+    
+    // NSMutableArray*newarray=[[NSMutableArray alloc]init];
+    // [newarray addObject:track1];
+    // self.TrackVCtrl.trackarray=newarray;
+    self.TrackVCtrl.editpath=@"2";
+    self.TrackVCtrl.workorder=smdl.entryid;
+    //self.TrackVCtrl.workorderdesc=track1.workorder;
+    
+    
+    [self presentViewController:self.TrackVCtrl animated:YES completion:nil];
+
+    
+    
 }
 - (IBAction)clsebtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

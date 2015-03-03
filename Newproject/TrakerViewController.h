@@ -13,7 +13,7 @@
 #import "TSManpwrmdl.h"
 #import "TSOtherMdl.h"
 #import "Validation.h"
-
+#import "NumbrSerMdl.h"
 @interface TrakerViewController : UIViewController
 {
        BOOL recordResults;
@@ -23,6 +23,9 @@
     
     NSInteger poptype;
 }
+@property(strong,nonatomic)NumbrSerMdl *seqmdl;
+@property (strong, nonatomic)Trackmdl*Trackmdl;
+@property (strong, nonatomic)NSMutableArray*Trackarray,*sequencearray;
 @property(strong,nonatomic)TSManpwrmdl*Manpwrmdl;
 @property(strong,nonatomic)TSOtherMdl*Othermdl;
 @property(strong,nonatomic)NSMutableArray*manpwrarry;
@@ -31,7 +34,7 @@
 @property(strong,nonatomic)NSMutableDictionary*Delaydict;
           
 
-@property(strong,nonatomic)Trackmdl*track1;
+//@property(strong,nonatomic)Trackmdl*track1;
 @property(strong,nonatomic)NSString*editpath,*workorder,*workorderdesc;
 @property(strong,nonatomic)IBOutlet UIDatePicker *timepick;
 /*calendar*/
@@ -43,7 +46,7 @@
 @property(strong,nonatomic)UIPopoverController *popOverController;
 @property(strong,nonatomic)UITableView *popOverTableView;
 
-@property (strong, nonatomic)NSMutableArray*trackarray;
+//@property (strong, nonatomic)NSMutableArray*trackarray;
 @property (strong, nonatomic)NSMutableArray*ScaffoldArray,*percentagearray;
 @property (strong, nonatomic)TScfTypemdl*Scaffldmdl;
 /* xmlparser*/
