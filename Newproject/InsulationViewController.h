@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "InsulatnMdl.h"
+#import "Validation.h"
+#import "Insubtypemdl.h"
 
 @interface InsulationViewController : UIViewController{
       BOOL recordResults;
-    NSInteger poptype,btnindfr;
-    NSString*typestrg,*msgstrg;
+    NSInteger poptype,btnindfr,subcheck,subbtnIndex,webtype;
+    NSString*typestrg,*msgstrg,*Insutnid;
+    
+    UIButton *button;
 }
+@property(strong,nonatomic)Insubtypemdl *Subtypemdl;
 @property (readwrite)NSInteger btntype;
 @property(strong,nonatomic)NSMutableDictionary*Typedict;
 @property(strong,nonatomic)NSMutableDictionary*pipedict;
@@ -32,6 +37,7 @@
 
 @property (strong, nonatomic)InsulatnMdl*Insmdl;
 @property (strong, nonatomic) NSMutableArray*insultnarray;
+@property (strong, nonatomic) NSMutableArray*SubtypeArray;
 @property (strong, nonatomic) IBOutlet UIScrollView *scroll;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *subtypebtnlbl;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *otherbtnlbl;
@@ -79,12 +85,31 @@
 
 @property (strong, nonatomic) IBOutlet UIView *subtitle;
 @property (strong, nonatomic) IBOutlet UITableView *subtable;
+
 /*Other outlets*/
 @property (strong, nonatomic) IBOutlet UIView *Otherview;
 @property (strong, nonatomic) IBOutlet UIView *othertitle;
 @property (strong, nonatomic) IBOutlet UITableView *othertable;
 
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *subcell;
+@property (strong, nonatomic) IBOutlet UIButton *checkbtn;
+@property (strong, nonatomic) IBOutlet UILabel *sublbl;
 
+@property (strong, nonatomic) IBOutlet UILabel *quntylbl;
+@property (strong, nonatomic) IBOutlet UIButton *subedit;
+
+@property (strong, nonatomic) IBOutlet UITextField *subtypetxtfld;
+@property (strong, nonatomic) IBOutlet UITextField *quntytxtfld;
+- (IBAction)subeditbtn:(id)sender;
+
+
+- (IBAction)subupdatebtn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *subeditview;
+- (IBAction)subclsebtn:(id)sender;
+
+- (IBAction)subcheckbtn:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *subcheckbtnlbl;
 
 @end

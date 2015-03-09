@@ -43,6 +43,26 @@
 //    searchctrlr.delegate=(id)self;
 
     // Do any additional setup after loading the view from its nib.
+    
+    
+    [_servicebtn setTitle:@"Scaffoldings" forState:UIControlStateNormal];
+    [self ReadScaffoldPlan];
+    if ([_servicebtn.titleLabel.text isEqualToString:@"Scaffoldings"]) {
+        droptype=1;
+        _scaffoldtable.hidden=NO;
+        _scafoldtitle.hidden=NO;
+        _institleview.hidden=YES;
+        
+    }
+    //    if ([_servicebtn.titleLabel.text isEqualToString:@"Insulation"]) {
+    //        _institleview.hidden=NO;
+    //        _scafoldtitle.hidden=YES;
+    //
+    //    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableReload) name:@"tableReload" object:nil];
+    
+    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -51,9 +71,12 @@
     _detailstextview.text=[NSString stringWithFormat:@"%@    %@    %@    %@      %@    %@       %@     %@",_work.WorkNo,_work.plant,_work.subunit,_work.equipmet,_work.reqBy,_work.reqDate,_work.apprBy,_work.apprDate];
     [self ReadWorkOrder];
     [self SelectAllServices];
-    [_servicebtn setTitle:@"Scaffoldings" forState:UIControlStateNormal];
-    [self ReadScaffoldPlan];
+   
+    
+    if(droptype==1){
     if ([_servicebtn.titleLabel.text isEqualToString:@"Scaffoldings"]) {
+        [_servicebtn setTitle:@"Scaffoldings" forState:UIControlStateNormal];
+        [self ReadScaffoldPlan];
         droptype=1;
         _scaffoldtable.hidden=NO;
         _scafoldtitle.hidden=NO;
@@ -67,6 +90,12 @@
 //    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableReload) name:@"tableReload" object:nil];
+    }
+    
+    else if (droptype==2){
+        
+        [self ReadInsulation];
+    }
 }
 -(void)tableReload{
     [self ReadScaffoldPlan];
@@ -136,7 +165,7 @@
              return [_scaffoldingplanlistarray count];
         }
         else if (droptype==2){
-            return 2;
+            return [_InsultnArray count];
 
         }
     }
@@ -1304,6 +1333,43 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"steamtrace"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"linearft"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"phasename"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"seqname"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
 
 }
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -1881,7 +1947,7 @@
         
         
         recordResults=FALSE;
-           _Insmdl.linearfleet=_soapResults;
+          // _Insmdl.linearfleet=_soapResults;
         _soapResults = nil;
     }
     if([elementName isEqualToString:@"phaseIDz"])
@@ -1889,7 +1955,7 @@
         
         
         recordResults=FALSE;
-           _Insmdl.phase=_soapResults;
+          // _Insmdl.phase=_soapResults;
         _soapResults = nil;
     }
     
@@ -1898,7 +1964,7 @@
         
         
         recordResults=FALSE;
-           _Insmdl.sequence=_soapResults;
+           //_Insmdl.sequence=_soapResults;
         _soapResults = nil;
     }
     if([elementName isEqualToString:@"TypeName"])
@@ -1938,7 +2004,8 @@
         
         
         recordResults=FALSE;
-        _Insmdl.stream=_soapResults;
+        //_Insmdl.stream=_soapResults;
+        
         _soapResults = nil;
     }
 
@@ -1947,10 +2014,42 @@
         
         recordResults=FALSE;
     _Insmdl.manhrs=_soapResults;
-        [_InsultnArray addObject:_Insmdl];
+     
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"steamtrace"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.stream=_soapResults;
+          [_InsultnArray addObject:_Insmdl];
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"linearft"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.linearfleet=_soapResults;
+        
         _soapResults = nil;
     }
 
+    if([elementName isEqualToString:@"phasename"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.phase=_soapResults;
+        
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"seqname"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.sequence=_soapResults;
+        
+        _soapResults = nil;
+    }
 
 }
 - (IBAction)update:(id)sender

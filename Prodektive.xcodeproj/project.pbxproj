@@ -213,6 +213,7 @@
 		D4014FF418E3E05B00DB825A /* SerialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4014FF218E3E05B00DB825A /* SerialViewController.xib */; };
 		D4014FF618E3E34000DB825A /* Snumcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4014FF518E3E34000DB825A /* Snumcell.xib */; };
 		D40209761A0B756D00E1428D /* iconclose.png in Resources */ = {isa = PBXBuildFile; fileRef = D40209751A0B756D00E1428D /* iconclose.png */; };
+		D4025B021AAD92BC004CF55B /* Insubtypemdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4025B011AAD92BC004CF55B /* Insubtypemdl.m */; };
 		D40367F018ED3A5200139E7D /* MangmntdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40367EE18ED3A5100139E7D /* MangmntdetailsViewController.m */; };
 		D40367F118ED3A5200139E7D /* MangmntdetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40367EF18ED3A5200139E7D /* MangmntdetailsViewController.xib */; };
 		D4036FF319FE0FAF0031C4F1 /* workentrycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4036FF219FE0FAF0031C4F1 /* workentrycell.xib */; };
@@ -1011,6 +1012,8 @@
 		D4014FF218E3E05B00DB825A /* SerialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerialViewController.xib; sourceTree = "<group>"; };
 		D4014FF518E3E34000DB825A /* Snumcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Snumcell.xib; sourceTree = "<group>"; };
 		D40209751A0B756D00E1428D /* iconclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconclose.png; sourceTree = "<group>"; };
+		D4025B001AAD92BB004CF55B /* Insubtypemdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Insubtypemdl.h; sourceTree = "<group>"; };
+		D4025B011AAD92BC004CF55B /* Insubtypemdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Insubtypemdl.m; sourceTree = "<group>"; };
 		D40367ED18ED3A5100139E7D /* MangmntdetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangmntdetailsViewController.h; sourceTree = "<group>"; };
 		D40367EE18ED3A5100139E7D /* MangmntdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangmntdetailsViewController.m; sourceTree = "<group>"; };
 		D40367EF18ED3A5200139E7D /* MangmntdetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MangmntdetailsViewController.xib; sourceTree = "<group>"; };
@@ -2795,6 +2798,8 @@
 				D417163E1A9ED5BD00087BFA /* prioritymodel.m */,
 				D407920F1AA6FAF500A29666 /* InsulatnMdl.h */,
 				D40792101AA6FAF500A29666 /* InsulatnMdl.m */,
+				D4025B001AAD92BB004CF55B /* Insubtypemdl.h */,
+				D4025B011AAD92BC004CF55B /* Insubtypemdl.m */,
 			);
 			name = model;
 			path = Newproject;
@@ -3572,6 +3577,7 @@
 				D40DE14F19E69DA4008FFD15 /* AFURLConnectionOperation.m in Sources */,
 				64CB04F81A5C0321005394D5 /* formanmdl.m in Sources */,
 				D4B4CBA119738ED500696D37 /* Appreqmdl.m in Sources */,
+				D4025B021AAD92BC004CF55B /* Insubtypemdl.m in Sources */,
 				D49F876D18EEA36B00413CAD /* subcontract.m in Sources */,
 				64A3B82318DFEF0B0015887F /* CommentsViewController.m in Sources */,
 				D42D8C1C18D2D91C009D8085 /* venderViewController.m in Sources */,

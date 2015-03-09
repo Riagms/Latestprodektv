@@ -40,6 +40,7 @@
     
     if (_btntype==2) {
         //_Insmdl=(InsulatnMdl *)[_insultnarray objectAtIndex:0];
+    Insutnid=_Insmdl.entryid;
         _unittxtfld.text=_Insmdl.unit;
         _subunittxtfld.text=_Insmdl.subunit;
         _equpmnttxtfld.text=_Insmdl.equipment;
@@ -50,9 +51,9 @@
          [_pipebtnlbl setTitle:_Insmdl.pipesize forState:UIControlStateNormal];
            [_layerbtnlbl setTitle:_Insmdl.layertype forState:UIControlStateNormal];
               [_inslutnbtnlbl setTitle:_Insmdl.insulatntype forState:UIControlStateNormal];
-                [_phasebtnlbl setTitle:[_phasedict objectForKey:_Insmdl.phase] forState:UIControlStateNormal];
-        [_sequbtnlbl setTitle:[_sequencedict objectForKey:_Insmdl.sequence] forState:UIControlStateNormal];
-         [_streambtnlbl setTitle:[_streamdict objectForKey:_Insmdl.stream] forState:UIControlStateNormal];
+                [_phasebtnlbl setTitle:_Insmdl.phase forState:UIControlStateNormal];
+        [_sequbtnlbl setTitle:_Insmdl.sequence forState:UIControlStateNormal];
+         [_streambtnlbl setTitle:_Insmdl.stream forState:UIControlStateNormal];
 
         [self SelectAllPhases];
         [self GetMasterInsulationInsulationType];
@@ -191,6 +192,11 @@
         }
 
     }
+    
+    else if(tableView==_subtable){
+        return [_SubtypeArray count];
+    }
+        
     return YES;
         
 }
@@ -204,6 +210,13 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
+        
+        if(tableView==_subtable){
+             [[NSBundle mainBundle]loadNibNamed:@"Isubcellview" owner:self options:nil];
+            
+            
+            cell=_subcell;
+        }
        
     }
      cell.textLabel.font=[UIFont fontWithName:@"Helvetica Neue" size:12];
@@ -247,11 +260,31 @@
          
 
      }
+     if(tableView==_subtable){
+         
+         Insubtypemdl *submdl=(Insubtypemdl *)[_SubtypeArray objectAtIndex:indexPath.row];
+         _subcheckbtnlbl.tag=indexPath.row;
+         if([submdl.ischeck isEqualToString:@"1"]) {
+             
+             [_subcheckbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
+         }
+         else{
+             [_subcheckbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+         }
+         
+
+         _sublbl=(UILabel *)[cell viewWithTag:1];
+         _sublbl.text=submdl.subdesptn;
+         _quntylbl=(UILabel *)[cell viewWithTag:2];
+         _quntylbl.text=submdl.quantity;
+            //_checkbtn.tag=indexPath.row;
+         
     
-    
-    
+   
+}
     
     return cell;
+    
 }
 #pragma mark - Table View delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -831,6 +864,274 @@
     }
     
 }
+-(void)ReadInsulationSubType{
+    
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadInsulationSubType xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<InsID>%@</InsID>\n"
+                   "</ReadInsulationSubType>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",Insutnid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadInsulationSubType" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)UpdateInsulationSubType{
+    
+    webtype=1;
+    recordResults = FALSE;
+    Insubtypemdl *submdl=(Insubtypemdl *)[_SubtypeArray objectAtIndex:subbtnIndex];
+    NSInteger qunty;
+    if (subcheck==1) {
+        qunty=1;
+    }
+    else{
+        qunty=0;
+        
+    }
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<UpdateInsulationSubType xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<InsID>%@</InsID>\n"
+                   "<isCheck>%d</isCheck>\n"
+                   "<Entry>%d</Entry>\n"
+                   "<Quan>%d</Quan>\n"
+                   "</UpdateInsulationSubType>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",Insutnid,subcheck,[submdl.entryid integerValue],qunty];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/UpdateInsulationSubType" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)NewUpdateInsulationSubType{
+    
+    webtype=1;
+    recordResults = FALSE;
+    Insubtypemdl *submdl=(Insubtypemdl *)[_SubtypeArray objectAtIndex:subbtnIndex];
+          NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<UpdateInsulationSubType xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<InsID>%@</InsID>\n"
+                   "<isCheck>%d</isCheck>\n"
+                   "<Entry>%d</Entry>\n"
+                   "<Quan>%d</Quan>\n"
+                   "</UpdateInsulationSubType>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",Insutnid,[submdl.ischeck integerValue],[submdl.entryid integerValue],[_quntytxtfld.text integerValue]];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/UpdateInsulationSubType" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+
+-(void)ReadInsulationOtherFactorDetailsss{
+    
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadInsulationOtherFactorDetailsss xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<InsID>%@</InsID>\n"
+                   "<InsuTypeID>%@</InsuTypeID>\n"
+                   "<PiVe>%@</PiVe>\n"
+                   "</ReadInsulationOtherFactorDetailsss>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n"];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadInsulationOtherFactorDetailsss" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)UpdateInsulationOtherFactSelect{
+    
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<UpdateInsulationOtherFactSelect xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<EntryId>%d</EntryId>\n"
+                   "<isPre>%d</isPre>\n"
+                   "<InsuID>%@</InsuID>\n"
+                   "</UpdateInsulationOtherFactSelect>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n"];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    // NSURL *url = [NSURL URLWithString:@"http://192.168.0.146/link/service.asmx"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/UpdateInsulationOtherFactSelect" forHTTPHeaderField:@"Soapaction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
 
 #pragma mark - Connection
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -864,6 +1165,14 @@
     [_xmlParser setShouldResolveExternalEntities: YES];
     [_xmlParser parse];
     [_popOverTableView reloadData];
+    
+    if (webtype==1) {
+        [self ReadInsulationSubType];
+        webtype=0;
+
+    }
+    
+    [_subtable reloadData];
 
     
 }
@@ -1070,6 +1379,79 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"ReadInsulationSubTypeResponse"])
+    {
+        _SubtypeArray=[[NSMutableArray alloc]init];
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Entry"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Dec"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"isCheck"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Quan"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"InsulationID"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"subID"])
+    {
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"records1"]){
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+        
+    }
+
 
 }
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -1174,10 +1556,83 @@
     {
         
        recordResults=FALSE;
-        msgstrg=_soapResults;
+        if([_soapResults isEqualToString:@"Updated Successfully"]){
+            msgstrg=_soapResults;
+            UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+            [self ReadInsulationSubType];
+
+        }
+        else{
+            
+            Insutnid=_soapResults;
+                 msgstrg=@"Inserted Successfully";
+            UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"" message:msgstrg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+            [self ReadInsulationSubType];
+            
+        }
+        
+              _soapResults = nil;
+    }
+
+    
+    if([elementName isEqualToString:@"Entry"])
+    {
+        _Subtypemdl=[[Insubtypemdl alloc]init];
+        recordResults=FALSE;
+        _Subtypemdl.entryid=_soapResults;
+       _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"Dec"])
+    {
+        
+        recordResults=FALSE;
+         _Subtypemdl.subdesptn=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"isCheck"])
+    {
+        
+        recordResults=FALSE;
+         if([_soapResults isEqualToString:@"true"]) {
+               _Subtypemdl.ischeck=@"1";
+         }
+         else{
+             _Subtypemdl.ischeck=@"0";
+             
+             
+         }
+      
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"Quan"])
+    {
+        
+        recordResults=FALSE;
+         _Subtypemdl.quantity=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"InsulationID"])
+    {
+        recordResults=FALSE;
+         _Subtypemdl.insultnid=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"subID"])
+    {
+        
+        recordResults=FALSE;
+         _Subtypemdl.subid=_soapResults;
+        [_SubtypeArray addObject:_Subtypemdl];
+        _soapResults = nil;
+    }
+
+    if([elementName isEqualToString:@"records1"]){
+            recordResults=FALSE;
         UIAlertView*alert=[[UIAlertView alloc]initWithTitle:@"" message:_soapResults delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
-        _soapResults = nil;
+                 _soapResults = nil;
     }
 
 }
@@ -1191,6 +1646,7 @@
 }
 - (IBAction)subtypebtn:(id)sender {
     
+    [self ReadInsulationSubType];
     _Otherview.hidden=YES;
     _subtypeview.hidden=NO;
      _subtypebtnlbl.tintColor=[UIColor whiteColor];
@@ -1252,32 +1708,143 @@
 }
 
 - (IBAction)updatebtn:(id)sender {
+    
+    Validation*val=[[Validation alloc]init];
+    int value1=[val isNumeric:_linearbtnlbl.text];
+    if ([_unittxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length ==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Unit is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if ([_subunittxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length ==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Sub Unit is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if ([_equpmnttxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length ==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Equipment is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if ([_phtxtfld.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length ==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Project Header is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if ([_linearbtnlbl.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length ==0) {
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@"Linear Fleet is required" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
+    else if(value1==0)
+    {
+        
+        UIAlertView *alert1=[[UIAlertView alloc]initWithTitle:@"" message:@"Invalid Linear Fleet" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert1 show];
+        
+        
+    }
+    else{
+
+    
     if (_btntype==1) {
         [self CreateInsulation];
     }
     else   if (_btntype==2) {
          [self Updateinsulation];
     }
+        
+    }
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    
+    
+    
+
     if ([alertView.message isEqualToString:msgstrg]) {
-        _unittxtfld.text=@"";
-        _subunittxtfld.text=@"";
-        _equpmnttxtfld.text=@"";
-        _phtxtfld.text=@"";
-        _linearbtnlbl.text=@"";
         
-        [_typebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
-        [_pipebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
-        [_layerbtnlbl setTitle:@"Select" forState:UIControlStateNormal];
-        [_inslutnbtnlbl setTitle:@"Select" forState:UIControlStateNormal];
-        [_phasebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
-        [_sequbtnlbl setTitle:@"Select" forState:UIControlStateNormal];
-        [_streambtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+       
+        if([msgstrg isEqualToString:@"Inserted Successfully"]){
+            
+        }
+        else{
+            
+//        _unittxtfld.text=@"";
+//        _subunittxtfld.text=@"";
+//        _equpmnttxtfld.text=@"";
+//        _phtxtfld.text=@"";
+//        _linearbtnlbl.text=@"";
+//        
+//        [_typebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+//        [_pipebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+//        [_layerbtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+//        [_inslutnbtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+//        [_phasebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+//        [_sequbtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+//        [_streambtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+        }
 
     }
 }
 
+
+- (IBAction)subeditbtn:(id)sender {
+    _subeditview.hidden=NO;
+    button = (UIButton *)sender;
+    CGPoint center= button.center;
+    
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.subtable];
+    NSIndexPath *textFieldIndexPath = [self.subtable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    subbtnIndex=textFieldIndexPath.row;
+    
+    Insubtypemdl *submdl=(Insubtypemdl *)[_SubtypeArray objectAtIndex:textFieldIndexPath.row];
+    
+    _subtypetxtfld.text=submdl.subdesptn;
+    _quntytxtfld.text=submdl.quantity;
+
+}
+
+- (IBAction)subupdatebtn:(id)sender {
+    [self NewUpdateInsulationSubType];
+    
+
+}
+- (IBAction)subclsebtn:(id)sender {
+     _subeditview.hidden=YES;
+}
+
+- (IBAction)subcheckbtn:(id)sender {
+    
+    button = (UIButton *)sender;
+    CGPoint center= button.center;
+   
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.subtable];
+    NSIndexPath *textFieldIndexPath = [self.subtable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+   subbtnIndex=textFieldIndexPath.row;
+    
+    
+     Insubtypemdl *submdl=(Insubtypemdl *)[_SubtypeArray objectAtIndex:textFieldIndexPath.row];
+    if ([submdl.ischeck isEqualToString:@"0"])
+        
+        
+    {
+        
+        [_subcheckbtnlbl setImage:[UIImage imageNamed:@"cb_mono_on"] forState:UIControlStateNormal];
+        
+        
+       subcheck=1;
+        
+        
+    }
+    else
+    {
+        [_subcheckbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+        subcheck=0;
+        
+    }
+      [_subtable reloadData];
+     [self UpdateInsulationSubType];
+
+}
 @end
