@@ -28,9 +28,11 @@
     _scaffoldtable.layer.borderWidth=2;
     _scaffoldtable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1].CGColor;
     _scafoldtitle.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1];
+    _institleview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1];
 
-    _scaffoldtable.hidden=YES;
-    _scafoldtitle.hidden=YES;
+    //_scaffoldtable.hidden=YES;
+    //_scafoldtitle.hidden=YES;
+    //_institleview.hidden=YES;
 //    _searchbar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 220, 44)];
 //    _searchbar.delegate=(id)self;
 //    _searchbar.tintColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1.0f];
@@ -52,10 +54,18 @@
     [_servicebtn setTitle:@"Scaffoldings" forState:UIControlStateNormal];
     [self ReadScaffoldPlan];
     if ([_servicebtn.titleLabel.text isEqualToString:@"Scaffoldings"]) {
+        droptype=1;
         _scaffoldtable.hidden=NO;
         _scafoldtitle.hidden=NO;
+        _institleview.hidden=YES;
         
     }
+//    if ([_servicebtn.titleLabel.text isEqualToString:@"Insulation"]) {
+//        _institleview.hidden=NO;
+//        _scafoldtitle.hidden=YES;
+//        
+//    }
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableReload) name:@"tableReload" object:nil];
 }
 -(void)tableReload{
@@ -85,9 +95,9 @@
 - (IBAction)serviceselection:(id)sender {
     [self SelectAllServices];
     UIViewController* popoverContent = [[UIViewController alloc]init];
-    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    UIView* popoverView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 260)];
     // popoverView.backgroundColor = [UIColor whiteColor];
-    _PopOvertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
+    _PopOvertableview=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 200, 260)];
     _PopOvertableview.delegate=(id)self;
     _PopOvertableview.dataSource=(id)self
     ;
@@ -96,12 +106,12 @@
     //_popovertableview.separatorColor=[UIColor blackColor];
     [popoverView addSubview:_PopOvertableview];
     popoverContent.view = popoverView;
-    popoverContent.preferredContentSize = CGSizeMake(200, 200);
+    popoverContent.preferredContentSize = CGSizeMake(200, 260);
     
     
     //UITableView *table = (UITableView *)[cell superview];
     self.popoverctrlr = [[UIPopoverController alloc]initWithContentViewController:popoverContent];
-    self.popoverctrlr.popoverContentSize=CGSizeMake(200.0f, 200.0f);
+    self.popoverctrlr.popoverContentSize=CGSizeMake(200.0f, 260.0f);
     self.popoverctrlr=_popoverctrlr;
     [self.popoverctrlr presentPopoverFromRect:_servicebtn.frame inView:self.scroll permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     
@@ -121,7 +131,14 @@
     }
     if(tableView==_scaffoldtable)
     {
-        return [_scaffoldingplanlistarray count];
+        
+        if(droptype==1){
+             return [_scaffoldingplanlistarray count];
+        }
+        else if (droptype==2){
+            return 2;
+
+        }
     }
     return YES;
 }
@@ -132,8 +149,14 @@
     if (cell==nil) {
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellidentifier];
         if (tableView==_scaffoldtable) {
+             if(droptype==1){
             [[NSBundle mainBundle]loadNibNamed:@"Scaffcell" owner:self options:nil];
             cell=_scaffoldcell;
+             }
+             else if (droptype==2){
+                 [[NSBundle mainBundle]loadNibNamed:@"InsCellView" owner:self options:nil];
+                 cell=_insultncell;
+             }
         }
     }
     if(tableView==_PopOvertableview){
@@ -142,6 +165,7 @@
         
     }
     if(tableView==_scaffoldtable){
+         if(droptype==1){
         Customscaffoldingplan*scaffmdl=(Customscaffoldingplan *)[_scaffoldingplanlistarray objectAtIndex:indexPath.row];
         _unitcelllabel=(UILabel*)[cell viewWithTag:1];
         _unitcelllabel.text=scaffmdl.unit;
@@ -174,6 +198,39 @@
         _erecthourslabel.text=scaffmdl.erecthours;
         _desmanitilehourslabel=(UILabel*)[cell viewWithTag:12];
         _desmanitilehourslabel.text=scaffmdl.dismantlehours;
+         }
+        if(droptype==2){
+            InsulatnMdl*imdl=(InsulatnMdl *)[_InsultnArray objectAtIndex:indexPath.row];
+            _Iunitlbl=(UILabel*)[cell viewWithTag:1];
+            _Iunitlbl.text=imdl.unit;
+            _Iequmntlbl=(UILabel*)[cell viewWithTag:2];
+            _Iequmntlbl.text=imdl.equipment;
+            _Iphlbl=(UILabel*)[cell viewWithTag:3];
+            _Iphlbl.text=imdl.projectheader;
+            _Isubunitlbl=(UILabel*)[cell viewWithTag:4];
+            _Isubunitlbl.text=imdl.subunit;
+            _Itypelbl=(UILabel*)[cell viewWithTag:5];
+            _Itypelbl.text=imdl.type;
+            _Ipipelbl=(UILabel*)[cell viewWithTag:6];
+            _Ipipelbl.text=imdl.pipesize;
+            _Ilayerlbl=(UILabel*)[cell viewWithTag:7];
+            _Ilayerlbl.text=imdl.layertype;
+            _Iinsultnlbl=(UILabel*)[cell viewWithTag:8];
+            _Iinsultnlbl.text=imdl.insulatntype;
+            _Ilinearlbl=(UILabel*)[cell viewWithTag:9];
+            _Ilinearlbl.text=imdl.linearfleet;
+            _Imanlbl=(UILabel*)[cell viewWithTag:10];
+            _Imanlbl.text=[NSString stringWithFormat:@"%.02f",[imdl.manhrs floatValue]];
+            
+
+
+
+
+
+            
+            
+        }
+
 
     }
     
@@ -187,12 +244,24 @@
         path=indexPath.row;
         [_servicebtn setTitle:[_Subtypelistarray objectAtIndex:indexPath.row] forState:UIControlStateNormal];
         if ([[_Subtypelistarray objectAtIndex:indexPath.row] isEqualToString:@"Scaffoldings"]) {
+             droptype=1;
             _scafoldtitle.hidden=NO;
             _scaffoldtable.hidden=NO;
             [self ReadScaffoldPlan];
         }
+        
+      else  if ([[_Subtypelistarray objectAtIndex:indexPath.row] isEqualToString:@"Insulation"]) {
+           droptype=2;
+            _institleview.hidden=NO;
+            _scafoldtitle.hidden=YES;
+          _scaffoldtable.hidden=NO;
+          [self ReadInsulation];
+            
+        }
+
         else
         {
+            droptype=3;
             _scafoldtitle.hidden=YES;
             _scaffoldtable.hidden=YES;
 
@@ -420,7 +489,7 @@
     
 }
 
-#pragma mark- WebService
+
 -(void)ReadScaffoldPlan{
     recordResults = FALSE;
     NSString *soapMessage;
@@ -453,6 +522,58 @@
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     [theRequest addValue: @"http://ios.kontract360.com/ReadScaffoldPlan" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)ReadInsulation
+{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadInsulation xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<ID>%@</ID>\n"
+                   "<PL>%@</PL>\n"
+                   "</ReadInsulation>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_workorderid,_planid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadInsulation" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -949,7 +1070,240 @@
         recordResults = TRUE;
     }
 
-    
+    if([elementName isEqualToString:@"ReadInsulationResponse"])
+    {
+        
+        _InsultnArray=[[NSMutableArray alloc]init];
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Entry"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"plan"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"workO"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"plant"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"subUnit"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"equipment"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"projectHead"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Type"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"pageSize"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"layerSize"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"insulatnType"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"subType"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"otherFactors"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"legFeet"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"phaseIDz"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"seqIDz"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"TypeName"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"PipeName"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"steamTrace"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+
+    }
+
+    if([elementName isEqualToString:@"InsuTyName"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"LayerName"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Manhours"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
 
 }
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -1419,6 +1773,183 @@
         _soapResults = nil;
         
     }
+    if([elementName isEqualToString:@"Entry"])
+    {
+        _Insmdl=[[InsulatnMdl alloc]init];
+        
+        recordResults=FALSE;
+        _Insmdl.entryid=_soapResults;
+        _soapResults = nil;
+        
+        
+    }
+    
+    if([elementName isEqualToString:@"plan"])
+    {
+        
+        recordResults=FALSE;
+         _Insmdl.plan=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"workO"])
+    {
+        
+        
+        recordResults=FALSE;
+        _Insmdl.workorder=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"plant"])
+    {
+        
+        
+        recordResults=FALSE;
+        _Insmdl.unit=_soapResults;
+        _soapResults = nil;
+        
+    }
+    if([elementName isEqualToString:@"subUnit"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.subunit=_soapResults;
+        _soapResults = nil;
+        
+    }
+    if([elementName isEqualToString:@"equipment"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.equipment=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"projectHead"])
+    {
+        
+        
+        recordResults=FALSE;
+        _Insmdl.projectheader=_soapResults;
+        _soapResults = nil;
+        
+    }
+    if([elementName isEqualToString:@"Type"])
+    {
+        
+        
+        recordResults=FALSE;
+       
+        _soapResults = nil;
+        
+    }
+    if([elementName isEqualToString:@"pageSize"])
+    {
+        
+        
+        recordResults=FALSE;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"layerSize"])
+    {
+        
+        recordResults=FALSE;
+        _Insmdl.layertype=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"insulatnType"])
+    {
+        
+        
+        recordResults=FALSE;
+     
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"subType"])
+    {
+        
+        recordResults=FALSE;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"otherFactors"])
+    {
+        
+        
+        recordResults=FALSE;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"legFeet"])
+    {
+        
+        
+        recordResults=FALSE;
+           _Insmdl.linearfleet=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"phaseIDz"])
+    {
+        
+        
+        recordResults=FALSE;
+           _Insmdl.phase=_soapResults;
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"seqIDz"])
+    {
+        
+        
+        recordResults=FALSE;
+           _Insmdl.sequence=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"TypeName"])
+    {
+        
+        
+        recordResults=FALSE;
+         _Insmdl.type=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"PipeName"])
+    {
+        
+        
+        recordResults=FALSE;
+           _Insmdl.pipesize=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"InsuTyName"])
+    {
+        
+        
+        recordResults=FALSE;
+           _Insmdl.insulatntype=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"LayerName"])
+    {
+        
+        
+        recordResults=FALSE;
+           _Insmdl.layertype=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"steamTrace"])
+    {
+        
+        
+        recordResults=FALSE;
+        _Insmdl.stream=_soapResults;
+        _soapResults = nil;
+    }
+
+    if([elementName isEqualToString:@"Manhours"])
+    {
+        
+        recordResults=FALSE;
+    _Insmdl.manhrs=_soapResults;
+        [_InsultnArray addObject:_Insmdl];
+        _soapResults = nil;
+    }
 
 
 }
@@ -1432,5 +1963,34 @@
     {
         [self updateScaffoldWorkDet];
     }
+}
+- (IBAction)insultnaddbtn:(id)sender {
+    self.insultnVctrl=[[InsulationViewController alloc]initWithNibName:@"InsulationViewController" bundle:nil];
+       InsulatnMdl*imdl=(InsulatnMdl *)[_InsultnArray objectAtIndex:0];
+     NSMutableArray*newarray=[[NSMutableArray alloc]initWithObjects:imdl, nil];
+      self.insultnVctrl.insultnarray=newarray;
+    self.insultnVctrl.btntype=1;
+    [self presentViewController:_insultnVctrl animated:YES completion:nil];
+}
+
+- (IBAction)insultneditbtn:(id)sender {
+    button = (UIButton *)sender;
+    UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
+    CGPoint center= button.center;
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.scaffoldtable];
+    NSIndexPath *textFieldIndexPath = [self.scaffoldtable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    btnindex=textFieldIndexPath.row;
+     InsulatnMdl*imdl=(InsulatnMdl *)[_InsultnArray objectAtIndex:btnindex];
+    
+    NSMutableArray*newarray=[[NSMutableArray alloc]initWithObjects:imdl, nil];
+    
+    
+    
+    self.insultnVctrl=[[InsulationViewController alloc]initWithNibName:@"InsulationViewController" bundle:nil];
+    self.insultnVctrl.insultnarray=newarray;
+    self.insultnVctrl.btntype=2;
+    
+    [self presentViewController:_insultnVctrl animated:YES completion:nil];
 }
 @end

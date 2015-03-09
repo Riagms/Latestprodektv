@@ -89,6 +89,7 @@
                     </view>
                 </subviews>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="350.5" y="120.5"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

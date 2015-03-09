@@ -2388,6 +2388,8 @@ finishedSavingWithError:(NSError *)error
             _uplddocbtnlbl.enabled=YES;
 
             _documentnametextfld.text=@"";
+            _previewimg.image=[UIImage imageNamed:@"mNoImage"];
+
            // [_statuslbl  setTitle:@"Select" forState:UIControlStateNormal];
            // [_vendrnamebtnlbl  setTitle:@"Select" forState:UIControlStateNormal];
             //[_detalexpbtnlbl  setTitle:@"Select" forState:UIControlStateNormal];

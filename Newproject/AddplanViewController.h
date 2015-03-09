@@ -11,17 +11,26 @@
 #import "Servicemdl.h"
 #import "Customscaffoldingplan.h"
 #import "Workordrmdl.h"
+#import "InsulationViewController.h"
+#import "InsulatnMdl.h"
 @interface AddplanViewController : UIViewController
 {
     UINavigationController *modalViewNavController;
     UIButton *button;
-    NSInteger btnindex;
+    NSInteger btnindex,droptype;
     BOOL recordResults;
     NSInteger path;
 }
+
+@property (strong, nonatomic)InsulatnMdl*Insmdl;
+@property (strong, nonatomic)NSMutableArray*InsultnArray;
+
+
+
 @property(strong,nonatomic)NSString *searchstring;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchbar;
 @property(strong,nonatomic)Customscaffoldingplan *scfldmdl;
+@property(strong,nonatomic)InsulationViewController*insultnVctrl;
 @property(strong,nonatomic)Workordrmdl *work;
 
 @property(readwrite)NSInteger optionidentifier;
@@ -68,5 +77,27 @@
 @property(strong,nonatomic)IBOutlet UILabel *manhourslabel;
 @property(strong,nonatomic)IBOutlet UILabel *desmanitilehourslabel;
 @property(strong,nonatomic)IBOutlet UILabel *erecthourslabel;
+
+
+/*Insulation outlets*/
+@property (strong, nonatomic) IBOutlet UIView *institleview;
+- (IBAction)insultnaddbtn:(id)sender;
+- (IBAction)insultneditbtn:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *insultncell;
+
+@property (strong, nonatomic) IBOutlet UILabel *Iunitlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Iequmntlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Iphlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Isubunitlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Itypelbl;
+
+@property (strong, nonatomic) IBOutlet UILabel *Ipipelbl;
+@property (strong, nonatomic) IBOutlet UILabel *Ilayerlbl;
+
+@property (strong, nonatomic) IBOutlet UILabel *Iinsultnlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Imanlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Ilinearlbl;
+
 
 @end

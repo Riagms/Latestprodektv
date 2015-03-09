@@ -319,7 +319,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="630" y="160"/>
+            <point key="canvasLocation" x="-47" y="193"/>
         </view>
     </objects>
     <resources>

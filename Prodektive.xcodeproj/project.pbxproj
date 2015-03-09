@@ -240,6 +240,12 @@
 		D40736C118BB1E9B00C5DB30 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D40736BD18BB1E9B00C5DB30 /* right_arrow@2x.png */; };
 		D40736C218BB1E9B00C5DB30 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D40736BE18BB1E9B00C5DB30 /* left_arrow.png */; };
 		D40736C318BB1E9B00C5DB30 /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D40736BF18BB1E9B00C5DB30 /* left_arrow@2x.png */; };
+		D40792051AA6D12400A29666 /* InsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40792041AA6D12400A29666 /* InsCellView.xib */; };
+		D40792091AA6D71C00A29666 /* InsulationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40792071AA6D71C00A29666 /* InsulationViewController.m */; };
+		D407920A1AA6D71C00A29666 /* InsulationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40792081AA6D71C00A29666 /* InsulationViewController.xib */; };
+		D407920C1AA6E42800A29666 /* Isubcellview.xib in Resources */ = {isa = PBXBuildFile; fileRef = D407920B1AA6E42800A29666 /* Isubcellview.xib */; };
+		D407920E1AA6E44200A29666 /* IothercellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D407920D1AA6E44200A29666 /* IothercellView.xib */; };
+		D40792111AA6FAF500A29666 /* InsulatnMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D40792101AA6FAF500A29666 /* InsulatnMdl.m */; };
 		D408B81518CF19AC0001AAD5 /* TilecustmrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D408B81318CF19AC0001AAD5 /* TilecustmrViewController.m */; };
 		D408B81618CF19AC0001AAD5 /* TilecustmrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D408B81418CF19AC0001AAD5 /* TilecustmrViewController.xib */; };
 		D4097D0D1963D00B00D8E910 /* PSitereqmntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4097D0B1963D00B00D8E910 /* PSitereqmntViewController.m */; };
@@ -1039,6 +1045,14 @@
 		D40736BD18BB1E9B00C5DB30 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
 		D40736BE18BB1E9B00C5DB30 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
 		D40736BF18BB1E9B00C5DB30 /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_arrow@2x.png"; sourceTree = "<group>"; };
+		D40792041AA6D12400A29666 /* InsCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsCellView.xib; sourceTree = "<group>"; };
+		D40792061AA6D71C00A29666 /* InsulationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsulationViewController.h; sourceTree = "<group>"; };
+		D40792071AA6D71C00A29666 /* InsulationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsulationViewController.m; sourceTree = "<group>"; };
+		D40792081AA6D71C00A29666 /* InsulationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsulationViewController.xib; sourceTree = "<group>"; };
+		D407920B1AA6E42800A29666 /* Isubcellview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Isubcellview.xib; sourceTree = "<group>"; };
+		D407920D1AA6E44200A29666 /* IothercellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IothercellView.xib; sourceTree = "<group>"; };
+		D407920F1AA6FAF500A29666 /* InsulatnMdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsulatnMdl.h; sourceTree = "<group>"; };
+		D40792101AA6FAF500A29666 /* InsulatnMdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsulatnMdl.m; sourceTree = "<group>"; };
 		D408B81218CF19AC0001AAD5 /* TilecustmrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TilecustmrViewController.h; sourceTree = "<group>"; };
 		D408B81318CF19AC0001AAD5 /* TilecustmrViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TilecustmrViewController.m; sourceTree = "<group>"; };
 		D408B81418CF19AC0001AAD5 /* TilecustmrViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TilecustmrViewController.xib; sourceTree = "<group>"; };
@@ -2392,6 +2406,7 @@
 				D417164B1A9F1F3500087BFA /* AddplanViewController.m */,
 				D417164C1A9F1F3500087BFA /* AddplanViewController.xib */,
 				D4BB03981A9DFCD900F4FF70 /* Scaffcell.xib */,
+				D40792041AA6D12400A29666 /* InsCellView.xib */,
 				D41716091A9ED31800087BFA /* SitevisitViewController.h */,
 				D417160A1A9ED31800087BFA /* SitevisitViewController.m */,
 				D417160B1A9ED31800087BFA /* SitevisitViewController.xib */,
@@ -2432,6 +2447,11 @@
 				D413694B1A97265D003C88A9 /* CrewDropCell.xib */,
 				D413694D1A972689003C88A9 /* ResurceDragCell.xib */,
 				D413694F1A97269A003C88A9 /* ResourceDropCell.xib */,
+				D40792061AA6D71C00A29666 /* InsulationViewController.h */,
+				D40792071AA6D71C00A29666 /* InsulationViewController.m */,
+				D40792081AA6D71C00A29666 /* InsulationViewController.xib */,
+				D407920B1AA6E42800A29666 /* Isubcellview.xib */,
+				D407920D1AA6E44200A29666 /* IothercellView.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -2773,6 +2793,8 @@
 				D45E50C31A9C97B2001CD151 /* Schedulermdl.m */,
 				D417163D1A9ED5BD00087BFA /* prioritymodel.h */,
 				D417163E1A9ED5BD00087BFA /* prioritymodel.m */,
+				D407920F1AA6FAF500A29666 /* InsulatnMdl.h */,
+				D40792101AA6FAF500A29666 /* InsulatnMdl.m */,
 			);
 			name = model;
 			path = Newproject;
@@ -3043,6 +3065,7 @@
 				D44ECC6F1A5D3E8E00B3082A /* PurchaseViewController.xib in Resources */,
 				64C0AD081A5CF84400B31F52 /* StockViewController.xib in Resources */,
 				D49FA2F0196164560037BA7A /* TEqupcell.xib in Resources */,
+				D40792051AA6D12400A29666 /* InsCellView.xib in Resources */,
 				D41F922E1A9AF053005812B8 /* NewTrackerCell.xib in Resources */,
 				64A5ED5019C2D7D3002E0018 /* Subcell.xib in Resources */,
 				64C3BB3C1A2836D000E5A3EA /* GSmallViewController.xib in Resources */,
@@ -3342,6 +3365,7 @@
 				D41499B0194573A2001E9146 /* ManagemttileViewController.xib in Resources */,
 				D4A3977819CFE8DE00E2514C /* PServiceViewController.xib in Resources */,
 				D4F7D9CE196E5B5200B8F4D4 /* ResourceMovement.png in Resources */,
+				D407920C1AA6E42800A29666 /* Isubcellview.xib in Resources */,
 				649F45E219457D1800E89F5C /* LabourViewController.xib in Resources */,
 				D404A21E1A03483A0086E40A /* CategoryViewController.xib in Resources */,
 				D404966F192F3DCE00685109 /* ecrewcell.xib in Resources */,
@@ -3414,11 +3438,13 @@
 				D4F7D9D0196E5B5600B8F4D4 /* timesheet.png in Resources */,
 				64161C0D17FEB511007D4D89 /* squre.png in Resources */,
 				64F97992185EF8B000E7722B /* jobsitereqViewController.xib in Resources */,
+				D407920A1AA6D71C00A29666 /* InsulationViewController.xib in Resources */,
 				D4004075185B183600C38E12 /* EqpmViewController.xib in Resources */,
 				6426F5F718C067F3002471AC /* accounting.png in Resources */,
 				64A4125019408104003EE113 /* hrmaster.png in Resources */,
 				D4FFBD221855B7880007851D /* carat-open.png in Resources */,
 				64A2F9AE19CBE425009B1018 /* LdtypViewController.xib in Resources */,
+				D407920E1AA6E44200A29666 /* IothercellView.xib in Resources */,
 				D4A16B891974EEE0002CA2A2 /* Emtncell.xib in Resources */,
 				D40A663B187131CA00AB7496 /* cb_mono_on.png in Resources */,
 				6424B9CD1A27194300BC4648 /* Tpgpfirstcell.xib in Resources */,
@@ -3555,6 +3581,7 @@
 				D49F874518EEA36B00413CAD /* CKCalendarView.m in Sources */,
 				D49F875118EEA36B00413CAD /* Infoleads.m in Sources */,
 				D4014FF318E3E05B00DB825A /* SerialViewController.m in Sources */,
+				D40792091AA6D71C00A29666 /* InsulationViewController.m in Sources */,
 				64A1317D19485599009F5431 /* Countmdl.m in Sources */,
 				64A4C4E419FF974D00C8BA33 /* InDetailhrviewViewController.m in Sources */,
 				D4A16B8D1974EEE0002CA2A2 /* DisplayBidTableViewController.m in Sources */,
@@ -3706,6 +3733,7 @@
 				64C3BB3B1A2836D000E5A3EA /* GSmallViewController.m in Sources */,
 				64B12DD919D520940074A404 /* BscTypViewController.m in Sources */,
 				D47A9B0B19402B89001CC416 /* EmpJobViewController.m in Sources */,
+				D40792111AA6FAF500A29666 /* InsulatnMdl.m in Sources */,
 				D40DE14E19E69DA4008FFD15 /* AFPropertyListRequestOperation.m in Sources */,
 				D4DEEDDA17F40BE70096A908 /* UploadDocViewController.m in Sources */,
 				D4A16B9A1974EEE0002CA2A2 /* CalEventDetailViewController.m in Sources */,
