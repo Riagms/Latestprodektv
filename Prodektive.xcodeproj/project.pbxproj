@@ -392,6 +392,8 @@
 		D42D8C4018D2E442009D8085 /* ServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42D8C3F18D2E442009D8085 /* ServiceViewController.m */; };
 		D42D8C4218D2E450009D8085 /* ServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42D8C4118D2E450009D8085 /* ServiceViewController.xib */; };
 		D42E73DE1907E26300F7C99A /* Metgenmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D42E73DD1907E26300F7C99A /* Metgenmdl.m */; };
+		D4379A9E1AAEF07B00AB786D /* HeatCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4379A9D1AAEF07A00AB786D /* HeatCellView.xib */; };
+		D4379AA01AAF0BD100AB786D /* wrapcellview.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4379A9F1AAF0BD100AB786D /* wrapcellview.xib */; };
 		D43984E41A5E874F00E1BC30 /* Purchasecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43984E31A5E874F00E1BC30 /* Purchasecell.xib */; };
 		D4399EBC186D7BB100A693F7 /* search-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4399EBB186D7BB000A693F7 /* search-button@2x.png */; };
 		D4399EBE186D7BBF00A693F7 /* search-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D4399EBD186D7BBF00A693F7 /* search-button.png */; };
@@ -1258,6 +1260,8 @@
 		D42D8C4118D2E450009D8085 /* ServiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceViewController.xib; sourceTree = "<group>"; };
 		D42E73DC1907E26300F7C99A /* Metgenmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metgenmdl.h; sourceTree = "<group>"; };
 		D42E73DD1907E26300F7C99A /* Metgenmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Metgenmdl.m; sourceTree = "<group>"; };
+		D4379A9D1AAEF07A00AB786D /* HeatCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeatCellView.xib; sourceTree = "<group>"; };
+		D4379A9F1AAF0BD100AB786D /* wrapcellview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wrapcellview.xib; sourceTree = "<group>"; };
 		D43984E31A5E874F00E1BC30 /* Purchasecell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Purchasecell.xib; sourceTree = "<group>"; };
 		D4399EBB186D7BB000A693F7 /* search-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-button@2x.png"; sourceTree = "<group>"; };
 		D4399EBD186D7BBF00A693F7 /* search-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-button.png"; sourceTree = "<group>"; };
@@ -2455,6 +2459,8 @@
 				D40792081AA6D71C00A29666 /* InsulationViewController.xib */,
 				D407920B1AA6E42800A29666 /* Isubcellview.xib */,
 				D407920D1AA6E44200A29666 /* IothercellView.xib */,
+				D4379A9D1AAEF07A00AB786D /* HeatCellView.xib */,
+				D4379A9F1AAF0BD100AB786D /* wrapcellview.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -3164,6 +3170,7 @@
 				D4F0AD4619306866004821DD /* Metgroupcell.xib in Resources */,
 				D4F19DEC18D03AD1007617F0 /* FollowupViewController.xib in Resources */,
 				D47A9B3219407D67001CC416 /* thridpartyicon.png in Resources */,
+				D4379A9E1AAEF07B00AB786D /* HeatCellView.xib in Resources */,
 				64B36211198F4D2000B54191 /* action.png in Resources */,
 				D47A9B3819407DEB001CC416 /* equipmenticon.png in Resources */,
 				64A41246194080D6003EE113 /* markupmaster.png in Resources */,
@@ -3261,6 +3268,7 @@
 				D4A16B601974EEA8002CA2A2 /* Subtypecell.xib in Resources */,
 				D453DA301873F206007EE3DC /* Consumblecell.xib in Resources */,
 				D4A16B881974EEE0002CA2A2 /* EstimationViewController.xib in Resources */,
+				D4379AA01AAF0BD100AB786D /* wrapcellview.xib in Resources */,
 				D43A395D18C993B00099EF7B /* NVerificationViewController.xib in Resources */,
 				D4049669192F183B00685109 /* GroupEqupViewController.xib in Resources */,
 				D417160D1A9ED31900087BFA /* SitevisitViewController.xib in Resources */,

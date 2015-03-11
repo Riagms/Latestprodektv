@@ -15,5 +15,14 @@
 @property(strong,nonatomic)NSString *quantity;
 @property(strong,nonatomic)NSString *insultnid;
 @property(strong,nonatomic)NSString *subid;
+@property(strong,nonatomic)NSString *masterrate;
+@property(strong,nonatomic)NSString *factor;
+@property(strong,nonatomic)NSString *wrapid;
+@property(strong,nonatomic)NSString *mode;
+@property(strong,nonatomic)NSString *mode1;
+@property(strong,nonatomic)NSString *rate;
+@property(strong,nonatomic)NSString *removal;
+@property(strong,nonatomic)NSString *size;
+@property(strong,nonatomic)NSString *sizeid;
 
 @end

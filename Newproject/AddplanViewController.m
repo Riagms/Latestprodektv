@@ -2022,7 +2022,7 @@
         
         recordResults=FALSE;
         _Insmdl.stream=_soapResults;
-          [_InsultnArray addObject:_Insmdl];
+       
         _soapResults = nil;
     }
     if([elementName isEqualToString:@"linearft"])
@@ -2030,7 +2030,7 @@
         
         recordResults=FALSE;
         _Insmdl.linearfleet=_soapResults;
-        
+           [_InsultnArray addObject:_Insmdl];
         _soapResults = nil;
     }
 

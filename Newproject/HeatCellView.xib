@@ -7,27 +7,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsulationViewController">
             <connections>
-                <outlet property="quntylbl" destination="mZb-5o-FMq" id="tAW-Zc-QlK"/>
-                <outlet property="subcell" destination="mNf-AD-RXs" id="UtA-ZV-9dJ"/>
-                <outlet property="subcheckbtnlbl" destination="8d1-w2-8Vz" id="T01-Ou-ic4"/>
-                <outlet property="subedit" destination="ZJE-Gs-e4S" id="nDl-v1-PaJ"/>
-                <outlet property="sublbl" destination="1y5-FK-uwL" id="wE1-MW-kMt"/>
+                <outlet property="heatcell" destination="fRv-2v-Imx" id="ztZ-x9-AKR"/>
+                <outlet property="heatdescptnlbl" destination="ZTJ-7M-l8p" id="ULr-X8-oZ2"/>
+                <outlet property="heatquantylbl" destination="gRs-Is-rkZ" id="0Cc-tk-WXU"/>
+                <outlet property="modelbl" destination="BRd-if-ws7" id="u2Z-yL-JcL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycell" id="mNf-AD-RXs">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycell" id="fRv-2v-Imx">
             <rect key="frame" x="0.0" y="0.0" width="634" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mNf-AD-RXs" id="ATJ-U3-4ew">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fRv-2v-Imx" id="WQO-3S-Z8Z">
                 <rect key="frame" x="0.0" y="0.0" width="634" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" id="k79-Hf-sAX">
-                        <rect key="frame" x="376" y="-4" width="1" height="48"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZJE-Gs-e4S">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2qZ-yg-Jde">
                         <rect key="frame" x="576" y="2" width="36" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -39,51 +33,52 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="subeditbtn:" destination="-1" eventType="touchUpInside" id="MkH-xc-m5A"/>
+                            <action selector="heateditbtn:" destination="-1" eventType="touchUpInside" id="Xwk-Nf-YkB"/>
                         </connections>
                     </button>
-                    <view contentMode="scaleToFill" id="ikE-GK-rkd">
+                    <view contentMode="scaleToFill" id="w7P-Bo-J7z">
                         <rect key="frame" x="195" y="-2" width="1" height="46"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Factors " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1y5-FK-uwL">
-                        <rect key="frame" x="204" y="11" width="164" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view contentMode="scaleToFill" id="uc2-LH-pOW">
+                    <view contentMode="scaleToFill" id="3Ze-pj-yVb">
                         <rect key="frame" x="560" y="-6" width="1" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Factors " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mZb-5o-FMq">
-                        <rect key="frame" x="417" y="9" width="115" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gRs-Is-rkZ">
+                        <rect key="frame" x="461" y="9" width="71" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8d1-w2-8Vz">
-                        <rect key="frame" x="53" y="12" width="67" height="22"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BRd-if-ws7">
+                        <rect key="frame" x="38" y="11" width="115" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="cb_mono_off.png">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="subcheckbtn:" destination="-1" eventType="touchUpInside" id="H87-aZ-3dg"/>
-                        </connections>
-                    </button>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descriptn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZTJ-7M-l8p">
+                        <rect key="frame" x="204" y="10" width="213" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" id="n25-ja-dOt">
+                        <rect key="frame" x="431" y="-2" width="1" height="48"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="518" y="84"/>
+            <point key="canvasLocation" x="605" y="159"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="appbar.edit.png" width="52" height="52"/>
-        <image name="cb_mono_off.png" width="22" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
