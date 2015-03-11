@@ -48,6 +48,7 @@
     
     if (_btntype==2) {
         //_Insmdl=(InsulatnMdl *)[_insultnarray objectAtIndex:0];
+        _navtitle.title=@"Edit";
     Insutnid=_Insmdl.entryid;
         _unittxtfld.text=_Insmdl.unit;
         _subunittxtfld.text=_Insmdl.subunit;
@@ -396,10 +397,10 @@
         Insubtypemdl *submdl=(Insubtypemdl *)[_HeatArray objectAtIndex:indexPath.row];
         _wsublbl=(UILabel *)[cell viewWithTag:1];
         _wsublbl.text=submdl.subdesptn;
-        _wmodelbl=(UILabel *)[cell viewWithTag:2];
+        _wmodelbl=(UILabel *)[cell viewWithTag:3];
         _wmodelbl.text=submdl.mode;
       
-        _wqtylbl=(UILabel *)[cell viewWithTag:3];
+        _wqtylbl=(UILabel *)[cell viewWithTag:2];
         _wqtylbl.text=submdl.quantity;
         _wsizelbl=(UILabel *)[cell viewWithTag:4];
         _wsizelbl.text=submdl.size;
@@ -2636,14 +2637,14 @@
         recordResults = TRUE;
         
     }
-    if([elementName isEqualToString:@"Mode"]){
-               if(!_soapResults)
-        {
-            _soapResults = [[NSMutableString alloc] init];
-        }
-        recordResults = TRUE;
-        
-    }
+//    if([elementName isEqualToString:@"Mode"]){
+//               if(!_soapResults)
+//        {
+//            _soapResults = [[NSMutableString alloc] init];
+//        }
+//        recordResults = TRUE;
+//        
+//    }
        if([elementName isEqualToString:@"GetSubtypeResponse"]){
         _subtypedict=[[NSMutableDictionary alloc]init];
            _revsubtypedict=[[NSMutableDictionary alloc]init];
@@ -3024,6 +3025,7 @@
         _Subtypemdl.mode=_soapResults;
         if (![typestrg isEqualToString:@""]) {
                [_modedict setObject:typestrg forKey:_soapResults];
+            
         }
         
         
@@ -3558,7 +3560,8 @@ else{
 }
 - (IBAction)weditbtn:(id)sender {
       _heataddview.hidden=NO;
-    _wsizelbl.hidden=NO;
+   // _wsizelbl.hidden=NO;
+    _sizelbl.hidden=NO;
     _wrapsizebtn.hidden=NO;
     optnidntfr=2;
     button = (UIButton *)sender;
@@ -3572,7 +3575,7 @@ else{
     
     Insubtypemdl *submdl=(Insubtypemdl *)[_HeatArray objectAtIndex:newbtnindx];
     [_modebtnlbl setTitle:submdl.mode forState:UIControlStateNormal];
-        [_wrapsizebtn setTitle:submdl.size forState:UIControlStateNormal];
+    [_wrapsizebtn setTitle:submdl.size forState:UIControlStateNormal];
     [_heatsubtypebtnlbl setTitle:[_revsubtypedict objectForKey:submdl.subid] forState:UIControlStateNormal];
     _heatquntytxtfld.text=submdl.quantity;
     
@@ -3588,7 +3591,8 @@ else{
 
 - (IBAction)wrapaddbtn:(id)sender {
     _heataddview.hidden=NO;
-    _wsizelbl.hidden=NO;
+   // _wsizelbl.hidden=NO;
+    _sizelbl.hidden=NO;
     _wrapsizebtn.hidden=NO;
     optnidntfr=1;
 

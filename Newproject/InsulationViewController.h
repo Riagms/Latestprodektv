@@ -185,5 +185,6 @@
 
 - (IBAction)wrapaddbtn:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *navtitle;
 
 @end
