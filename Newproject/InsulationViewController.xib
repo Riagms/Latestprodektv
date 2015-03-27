@@ -11,6 +11,8 @@
                 <outlet property="equpmnttxtfld" destination="Ylc-sm-uOg" id="X0e-TI-Hiz"/>
                 <outlet property="heataddview" destination="chI-Ho-Qhd" id="bs3-kk-Jea"/>
                 <outlet property="heatbtnlbl" destination="Qnp-9o-bLQ" id="l5G-V5-SJN"/>
+                <outlet property="heatcancelbtnlbl" destination="b02-pS-Eq5" id="pBS-zG-O7h"/>
+                <outlet property="heatnavtitle" destination="e12-4q-HCm" id="0AY-sg-NMQ"/>
                 <outlet property="heatquntytxtfld" destination="XYz-sM-bQF" id="Otp-2S-X41"/>
                 <outlet property="heatsubtypebtnlbl" destination="Fn5-KE-rRa" id="asm-wm-SBm"/>
                 <outlet property="heattable" destination="RLG-Kj-fqt" id="Dbx-uR-5CM"/>
@@ -22,7 +24,6 @@
                 <outlet property="linearbtnlbl" destination="7qv-Er-egM" id="Lv6-I3-hpf"/>
                 <outlet property="lineartitlelbl" destination="wa4-nf-SsO" id="e0v-05-oxe"/>
                 <outlet property="modebtnlbl" destination="Fcj-M8-a61" id="dC6-1o-chC"/>
-                <outlet property="navtitle" destination="sgG-68-iXN" id="1GA-rf-iPb"/>
                 <outlet property="otherbtnlbl" destination="DAV-1U-wHX" id="cU5-oM-Ihn"/>
                 <outlet property="othertable" destination="rVw-mh-rae" id="fgK-Mt-6gO"/>
                 <outlet property="othertitle" destination="b5T-cv-BtO" id="4uc-Gk-kWg"/>

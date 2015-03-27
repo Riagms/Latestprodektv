@@ -13,6 +13,9 @@
 #import "Workordrmdl.h"
 #import "InsulationViewController.h"
 #import "InsulatnMdl.h"
+#import "CoatMdl.h"
+#import "CoatViewController.h"
+#import "Asbetosmdl.h"
 @interface AddplanViewController : UIViewController
 {
     UINavigationController *modalViewNavController;
@@ -23,7 +26,10 @@
 }
 
 @property (strong, nonatomic)InsulatnMdl*Insmdl;
+@property (strong, nonatomic)Asbetosmdl*Asmdl;
+
 @property (strong, nonatomic)NSMutableArray*InsultnArray;
+@property (strong, nonatomic)NSMutableArray*AsbetosArray;
 
 
 
@@ -31,6 +37,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchbar;
 @property(strong,nonatomic)Customscaffoldingplan *scfldmdl;
 @property(strong,nonatomic)InsulationViewController*insultnVctrl;
+@property(strong,nonatomic)CoatViewController*CoatVCtrl;
 @property(strong,nonatomic)Workordrmdl *work;
 
 @property(readwrite)NSInteger optionidentifier;
@@ -98,6 +105,34 @@
 @property (strong, nonatomic) IBOutlet UILabel *Iinsultnlbl;
 @property (strong, nonatomic) IBOutlet UILabel *Imanlbl;
 @property (strong, nonatomic) IBOutlet UILabel *Ilinearlbl;
+/*Coating Outlets*/
+@property (strong, nonatomic) CoatMdl*coatgmdl;
+@property (strong, nonatomic) IBOutlet UIView *coatgview;
+- (IBAction)coatgaddbtn:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *Cplantlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Cequptlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Cphlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Csublbl;
+@property (strong, nonatomic) IBOutlet UITableViewCell *coatcell;
+@property (strong, nonatomic)NSMutableArray*Coatgarray;
+- (IBAction)Ceditbtn:(id)sender;
+
+/*asbestos outlets*/
+@property (strong, nonatomic) IBOutlet UIView *asbestosview;
+
+@property (strong, nonatomic) IBOutlet UILabel *Aplantlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Aequlbl;
+
+@property (strong, nonatomic) IBOutlet UILabel *Aphlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Asublbl;
+@property (strong, nonatomic) IBOutlet UILabel *Atypelbl;
+@property (strong, nonatomic) IBOutlet UILabel *Apipelbl;
+@property (strong, nonatomic) IBOutlet UILabel *Alayerlbl;
+@property (strong, nonatomic) IBOutlet UILabel *Amanlbl;
+
+- (IBAction)editbtn:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *asbtoscell;
 
 @end

@@ -186,5 +186,9 @@
 - (IBAction)wrapaddbtn:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navtitle;
+@property (strong, nonatomic) IBOutlet UIButton *heatcancelbtnlbl;
+
+@property (strong, nonatomic) IBOutlet UINavigationItem *heatnavtitle;
+
 
 @end

@@ -43,6 +43,57 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark-Popover
+-(void)createpopover{
+    UIViewController* popoverContent = [[UIViewController alloc]
+                                        init];
+    
+    UIView* popoverView = [[UIView alloc]
+                           initWithFrame:CGRectMake(0, 0, 250, 200)];
+    
+    popoverView.backgroundColor = [UIColor whiteColor];
+    _popOverTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 250, 200)];
+    
+    _popOverTableView.delegate=(id)self;
+    _popOverTableView.dataSource=(id)self;
+    _popOverTableView.rowHeight= 32;
+    _popOverTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    
+    
+    // CGRect rect = frame;
+    [popoverView addSubview:_popOverTableView];
+    popoverContent.view = popoverView;
+    
+    //resize the popover view shown
+    //in the current view to the view's size
+    popoverContent.contentSizeForViewInPopover = CGSizeMake(250, 200);
+    
+    //create a popover controller
+    
+    self.popOverController = [[UIPopoverController alloc]
+                              initWithContentViewController:popoverContent];
+    self.popOverController.popoverContentSize=CGSizeMake(250.0f, 200.0f);
+    self.popOverController=_popOverController;
+    
+    //
+    //    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    //    CGRect rect=CGRectMake(cell.bounds.origin.x+90, cell.bounds.origin.y+10, 50, 30);
+    //    [self.popOverController presentPopoverFromRect:_disclsurelbl.bounds inView:self.view permittedArrowDirections:nil animated:YES];
+    
+    
+    
+    
+    
+    
+    [self.popOverController presentPopoverFromRect:_formanbtn.frame
+                                            inView:self.view
+                          permittedArrowDirections:UIPopoverArrowDirectionUp
+                                          animated:YES];
+    
+    
+}
+
 #pragma mark - Calendar
 -(void)createCalenderPopover
 {
@@ -195,6 +246,61 @@
     
     
 }
+-(void)GetForeman{
+   // webtype=1;
+    recordResults=FALSE;
+    NSString *soapMessage;
+    
+    
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<GetForeman xmlns=\"http://ios.kontract360.com/\">\n"
+                   
+                   
+                   "</GetForeman>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n"];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/GetForeman" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+    
+}
+
 #pragma mark - Connection
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
@@ -231,6 +337,7 @@
     [_xmlParser parse];
     
     [_tickettable reloadData];
+    [_popOverTableView reloadData];
     
     
     //    if (webtype==1) {
@@ -343,6 +450,40 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"GetForemanResponse"])
+    {
+        
+        _foremandict=[[NSMutableDictionary alloc]init];
+        _Revforemandict=[[NSMutableDictionary alloc]init];
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"FId"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"FDesc"])
+    {
+        
+        
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
 }
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
@@ -441,7 +582,35 @@
         _schmdl.foreman=_soapResults;
         _soapResults = nil;
     }
+    if([elementName isEqualToString:@"FId"])
+    {
+        
+        recordResults = FALSE;
+        
+        foremanid=_soapResults;
+        _soapResults = nil;
+    }
     
+    if([elementName isEqualToString:@"FDesc"])
+    {
+        
+        
+        recordResults = FALSE;
+        
+        [_foremandict setObject:_soapResults forKey:foremanid];
+        [_Revforemandict setObject:foremanid forKey:_soapResults];
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"Fname"])
+    {
+        
+        
+        recordResults = FALSE;
+        _schmdl.foreman=_soapResults;
+        _soapResults = nil;
+    }
+
 }
 
 #pragma mark-Tableview
@@ -460,7 +629,11 @@
         return [_ticketarray count];
         
     }
-    
+    if (tableView==_popOverTableView) {
+        return [_foremandict count];
+        
+    }
+
     return YES;
     
 }
@@ -499,8 +672,30 @@
         _datelbl.text=smdl.wdate;
         
     }
-    
+    if (tableView==_popOverTableView)
+    {
+        
+        NSArray*array=[_foremandict allValues];
+        cell.textLabel.text=[array objectAtIndex:indexPath.row];
+
+        
+    }
     return cell;
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    if (tableView==_popOverTableView) {
+        NSArray*array=[_foremandict allValues];
+        [_formanbtn setTitle:[array objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+    }
+    
+    
+    
+    [self.popOverController dismissPopoverAnimated:YES];
+    
     
 }
 
@@ -537,6 +732,12 @@
 }
 - (IBAction)clsebtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)foremanbtnlbl:(id)sender {
+    
+    [self createpopover];
+    [self GetForeman];
 }
 - (IBAction)Datebtn:(id)sender {
     [self createCalenderPopover];

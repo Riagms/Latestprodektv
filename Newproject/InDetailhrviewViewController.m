@@ -53,7 +53,7 @@
     //_doblbl.text=[d2 objectAtIndex:0];
     _phonelbl.text=_empmdl.phone;
     NSString *fullURL =[NSString stringWithFormat:@"http://ios.kontract360.com/files/docs/hr/%@",_empmdl.photo]  ;
-   
+    NSLog(@"%@",fullURL);
     
     
     NSString *htmlString = @"<html><body><img src='%@' width='577%' height='582%'></body></html>";

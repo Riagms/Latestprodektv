@@ -214,6 +214,12 @@
 		D4014FF618E3E34000DB825A /* Snumcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4014FF518E3E34000DB825A /* Snumcell.xib */; };
 		D40209761A0B756D00E1428D /* iconclose.png in Resources */ = {isa = PBXBuildFile; fileRef = D40209751A0B756D00E1428D /* iconclose.png */; };
 		D4025B021AAD92BC004CF55B /* Insubtypemdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4025B011AAD92BC004CF55B /* Insubtypemdl.m */; };
+		D4032F041AC517B600D5C41C /* Valvemdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4032F031AC517B600D5C41C /* Valvemdl.m */; };
+		D4032F061AC5303E00D5C41C /* ValOtherfactrcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4032F051AC5303E00D5C41C /* ValOtherfactrcell.xib */; };
+		D4032F081AC557BA00D5C41C /* AsbetosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4032F071AC557BA00D5C41C /* AsbetosCell.xib */; };
+		D4032F0B1AC568F600D5C41C /* Asbetosmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4032F0A1AC568F500D5C41C /* Asbetosmdl.m */; };
+		D4032F0F1AC57B9600D5C41C /* AsbetosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4032F0D1AC57B9500D5C41C /* AsbetosViewController.m */; };
+		D4032F101AC57B9600D5C41C /* AsbetosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4032F0E1AC57B9500D5C41C /* AsbetosViewController.xib */; };
 		D40367F018ED3A5200139E7D /* MangmntdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40367EE18ED3A5100139E7D /* MangmntdetailsViewController.m */; };
 		D40367F118ED3A5200139E7D /* MangmntdetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40367EF18ED3A5200139E7D /* MangmntdetailsViewController.xib */; };
 		D4036FF319FE0FAF0031C4F1 /* workentrycell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4036FF219FE0FAF0031C4F1 /* workentrycell.xib */; };
@@ -392,6 +398,11 @@
 		D42D8C4018D2E442009D8085 /* ServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D42D8C3F18D2E442009D8085 /* ServiceViewController.m */; };
 		D42D8C4218D2E450009D8085 /* ServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D42D8C4118D2E450009D8085 /* ServiceViewController.xib */; };
 		D42E73DE1907E26300F7C99A /* Metgenmdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D42E73DD1907E26300F7C99A /* Metgenmdl.m */; };
+		D4304EDF1AC3CA7300689DA3 /* CoatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4304EDE1AC3CA7300689DA3 /* CoatingCell.xib */; };
+		D4304EE21AC3D39800689DA3 /* CoatMdl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4304EE11AC3D39700689DA3 /* CoatMdl.m */; };
+		D4304EE61AC3D90500689DA3 /* CoatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4304EE41AC3D90500689DA3 /* CoatViewController.m */; };
+		D4304EE71AC3D90500689DA3 /* CoatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4304EE51AC3D90500689DA3 /* CoatViewController.xib */; };
+		D4304EE91AC424D900689DA3 /* Valvescell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4304EE81AC424D900689DA3 /* Valvescell.xib */; };
 		D4379A9E1AAEF07B00AB786D /* HeatCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4379A9D1AAEF07A00AB786D /* HeatCellView.xib */; };
 		D4379AA01AAF0BD100AB786D /* wrapcellview.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4379A9F1AAF0BD100AB786D /* wrapcellview.xib */; };
 		D43984E41A5E874F00E1BC30 /* Purchasecell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D43984E31A5E874F00E1BC30 /* Purchasecell.xib */; };
@@ -1016,6 +1027,15 @@
 		D40209751A0B756D00E1428D /* iconclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconclose.png; sourceTree = "<group>"; };
 		D4025B001AAD92BB004CF55B /* Insubtypemdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Insubtypemdl.h; sourceTree = "<group>"; };
 		D4025B011AAD92BC004CF55B /* Insubtypemdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Insubtypemdl.m; sourceTree = "<group>"; };
+		D4032F021AC517B600D5C41C /* Valvemdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Valvemdl.h; sourceTree = "<group>"; };
+		D4032F031AC517B600D5C41C /* Valvemdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Valvemdl.m; sourceTree = "<group>"; };
+		D4032F051AC5303E00D5C41C /* ValOtherfactrcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValOtherfactrcell.xib; sourceTree = "<group>"; };
+		D4032F071AC557BA00D5C41C /* AsbetosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AsbetosCell.xib; sourceTree = "<group>"; };
+		D4032F091AC568F500D5C41C /* Asbetosmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asbetosmdl.h; sourceTree = "<group>"; };
+		D4032F0A1AC568F500D5C41C /* Asbetosmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asbetosmdl.m; sourceTree = "<group>"; };
+		D4032F0C1AC57B9500D5C41C /* AsbetosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsbetosViewController.h; sourceTree = "<group>"; };
+		D4032F0D1AC57B9500D5C41C /* AsbetosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsbetosViewController.m; sourceTree = "<group>"; };
+		D4032F0E1AC57B9500D5C41C /* AsbetosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AsbetosViewController.xib; sourceTree = "<group>"; };
 		D40367ED18ED3A5100139E7D /* MangmntdetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangmntdetailsViewController.h; sourceTree = "<group>"; };
 		D40367EE18ED3A5100139E7D /* MangmntdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangmntdetailsViewController.m; sourceTree = "<group>"; };
 		D40367EF18ED3A5200139E7D /* MangmntdetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MangmntdetailsViewController.xib; sourceTree = "<group>"; };
@@ -1260,6 +1280,13 @@
 		D42D8C4118D2E450009D8085 /* ServiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceViewController.xib; sourceTree = "<group>"; };
 		D42E73DC1907E26300F7C99A /* Metgenmdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metgenmdl.h; sourceTree = "<group>"; };
 		D42E73DD1907E26300F7C99A /* Metgenmdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Metgenmdl.m; sourceTree = "<group>"; };
+		D4304EDE1AC3CA7300689DA3 /* CoatingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoatingCell.xib; sourceTree = "<group>"; };
+		D4304EE01AC3D39700689DA3 /* CoatMdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoatMdl.h; sourceTree = "<group>"; };
+		D4304EE11AC3D39700689DA3 /* CoatMdl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoatMdl.m; sourceTree = "<group>"; };
+		D4304EE31AC3D90500689DA3 /* CoatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoatViewController.h; sourceTree = "<group>"; };
+		D4304EE41AC3D90500689DA3 /* CoatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoatViewController.m; sourceTree = "<group>"; };
+		D4304EE51AC3D90500689DA3 /* CoatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoatViewController.xib; sourceTree = "<group>"; };
+		D4304EE81AC424D900689DA3 /* Valvescell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Valvescell.xib; sourceTree = "<group>"; };
 		D4379A9D1AAEF07A00AB786D /* HeatCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeatCellView.xib; sourceTree = "<group>"; };
 		D4379A9F1AAF0BD100AB786D /* wrapcellview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wrapcellview.xib; sourceTree = "<group>"; };
 		D43984E31A5E874F00E1BC30 /* Purchasecell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Purchasecell.xib; sourceTree = "<group>"; };
@@ -2414,6 +2441,8 @@
 				D417164C1A9F1F3500087BFA /* AddplanViewController.xib */,
 				D4BB03981A9DFCD900F4FF70 /* Scaffcell.xib */,
 				D40792041AA6D12400A29666 /* InsCellView.xib */,
+				D4304EDE1AC3CA7300689DA3 /* CoatingCell.xib */,
+				D4032F071AC557BA00D5C41C /* AsbetosCell.xib */,
 				D41716091A9ED31800087BFA /* SitevisitViewController.h */,
 				D417160A1A9ED31800087BFA /* SitevisitViewController.m */,
 				D417160B1A9ED31800087BFA /* SitevisitViewController.xib */,
@@ -2461,6 +2490,14 @@
 				D407920D1AA6E44200A29666 /* IothercellView.xib */,
 				D4379A9D1AAEF07A00AB786D /* HeatCellView.xib */,
 				D4379A9F1AAF0BD100AB786D /* wrapcellview.xib */,
+				D4304EE31AC3D90500689DA3 /* CoatViewController.h */,
+				D4304EE41AC3D90500689DA3 /* CoatViewController.m */,
+				D4304EE51AC3D90500689DA3 /* CoatViewController.xib */,
+				D4304EE81AC424D900689DA3 /* Valvescell.xib */,
+				D4032F051AC5303E00D5C41C /* ValOtherfactrcell.xib */,
+				D4032F0C1AC57B9500D5C41C /* AsbetosViewController.h */,
+				D4032F0D1AC57B9500D5C41C /* AsbetosViewController.m */,
+				D4032F0E1AC57B9500D5C41C /* AsbetosViewController.xib */,
 			);
 			name = Planning;
 			sourceTree = "<group>";
@@ -2806,6 +2843,12 @@
 				D40792101AA6FAF500A29666 /* InsulatnMdl.m */,
 				D4025B001AAD92BB004CF55B /* Insubtypemdl.h */,
 				D4025B011AAD92BC004CF55B /* Insubtypemdl.m */,
+				D4304EE01AC3D39700689DA3 /* CoatMdl.h */,
+				D4304EE11AC3D39700689DA3 /* CoatMdl.m */,
+				D4032F021AC517B600D5C41C /* Valvemdl.h */,
+				D4032F031AC517B600D5C41C /* Valvemdl.m */,
+				D4032F091AC568F500D5C41C /* Asbetosmdl.h */,
+				D4032F0A1AC568F500D5C41C /* Asbetosmdl.m */,
 			);
 			name = model;
 			path = Newproject;
@@ -3040,7 +3083,9 @@
 				D4A16B861974EEE0002CA2A2 /* EsttileViewController.xib in Resources */,
 				D4A16B981974EEE0002CA2A2 /* Thirdmatothcell.xib in Resources */,
 				64A00F3118C5B115002F607E /* empmgmtcell.xib in Resources */,
+				D4032F081AC557BA00D5C41C /* AsbetosCell.xib in Resources */,
 				649F45E419457F8A00E89F5C /* Lbrcuscell.xib in Resources */,
+				D4032F061AC5303E00D5C41C /* ValOtherfactrcell.xib in Resources */,
 				D4A1065419CAC04A009A68C4 /* NLProjecttypecell.xib in Resources */,
 				D4BB037F1A9DACEF00F4FF70 /* WorKTrackViewController.xib in Resources */,
 				D49E056118C7022800AF6330 /* CrewsetupViewController.xib in Resources */,
@@ -3144,6 +3189,7 @@
 				D4A5317819CD822B0056EBC1 /* login-1.jpg in Resources */,
 				D4FE723C187EA3BA00FF4DEF /* ios7-camera-icon.png in Resources */,
 				6424B9CB1A27190B00BC4648 /* TPGPViewController.xib in Resources */,
+				D4032F101AC57B9600D5C41C /* AsbetosViewController.xib in Resources */,
 				D4A16B571974EEA8002CA2A2 /* Gnmatlfirstcell.xib in Resources */,
 				D443A33317716FE60011C5DB /* appbar.close.png in Resources */,
 				D4A123D419A7249C00A4ED9B /* Newuserrightscell.xib in Resources */,
@@ -3175,6 +3221,7 @@
 				D47A9B3819407DEB001CC416 /* equipmenticon.png in Resources */,
 				64A41246194080D6003EE113 /* markupmaster.png in Resources */,
 				64C058E81A8F267E001331F2 /* Ssafe.xib in Resources */,
+				D4304EDF1AC3CA7300689DA3 /* CoatingCell.xib in Resources */,
 				D4A16B561974EEA8002CA2A2 /* SecondMdragcell.xib in Resources */,
 				64A3B81518DFEE980015887F /* CustomLeadCell.xib in Resources */,
 				64C0AD0A1A5CF84400B31F52 /* Exceptioncell.xib in Resources */,
@@ -3242,6 +3289,7 @@
 				D49F8A4D18EEBAD700413CAD /* Basewagecell.xib in Resources */,
 				D4BB03711A9D7ECE00F4FF70 /* TicketcellView.xib in Resources */,
 				642F93011872870E0059101A /* customjobcell.xib in Resources */,
+				D4304EE71AC3D90500689DA3 /* CoatViewController.xib in Resources */,
 				649B1F8B18C9CE800081B1F1 /* SendEmployeeview.xib in Resources */,
 				D43984E41A5E874F00E1BC30 /* Purchasecell.xib in Resources */,
 				D42D8C3818D2E3E3009D8085 /* UsersViewController.xib in Resources */,
@@ -3317,6 +3365,7 @@
 				64C0ACF01A5CF7D600B31F52 /* AbsentViewController.xib in Resources */,
 				D41499BC19458121001E9146 /* Eqotherscell.xib in Resources */,
 				D4E6156418D971C500D7EAA0 /* logo.png in Resources */,
+				D4304EE91AC424D900689DA3 /* Valvescell.xib in Resources */,
 				D4E658C017F2A54F00202B14 /* I9view.xib in Resources */,
 				D4004057185B174A00C38E12 /* TileViewController.xib in Resources */,
 				D4A16B911974EEE0002CA2A2 /* sumbidcell.xib in Resources */,
@@ -3570,6 +3619,7 @@
 				D4A338C918F3BD1900E53FAC /* WorktypeViewController.m in Sources */,
 				D42D8C1518D2D8FF009D8085 /* BasicReqViewController.m in Sources */,
 				D4A674A819345F7200D5A77E /* DateTable.m in Sources */,
+				D4304EE21AC3D39800689DA3 /* CoatMdl.m in Sources */,
 				64B08E5F19471498003C25F5 /* Labourcustommdl.m in Sources */,
 				649E1F8018617ECD0010CBD8 /* MaterialsViewController.m in Sources */,
 				D40DE14A19E69DA4008FFD15 /* AFHTTPRequestOperation.m in Sources */,
@@ -3580,6 +3630,7 @@
 				D400405B185B178F00C38E12 /* DocmntViewController.m in Sources */,
 				D40DD2611873D29B00E7BC2C /* SmalltoolsViewController.m in Sources */,
 				D40DE14919E69DA3008FFD15 /* AFHTTPClient.m in Sources */,
+				D4304EE61AC3D90500689DA3 /* CoatViewController.m in Sources */,
 				D4A123D219A6FE1100A4ED9B /* UserRightsmdl.m in Sources */,
 				D4097D0D1963D00B00D8E910 /* PSitereqmntViewController.m in Sources */,
 				D40DE14F19E69DA4008FFD15 /* AFURLConnectionOperation.m in Sources */,
@@ -3599,6 +3650,7 @@
 				64A1317D19485599009F5431 /* Countmdl.m in Sources */,
 				64A4C4E419FF974D00C8BA33 /* InDetailhrviewViewController.m in Sources */,
 				D4A16B8D1974EEE0002CA2A2 /* DisplayBidTableViewController.m in Sources */,
+				D4032F0B1AC568F600D5C41C /* Asbetosmdl.m in Sources */,
 				D41F92481A9B6D66005812B8 /* TSManpwrmdl.m in Sources */,
 				D49F876318EEA36B00413CAD /* Crewmodel.m in Sources */,
 				D49F875E18EEA36B00413CAD /* Customscaffoldingplan.m in Sources */,
@@ -3649,6 +3701,7 @@
 				D4A85B4118A0E867004E9C8B /* TilehrViewController.m in Sources */,
 				D4A6749B19345F1B00D5A77E /* DPCalendarEvent.m in Sources */,
 				64CB04F41A5BAE00005394D5 /* RMLaborViewController.m in Sources */,
+				D4032F041AC517B600D5C41C /* Valvemdl.m in Sources */,
 				64A2F9BB19CBEC17009B1018 /* FLPViewController.m in Sources */,
 				D408B81518CF19AC0001AAD5 /* TilecustmrViewController.m in Sources */,
 				D40427E819237F980049A709 /* Rephase.m in Sources */,
@@ -3724,6 +3777,7 @@
 				D44BEA7118E0252600719ED5 /* BranchViewController.m in Sources */,
 				649ED79E187FB8260086CDDE /* CompanyViewController.m in Sources */,
 				64614A271A8C69EF009E3A8C /* BranchsubViewController.m in Sources */,
+				D4032F0F1AC57B9600D5C41C /* AsbetosViewController.m in Sources */,
 				649316C119AB4629008CB7BF /* TLLeadsViewController.m in Sources */,
 				D49F876118EEA36B00413CAD /* Scaffoldsubtypemodel.m in Sources */,
 				D44ECC651A5D166C00B3082A /* PMjobsmdl.m in Sources */,

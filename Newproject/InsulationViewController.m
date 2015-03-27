@@ -3449,6 +3449,8 @@ else{
     _heataddview.hidden=NO;
     _wsizelbl.hidden=YES;
     _wrapsizebtn.hidden=YES;
+      _heatcancelbtnlbl.enabled=YES;
+     _heatnavtitle.title=@"Create";
 }
 
 - (IBAction)heatclsebtn:(id)sender {
@@ -3501,6 +3503,12 @@ else{
 }
 
 - (IBAction)cancelbtn:(id)sender {
+    
+    _heatquntytxtfld.text=@"0";
+     [_remveckbtnlbl setImage:[UIImage imageNamed:@"cb_mono_off"] forState:UIControlStateNormal];
+    [_modebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
+    [_wrapsizebtn setTitle:@"Select" forState:UIControlStateNormal];
+    [_heatsubtypebtnlbl setTitle:@"Select" forState:UIControlStateNormal];
 }
 - (IBAction)remvechckbtn:(id)sender {
     
@@ -3527,8 +3535,13 @@ else{
 }
 
 - (IBAction)heateditbtn:(id)sender {
+    
+     _heatnavtitle.title=@"Edit";
      _heataddview.hidden=NO;
     optnidntfr=2;
+    _heatcancelbtnlbl.enabled=NO;
+    [_heatcancelbtnlbl setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+    
     button = (UIButton *)sender;
     CGPoint center= button.center;
     
@@ -3559,10 +3572,13 @@ else{
     _wrapsizebtn.hidden=YES;
 }
 - (IBAction)weditbtn:(id)sender {
+     _heatnavtitle.title=@"Edit";
       _heataddview.hidden=NO;
    // _wsizelbl.hidden=NO;
     _sizelbl.hidden=NO;
     _wrapsizebtn.hidden=NO;
+    _heatcancelbtnlbl.enabled=NO;
+    [_heatcancelbtnlbl setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     optnidntfr=2;
     button = (UIButton *)sender;
     CGPoint center= button.center;
@@ -3590,11 +3606,13 @@ else{
 }
 
 - (IBAction)wrapaddbtn:(id)sender {
+     _heatnavtitle.title=@"Create";
     _heataddview.hidden=NO;
    // _wsizelbl.hidden=NO;
     _sizelbl.hidden=NO;
     _wrapsizebtn.hidden=NO;
     optnidntfr=1;
+     _heatcancelbtnlbl.enabled=YES;
 
 }
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

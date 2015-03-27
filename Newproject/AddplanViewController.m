@@ -29,6 +29,8 @@
     _scaffoldtable.layer.borderColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1].CGColor;
     _scafoldtitle.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1];
     _institleview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1];
+     _coatgview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1];
+     _asbestosview.backgroundColor=[UIColor colorWithRed:234.0/255.0f green:244.0/255.0f blue:249.0/255.0f alpha:1];
 
     //_scaffoldtable.hidden=YES;
     //_scafoldtitle.hidden=YES;
@@ -81,6 +83,9 @@
         _scaffoldtable.hidden=NO;
         _scafoldtitle.hidden=NO;
         _institleview.hidden=YES;
+        _coatgview.hidden=YES;
+        _asbestosview.hidden=YES;
+        
         
     }
 //    if ([_servicebtn.titleLabel.text isEqualToString:@"Insulation"]) {
@@ -168,6 +173,16 @@
             return [_InsultnArray count];
 
         }
+        else if (droptype==3){
+            return [_Coatgarray count];
+            
+        }
+        else if (droptype==4){
+            return [_AsbetosArray count];
+            
+        }
+
+
     }
     return YES;
 }
@@ -186,6 +201,15 @@
                  [[NSBundle mainBundle]loadNibNamed:@"InsCellView" owner:self options:nil];
                  cell=_insultncell;
              }
+             else if (droptype==3){
+                 [[NSBundle mainBundle]loadNibNamed:@"CoatingCell" owner:self options:nil];
+                 cell=_coatcell;
+             }
+             else if (droptype==4){
+                 [[NSBundle mainBundle]loadNibNamed:@"AsbetosCell" owner:self options:nil];
+                 cell=_asbtoscell;
+             }
+
         }
     }
     if(tableView==_PopOvertableview){
@@ -259,6 +283,48 @@
             
             
         }
+        if(droptype==3){
+            CoatMdl*cmdl=(CoatMdl *)[_Coatgarray objectAtIndex:indexPath.row];
+            _Cplantlbl=(UILabel*)[cell viewWithTag:1];
+            _Cplantlbl.text=cmdl.plant;
+            _Cequptlbl=(UILabel*)[cell viewWithTag:2];
+            _Cequptlbl.text=cmdl.equmnt;
+            _Cphlbl=(UILabel*)[cell viewWithTag:3];
+            _Cphlbl.text=cmdl.ph;
+            _Csublbl=(UILabel*)[cell viewWithTag:4];
+            _Csublbl.text=cmdl.subunit;
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        if (droptype==4) {
+            
+            Asbetosmdl*amdl=(Asbetosmdl *)[_AsbetosArray objectAtIndex:indexPath.row];
+            _Aplantlbl=(UILabel *)[cell viewWithTag:1];
+            _Aplantlbl.text=amdl.plant;
+            _Aequlbl=(UILabel *)[cell viewWithTag:2];
+            _Aequlbl.text=amdl.equipment;
+            _Aphlbl=(UILabel *)[cell viewWithTag:3];
+            _Aphlbl.text=amdl.equipment;
+            _Asublbl=(UILabel *)[cell viewWithTag:4];
+            _Asublbl.text=amdl.subunit;
+            _Atypelbl=(UILabel *)[cell viewWithTag:5];
+            _Atypelbl.text=amdl.typenamev;
+            _Apipelbl=(UILabel *)[cell viewWithTag:6];
+            _Apipelbl.text=amdl.pipename;
+            _Alayerlbl=(UILabel *)[cell viewWithTag:7];
+            _Alayerlbl.text=amdl.layername;
+            _Amanlbl=(UILabel *)[cell viewWithTag:8];
+            _Amanlbl.text=amdl.manhrs;
+            
+            
+            
+        }
 
 
     }
@@ -276,6 +342,8 @@
              droptype=1;
             _scafoldtitle.hidden=NO;
             _scaffoldtable.hidden=NO;
+             _asbestosview.hidden=YES;
+             _coatgview.hidden=YES;
             [self ReadScaffoldPlan];
         }
         
@@ -283,14 +351,40 @@
            droptype=2;
             _institleview.hidden=NO;
             _scafoldtitle.hidden=YES;
+           _asbestosview.hidden=YES;
           _scaffoldtable.hidden=NO;
+           _coatgview.hidden=YES;
           [self ReadInsulation];
             
         }
+      else  if ([[_Subtypelistarray objectAtIndex:indexPath.row] isEqualToString:@"Coatings"]) {
+          droptype=3;
+          _institleview.hidden=YES;
+          _scafoldtitle.hidden=YES;
+          _coatgview.hidden=NO;
+           _asbestosview.hidden=YES;
+          
+          _scaffoldtable.hidden=NO;
+          [self ReadCoatting];
+          
+          
+      }
+      else  if ([[_Subtypelistarray objectAtIndex:indexPath.row] isEqualToString:@"Asbestos Abatement"]) {
+          droptype=4;
+          _institleview.hidden=YES;
+          _scafoldtitle.hidden=YES;
+          _coatgview.hidden=YES;
+          _asbestosview.hidden=NO;
+          
+          _scaffoldtable.hidden=NO;
+          [self ReadAsbestos];
+          
+          
+      }
 
         else
         {
-            droptype=3;
+            droptype=5;
             _scafoldtitle.hidden=YES;
             _scaffoldtable.hidden=YES;
 
@@ -603,6 +697,110 @@
     [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
     [theRequest addValue: @"http://ios.kontract360.com/ReadInsulation" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)ReadCoatting
+{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadCoatting xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<ID>%@</ID>\n"
+                   "<PL>%@</PL>\n"
+                   "</ReadCoatting>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_workorderid,_planid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadCoatting" forHTTPHeaderField:@"Soapaction"];
+    
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    
+    if( theConnection )
+    {
+        _webData = [NSMutableData data];
+    }
+    else
+    {
+        ////NSLog(@"theConnection is NULL");
+    }
+    
+}
+-(void)ReadAsbestos
+{
+    recordResults = FALSE;
+    NSString *soapMessage;
+    
+    
+    soapMessage = [NSString stringWithFormat:
+                   
+                   @"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+                   "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+                   
+                   
+                   "<soap:Body>\n"
+                   
+                   "<ReadAsbestos xmlns=\"http://ios.kontract360.com/\">\n"
+                   "<ID>%@</ID>\n"
+                   "<PL>%@</PL>\n"
+                   "</ReadAsbestos>\n"
+                   "</soap:Body>\n"
+                   "</soap:Envelope>\n",_workorderid,_planid];
+    NSLog(@"soapmsg%@",soapMessage);
+    
+    
+    //   NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.175/service.asmx"];
+    
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+    
+    [theRequest addValue: @"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    [theRequest addValue: @"http://ios.kontract360.com/ReadAsbestos" forHTTPHeaderField:@"Soapaction"];
     
     [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
@@ -1369,6 +1567,414 @@
         }
         recordResults = TRUE;
     }
+    if([elementName isEqualToString:@"ReadCoattingResponse"])
+    {
+        _Coatgarray=[[NSMutableArray alloc]init];
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"EntryCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    
+    if([elementName isEqualToString:@"planCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"workOCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"plantCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"subUnitCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"equipmentCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"projectHeadCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"TypeCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"surfaceCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"surfaceSubTyCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"thicknessCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"legFeetCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"phaseIDzCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"seqIDzCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"ManhoursCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"linearftCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"isLead"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"isRoof"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"isNonSpray"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"phasenameCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"seqnameCO"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"surfaceCOName"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"surfaceSubTyCOName"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"thicknessCOName"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"ReadAsbestosResponse"])
+    {
+        _AsbetosArray=[[NSMutableArray alloc]init];
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"Entryv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"planv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"workOv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"plantv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"subUnitv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"equipmentv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"projectHeadv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Typev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"pageSizev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"layerSizev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"insulatnTypev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"subTypev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"otherFactorsv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"legFeetv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"phaseIDzv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"seqIDzv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"TypeNamev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"PipeNamev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"LayerNamev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"Manhoursv"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+
+    if([elementName isEqualToString:@"steamTracev"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"elbow"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"valves"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
+    if([elementName isEqualToString:@"steamtracebit"])
+    {
+        if(!_soapResults)
+        {
+            _soapResults = [[NSMutableString alloc] init];
+        }
+        recordResults = TRUE;
+    }
 
 
 }
@@ -2050,6 +2656,314 @@
         
         _soapResults = nil;
     }
+    if([elementName isEqualToString:@"EntryCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl=[[CoatMdl alloc]init];
+        _coatgmdl.entryid=_soapResults;
+        
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"planCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.plan=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"workOCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.worko=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"plantCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.plant=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"subUnitCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.subunit=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"equipmentCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.equmnt=_soapResults;
+        _soapResults = nil;    }
+    if([elementName isEqualToString:@"projectHeadCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.ph=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"TypeCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.type=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"surfaceCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.surface=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"surfaceSubTyCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.surfacesub=_soapResults;
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"thicknessCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.thickness=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"legFeetCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.legfeet=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"phaseIDzCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.phaseid=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"seqIDzCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.seqid=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"ManhoursCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.manhrs=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"linearftCO"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.linearft=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"isLead"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.islead=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"isRoof"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.isroof=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"isNonSpray"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.isnonspray=_soapResults;
+        [_Coatgarray addObject:_coatgmdl];
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"phasenameCO"])
+    {
+        recordResults=FALSE;
+          _coatgmdl.phasename=_soapResults;
+        _soapResults = nil;
+
+    }
+    if([elementName isEqualToString:@"seqnameCO"])
+    {
+        recordResults=FALSE;
+         _coatgmdl.sequencename=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"surfaceCOName"])
+    {
+        recordResults=FALSE;
+         _coatgmdl.surfacename=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"surfaceSubTyCOName"])
+    {
+        recordResults=FALSE;
+        _coatgmdl.surfacesubname=_soapResults;
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"thicknessCOName"])
+    {
+        recordResults=FALSE;
+          _coatgmdl.thicknessname=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"Entryv"])
+    {
+        recordResults=FALSE;
+         _Asmdl=[[Asbetosmdl alloc]init];
+        _Asmdl.entryid=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"planv"])
+    {
+        recordResults=FALSE;
+         _Asmdl.plan=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"workOv"])
+    {
+        recordResults=FALSE;
+          _Asmdl.workorder=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"plantv"])
+    {
+        recordResults=FALSE;
+         _Asmdl.plant=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"subUnitv"])
+    {
+        recordResults=FALSE;
+        _Asmdl.subunit=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"equipmentv"])
+    {
+        recordResults=FALSE;
+        _Asmdl.equipment=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"projectHeadv"])
+    {
+        recordResults=FALSE;
+        _Asmdl.ph=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"Typev"])
+    {
+        recordResults=FALSE;
+        _Asmdl.type=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"pageSizev"])
+    {
+        recordResults=FALSE;
+        _Asmdl.pagesize=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"layerSizev"])
+    {
+        recordResults=FALSE;
+        _Asmdl.layersize=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"insulatnTypev"])
+    {
+        recordResults=FALSE;
+        _Asmdl.insltntype=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"subTypev"])
+    {
+        recordResults=FALSE;
+       _Asmdl.subtype=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"otherFactorsv"])
+    {
+        recordResults=FALSE;
+        _Asmdl.othrfactor=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"legFeetv"])
+    {
+        recordResults=FALSE;
+       _Asmdl.legfeet=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"phaseIDzv"])
+    {
+        recordResults=FALSE;
+       _Asmdl.phaseid=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"seqIDzv"])
+    {
+        recordResults=FALSE;
+        _Asmdl.seqid=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"TypeNamev"])
+    {
+        recordResults=FALSE;
+        _Asmdl.typenamev=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"PipeNamev"])
+    {
+        recordResults=FALSE;
+         _Asmdl.pipename=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"LayerNamev"])
+    {
+        recordResults=FALSE;
+         _Asmdl.layername=_soapResults;
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"Manhoursv"])
+    {
+        recordResults=FALSE;
+        _Asmdl.manhrs=_soapResults;
+
+        _soapResults = nil;
+    }
+    
+    if([elementName isEqualToString:@"steamTracev"])
+    {
+        recordResults=FALSE;
+        _Asmdl.streamtrace=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"elbow"])
+    {
+        recordResults=FALSE;
+        _Asmdl.elbow=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"valves"])
+    {
+        recordResults=FALSE;
+        _Asmdl.valves=_soapResults;
+
+        _soapResults = nil;
+    }
+    if([elementName isEqualToString:@"steamtracebit"])
+    {
+        recordResults=FALSE;
+        _Asmdl.streamtracebit=_soapResults;
+        [_AsbetosArray addObject:_Asmdl];
+
+        _soapResults = nil;
+    }
+
+
 
 }
 - (IBAction)update:(id)sender
@@ -2091,5 +3005,33 @@
     self.insultnVctrl.btntype=2;
     
     [self presentViewController:_insultnVctrl animated:YES completion:nil];
+}
+- (IBAction)coatgaddbtn:(id)sender {
+    
+    self.CoatVCtrl=[[CoatViewController alloc]initWithNibName:@"CoatViewController" bundle:nil];
+    CoatMdl*cmdl=(CoatMdl *)[_Coatgarray objectAtIndex:0];
+     NSMutableArray*newarray=[[NSMutableArray alloc]initWithObjects:cmdl, nil];
+    self.CoatVCtrl.CoatingArray=newarray;
+    self.CoatVCtrl.btntype=1;
+    [self presentViewController:_CoatVCtrl animated:YES completion:nil];
+}
+- (IBAction)Ceditbtn:(id)sender {
+    button = (UIButton *)sender;
+    UITableViewCell *cell = (UITableViewCell *)[[button superview] superview];
+    CGPoint center= button.center;
+    CGPoint rootViewPoint = [button.superview convertPoint:center toView:self.scaffoldtable];
+    NSIndexPath *textFieldIndexPath = [self.scaffoldtable indexPathForRowAtPoint:rootViewPoint];
+    NSLog(@"textFieldIndexPath%d",textFieldIndexPath.row);
+    btnindex=textFieldIndexPath.row;
+    
+    self.CoatVCtrl=[[CoatViewController alloc]initWithNibName:@"CoatViewController" bundle:nil];
+    CoatMdl*cmdl=(CoatMdl *)[_Coatgarray objectAtIndex:btnindex];
+    NSMutableArray*newarray=[[NSMutableArray alloc]initWithObjects:cmdl, nil];
+    self.CoatVCtrl.CoatingArray=newarray;
+    self.CoatVCtrl.btntype=2;
+    [self presentViewController:_CoatVCtrl animated:YES completion:nil];
+
+}
+- (IBAction)editbtn:(id)sender {
 }
 @end

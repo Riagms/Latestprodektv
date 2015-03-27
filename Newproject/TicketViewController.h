@@ -13,10 +13,13 @@
 #import "TrakerViewController.h"
 @interface TicketViewController : UIViewController{
     BOOL recordResults;
-    NSString *selcteddate;
+    NSString *selcteddate,*foremanid;
     UIButton*button;
     
 }
+
+@property(strong,nonatomic)NSMutableDictionary *foremandict;
+@property(strong,nonatomic)NSMutableDictionary *Revforemandict;
 @property(strong,nonatomic)Schedulermdl*schmdl;
 @property (strong, nonatomic)TrakerViewController*TrackVCtrl;
 /* xmlparser*/
@@ -50,5 +53,7 @@
 - (IBAction)Datebtn:(id)sender;
 - (IBAction)clsebtn:(id)sender;
 
+- (IBAction)foremanbtnlbl:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *formanbtn;
 
 @end
